@@ -15,10 +15,6 @@
 
 package com.company;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
-
 public class Main {
 
     public static void main(String[] args) {

@@ -25,7 +25,6 @@ public class Hospital {
         }
         double middleTemp = sumOfTemp / hospitalTemper.length;
         BigDecimal averageTemperature = BigDecimal.valueOf(middleTemp).round(DECIMAL3);
-
         System.out.println("Average temperature: " + averageTemperature + "\nNumber of persons with normal temperature: "
                 + countOfHealthyPersons);
     }
