@@ -5,12 +5,30 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+        List<String> numberList = new ArrayList<>();
+        HashSet<String> numberHashSet = new HashSet<>();
+        TreeSet<String> numberTreeSet = new TreeSet<>();
+        final String STRING_TO_FIND = "Т888ТТ187";
+        generateCollection(numberList);
+        generateCollection(numberHashSet);
+        generateCollection(numberTreeSet);
+        System.out.println("\nTotally generated " + numberList.size() + " numbers:");
+
+        TreeMap<Long, String> result = new TreeMap<>();
+
+        searchNumberInSet(STRING_TO_FIND, numberHashSet, result);
+        searchNumberInSet(STRING_TO_FIND, numberTreeSet, result);
+        findNumberInList(STRING_TO_FIND, numberList, result, false);
+        findNumberInList(STRING_TO_FIND, numberList, result, true);
+
+        for (Map.Entry<Long, String> e : result.entrySet()) {
+            System.out.println(e);
+        }
+    }
+
+    private static void generateCollection(Collection<String> object) {
         String[] alphabet = {"А", "Б", "B", "Г", "Д", "Е", "Ж", "З", "И", "К", "Л", "М", "Н", "О", "П," +
                 "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я"};
-        List<String> numberList = new ArrayList();
-        HashSet<String> numberHashSet = new HashSet<>();
-        TreeSet <String> numberTreeSet = new TreeSet<>();
-        final String STRING_TO_FIND = "Т888ТТ187";
         for (int i = 0; i < alphabet.length; i++) {
             for (int j = 1; j < 10; j++) {
                 for (int k = 1; k <= 199; k++) {
@@ -20,55 +38,52 @@ public class Main {
                     } else {
                         number = alphabet[i] + j + "" + j + "" + j + alphabet[i] + alphabet[i] + k;
                     }
-                        numberList.add(number);
-                        numberHashSet.add(number);
-                        numberTreeSet.add(number);
+                    object.add(number);
                 }
             }
         }
-        System.out.println("\nTotally generated " + numberList.size() + " numbers:");
-        for (String s : numberList) {
-            System.out.println(s);
-        }
+    }
+
+    private static void searchNumberInSet(String toFind, Collection<String> collection, TreeMap<Long, String> result) {
         boolean isFoundInList;
-        boolean isFoundInHashSet;
-        boolean isFoundInTreeSet;
         long beginList = System.nanoTime();
-        // direct search in List
-        isFoundInList = numberList.contains(STRING_TO_FIND);
+        isFoundInList = collection.contains(toFind);
         long endList = System.nanoTime();
+        String toResult;
         if (isFoundInList) {
-            System.out.println("The number is found in not sorted List in " + (endList - beginList) + " nanosec.");
+            toResult = " nanosec: duration of time while number found in " + collection.getClass();
+            result.put((endList - beginList), toResult);
         } else {
-            System.out.println("The number is NOT found in not sorted List in " + (endList - beginList) + " nanosec.");
+            toResult = " nanosec: duration of time while number searched but not found in " + collection.getClass();
+            result.put((endList - beginList), toResult);
         }
-        // search in sorted List
-        Collections.sort(numberList);
-        long beginListSorted = System.nanoTime();
-        int findInListSorted = Collections.binarySearch(numberList, STRING_TO_FIND);
-        long endListSorted = System.nanoTime();
-        if (findInListSorted > 0) {
-            System.out.println("The number is found in sorted List in " + (endListSorted - beginListSorted) + " nanosec.");
+    }
+
+    private static void findNumberInList(String toFind, List<String> list, TreeMap<Long, String> result, boolean isListSorted) {
+        String toResult;
+        if (isListSorted) {
+            Collections.sort(list);
+            long beginListSorted = System.nanoTime();
+            int findInListSorted = Collections.binarySearch(list, toFind);
+            long endListSorted = System.nanoTime();
+            if (findInListSorted > 0) {
+                toResult = " nanosec: duration of time while number found in sorted " + list.getClass();
+                result.put((endListSorted - beginListSorted), toResult);
+            } else {
+                toResult = " nanosec: duration of time while number searched but not found in sorted " + list.getClass();
+                result.put((endListSorted - beginListSorted), toResult);
+            }
         } else {
-            System.out.println("The number is NOT found in sorted List in " + (endListSorted - beginListSorted) + " nanosec.");
-        }
-        // search in HashSet
-        long beginHashSet = System.nanoTime();
-        isFoundInHashSet = numberHashSet.contains(STRING_TO_FIND);
-        long endHashSet = System.nanoTime();
-        if (isFoundInHashSet) {
-            System.out.println("The number is found in HashSet in " + (endHashSet - beginHashSet) + " nanosec.");
-        } else {
-            System.out.println("The number is NOT found in HashSet in " + (endHashSet - beginHashSet) + " nanosec.");
-        }
-        // search in TreeSet
-        long beginTreeSet = System.nanoTime();
-        isFoundInTreeSet = numberHashSet.contains(STRING_TO_FIND);
-        long endTreeSet = System.nanoTime();
-        if (isFoundInTreeSet) {
-            System.out.println("The number is found in TreeSet in " + (endTreeSet - beginTreeSet) + " nanosec.");
-        } else {
-            System.out.println("The number is NOT found in TreeSet in " + (endTreeSet - beginTreeSet) + " nanosec.");
+            long beginListSorted = System.nanoTime();
+            int findInListSorted = Collections.binarySearch(list, toFind);
+            long endListSorted = System.nanoTime();
+            if (findInListSorted > 0) {
+                toResult = " nanosec: duration of time while number found in not sorted " + list.getClass();
+                result.put((endListSorted - beginListSorted), toResult);
+            } else {
+                toResult = " nanosec: duration of time while number searched but not found in not sorted "  + list.getClass();
+                result.put((endListSorted - beginListSorted), toResult);
+            }
         }
     }
 }
