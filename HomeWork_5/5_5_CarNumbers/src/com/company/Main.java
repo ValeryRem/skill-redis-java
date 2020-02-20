@@ -1,5 +1,6 @@
 package com.company;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Main {
@@ -10,35 +11,35 @@ public class Main {
 
     public static void main(String[] args) {
 
-        final String STRING1_TO_FIND = "Т888ТТ187";
-        final String STRING2_TO_FIND = "А111АА01";
-        final String STRING3_TO_FIND = "Я999ЯЯ190";
-        generateCollection(numberList);
-        numberHashSet = new HashSet<>(numberList);
-        numberTreeSet = new TreeSet<>(numberList);
-        System.out.println("\nTotally generated " + numberList.size() + " numbers");
+        final String STRING1_TO_FIND = "Л888ЛН187";
+        final String STRING2_TO_FIND = "А111АА001";
+        final String STRING3_TO_FIND = "Я999ЯЯ199";
+        List<String> numberListFilled = generateList(numberList);
+        numberHashSet = new HashSet<>(numberListFilled);
+        numberTreeSet = new TreeSet<>(numberListFilled);
+        System.out.println("\nTotally generated " + numberListFilled.size() + " numbers");
 
         selectByString (STRING1_TO_FIND);
         selectByString(STRING2_TO_FIND);
         selectByString(STRING3_TO_FIND);
     }
 
-    private static void generateCollection(Collection<String> object) {
+    private static List<String> generateList(List<String> listToFill) {
         String[] alphabet = {"А", "Б", "B", "Г", "Д", "Е", "Ж", "З", "И", "К", "Л", "М", "Н", "О", "П," +
                 "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я"};
         for (int i = 0; i < alphabet.length; i++) {
-            for (int j = 1; j < 10; j++) {
-                for (int k = 1; k <= 199; k++) {
-                    String number;
-                    if (k < 10) {
-                        number = alphabet[i] + j + "" + j + "" + j + alphabet[i] + alphabet[i] + "0" + k;
-                    } else {
-                        number = alphabet[i] + j + "" + j + "" + j + alphabet[i] + alphabet[i] + k;
+            for (int n = 0; n < alphabet.length; n++) {
+                for (int j = 1; j <= 9; j++) {
+                    for (int k = 1; k <= 199; k++) {
+                        String number;
+                        String suffix = formatInt(k);
+                        number = alphabet[i] + j + "" + j + "" + j + alphabet[i] + alphabet[n] + suffix;
+                        listToFill.add(number);
                     }
-                    object.add(number);
                 }
             }
         }
+        return listToFill;
     }
 
     private static void searchNumberInSet(String toFind, Collection<String> collection, TreeMap<Long, String> result) {
@@ -48,10 +49,10 @@ public class Main {
         long endList = System.nanoTime();
         String toResult;
         if (isFoundInList) {
-            toResult = " nanosec for search in " + collection.getClass();
+            toResult = " ns for search in " + collection.getClass();
             result.put((endList - beginList), toResult);
         } else {
-            toResult = " nanosec for search when number is not found in " + collection.getClass();
+            toResult = " ns for empty search in " + collection.getClass();
             result.put((endList - beginList), toResult);
         }
     }
@@ -63,22 +64,22 @@ public class Main {
             long beginListSorted = System.nanoTime();
             int findInListSorted = Collections.binarySearch(list, toFind);
             long endListSorted = System.nanoTime();
-            if (findInListSorted > 0) {
-                toResult = " nanosec for search in sorted " + list.getClass();
+            if (findInListSorted >= 0) {
+                toResult = " ns for search in sorted " + list.getClass();
                 result.put((endListSorted - beginListSorted), toResult);
             } else {
-                toResult = " nanosec for search in sorted " + list.getClass();
+                toResult = " ns for empty search in sorted " + list.getClass();
                 result.put((endListSorted - beginListSorted), toResult);
             }
         } else {
             long beginListSorted = System.nanoTime();
             int findInListSorted = Collections.binarySearch(list, toFind);
             long endListSorted = System.nanoTime();
-            if (findInListSorted > 0) {
-                toResult = " nanosec for search in not sorted " + list.getClass();
+            if (findInListSorted >= 0) {
+                toResult = " ns for search in not sorted " + list.getClass();
                 result.put((endListSorted - beginListSorted), toResult);
             } else {
-                toResult = " nanosec for search in not sorted "  + list.getClass();
+                toResult = " ns for empty search in not sorted "  + list.getClass();
                 result.put((endListSorted - beginListSorted), toResult);
             }
         }
@@ -94,5 +95,10 @@ public class Main {
             System.out.println(e);
         }
         System.out.println();
+    }
+
+    private static String formatInt(int value) {
+        DecimalFormat myFormatter = new DecimalFormat("000");
+        return myFormatter.format(value);
     }
 }
