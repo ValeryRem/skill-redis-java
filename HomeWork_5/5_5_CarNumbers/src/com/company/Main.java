@@ -3,27 +3,24 @@ package com.company;
 import java.util.*;
 
 public class Main {
+    static List<String> numberList = new ArrayList<>();
+    static HashSet<String> numberHashSet; //= new HashSet<>(numberList);
+    static TreeSet<String> numberTreeSet;
+    static TreeMap<Long, String> result = new TreeMap<>();
 
     public static void main(String[] args) {
-        List<String> numberList = new ArrayList<>();
-        HashSet<String> numberHashSet = new HashSet<>();
-        TreeSet<String> numberTreeSet = new TreeSet<>();
-        final String STRING_TO_FIND = "Т888ТТ187";
+
+        final String STRING1_TO_FIND = "Т888ТТ187";
+        final String STRING2_TO_FIND = "А111АА01";
+        final String STRING3_TO_FIND = "Я999ЯЯ190";
         generateCollection(numberList);
-        generateCollection(numberHashSet);
-        generateCollection(numberTreeSet);
-        System.out.println("\nTotally generated " + numberList.size() + " numbers:");
+        numberHashSet = new HashSet<>(numberList);
+        numberTreeSet = new TreeSet<>(numberList);
+        System.out.println("\nTotally generated " + numberList.size() + " numbers");
 
-        TreeMap<Long, String> result = new TreeMap<>();
-
-        searchNumberInSet(STRING_TO_FIND, numberHashSet, result);
-        searchNumberInSet(STRING_TO_FIND, numberTreeSet, result);
-        findNumberInList(STRING_TO_FIND, numberList, result, false);
-        findNumberInList(STRING_TO_FIND, numberList, result, true);
-
-        for (Map.Entry<Long, String> e : result.entrySet()) {
-            System.out.println(e);
-        }
+        selectByString (STRING1_TO_FIND);
+        selectByString(STRING2_TO_FIND);
+        selectByString(STRING3_TO_FIND);
     }
 
     private static void generateCollection(Collection<String> object) {
@@ -51,10 +48,10 @@ public class Main {
         long endList = System.nanoTime();
         String toResult;
         if (isFoundInList) {
-            toResult = " nanosec: duration of time while number found in " + collection.getClass();
+            toResult = " nanosec for search in " + collection.getClass();
             result.put((endList - beginList), toResult);
         } else {
-            toResult = " nanosec: duration of time while number searched but not found in " + collection.getClass();
+            toResult = " nanosec for search when number is not found in " + collection.getClass();
             result.put((endList - beginList), toResult);
         }
     }
@@ -67,10 +64,10 @@ public class Main {
             int findInListSorted = Collections.binarySearch(list, toFind);
             long endListSorted = System.nanoTime();
             if (findInListSorted > 0) {
-                toResult = " nanosec: duration of time while number found in sorted " + list.getClass();
+                toResult = " nanosec for search in sorted " + list.getClass();
                 result.put((endListSorted - beginListSorted), toResult);
             } else {
-                toResult = " nanosec: duration of time while number searched but not found in sorted " + list.getClass();
+                toResult = " nanosec for search in sorted " + list.getClass();
                 result.put((endListSorted - beginListSorted), toResult);
             }
         } else {
@@ -78,12 +75,24 @@ public class Main {
             int findInListSorted = Collections.binarySearch(list, toFind);
             long endListSorted = System.nanoTime();
             if (findInListSorted > 0) {
-                toResult = " nanosec: duration of time while number found in not sorted " + list.getClass();
+                toResult = " nanosec for search in not sorted " + list.getClass();
                 result.put((endListSorted - beginListSorted), toResult);
             } else {
-                toResult = " nanosec: duration of time while number searched but not found in not sorted "  + list.getClass();
+                toResult = " nanosec for search in not sorted "  + list.getClass();
                 result.put((endListSorted - beginListSorted), toResult);
             }
         }
+    }
+    private static void selectByString (String toFind ){
+        result = new TreeMap<>();
+        searchNumberInSet(toFind, numberHashSet, result);
+        searchNumberInSet(toFind, numberTreeSet, result);
+        findNumberInList(toFind, numberList, result, false);
+        findNumberInList(toFind, numberList, result, true);
+        System.out.println("Number to find: " + toFind);
+        for (Map.Entry<Long, String> e : result.entrySet()) {
+            System.out.println(e);
+        }
+        System.out.println();
     }
 }
