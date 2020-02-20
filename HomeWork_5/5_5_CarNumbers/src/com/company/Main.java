@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Main {
     static List<String> numberList = new ArrayList<>();
-    static HashSet<String> numberHashSet; //= new HashSet<>(numberList);
+    static HashSet<String> numberHashSet;
     static TreeSet<String> numberTreeSet;
     static TreeMap<Long, String> result = new TreeMap<>();
 
