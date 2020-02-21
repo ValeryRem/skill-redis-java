@@ -17,11 +17,24 @@ public class Main {
         List<String> numberListFilled = generateList(numberList);
         numberHashSet = new HashSet<>(numberListFilled);
         numberTreeSet = new TreeSet<>(numberListFilled);
-        System.out.println("\nTotally generated " + numberListFilled.size() + " numbers");
-
+        System.out.println("Totally generated " + numberListFilled.size() + " numbers. \nAverage results in 10 experiments: ");
         selectByString (STRING1_TO_FIND);
+        System.out.println(statisticOfSearch ( result, "ns for search in sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "ns for search in not sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.HashSet"));
+        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.TreeSet"));
+        System.out.println();
         selectByString(STRING2_TO_FIND);
+        System.out.println(statisticOfSearch ( result, "ns for search in sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "ns for search in not sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.HashSet"));
+        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.TreeSet"));
+        System.out.println();
         selectByString(STRING3_TO_FIND);
+        System.out.println(statisticOfSearch ( result, "ns for search in sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "ns for search in not sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.HashSet"));
+        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.TreeSet"));
     }
 
     private static List<String> generateList(List<String> listToFill) {
@@ -50,11 +63,10 @@ public class Main {
         String toResult;
         if (isFoundInList) {
             toResult = " ns for search in " + collection.getClass();
-            result.put((endList - beginList), toResult);
         } else {
             toResult = " ns for empty search in " + collection.getClass();
-            result.put((endList - beginList), toResult);
         }
+        result.put((endList - beginList), toResult);
     }
 
     private static void findNumberInList(String toFind, List<String> list, TreeMap<Long, String> result, boolean isListSorted) {
@@ -73,9 +85,9 @@ public class Main {
             }
         } else {
             long beginListSorted = System.nanoTime();
-            int findInListSorted = Collections.binarySearch(list, toFind);
+            boolean findInListSorted = list.contains(toFind);
             long endListSorted = System.nanoTime();
-            if (findInListSorted >= 0) {
+            if (findInListSorted) {
                 toResult = " ns for search in not sorted " + list.getClass();
                 result.put((endListSorted - beginListSorted), toResult);
             } else {
@@ -86,19 +98,33 @@ public class Main {
     }
     private static void selectByString (String toFind ){
         result = new TreeMap<>();
-        searchNumberInSet(toFind, numberHashSet, result);
-        searchNumberInSet(toFind, numberTreeSet, result);
-        findNumberInList(toFind, numberList, result, false);
-        findNumberInList(toFind, numberList, result, true);
-        System.out.println("Number to find: " + toFind);
-        for (Map.Entry<Long, String> e : result.entrySet()) {
-            System.out.println(e);
+        for (int i = 0; i < 10; i++) {
+            searchNumberInSet(toFind, numberHashSet, result);
+            searchNumberInSet(toFind, numberTreeSet, result);
+            findNumberInList(toFind, numberList, result, false);
+            findNumberInList(toFind, numberList, result, true);
         }
-        System.out.println();
+        System.out.println("Number to find: " + toFind);
+//        for (Map.Entry<Long, String> e : result.entrySet()) {
+//            System.out.println(e);
+//        }
+//        System.out.println();
     }
 
     private static String formatInt(int value) {
         DecimalFormat myFormatter = new DecimalFormat("000");
         return myFormatter.format(value);
+    }
+
+    private static String statisticOfSearch (TreeMap<Long, String> result, String collectionType) {
+        Object[] resInArray = result.entrySet().toArray();
+        double value = 0;
+        for (int i = 0; i < resInArray.length; i++) {
+            if (resInArray[i].toString().contains(collectionType)) {
+                value += Double.parseDouble(resInArray[i].toString().split("=")[0]);
+            }
+        }
+        return
+                value / 10 + " ns " + collectionType;
     }
 }
