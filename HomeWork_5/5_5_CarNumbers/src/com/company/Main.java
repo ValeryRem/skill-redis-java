@@ -19,22 +19,22 @@ public class Main {
         numberTreeSet = new TreeSet<>(numberListFilled);
         System.out.println("Totally generated " + numberListFilled.size() + " numbers. \nAverage results in 10 experiments: ");
         selectByString (STRING1_TO_FIND);
-        System.out.println(statisticOfSearch ( result, "ns for search in sorted class java.util.ArrayList"));
-        System.out.println(statisticOfSearch ( result, "ns for search in not sorted class java.util.ArrayList"));
-        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.HashSet"));
-        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.TreeSet"));
+        System.out.println(statisticOfSearch ( result, "for search in sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "for search in not sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "for search in class java.util.HashSet"));
+        System.out.println(statisticOfSearch ( result, "for search in class java.util.TreeSet"));
         System.out.println();
         selectByString(STRING2_TO_FIND);
-        System.out.println(statisticOfSearch ( result, "ns for search in sorted class java.util.ArrayList"));
-        System.out.println(statisticOfSearch ( result, "ns for search in not sorted class java.util.ArrayList"));
-        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.HashSet"));
-        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.TreeSet"));
+        System.out.println(statisticOfSearch ( result, "for search in sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "for search in not sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "for search in class java.util.HashSet"));
+        System.out.println(statisticOfSearch ( result, "for search in class java.util.TreeSet"));
         System.out.println();
         selectByString(STRING3_TO_FIND);
-        System.out.println(statisticOfSearch ( result, "ns for search in sorted class java.util.ArrayList"));
-        System.out.println(statisticOfSearch ( result, "ns for search in not sorted class java.util.ArrayList"));
-        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.HashSet"));
-        System.out.println(statisticOfSearch ( result, "ns for search in class java.util.TreeSet"));
+        System.out.println(statisticOfSearch ( result, "for search in sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "for search in not sorted class java.util.ArrayList"));
+        System.out.println(statisticOfSearch ( result, "for search in class java.util.HashSet"));
+        System.out.println(statisticOfSearch ( result, "for search in class java.util.TreeSet"));
     }
 
     private static List<String> generateList(List<String> listToFill) {
@@ -105,10 +105,6 @@ public class Main {
             findNumberInList(toFind, numberList, result, true);
         }
         System.out.println("Number to find: " + toFind);
-//        for (Map.Entry<Long, String> e : result.entrySet()) {
-//            System.out.println(e);
-//        }
-//        System.out.println();
     }
 
     private static String formatInt(int value) {
