@@ -12,8 +12,12 @@ public class CustomerStorage
     public void addCustomer(String data)
     {
         String[] components = data.split("\\s+");
-        String name = components[0] + " " + components[1];
-        storage.put(name, new Customer(name, components[3], components[2]));
+        try {
+            String name = components[0] + " " + components[1];
+            storage.put(name, new Customer(name, components[3], components[2]));
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            System.out.println("Too short input string!");
+        }
     }
 
     public void listCustomers()
@@ -22,8 +26,11 @@ public class CustomerStorage
     }
 
     public void removeCustomer(String name)
-    {
+    { try {
         storage.remove(name);
+    } catch (NullPointerException ex) {
+        ex.getMessage();
+    }
     }
 
     public int getCount()
