@@ -10,7 +10,7 @@ public class CustomerStorage {
     public boolean addCustomer(String data) {
         String[] components = data.split("\\s+");
         String name = components[0] + " " + components[1];
-        if (components[3].matches("([+7]\\d{11})")) {
+        if (components[2].matches("(\\w+@\\w+\\.\\w+)") && components[3].matches("([+7]\\d{11})")) {
             storage.put(name, new Customer(name, components[3], components[2]));
             return true;
         } else {
