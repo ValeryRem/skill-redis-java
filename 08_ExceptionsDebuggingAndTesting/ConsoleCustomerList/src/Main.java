@@ -10,45 +10,38 @@ public class Main {
     private static String helpText = "Command examples:\n" + commandExamples;
 
     public static void main(String[] args) {
+        System.out.println("Input order from the commands available: \n"  + commandExamples);
         Scanner scanner = new Scanner(System.in);
         CustomerStorage executor = new CustomerStorage();
         while (true) {
             String command = scanner.nextLine();
             String[] tokens = command.split("\\s+", 2);
-
-            switch (tokens[0]) {
-                case "add":
-                    try {
-                        if (executor.addCustomer(tokens[1])) {
-                            System.out.println("Customer " + tokens[1] + " is put to the list.");
-                        } else {
-                            System.out.println("Wrong format of the phone number input!");
-                            continue;
-                        }
-
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        System.out.println("Too short input!");
-                    }
-                    break;
-                case "list":
-                    executor.listCustomers();
-                    break;
-                case "remove":
-                    try {
+            try {
+                switch (tokens[0]) {
+                    case "add":
+                        executor.addCustomer(tokens[1]);
+                        System.out.println("Customer " + tokens[1] + " is put to the list.");
+                        break;
+                    case "list":
+                        executor.listCustomers();
+                        break;
+                    case "remove":
                         executor.removeCustomer(tokens[1]);
-                    } catch (NullPointerException ex) {
-                        ex.getMessage();
-                    }
-                    break;
-                case "count":
-                    System.out.println("There are " + executor.getCount() + " customers");
-                    break;
-                case "help":
-                    System.out.println(helpText);
-                    break;
-                default:
-                    System.out.println(commandError);
+                        System.out.println("Customer " + tokens[1] + " is deleted.");
+                        break;
+                    case "count":
+                        System.out.println("There are " + executor.getCount() + " customers");
+                        break;
+                    case "help":
+                        System.out.println(helpText);
+                        break;
+                    default:
+                        System.out.println(commandError);
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
         }
+
     }
 }
