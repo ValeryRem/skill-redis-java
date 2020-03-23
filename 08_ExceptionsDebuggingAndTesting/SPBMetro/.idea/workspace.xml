@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ConsoleCustomerList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ConsoleCustomerList/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +29,6 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
-  </component>
   <component name="ProjectId" id="1ZUPwkpfrizDTFSsNSv5im97oqe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -54,7 +51,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.RoadCalculatorTest.testGetRouteWithOneConnection">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SPBMetro" />
@@ -70,9 +67,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RoadCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SPBMetro" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoadCalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoadCalculatorTest.testCalculateDuration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SPBMetro" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoadCalculatorTest" />
+      <option name="METHOD_NAME" value="testCalculateDuration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoadCalculatorTest.testGetRouteWithOneConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SPBMetro" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoadCalculatorTest" />
+      <option name="METHOD_NAME" value="testGetRouteWithOneConnection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteWithOneConnection" />
+        <item itemvalue="JUnit.RoadCalculatorTest.testCalculateDuration" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.RoadCalculatorTest" />
         <item itemvalue="JUnit.All in SPBMetro" />
       </list>
     </recent_temporary>
@@ -90,44 +119,54 @@
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="All_in_SPBMetro - 2019.06.03 at 18h 00m 44s.xml">
-      <configuration name="All in SPBMetro" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_SPBMetro - 2019.06.03 at 18h 05m 21s.xml">
-      <configuration name="All in SPBMetro" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_SPBMetro - 2019.06.03 at 18h 24m 12s.xml">
-      <configuration name="All in SPBMetro" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_SPBMetro - 2019.06.03 at 18h 24m 57s.xml">
-      <configuration name="All in SPBMetro" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_SPBMetro - 2019.06.03 at 18h 25m 45s.xml">
-      <configuration name="All in SPBMetro" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="WindowStateProjectService">
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584891041925">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1584891041925" />
-    <state width="1311" height="494" key="GridCell.Tab.0.bottom" timestamp="1584907891634">
+    <state width="1311" height="207" key="GridCell.Tab.0.bottom" timestamp="1584999020542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="494" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584907891633" />
-    <state width="1311" height="494" key="GridCell.Tab.0.center" timestamp="1584907891633">
+    <state width="1311" height="207" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
+    <state width="1311" height="207" key="GridCell.Tab.0.center" timestamp="1584999020542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="494" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584907891633" />
-    <state width="1311" height="494" key="GridCell.Tab.0.left" timestamp="1584907891633">
+    <state width="1311" height="207" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
+    <state width="1311" height="207" key="GridCell.Tab.0.left" timestamp="1584999020542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="494" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584907891633" />
-    <state width="1311" height="494" key="GridCell.Tab.0.right" timestamp="1584907891633">
+    <state width="1311" height="207" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
+    <state width="1311" height="207" key="GridCell.Tab.0.right" timestamp="1584999020542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="494" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584907891633" />
+    <state width="1311" height="207" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
+    <state width="1311" height="207" key="GridCell.Tab.1.bottom" timestamp="1584999020543">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1311" height="207" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584999020543" />
+    <state width="1311" height="207" key="GridCell.Tab.1.center" timestamp="1584999020542">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1311" height="207" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
+    <state width="1311" height="207" key="GridCell.Tab.1.left" timestamp="1584999020542">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1311" height="207" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
+    <state width="1311" height="207" key="GridCell.Tab.1.right" timestamp="1584999020543">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1311" height="207" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1584999020543" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Test/java/RoadCalculatorTest.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>
