@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ConsoleCustomerList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ConsoleCustomerList/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,29 +114,45 @@
       <option name="presentableId" value="Default" />
       <updated>1559569584327</updated>
     </task>
+    <task id="LOCAL-00001" summary="Init commit with try to check testGetRouteWithOneConnection().">
+      <created>1584999190633</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584999190633</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init commit with try to check testGetRouteWithOneConnection()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit with try to check testGetRouteWithOneConnection()." />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584891041925">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1584891041925" />
-    <state width="1311" height="207" key="GridCell.Tab.0.bottom" timestamp="1584999020542">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1584999189162">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="207" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
-    <state width="1311" height="207" key="GridCell.Tab.0.center" timestamp="1584999020542">
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1584999189162" />
+    <state width="1311" height="494" key="GridCell.Tab.0.bottom" timestamp="1585046966063">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="207" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
-    <state width="1311" height="207" key="GridCell.Tab.0.left" timestamp="1584999020542">
+    <state width="1311" height="494" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585046966063" />
+    <state width="1311" height="494" key="GridCell.Tab.0.center" timestamp="1585046966062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="207" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
-    <state width="1311" height="207" key="GridCell.Tab.0.right" timestamp="1584999020542">
+    <state width="1311" height="494" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585046966062" />
+    <state width="1311" height="494" key="GridCell.Tab.0.left" timestamp="1585046966062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="207" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
+    <state width="1311" height="494" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585046966062" />
+    <state width="1311" height="494" key="GridCell.Tab.0.right" timestamp="1585046966063">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1311" height="494" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585046966063" />
     <state width="1311" height="207" key="GridCell.Tab.1.bottom" timestamp="1584999020543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -156,17 +169,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1311" height="207" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1584999020543" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Test/java/RoadCalculatorTest.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1584999205605">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1584999205605" />
   </component>
   <component name="masterDetails">
     <states>
