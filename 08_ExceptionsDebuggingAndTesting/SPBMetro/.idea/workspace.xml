@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/java/RoadCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/java/RoadCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/RouteCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/RouteCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/RoadCalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RoadCalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,18 +52,10 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RoadCalculatorTest.testGetRouteWithOneConnection">
+  <component name="RunManager" selected="JUnit.RoadCalculatorTest.testGetRouteOnTheLine">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SPBMetro" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in SPBMetro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SPBMetro" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -83,6 +79,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RoadCalculatorTest.testGetRouteOnTheLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SPBMetro" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoadCalculatorTest" />
+      <option name="METHOD_NAME" value="testGetRouteOnTheLine" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RoadCalculatorTest.testGetRouteWithOneConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SPBMetro" />
       <option name="PACKAGE_NAME" value="" />
@@ -95,11 +101,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteOnTheLine" />
         <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteWithOneConnection" />
         <item itemvalue="JUnit.RoadCalculatorTest.testCalculateDuration" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.RoadCalculatorTest" />
-        <item itemvalue="JUnit.All in SPBMetro" />
       </list>
     </recent_temporary>
   </component>
@@ -121,58 +127,70 @@
       <option name="project" value="LOCAL" />
       <updated>1584999190633</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit #2 with try to check testGetRouteWithOneConnection().">
+      <created>1585047323846</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585047323846</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit with try to check testGetRouteWithOneConnection()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Init commit with try to check testGetRouteWithOneConnection()." />
+    <MESSAGE value="Commit #2 with try to check testGetRouteWithOneConnection()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit #2 with try to check testGetRouteWithOneConnection()." />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584891041925">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1584891041925" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1584999189162">
+    <state x="403" y="162" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1585076168290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1584999189162" />
-    <state width="1311" height="494" key="GridCell.Tab.0.bottom" timestamp="1585046966063">
+    <state x="403" y="162" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1366.728@0.0.1366.728" timestamp="1585076168290" />
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1585047322507">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="494" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585046966063" />
-    <state width="1311" height="494" key="GridCell.Tab.0.center" timestamp="1585046966062">
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585047322507" />
+    <state width="1311" height="494" key="GridCell.Tab.0.bottom" timestamp="1585079635603">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="494" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585046966062" />
-    <state width="1311" height="494" key="GridCell.Tab.0.left" timestamp="1585046966062">
+    <state width="1311" height="494" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585079635603" />
+    <state width="1311" height="494" key="GridCell.Tab.0.center" timestamp="1585079635603">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="494" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585046966062" />
-    <state width="1311" height="494" key="GridCell.Tab.0.right" timestamp="1585046966063">
+    <state width="1311" height="494" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585079635603" />
+    <state width="1311" height="494" key="GridCell.Tab.0.left" timestamp="1585079635603">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="494" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585046966063" />
-    <state width="1311" height="207" key="GridCell.Tab.1.bottom" timestamp="1584999020543">
+    <state width="1311" height="494" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585079635603" />
+    <state width="1311" height="494" key="GridCell.Tab.0.right" timestamp="1585079635603">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="207" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584999020543" />
-    <state width="1311" height="207" key="GridCell.Tab.1.center" timestamp="1584999020542">
+    <state width="1311" height="494" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585079635603" />
+    <state width="1311" height="207" key="GridCell.Tab.1.bottom" timestamp="1585078956661">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="207" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
-    <state width="1311" height="207" key="GridCell.Tab.1.left" timestamp="1584999020542">
+    <state width="1311" height="207" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585078956661" />
+    <state width="1311" height="207" key="GridCell.Tab.1.center" timestamp="1585078956661">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="207" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1584999020542" />
-    <state width="1311" height="207" key="GridCell.Tab.1.right" timestamp="1584999020543">
+    <state width="1311" height="207" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1585078956661" />
+    <state width="1311" height="207" key="GridCell.Tab.1.left" timestamp="1585078956661">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="207" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1584999020543" />
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1584999205605">
+    <state width="1311" height="207" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1585078956661" />
+    <state width="1311" height="207" key="GridCell.Tab.1.right" timestamp="1585078956661">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1584999205605" />
+    <state width="1311" height="207" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585078956661" />
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585047340244">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585047340244" />
   </component>
   <component name="masterDetails">
     <states>

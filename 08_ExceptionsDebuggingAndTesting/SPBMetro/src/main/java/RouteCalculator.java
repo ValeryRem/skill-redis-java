@@ -52,7 +52,7 @@ public class RouteCalculator
 
     //=========================================================================
 
-    private List<Station> getRouteOnTheLine(Station from, Station to)
+    public List<Station> getRouteOnTheLine(Station from, Station to)
     {
         if(!from.getLine().equals(to.getLine())) {
             return null;
