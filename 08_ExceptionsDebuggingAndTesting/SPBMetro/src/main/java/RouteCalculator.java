@@ -117,7 +117,7 @@ public class RouteCalculator
         return connected.contains(station2);
     }
 
-    private List<Station> getRouteViaConnectedLine(Station from, Station to)
+    public List<Station> getRouteViaConnectedLine(Station from, Station to)
     {
         Set<Station> fromConnected = stationIndex.getConnectedStations(from);
         Set<Station> toConnected = stationIndex.getConnectedStations(to);
@@ -133,7 +133,7 @@ public class RouteCalculator
         return null;
     }
 
-    private List<Station> getRouteWithTwoConnections(Station from, Station to)
+    public List<Station> getRouteWithTwoConnections(Station from, Station to)
     {
         if (from.getLine().equals(to.getLine())) {
             return null;

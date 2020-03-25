@@ -1,22 +1,22 @@
-/*
-Написать тесты на все методы класса RouteCalculator в проекте SPBMetro.
-С помощью тестов и отладки исправить все ошибки, которые Вам удастся найти в проекте SPBMetro.
- * Metro scheme that used in tests:
- <pre>{@code
-        (Line 1)
-       Station A
-           ↓
-       Station B / Station F → Station G → Station H (Line 2)
-           ↓
-       Station C
-           ↓
-       Station D / Station J → Station K → Station L (Line 3)
-           ↓                      /
-       Station E               Station M
-                                   ↓
-                               Station N
-                               (Line 4)
-  }</pre>
+/**
+* Написать тесты на все методы класса RouteCalculator в проекте SPBMetro.
+* С помощью тестов и отладки исправить все ошибки, которые Вам удастся найти в проекте SPBMetro.
+ *  Metro scheme that used in tests:
+ * <pre>{@code
+ *       (Line 1)
+ *      Station A
+ *          ↓
+ *      Station B / Station F → Station G → Station H (Line 2)
+ *          ↓
+ *      Station C
+ *          ↓
+ *      Station D / Station J → Station K → Station L (Line 3)
+ *          ↓                      /
+ *      Station E               Station M
+ *                                  ↓
+ *                              Station N
+ *                              (Line 4)
+ * }</pre>
 */
 
 import core.Line;
@@ -26,7 +26,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 import static org.junit.Assert.assertEquals;
 
 public class RoadCalculatorTest {
@@ -75,7 +78,9 @@ public class RoadCalculatorTest {
 
         stationList = Arrays.asList(A, B, C, D, E, F, G, H, J, K, L, M, N);
         stationList.forEach(station ->  stationIndex.addStation(station));
-        stationIndex.addConnection(Arrays.asList(B, D, F, J, K, M));
+        stationIndex.addConnection(Arrays.asList(B, F));
+        stationIndex.addConnection(Arrays.asList(D, J));
+        stationIndex.addConnection(Arrays.asList(K, M));
     }
 
     @Test
@@ -89,15 +94,36 @@ public class RoadCalculatorTest {
     @Test
     public void testGetRouteOnTheLine () {
         List<Station> actual = makeRoute("JKL");
-        List<Station> expected =  routeCalculator.getRouteOnTheLine (stationList.get(8), stationList.get(10));
+        List<Station> expected =  routeCalculator.getRouteOnTheLine (getStation("J"), getStation("L"));
         assertEquals("Ожидается путь J-K-L", expected, actual);
     }
 
     @Test
     public void testGetRouteWithOneConnection() {
         List<Station> actual  = makeRoute("CDJKL");
-        List<Station> expected = routeCalculator.getRouteWithOneConnection(stationList.get(2), stationList.get(10));
+        List<Station> expected = routeCalculator.getRouteWithOneConnection(getStation("C"), getStation("L"));
         assertEquals("Ожидается путь  C D J K L", expected, actual);
+    }
+
+    @Test
+    public void testGetRouteWithTwoConnections () {
+        List<Station> actual  = makeRoute("GFBCDJK");
+        List<Station> expected = routeCalculator.getRouteWithTwoConnections(getStation("G"), getStation("K"));
+        assertEquals("Ожидается путь  G F B C D J K", expected, actual);
+    }
+
+    @Test
+    public void testGetRouteViaConnectedLine() {
+        List<Station> actual  = makeRoute("ABCDJK");
+        List<Station> expected =  routeCalculator.getRouteViaConnectedLine(getStation("A"), getStation("K"));
+        assertEquals("Ожидается путь A B C D J K", expected, actual);
+    }
+
+    @Test
+    public void testGetShortestRoute () {
+        List<Station> actual = makeRoute("GFBCDJK");
+        List<Station> expected =  routeCalculator.getShortestRoute (getStation("G"), getStation("K"));
+        assertEquals("Ожидается путь G F B C D J K", expected, actual);
     }
 
     @After
@@ -112,5 +138,11 @@ public class RoadCalculatorTest {
             routeExpected.add(stationIndex.getStation(name));
         }
         return routeExpected;
+    }
+
+    private Station getStation(String nameOfStation) {
+        return
+                stationList.stream()
+                        .filter(station -> station.getName().equals(nameOfStation)).collect(toList()).get(0);
     }
 }
