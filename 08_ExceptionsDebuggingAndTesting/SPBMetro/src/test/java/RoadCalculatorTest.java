@@ -94,35 +94,35 @@ public class RoadCalculatorTest {
     @Test
     public void testGetRouteOnTheLine () {
         List<Station> actual = makeRoute("JKL");
-        List<Station> expected =  routeCalculator.getRouteOnTheLine (getStation("J"), getStation("L"));
+        List<Station> expected =  routeCalculator.getRouteOnTheLine (stationIndex.getStation("J"), stationIndex.getStation("L"));
         assertEquals("Ожидается путь J-K-L", expected, actual);
     }
 
     @Test
     public void testGetRouteWithOneConnection() {
         List<Station> actual  = makeRoute("CDJKL");
-        List<Station> expected = routeCalculator.getRouteWithOneConnection(getStation("C"), getStation("L"));
+        List<Station> expected = routeCalculator.getRouteWithOneConnection(stationIndex.getStation("C"), stationIndex.getStation("L"));
         assertEquals("Ожидается путь  C D J K L", expected, actual);
     }
 
     @Test
     public void testGetRouteWithTwoConnections () {
         List<Station> actual  = makeRoute("GFBCDJK");
-        List<Station> expected = routeCalculator.getRouteWithTwoConnections(getStation("G"), getStation("K"));
+        List<Station> expected = routeCalculator.getRouteWithTwoConnections(stationIndex.getStation("G"), stationIndex.getStation("K"));
         assertEquals("Ожидается путь  G F B C D J K", expected, actual);
     }
 
     @Test
     public void testGetRouteViaConnectedLine() {
         List<Station> actual  = makeRoute("ABCDJK");
-        List<Station> expected =  routeCalculator.getRouteViaConnectedLine(getStation("A"), getStation("K"));
+        List<Station> expected =  routeCalculator.getRouteViaConnectedLine(stationIndex.getStation("A"), stationIndex.getStation("K"));
         assertEquals("Ожидается путь A B C D J K", expected, actual);
     }
 
     @Test
     public void testGetShortestRoute () {
         List<Station> actual = makeRoute("GFBCDJK");
-        List<Station> expected =  routeCalculator.getShortestRoute (getStation("G"), getStation("K"));
+        List<Station> expected =  routeCalculator.getShortestRoute (stationIndex.getStation("G"), stationIndex.getStation("K"));
         assertEquals("Ожидается путь G F B C D J K", expected, actual);
     }
 
@@ -140,9 +140,9 @@ public class RoadCalculatorTest {
         return routeExpected;
     }
 
-    private Station getStation(String nameOfStation) {
-        return
-                stationList.stream()
-                        .filter(station -> station.getName().equals(nameOfStation)).collect(toList()).get(0);
-    }
+//    private Station getStation(String nameOfStation) {
+//        return
+//                stationList.stream()
+//                        .filter(station -> station.getName().equals(nameOfStation)).collect(toList()).get(0);
+//    }
 }
