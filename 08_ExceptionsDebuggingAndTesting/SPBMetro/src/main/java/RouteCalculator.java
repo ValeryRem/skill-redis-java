@@ -113,7 +113,7 @@ public class RouteCalculator
         }
     }
 
-    private boolean isConnected(Station station1, Station station2)
+    public boolean isConnected(Station station1, Station station2)
     {
         Set<Station> connected = stationIndex.getConnectedStations(station1);
         return connected.contains(station2);

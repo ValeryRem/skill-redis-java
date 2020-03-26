@@ -115,7 +115,7 @@ public class RoadCalculatorTest {
     @Test
     public void testGetRouteViaConnectedLine() {
         List<Station> actual  = makeRoute("B1-C1-D1");
-        List<Station> expected =  routeCalculator.getRouteViaConnectedLine(stationIndex.getStation("G2"), stationIndex.getStation("K3"));
+        List<Station> expected =  routeCalculator.getRouteViaConnectedLine(stationIndex.getStation("F2"), stationIndex.getStation("J3"));
         assertEquals("Ожидается путь B1-C1-D1", expected, actual);
     }
 
@@ -126,10 +126,17 @@ public class RoadCalculatorTest {
         assertEquals("Ожидается путь G2-F2-B1-C1-D1-J3-K3", expected, actual);
     }
 
-    @After
-    public void tearDown(){
-        stationList = null;
+    @Test
+    public void testIsConnected () {
+        boolean expected = routeCalculator.isConnected(stationIndex.getStation("F2"), stationIndex.getStation("L3"));
+        boolean actual = stationIndex.connections.get(stationIndex.getStation("F2")).contains(stationIndex.getStation("L3"));
+        assertEquals(expected, actual);
     }
+
+//    @After
+//    public void tearDown(){
+//        stationList = null;
+//    }
 
     private List<Station> makeRoute(String namesJoint) {
         List<Station> list = new ArrayList<>();

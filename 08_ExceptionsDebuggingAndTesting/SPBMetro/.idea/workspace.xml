@@ -4,10 +4,8 @@
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/RoadCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RoadCalculatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/RouteCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/RouteCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/RoadCalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RoadCalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +42,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559622580090" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -57,7 +55,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RoadCalculatorTest.testGetRouteViaConnectedLine">
+  <component name="RunManager" selected="JUnit.RoadCalculatorTest.testIsConnected">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SPBMetro" />
@@ -70,16 +68,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RoadCalculatorTest" />
       <option name="METHOD_NAME" value="testGetRouteViaConnectedLine" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RoadCalculatorTest.testGetRouteWithOneConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SPBMetro" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RoadCalculatorTest" />
-      <option name="METHOD_NAME" value="testGetRouteWithOneConnection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,13 +93,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RoadCalculatorTest.testIsConnected" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="SPBMetro" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoadCalculatorTest" />
+      <option name="METHOD_NAME" value="testIsConnected" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteViaConnectedLine" />
         <item itemvalue="JUnit.RoadCalculatorTest.testGetShortestRoute" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteWithTwoConnections" />
-        <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteWithOneConnection" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585209325409</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Method testGetShortestRoute() improved.">
+      <created>1585233234210</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585233234210</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -189,7 +193,8 @@
     <MESSAGE value="Improved initializing of TreeMap&lt;Station, TreeSet&lt;Station&gt;&gt; connections." />
     <MESSAGE value="Idle method getStation(String nameOfStation) deleted." />
     <MESSAGE value="Experiments with testGetShortestRoute()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Experiments with testGetShortestRoute()." />
+    <MESSAGE value="Method testGetShortestRoute() improved." />
+    <option name="LAST_COMMIT_MESSAGE" value="Method testGetShortestRoute() improved." />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584891041925">
@@ -204,46 +209,50 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="381" y="4" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1585165838630" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1585209321759">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1585233232840">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585209321759" />
-    <state width="1311" height="174" key="GridCell.Tab.0.bottom" timestamp="1585232713934">
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585233232840" />
+    <state x="413" y="48" key="FileChooserDialogImpl" timestamp="1585248181843">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585232713934" />
-    <state width="1311" height="174" key="GridCell.Tab.0.center" timestamp="1585232713934">
+    <state x="413" y="48" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585248181843" />
+    <state width="1311" height="174" key="GridCell.Tab.0.bottom" timestamp="1585248359028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585232713934" />
-    <state width="1311" height="174" key="GridCell.Tab.0.left" timestamp="1585232713934">
+    <state width="1311" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585248359028" />
+    <state width="1311" height="174" key="GridCell.Tab.0.center" timestamp="1585248359028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585232713934" />
-    <state width="1311" height="174" key="GridCell.Tab.0.right" timestamp="1585232713934">
+    <state width="1311" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585248359028" />
+    <state width="1311" height="174" key="GridCell.Tab.0.left" timestamp="1585248359028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585232713934" />
-    <state width="1311" height="165" key="GridCell.Tab.1.bottom" timestamp="1585210129519">
+    <state width="1311" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585248359028" />
+    <state width="1311" height="174" key="GridCell.Tab.0.right" timestamp="1585248359028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="165" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585210129519" />
-    <state width="1311" height="165" key="GridCell.Tab.1.center" timestamp="1585210129519">
+    <state width="1311" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585248359028" />
+    <state width="1311" height="254" key="GridCell.Tab.1.bottom" timestamp="1585246832693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="165" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1585210129519" />
-    <state width="1311" height="165" key="GridCell.Tab.1.left" timestamp="1585210129519">
+    <state width="1311" height="254" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585246832693" />
+    <state width="1311" height="254" key="GridCell.Tab.1.center" timestamp="1585246832693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="165" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1585210129519" />
-    <state width="1311" height="165" key="GridCell.Tab.1.right" timestamp="1585210129519">
+    <state width="1311" height="254" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1585246832693" />
+    <state width="1311" height="254" key="GridCell.Tab.1.left" timestamp="1585246832693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="165" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585210129519" />
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585209333054">
+    <state width="1311" height="254" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1585246832693" />
+    <state width="1311" height="254" key="GridCell.Tab.1.right" timestamp="1585246832693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585209333054" />
+    <state width="1311" height="254" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585246832693" />
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585233246429">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585233246429" />
     <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1585134597309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -261,6 +270,9 @@
         <watch expression="((RoadCalculatorTest)this).routeCalculator.stationIndex.number2line.entrySet().toArray()[1]" language="JAVA" custom="RoadCalculatorTest" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SPBMetro$RoadCalculatorTest_testIsConnected.ic" NAME="RoadCalculatorTest.testIsConnected Coverage Results" MODIFIED="1585248083570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="masterDetails">
     <states>
