@@ -1,7 +1,17 @@
+
+import core.Line;
+import core.Station;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.*;
+
+import static org.junit.Assert.assertEquals;
+
 /**
-* Написать тесты на все методы класса RouteCalculator в проекте SPBMetro.
-* С помощью тестов и отладки исправить все ошибки, которые Вам удастся найти в проекте SPBMetro.
- *  Metro scheme that used in tests:
+ * Написать тесты на все методы класса RouteCalculator в проекте SPBMetro.
+ * С помощью тестов и отладки исправить все ошибки, которые Вам удастся найти в проекте SPBMetro.
+ * Metro scheme that used in tests:
  * <pre>{@code
  *       (Line 1)
  *      Station A
@@ -17,17 +27,7 @@
  *                              Station N
  *                              (Line 4)
  * }</pre>
-*/
-
-import core.Line;
-import core.Station;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.util.*;
-import java.util.stream.Stream;
-import static org.junit.Assert.assertEquals;
+ */
 
 public class RoadCalculatorTest {
     StationIndex stationIndex = new StationIndex();
@@ -38,13 +38,13 @@ public class RoadCalculatorTest {
     private static final double DELTA = 0.00001;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         Line line1 = new Line(1, "Line 1");
         Line line2 = new Line(2, "Line 2");
         Line line3 = new Line(3, "Line 3");
         Line line4 = new Line(4, "Line 4");
 
-        Station A1 = new Station( "A1", line1);
+        Station A1 = new Station("A1", line1);
         Station B1 = new Station("B1", line1);
         Station C1 = new Station("C1", line1);
         Station D1 = new Station("D1", line1);
@@ -77,7 +77,7 @@ public class RoadCalculatorTest {
         stationIndex.addLine(line4);
 
         stationList = Arrays.asList(A1, B1, C1, D1, E1, F2, G2, H2, J3, K3, L3, M4, N4);
-        stationList.forEach(station ->  stationIndex.addStation(station));
+        stationList.forEach(station -> stationIndex.addStation(station));
         stationIndex.addConnection(Arrays.asList(B1, F2));
         stationIndex.addConnection(Arrays.asList(D1, J3));
         stationIndex.addConnection(Arrays.asList(K3, M4));
@@ -86,50 +86,50 @@ public class RoadCalculatorTest {
     @Test
     public void testCalculateDuration() {
         stationList = makeRoute("B1-C1-D1-J3-K3");
-        double expected = RouteCalculator.calculateDuration(stationList);
-        double actual = ROUTE_TIME * 2 + CONNECTION_TIME + ROUTE_TIME;
+        double actual = RouteCalculator.calculateDuration(stationList);
+        double expected = ROUTE_TIME * 2 + CONNECTION_TIME + ROUTE_TIME;
         assertEquals(expected, actual, DELTA);
     }
 
     @Test
-    public void testGetRouteOnTheLine () {
-        List<Station> actual = makeRoute("J3-K3-L3");
-        List<Station> expected =  routeCalculator.getRouteOnTheLine (stationIndex.getStation("J3"), stationIndex.getStation("L3"));
+    public void testGetRouteOnTheLine() {
+        List<Station> expected = makeRoute("J3-K3-L3");
+        List<Station> actual = routeCalculator.getRouteOnTheLine(stationIndex.getStation("J3"), stationIndex.getStation("L3"));
         assertEquals("Ожидается путь J3-K3-L3", expected, actual);
     }
 
     @Test
     public void testGetRouteWithOneConnection() {
-        List<Station> actual  = makeRoute("C1-D1-J3-K3-L3");
-        List<Station> expected = routeCalculator.getRouteWithOneConnection(stationIndex.getStation("C1"), stationIndex.getStation("L3"));
+        List<Station> expected = makeRoute("C1-D1-J3-K3-L3");
+        List<Station> actual = routeCalculator.getRouteWithOneConnection(stationIndex.getStation("C1"), stationIndex.getStation("L3"));
         assertEquals("Ожидается путь  C1-D1-J3-K3-L3", expected, actual);
     }
 
     @Test
-    public void testGetRouteWithTwoConnections () {
-        List<Station> actual  = makeRoute("G2-F2-B1-C1-D1-J3-K3");
-        List<Station> expected = routeCalculator.getRouteWithTwoConnections(stationIndex.getStation("G2"), stationIndex.getStation("K3"));
+    public void testGetRouteWithTwoConnections() {
+        List<Station> expected = makeRoute("G2-F2-B1-C1-D1-J3-K3");
+        List<Station> actual = routeCalculator.getRouteWithTwoConnections(stationIndex.getStation("G2"), stationIndex.getStation("K3"));
         assertEquals("Ожидается путь  G2-F2-B1-C1-D1-J3-K3", expected, actual);
     }
 
     @Test
     public void testGetRouteViaConnectedLine() {
-        List<Station> actual  = makeRoute("B1-C1-D1");
-        List<Station> expected =  routeCalculator.getRouteViaConnectedLine(stationIndex.getStation("F2"), stationIndex.getStation("J3"));
+        List<Station> expected = makeRoute("B1-C1-D1");
+        List<Station> actual = routeCalculator.getRouteViaConnectedLine(stationIndex.getStation("F2"), stationIndex.getStation("J3"));
         assertEquals("Ожидается путь B1-C1-D1", expected, actual);
     }
 
     @Test
-    public void testGetShortestRoute () {
-        List<Station> actual = makeRoute("G2-F2-B1-C1-D1-J3-K3");
-        List<Station> expected =  routeCalculator.getShortestRoute (stationIndex.getStation("G2"), stationIndex.getStation("K3"));
+    public void testGetShortestRoute() {
+        List<Station> expected = makeRoute("G2-F2-B1-C1-D1-J3-K3");
+        List<Station> actual = routeCalculator.getShortestRoute(stationIndex.getStation("G2"), stationIndex.getStation("K3"));
         assertEquals("Ожидается путь G2-F2-B1-C1-D1-J3-K3", expected, actual);
     }
 
     @Test
-    public void testIsConnected () {
-        boolean expected = routeCalculator.isConnected(stationIndex.getStation("F2"), stationIndex.getStation("L3"));
-        boolean actual = stationIndex.connections.get(stationIndex.getStation("F2")).contains(stationIndex.getStation("L3"));
+    public void testIsConnected() {
+        boolean actual = routeCalculator.isConnected(stationIndex.getStation("F2"), stationIndex.getStation("L3"));
+        boolean expected = stationIndex.connections.get(stationIndex.getStation("F2")).contains(stationIndex.getStation("L3"));
         assertEquals(expected, actual);
     }
 
@@ -140,13 +140,13 @@ public class RoadCalculatorTest {
 
     private List<Station> makeRoute(String namesJoint) {
         List<Station> list = new ArrayList<>();
+        String[] names = namesJoint.split("-");
         for (int i = 0; i < namesJoint.split("-").length; i++) {
-            String name = namesJoint.split("-")[i];
+            String name = names[i];
             list.add(stationIndex.getStation(name));
         }
         return list;
     }
-
 //    private Station getStation(String nameOfStation) {
 //        return
 //                stationList.stream()

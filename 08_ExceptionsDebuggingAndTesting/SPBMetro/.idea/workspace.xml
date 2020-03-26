@@ -3,15 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/RoadCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RoadCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/RouteCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/RouteCalculator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/RoadCalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RoadCalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="262" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\valery\Desktop\java_basics\08_ExceptionsDebuggingAndTesting\SPBMetro\src\test\report.txt" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="SPBMetro" />
@@ -55,10 +59,20 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RoadCalculatorTest.testIsConnected">
+  <component name="RunManager" selected="JUnit.RoadCalculatorTest.testCalculateDuration">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SPBMetro" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoadCalculatorTest.testCalculateDuration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SPBMetro" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoadCalculatorTest" />
+      <option name="METHOD_NAME" value="testCalculateDuration" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,6 +119,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RoadCalculatorTest.testCalculateDuration" />
         <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteViaConnectedLine" />
         <item itemvalue="JUnit.RoadCalculatorTest.testGetShortestRoute" />
         <item itemvalue="Application.Main" />
@@ -182,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585233234210</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="RoadCalculator tested.">
+      <created>1585248420161</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585248420161</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -194,7 +216,8 @@
     <MESSAGE value="Idle method getStation(String nameOfStation) deleted." />
     <MESSAGE value="Experiments with testGetShortestRoute()." />
     <MESSAGE value="Method testGetShortestRoute() improved." />
-    <option name="LAST_COMMIT_MESSAGE" value="Method testGetShortestRoute() improved." />
+    <MESSAGE value="RoadCalculator tested." />
+    <option name="LAST_COMMIT_MESSAGE" value="RoadCalculator tested." />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584891041925">
@@ -209,30 +232,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="381" y="4" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1585165838630" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1585233232840">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1585248418464">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585233232840" />
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585248418464" />
     <state x="413" y="48" key="FileChooserDialogImpl" timestamp="1585248181843">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="48" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585248181843" />
-    <state width="1311" height="174" key="GridCell.Tab.0.bottom" timestamp="1585248359028">
+    <state width="1311" height="174" key="GridCell.Tab.0.bottom" timestamp="1585256333659">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585248359028" />
-    <state width="1311" height="174" key="GridCell.Tab.0.center" timestamp="1585248359028">
+    <state width="1311" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585256333659" />
+    <state width="1311" height="174" key="GridCell.Tab.0.center" timestamp="1585256333658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585248359028" />
-    <state width="1311" height="174" key="GridCell.Tab.0.left" timestamp="1585248359028">
+    <state width="1311" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585256333658" />
+    <state width="1311" height="174" key="GridCell.Tab.0.left" timestamp="1585256333658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585248359028" />
-    <state width="1311" height="174" key="GridCell.Tab.0.right" timestamp="1585248359028">
+    <state width="1311" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585256333658" />
+    <state width="1311" height="174" key="GridCell.Tab.0.right" timestamp="1585256333659">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585248359028" />
+    <state width="1311" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585256333659" />
     <state width="1311" height="254" key="GridCell.Tab.1.bottom" timestamp="1585246832693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -249,10 +272,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1311" height="254" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585246832693" />
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585233246429">
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585248432499">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585233246429" />
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585248432499" />
     <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1585134597309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -272,7 +295,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SPBMetro$RoadCalculatorTest_testIsConnected.ic" NAME="RoadCalculatorTest.testIsConnected Coverage Results" MODIFIED="1585248083570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/SPBMetro$RoadCalculatorTest_testIsConnected.ic" NAME="RoadCalculatorTest.testIsConnected Coverage Results" MODIFIED="1585255329044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="masterDetails">
     <states>
