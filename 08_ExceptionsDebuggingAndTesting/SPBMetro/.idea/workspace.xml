@@ -3,13 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RouteCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/RoadCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RoadCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/RouteCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/RouteCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/RoadCalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RoadCalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SPBMetro" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,13 +57,10 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RoadCalculatorTest.testGetShortestRoute">
-    <configuration name="RoadCalculatorTest.testCalculateDuration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RoadCalculatorTest.testGetRouteViaConnectedLine">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SPBMetro" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RoadCalculatorTest" />
-      <option name="METHOD_NAME" value="testCalculateDuration" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,13 +107,16 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RoadCalculatorTest.testGetShortestRoute" />
-        <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteWithTwoConnections" />
         <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteViaConnectedLine" />
+        <item itemvalue="JUnit.RoadCalculatorTest.testGetShortestRoute" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteWithTwoConnections" />
         <item itemvalue="JUnit.RoadCalculatorTest.testGetRouteWithOneConnection" />
-        <item itemvalue="JUnit.RoadCalculatorTest.testCalculateDuration" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_PROPERTIES" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -164,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585178030233</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Experiments with testGetShortestRoute().">
+      <created>1585209325409</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585209325409</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -174,7 +188,8 @@
     <MESSAGE value="Work with testGetRouteWithOneConnection()." />
     <MESSAGE value="Improved initializing of TreeMap&lt;Station, TreeSet&lt;Station&gt;&gt; connections." />
     <MESSAGE value="Idle method getStation(String nameOfStation) deleted." />
-    <option name="LAST_COMMIT_MESSAGE" value="Idle method getStation(String nameOfStation) deleted." />
+    <MESSAGE value="Experiments with testGetShortestRoute()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Experiments with testGetShortestRoute()." />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584891041925">
@@ -189,46 +204,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="381" y="4" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1585165838630" />
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1585209233220">
+    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1585209321759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585209233220" />
-    <state width="1311" height="174" key="GridCell.Tab.0.bottom" timestamp="1585209141671">
+    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585209321759" />
+    <state width="1311" height="174" key="GridCell.Tab.0.bottom" timestamp="1585232713934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585209141671" />
-    <state width="1311" height="174" key="GridCell.Tab.0.center" timestamp="1585209141671">
+    <state width="1311" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585232713934" />
+    <state width="1311" height="174" key="GridCell.Tab.0.center" timestamp="1585232713934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585209141671" />
-    <state width="1311" height="174" key="GridCell.Tab.0.left" timestamp="1585209141671">
+    <state width="1311" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585232713934" />
+    <state width="1311" height="174" key="GridCell.Tab.0.left" timestamp="1585232713934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585209141671" />
-    <state width="1311" height="174" key="GridCell.Tab.0.right" timestamp="1585209141671">
+    <state width="1311" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585232713934" />
+    <state width="1311" height="174" key="GridCell.Tab.0.right" timestamp="1585232713934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585209141671" />
-    <state width="1311" height="165" key="GridCell.Tab.1.bottom" timestamp="1585208857021">
+    <state width="1311" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585232713934" />
+    <state width="1311" height="165" key="GridCell.Tab.1.bottom" timestamp="1585210129519">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="165" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585208857021" />
-    <state width="1311" height="165" key="GridCell.Tab.1.center" timestamp="1585208857021">
+    <state width="1311" height="165" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585210129519" />
+    <state width="1311" height="165" key="GridCell.Tab.1.center" timestamp="1585210129519">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="165" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1585208857021" />
-    <state width="1311" height="165" key="GridCell.Tab.1.left" timestamp="1585208857020">
+    <state width="1311" height="165" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1585210129519" />
+    <state width="1311" height="165" key="GridCell.Tab.1.left" timestamp="1585210129519">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="165" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1585208857020" />
-    <state width="1311" height="165" key="GridCell.Tab.1.right" timestamp="1585208857021">
+    <state width="1311" height="165" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1585210129519" />
+    <state width="1311" height="165" key="GridCell.Tab.1.right" timestamp="1585210129519">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="165" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585208857021" />
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585178039834">
+    <state width="1311" height="165" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585210129519" />
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585209333054">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585178039834" />
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585209333054" />
     <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1585134597309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -19,13 +19,15 @@ public class RouteCalculator
 
     public List<Station> getShortestRoute(Station from, Station to)
     {
-        List<Station> route = getRouteOnTheLine(from, to);
-        if(route != null) {
+        List<Station> route;
+
+        route = getRouteOnTheLine(from, to);
+        if(route != null && !route.isEmpty()) {
             return route;
         }
 
         route = getRouteWithOneConnection(from, to);
-        if(route != null) {
+        if(route != null && !route.isEmpty()) {
             return route;
         }
 
@@ -158,7 +160,7 @@ public class RouteCalculator
                 way.addAll(getRouteOnTheLine(dstStation, to));
                 if(route.isEmpty() || route.size() > way.size())
                 {
-                    route.clear();
+//                    route.clear();
                     route.addAll(way);
                 }
             }

@@ -27,9 +27,6 @@ import org.junit.Test;
 
 import java.util.*;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toSet;
 import static org.junit.Assert.assertEquals;
 
 public class RoadCalculatorTest {
@@ -117,9 +114,9 @@ public class RoadCalculatorTest {
 
     @Test
     public void testGetRouteViaConnectedLine() {
-        List<Station> actual  = makeRoute("D1-J3");
-        List<Station> expected =  routeCalculator.getRouteViaConnectedLine(stationIndex.getStation("D1"), stationIndex.getStation("J3"));
-        assertEquals("Ожидается путь D1-J3", expected, actual);
+        List<Station> actual  = makeRoute("B1-C1-D1");
+        List<Station> expected =  routeCalculator.getRouteViaConnectedLine(stationIndex.getStation("G2"), stationIndex.getStation("K3"));
+        assertEquals("Ожидается путь B1-C1-D1", expected, actual);
     }
 
     @Test
@@ -132,17 +129,15 @@ public class RoadCalculatorTest {
     @After
     public void tearDown(){
         stationList = null;
-        stationIndex = null;
-        routeCalculator = null;
     }
 
     private List<Station> makeRoute(String namesJoint) {
-        List<Station> routeExpected = new ArrayList<>();
+        List<Station> list = new ArrayList<>();
         for (int i = 0; i < namesJoint.split("-").length; i++) {
             String name = namesJoint.split("-")[i];
-            routeExpected.add(stationIndex.getStation(name));
+            list.add(stationIndex.getStation(name));
         }
-        return routeExpected;
+        return list;
     }
 
 //    private Station getStation(String nameOfStation) {
