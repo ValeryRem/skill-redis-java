@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.LogManager;
+//import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class Main
@@ -23,7 +23,7 @@ public class Main
     public static void main(String[] args)
     {
         RouteCalculator calculator = getRouteCalculator();
-        logger = LogManager.getLogManager().getLogger("Core");
+        logger = Logger.getAnonymousLogger();//LogManager.getLogManager().getLogger("Core");
         System.out.println("Программа расчёта маршрутов метрополитена Санкт-Петербурга\n");
         scanner = new Scanner(System.in);
         for(;;)
@@ -76,7 +76,7 @@ public class Main
             if(station != null) {
                 return station;
             }
-            logger.info("Station is not found! " + line);
+            logger.info("Station is not found: " + line);
             System.out.println("Станция не найдена :(");
         }
     }

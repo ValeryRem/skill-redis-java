@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +45,9 @@
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559622580090" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -212,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585256413420</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Logging set up. In progress.">
+      <created>1585325735571</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585325735571</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -226,7 +233,8 @@
     <MESSAGE value="Method testGetShortestRoute() improved." />
     <MESSAGE value="RoadCalculator tested." />
     <MESSAGE value="RoadCalculator with every method tested. Final make up." />
-    <option name="LAST_COMMIT_MESSAGE" value="RoadCalculator with every method tested. Final make up." />
+    <MESSAGE value="Logging set up. In progress." />
+    <option name="LAST_COMMIT_MESSAGE" value="Logging set up. In progress." />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584891041925">
@@ -241,30 +249,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="381" y="4" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1585165838630" />
-    <state x="129" y="0" width="1075" height="446" key="CommitChangelistDialog2" timestamp="1585256411981">
+    <state x="129" y="0" width="1075" height="446" key="CommitChangelistDialog2" timestamp="1585325733888">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="129" y="0" width="1075" height="446" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585256411981" />
+    <state x="129" y="0" width="1075" height="446" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585325733888" />
     <state x="413" y="48" key="FileChooserDialogImpl" timestamp="1585248181843">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="48" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585248181843" />
-    <state width="1311" height="254" key="GridCell.Tab.0.bottom" timestamp="1585325674507">
+    <state width="1311" height="184" key="GridCell.Tab.0.bottom" timestamp="1585336376460">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="254" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585325674507" />
-    <state width="1311" height="254" key="GridCell.Tab.0.center" timestamp="1585325674507">
+    <state width="1311" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585336376460" />
+    <state width="1311" height="184" key="GridCell.Tab.0.center" timestamp="1585336376460">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="254" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585325674507" />
-    <state width="1311" height="254" key="GridCell.Tab.0.left" timestamp="1585325674507">
+    <state width="1311" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585336376460" />
+    <state width="1311" height="184" key="GridCell.Tab.0.left" timestamp="1585336376460">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="254" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585325674507" />
-    <state width="1311" height="254" key="GridCell.Tab.0.right" timestamp="1585325674507">
+    <state width="1311" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585336376460" />
+    <state width="1311" height="184" key="GridCell.Tab.0.right" timestamp="1585336376460">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="254" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585325674507" />
+    <state width="1311" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585336376460" />
     <state width="1311" height="254" key="GridCell.Tab.1.bottom" timestamp="1585325674508">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -281,10 +289,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1311" height="254" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585325674508" />
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585256430512">
+    <state x="35" y="0" key="SettingsEditor" timestamp="1585326024916">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585256430512" />
+    <state x="35" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585326024915" />
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585325745735">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585325745735" />
     <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1585134597309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -305,21 +317,5 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SPBMetro$RoadCalculatorTest_testIsConnected.ic" NAME="RoadCalculatorTest.testIsConnected Coverage Results" MODIFIED="1585255329044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
