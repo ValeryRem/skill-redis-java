@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
@@ -235,8 +233,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585336625365</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Configuring log4j2.xml = #1.">
+      <created>1585410519921</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1585410519921</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit with try to check testGetRouteWithOneConnection()." />
@@ -251,7 +259,8 @@
     <MESSAGE value="RoadCalculator with every method tested. Final make up." />
     <MESSAGE value="Logging set up. In progress." />
     <MESSAGE value="Use of java.util.logging.Logger." />
-    <option name="LAST_COMMIT_MESSAGE" value="Use of java.util.logging.Logger." />
+    <MESSAGE value="Configuring log4j2.xml = #1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring log4j2.xml = #1." />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="249" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584891041925">
@@ -266,30 +275,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="381" y="4" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1585165838630" />
-    <state x="129" y="0" width="1075" height="446" key="CommitChangelistDialog2" timestamp="1585410436986">
+    <state x="129" y="0" width="1075" height="446" key="CommitChangelistDialog2" timestamp="1585410518269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="129" y="0" width="1075" height="446" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585410436986" />
+    <state x="129" y="0" width="1075" height="446" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585410518269" />
     <state x="413" y="48" key="FileChooserDialogImpl" timestamp="1585248181843">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="48" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585248181843" />
-    <state width="1311" height="219" key="GridCell.Tab.0.bottom" timestamp="1585410422601">
+    <state width="1311" height="219" key="GridCell.Tab.0.bottom" timestamp="1585427673608">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="219" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585410422601" />
-    <state width="1311" height="219" key="GridCell.Tab.0.center" timestamp="1585410422601">
+    <state width="1311" height="219" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585427673608" />
+    <state width="1311" height="219" key="GridCell.Tab.0.center" timestamp="1585427673608">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="219" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585410422601" />
-    <state width="1311" height="219" key="GridCell.Tab.0.left" timestamp="1585410422601">
+    <state width="1311" height="219" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585427673608" />
+    <state width="1311" height="219" key="GridCell.Tab.0.left" timestamp="1585427673608">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="219" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585410422601" />
-    <state width="1311" height="219" key="GridCell.Tab.0.right" timestamp="1585410422601">
+    <state width="1311" height="219" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585427673608" />
+    <state width="1311" height="219" key="GridCell.Tab.0.right" timestamp="1585427673608">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="219" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585410422601" />
+    <state width="1311" height="219" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585427673608" />
     <state width="1311" height="254" key="GridCell.Tab.1.bottom" timestamp="1585399199026">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -314,14 +323,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="35" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585399780632" />
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585336640565">
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2" timestamp="1585410537348">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585336640565" />
-    <state x="319" y="151" key="com.intellij.ide.util.TipDialog" timestamp="1585399517781">
+    <state x="175" y="35" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585410537347" />
+    <state x="319" y="151" key="com.intellij.ide.util.TipDialog" timestamp="1585421964614">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="319" y="151" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585399517781" />
+    <state x="319" y="151" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585421964614" />
     <state x="255" y="159" key="run.anything.popup" timestamp="1585376746971">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

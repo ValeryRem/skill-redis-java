@@ -20,7 +20,9 @@ import org.apache.logging.log4j.Logger;
 
 public class Main
 {
-    private static Logger logger;
+    private static final Logger rootLogger = LogManager.getRootLogger();
+//    private static final Logger logger = LogManager.getLogger();
+
     private static String dataFile = "src/main/resources/map.json";
     private static Scanner scanner;
 
@@ -34,17 +36,14 @@ public class Main
             for (; ; ) {
                 Station from = takeStation("Введите станцию отправления:");
                 Station to = takeStation("Введите станцию назначения:");
-
                 List<Station> route = calculator.getShortestRoute(from, to);
                 System.out.println("Маршрут:");
                 printRoute(route);
-
                 System.out.println("Длительность: " +
                         RouteCalculator.calculateDuration(route) + " минут");
             }
         } catch (Exception ex) {
-            logger = LogManager.getLogger("Exceptions");
-            logger.debug("Exception: ", ex);
+            rootLogger.error(ex.getMessage());
         }
     }
 
@@ -73,17 +72,15 @@ public class Main
 
         private static Station takeStation (String message)
         {
-            Logger logger1 = LogManager.getRootLogger();
-            Logger logger2 = LogManager.getLogger("Error");
             for (; ; ) {
                 System.out.println(message);
                 String line = scanner.nextLine().trim();
                 Station station = stationIndex.getStation(line);
                 if (station != null) {
-                    logger1.info("New station input: " + line);
+                    rootLogger.info("New station input: " + line);
                     return station;
                 }
-                logger2.error("Station is not found: " + line);
+                rootLogger.debug("Station is not found: " + line);
                 System.out.println("Станция не найдена :(");
             }
         }
