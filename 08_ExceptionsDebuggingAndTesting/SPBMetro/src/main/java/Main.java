@@ -21,7 +21,8 @@ import org.apache.logging.log4j.Logger;
 public class Main
 {
     private static final Logger rootLogger = LogManager.getRootLogger();
-//    private static final Logger logger = LogManager.getLogger();
+    private static final Logger loggerInputWrong = LogManager.getLogger("StationInputWrong");
+    private static final Logger loggerInputOK = LogManager.getLogger("StationInputCorrect");
 
     private static String dataFile = "src/main/resources/map.json";
     private static Scanner scanner;
@@ -77,10 +78,10 @@ public class Main
                 String line = scanner.nextLine().trim();
                 Station station = stationIndex.getStation(line);
                 if (station != null) {
-                    rootLogger.info("New station input: " + line);
+                    loggerInputOK.info("New station input: " + line);
                     return station;
                 }
-                rootLogger.debug("Station is not found: " + line);
+                loggerInputWrong.debug("Station is not found: " + line);
                 System.out.println("Станция не найдена :(");
             }
         }
