@@ -83,6 +83,7 @@ public class Main
                 }
                 loggerInputWrong.debug("Station is not found: " + line);
                 System.out.println("Станция не найдена :(");
+                throw new RuntimeException("test");
             }
         }
 

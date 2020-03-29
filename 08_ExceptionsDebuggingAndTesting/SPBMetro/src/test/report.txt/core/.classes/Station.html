@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Station</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">core</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Station (core)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Station</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83,3%
+  </span>
+  <span class="absValue">
+    (5/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91,7%
+  </span>
+  <span class="absValue">
+    (11/ 12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package core;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;public class Station implements Comparable&lt;Station&gt;
+<i>4</i>&nbsp;{
+<i>5</i>&nbsp;    private Line line;
+<i>6</i>&nbsp;    private String name;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;    public Station(String name, Line line)
+<b class="fc"><i>9</i>&nbsp;    {</b>
+<b class="fc"><i>10</i>&nbsp;        this.name = name;</b>
+<b class="fc"><i>11</i>&nbsp;        this.line = line;</b>
+<b class="fc"><i>12</i>&nbsp;    }</b>
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    public Line getLine()
+<i>15</i>&nbsp;    {
+<b class="fc"><i>16</i>&nbsp;        return line;</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public String getName()
+<i>20</i>&nbsp;    {
+<b class="fc"><i>21</i>&nbsp;        return name;</b>
+<i>22</i>&nbsp;    }
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    @Override
+<i>25</i>&nbsp;    public int compareTo(Station station)
+<i>26</i>&nbsp;    {
+<b class="fc"><i>27</i>&nbsp;        int lineComparison = line.compareTo(station.getLine());</b>
+<b class="fc"><i>28</i>&nbsp;        if(lineComparison != 0) {</b>
+<b class="fc"><i>29</i>&nbsp;            return lineComparison;</b>
+<i>30</i>&nbsp;        }
+<b class="fc"><i>31</i>&nbsp;        return name.compareToIgnoreCase(station.getName());</b>
+<i>32</i>&nbsp;    }
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    @Override
+<i>35</i>&nbsp;    public boolean equals(Object obj)
+<i>36</i>&nbsp;    {
+<b class="fc"><i>37</i>&nbsp;        return compareTo((Station) obj) == 0;</b>
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    @Override
+<i>41</i>&nbsp;    public String toString()
+<i>42</i>&nbsp;    {
+<b class="nc"><i>43</i>&nbsp;        return name;</b>
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-03-26 21:43</div>
+</div>
+</body>
+</html>

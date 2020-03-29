@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <appenders>
+        <Console target="SYSTEM_OUT" name="Console">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <!-- <File name="MyFile" fileName="logs/app.log" immediateFlush="true">-->
+        <File name="MyFile" immediateFlush="true" fileName="logs/exceptions.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="StationInputCorrect" immediateFlush="true" fileName="logs/info.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="StationInputWrong" immediateFlush="true" fileName="logs/errors.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </appenders>
+    <loggers>
+        <root level="debug">
+            <appender-ref level="error" ref="MyFile"/>
+        </root>
+        <logger name="StationInputWrong" level="debug" additivity="true">
+           <appender-ref level="debug" ref="StationInputWrong"/>
+        </logger>
+        <logger name="StationInputCorrect" level="info" additivity="false">
+            <appender-ref level="info" ref="StationInputCorrect"/>
+        </logger>
+
+    </loggers>
+</configuration>

@@ -1,0 +1,156 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: StationIndex</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: StationIndex (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">StationIndex</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (6/ 8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    79,3%
+  </span>
+  <span class="absValue">
+    (23/ 29)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;import core.Line;
+<i>2</i>&nbsp;import core.Station;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import java.util.*;
+<i>5</i>&nbsp;import java.util.stream.Collectors;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;public class StationIndex
+<i>8</i>&nbsp;{
+<i>9</i>&nbsp;    HashMap&lt;Integer, Line&gt; number2line;
+<i>10</i>&nbsp;    TreeSet&lt;Station&gt; stations;
+<i>11</i>&nbsp;    TreeMap&lt;Station, TreeSet&lt;Station&gt;&gt; connections;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    public StationIndex()
+<b class="fc"><i>14</i>&nbsp;    {</b>
+<b class="fc"><i>15</i>&nbsp;        number2line = new HashMap&lt;&gt;();</b>
+<b class="fc"><i>16</i>&nbsp;        stations = new TreeSet&lt;&gt;();</b>
+<b class="fc"><i>17</i>&nbsp;        connections = new TreeMap&lt;&gt;();</b>
+<b class="fc"><i>18</i>&nbsp;    }</b>
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    public void addStation(Station station)
+<i>21</i>&nbsp;    {
+<b class="fc"><i>22</i>&nbsp;        stations.add(station);</b>
+<b class="fc"><i>23</i>&nbsp;    }</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    public void addLine(Line line)
+<i>26</i>&nbsp;    {
+<b class="fc"><i>27</i>&nbsp;        number2line.put(line.getNumber(), line);</b>
+<b class="fc"><i>28</i>&nbsp;    }</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    public void addConnection(List&lt;Station&gt; stations)
+<i>31</i>&nbsp;    {
+<b class="fc"><i>32</i>&nbsp;        for(Station station : stations)</b>
+<i>33</i>&nbsp;        {
+<b class="fc"><i>34</i>&nbsp;            if(!connections.containsKey(station)) {</b>
+<b class="fc"><i>35</i>&nbsp;                connections.put(station, new TreeSet&lt;&gt;());</b>
+<i>36</i>&nbsp;            }
+<b class="fc"><i>37</i>&nbsp;            TreeSet&lt;Station&gt; connectedStations = connections.get(station);</b>
+<b class="fc"><i>38</i>&nbsp;            connectedStations.addAll(stations.stream()</b>
+<b class="fc"><i>39</i>&nbsp;                .filter(s -&gt; !s.equals(station)).collect(Collectors.toList()));</b>
+<b class="fc"><i>40</i>&nbsp;        }</b>
+<b class="fc"><i>41</i>&nbsp;    }</b>
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    public Line getLine(int number)
+<i>44</i>&nbsp;    {
+<b class="nc"><i>45</i>&nbsp;        return number2line.get(number);</b>
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    public Station getStation(String name)
+<i>49</i>&nbsp;    {
+<b class="fc"><i>50</i>&nbsp;        for(Station station : stations)</b>
+<i>51</i>&nbsp;        {
+<b class="fc"><i>52</i>&nbsp;            if(station.getName().equalsIgnoreCase(name)) {</b>
+<b class="fc"><i>53</i>&nbsp;                return station;</b>
+<i>54</i>&nbsp;            }
+<b class="fc"><i>55</i>&nbsp;        }</b>
+<b class="nc"><i>56</i>&nbsp;        return null;</b>
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;    public Station getStation(String name, int lineNumber)
+<i>60</i>&nbsp;    {
+<b class="nc"><i>61</i>&nbsp;        Station query = new Station(name, getLine(lineNumber));</b>
+<b class="nc"><i>62</i>&nbsp;        Station station = stations.ceiling(query);</b>
+<b class="nc"><i>63</i>&nbsp;        return station.equals(query) ? station : null;</b>
+<i>64</i>&nbsp;    }
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;    public Set&lt;Station&gt; getConnectedStations(Station station)
+<i>67</i>&nbsp;    {
+<b class="fc"><i>68</i>&nbsp;        if(connections.containsKey(station)) {</b>
+<b class="fc"><i>69</i>&nbsp;            return connections.get(station);</b>
+<i>70</i>&nbsp;        }
+<b class="nc"><i>71</i>&nbsp;        return new TreeSet&lt;&gt;();</b>
+<i>72</i>&nbsp;    }
+<i>73</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-03-26 21:43</div>
+</div>
+</body>
+</html>
