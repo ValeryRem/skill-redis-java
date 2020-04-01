@@ -1,64 +1,54 @@
 package com.company;
 
-import java.io.File;
-import java.util.Scanner;
+        import java.io.File;
+        import java.io.IOException;
+        import java.nio.file.*;
 
-import static java.lang.Double.parseDouble;
+        import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 
 /**
- * Написать программу, которая будет измерять размер всего содержимого папки, путь которой передаётся на вход,
+ * 1) Написать программу, которая будет измерять размер всего содержимого папки, путь которой передаётся на вход,
  * и выводить его в удобочитаемом виде — в байтах, килобайтах, мегабайтах или гигабайтах.
  * For example: C:/Users/valery/Desktop/Android
+ * 2) Написать код, который будет копировать указанную папку с файлами с сохранением структуры в другую указанную папку.
  */
 
 public class Main {
-    static Scanner scanner = new Scanner(System.in);
-    static final long KILOBYTE = 1000;
-    static final long MEGABYTE = 1000000;
-    static final long GIGABYTE = MEGABYTE*1000;
+    static String rootDirectory = "C:/Users/valery/Desktop/Разное/Уроки внуков/";
+    static String resultDirectory = "C:/Users/valery/Desktop/Разное/Уроки внуков - copy/";
 
     public static void main(String[] args) {
-        System.out.println("Input path to your directory");
-        String path = scanner.nextLine();
-        File dir = new File(path);
-        long size = getDirSize(dir);
-        System.out.print("Size of the directory " + path + ": ");
-        if (size < KILOBYTE) {
-            System.out.printf("%d %s", size," b");
-        }
-        if (size >= KILOBYTE && size < MEGABYTE) {
-            System.out.printf("%d %s", size/KILOBYTE, " Kb");
-        }
-        if (size >= MEGABYTE && size < GIGABYTE) {
-            System.out.printf("%d %s", size/MEGABYTE, " Mb");
-        }
-        if (size >= GIGABYTE) {
-            System.out.printf("%.3s %s", (size/GIGABYTE)," Gb");
+        File rootFile = new File(rootDirectory);
+        try {
+            copyFiles(rootFile, resultDirectory);
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 
-    private static long getDirSize(File dir) {
-        long size = 0;
-        if (dir.isFile()) {
-            size = dir.length();
-        } else {
-            File[] subFiles = dir.listFiles();
-            if (subFiles != null) {
-                try {
-                    for (File file : subFiles) {
-                        if (file.isFile()) {
-                            size += file.length();
-                        } else {
-                            size += getDirSize(file);
-                        }
-                    }
-                } catch (NullPointerException ex) {
-                    ex.printStackTrace();
+    private static void copyFiles(File rootFile, String fileTo) throws IOException {
+        new File(fileTo);
+        File[] files = rootFile.listFiles();
+        Files.copy(Path.of(rootFile.getAbsolutePath()), Path.of(fileTo), COPY_ATTRIBUTES);
+        String copyName;
+        if (files == null) {
+            System.out.println("Root file is empty.");
+        }
+        for (File file : files) {
+            copyName = resultDirectory + file.getAbsolutePath().substring(rootDirectory.length());
+            Path pathTo = Path.of(copyName);
+            try {
+                if (file.isDirectory()) {
+                    copyFiles(file, copyName);
+                } else {
+                    Files.copy(Paths.get(file.getAbsolutePath()), pathTo, COPY_ATTRIBUTES);
                 }
-            } else {
-                System.out.println("The directory is absent.");
+                System.out.println(copyName);
+            } catch (FileAlreadyExistsException e) {
+                System.err.println("The directory [" + copyName + "] already exists.");
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
-        return size;
     }
 }
