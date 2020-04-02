@@ -37,7 +37,6 @@ public class Main {
                 lastWord = expenseList.get(i).get(expenseList.get(i).size() - 1);
                 if (lastWord.contains("\"")) {
                     sumToAdd = Double.parseDouble(lastWord.split("\"")[1].replace(",", "."));
-
                 } else {
                     sumToAdd = Double.parseDouble(lastWord.split(",")[lastWord.split(",").length - 1]);
                 }
@@ -49,8 +48,8 @@ public class Main {
                 totalExpenses += sumToAdd;
             }
             scanner.close();
-            System.out.printf("%s%.2f%n", "Total Income: ", totalIncome);
-            System.out.printf("%s%.2f%n", "Total Expenses: ", totalExpenses);
+            System.out.printf("%s%.2f%s%n", "Total Income: ", totalIncome, " RUR");
+            System.out.printf("%s%.2f%s%n", "Total Expenses: ", totalExpenses, " RUR");
             System.out.println("incomeList.size(): " + incomeList.size());
             System.out.println("expenseList.size(): " + expenseList.size());
             System.out.println("Lis of expense targets, size: " + expenseTargets.size());
@@ -64,7 +63,7 @@ public class Main {
         }
     }
 
-    public static ArrayList<String> parseLine(String csvLine) throws NullPointerException {
+    private static ArrayList<String> parseLine(String csvLine) throws NullPointerException {
         ArrayList<String> result = new ArrayList<>();
         if (csvLine.matches("[\\w\\W]+")) {
             String[] words = csvLine.split("\\s+");
