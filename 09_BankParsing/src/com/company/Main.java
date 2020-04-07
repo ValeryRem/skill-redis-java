@@ -18,10 +18,10 @@ public class Main {
         String inputFileName = scanner.nextLine();
         scanner.close();
         try {
-            Transaction.parseFile(inputFileName);
-            Transaction.printSumOfIncome(getTransactionList());
-            Transaction.printSumOfExpenses(getTransactionList());
-            Transaction.printSummaryByGroups(getTransactionList());
+            Transaction.setTransactionList(Parsers.parseFile(inputFileName));
+            Processing.printSumOfIncome(getTransactionList());
+            Processing.printSumOfExpenses(getTransactionList());
+            Processing.printSummaryByGroups(getTransactionList());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
