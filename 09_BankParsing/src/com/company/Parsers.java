@@ -50,19 +50,19 @@ public class Parsers {
     }
 
     private static Transaction parseOrgString(String inputScanned) {
-        List<String> stringProcessed;
-        String group;
-        double income = 0;
-        double outcome = 0;
-        inputScanned = inputScanned.replace(",", ".");
-        stringProcessed = asList(inputScanned.trim().split("\\|"));
-        group = stringProcessed.get(2);
-        String incomeString = stringProcessed.get(4).trim();
-        String outcomeString = stringProcessed.get(5).trim();
+        String[] stringProcessed;
 
+        inputScanned = inputScanned.replace(",", ".");
+        stringProcessed = inputScanned.trim().split("\\|");
+        String group = stringProcessed[2];
+        String incomeString = stringProcessed[4].trim();
+        String outcomeString = stringProcessed[5].trim();
+
+        double income = 0;
         if (incomeString.matches("\\d+\\.\\d+")) {
             income = Double.parseDouble(incomeString);
         }
+        double outcome = 0;
         if (outcomeString.matches("\\d+\\.\\d+")) {
             outcome = Double.parseDouble(outcomeString);
         }
@@ -72,9 +72,8 @@ public class Parsers {
 
     private static boolean isDigitPresent (String input) {
         boolean result = false;
-        char currentCharacter;
         for (int i = 0; i < input.length(); i++) {
-            currentCharacter = input.charAt(i);
+            char currentCharacter = input.charAt(i);
             if (Character.isDigit(currentCharacter)) {
                 result = true;
                 break;

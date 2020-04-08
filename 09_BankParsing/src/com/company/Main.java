@@ -7,8 +7,6 @@
 package com.company;
 import java.util.*;
 
-import static com.company.Transaction.getTransactionList;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -18,10 +16,11 @@ public class Main {
         String inputFileName = scanner.nextLine();
         scanner.close();
         try {
-            Transaction.setTransactionList(Parsers.parseFile(inputFileName));
-            Processing.printSumOfIncome(getTransactionList());
-            Processing.printSumOfExpenses(getTransactionList());
-            Processing.printSummaryByGroups(getTransactionList());
+            var list = Parsers.parseFile(inputFileName);
+            Transaction.setTransactionList(list);
+            Processing.printSumOfIncome(list);
+            Processing.printSumOfExpenses(list);
+            Processing.printSummaryByGroups(list);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
