@@ -20,4 +20,20 @@ public class Transaction {
     public static void setTransactionList(List<Transaction> transactionList) {
         Transaction.transactionList = transactionList;
     }
+
+//    public Transaction(String group) {
+//        this.group = group;
+//    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public double getIncome() {
+        return income;
+    }
+
+    public double getOutcome() {
+        return outcome;
+    }
 }

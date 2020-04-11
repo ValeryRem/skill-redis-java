@@ -20,9 +20,13 @@ public class Main {
             Transaction.setTransactionList(list);
             Processing.printSumOfIncome(list);
             Processing.printSumOfExpenses(list);
-            Processing.printSummaryByGroups(list);
+//            Processing.printSummaryByGroups(list);
+            System.out.println("\nJoint results");
+            Processing.printJointSummaryByGroups(list);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
+
+
 }
