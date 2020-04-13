@@ -4,6 +4,7 @@
  */
 package com.company;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,26 +17,40 @@ import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.file.*;
 
 public class Main {
 
     public static void main(String[] args) {
+        String filePath = "src/com/company/Images.txt";
+        String dirPictures = "src/com/company/LentaPictures";
         try {
-            Document doc = Jsoup.connect("https://lenta.ru/").get();
+            Document doc = Jsoup.connect("https://lenta.ru/").maxBodySize (1_000_000).get();
             Elements img = doc.getElementsByTag("img");
-            String filePath = "C:\\Users\\valery\\Desktop\\java_basics\\09_ParsingHTML\\src\\com\\company\\Images.txt";
             FileWriter writer = new FileWriter(filePath, true);
-
+            File file = new File(dirPictures);
+            file.mkdir();
             for (Element el : img) {
-                String src = el.absUrl("src") + "\n";
-                Files.write(Paths.get(filePath), src.getBytes(), StandardOpenOption.APPEND);
-                writer.append(src);
+                String src = el.absUrl("src");
+                writer.append(src).append("\n");
+                try (InputStream in = new URL(src).openStream()) {
+                    Files.copy(in, Paths.get(dirPictures), StandardCopyOption.REPLACE_EXISTING);
+                }
+//                try {
+//                    BufferedImage imgBuff = ImageIO.read(new URL(src));
+//                    ImageIO.write(imgBuff, "png", file);
+//                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+            writer.close();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
     }
 }
