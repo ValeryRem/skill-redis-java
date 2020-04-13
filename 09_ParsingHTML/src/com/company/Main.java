@@ -14,35 +14,46 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.nio.file.*;
 
 public class Main {
 
     public static void main(String[] args) {
         String filePath = "src/com/company/Images.txt";
-        String dirPictures = "src/com/company/LentaPictures";
+        String dirPictures = "src/com/company/LentaPictures/";
         try {
             Document doc = Jsoup.connect("https://lenta.ru/").maxBodySize (1_000_000).get();
             Elements img = doc.getElementsByTag("img");
             FileWriter writer = new FileWriter(filePath, true);
             File file = new File(dirPictures);
-            file.mkdir();
+            URLConnection connection;
+//            file.mkdir();
+            int i = 0;
             for (Element el : img) {
                 String src = el.absUrl("src");
+
+//                URL url = new URL(src);
+//                connection = url.openConnection();
+//                connection.setDoOutput(true);
+//                connection.setDoInput(true);
+//                BufferedInputStream bis = new BufferedInputStream(connection.getInputStream());
+//                FileOutputStream fos = new FileOutputStream(new File(dirPictures + i++ + ".png"));
+//                int ch;
+//                while ((ch = bis.read())!=-1) {
+//                    fos.write(ch);
+//                }
+//                bis.close();
+//                fos.flush();
+//                fos.close();
+
                 writer.append(src).append("\n");
                 try (InputStream in = new URL(src).openStream()) {
-                    Files.copy(in, Paths.get(dirPictures), StandardCopyOption.REPLACE_EXISTING);
+                    Files.copy(in, Paths.get(dirPictures + i++ + ".png"), StandardCopyOption.REPLACE_EXISTING);
                 }
-//                try {
-//                    BufferedImage imgBuff = ImageIO.read(new URL(src));
-//                    ImageIO.write(imgBuff, "png", file);
-//                }
                 catch (Exception e) {
                     e.printStackTrace();
                 }
