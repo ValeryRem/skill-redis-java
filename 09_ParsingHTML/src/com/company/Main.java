@@ -25,43 +25,20 @@ public class Main {
     public static void main(String[] args) {
         String filePath = "src/com/company/Images.txt";
         String dirPictures = "src/com/company/LentaPictures/";
-        try {
+        try (FileWriter writer = new FileWriter(filePath, true)){
             Document doc = Jsoup.connect("https://lenta.ru/").maxBodySize (1_000_000).get();
             Elements img = doc.getElementsByTag("img");
-            FileWriter writer = new FileWriter(filePath, true);
-            File file = new File(dirPictures);
-            URLConnection connection;
-//            file.mkdir();
             int i = 0;
             for (Element el : img) {
                 String src = el.absUrl("src");
-
-//                URL url = new URL(src);
-//                connection = url.openConnection();
-//                connection.setDoOutput(true);
-//                connection.setDoInput(true);
-//                BufferedInputStream bis = new BufferedInputStream(connection.getInputStream());
-//                FileOutputStream fos = new FileOutputStream(new File(dirPictures + i++ + ".png"));
-//                int ch;
-//                while ((ch = bis.read())!=-1) {
-//                    fos.write(ch);
-//                }
-//                bis.close();
-//                fos.flush();
-//                fos.close();
-
                 writer.append(src).append("\n");
                 try (InputStream in = new URL(src).openStream()) {
                     Files.copy(in, Paths.get(dirPictures + i++ + ".png"), StandardCopyOption.REPLACE_EXISTING);
                 }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
-            writer.close();
-        } catch (IOException ex) {
+        }
+        catch (IOException ex) {
             ex.printStackTrace();
         }
-
     }
 }
