@@ -8,6 +8,10 @@
 
 package com.company;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
 import java.util.*;
 
 public class Main {
@@ -17,12 +21,31 @@ public class Main {
                 "_%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D0%B8%D1" +
                 "%82%D0%B5%D0%BD%D0%B0#%D0%A1%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_" +
                 "%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B5%D0%BD%D0%B0";
-        Map<String, TreeSet<String>> listMap = new TreeMap<>();
-        Parser parser = new Parser();
-        parser.parsMetroLines(origin, listMap);
-        listMap.entrySet().forEach(System.out::println);
-        System.out.println("\nNumber of lines: " + listMap.size());
-        String jsonStr = new Gson().toJson(listMap);
-        System.out.println(jsonStr);
+        // json of Stations
+        Map<String, Set<Station>> stationMap = new TreeMap<>();
+        ParserOfStations parserOfStations = new ParserOfStations();
+        parserOfStations.parsingMetroMap(origin, stationMap);
+        System.out.println("\nNumber of lines: " + stationMap.size());
+        String jsonStr = new Gson().toJson(stationMap);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonParser jp = new JsonParser();
+        JsonElement je = jp.parse(jsonStr);
+        String prettyJsonString = gson.toJson(je);
+        System.out.println(prettyJsonString);
+
+        // json of connections
+        Map<String, Set<Connection>> mapOfConnections = new TreeMap<>();
+        ParserOfConnections parserOfConnections = new ParserOfConnections();
+        parserOfConnections.parsingConnections(origin, mapOfConnections);
+        String jsonString = new Gson().toJson(mapOfConnections);
+        Gson gs = new GsonBuilder().setPrettyPrinting().create();
+        JsonParser jprsr = new JsonParser();
+        JsonElement jelm = jprsr.parse(jsonString);
+        String connectionsJSON = gs.toJson(jelm);
+        System.out.println("\n///////////////////////////////////////////////////////////\n");
+        System.out.println(connectionsJSON);
+
+        //        mapOfConnections.entrySet().forEach(System.out::println);
+//        System.out.println("Number of connections: " + mapOfConnections.values().size());
     }
 }
