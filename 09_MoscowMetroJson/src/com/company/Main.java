@@ -25,27 +25,13 @@ public class Main {
         Map<String, Set<Station>> stationMap = new TreeMap<>();
         ParserOfStations parserOfStations = new ParserOfStations();
         parserOfStations.parsingMetroMap(origin, stationMap);
-        System.out.println("\nNumber of lines: " + stationMap.size());
-        String jsonStr = new Gson().toJson(stationMap);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        JsonParser jp = new JsonParser();
-        JsonElement je = jp.parse(jsonStr);
-        String prettyJsonString = gson.toJson(je);
-        System.out.println(prettyJsonString);
+        Connection connection = new Connection();
+        HashSet<List<Connection>> listHashSet = connection.connectionSetGenerate(parserOfStations.getList());
 
-        // json of connections
-        Map<String, Set<Connection>> mapOfConnections = new TreeMap<>();
-        ParserOfConnections parserOfConnections = new ParserOfConnections();
-        parserOfConnections.parsingConnections(origin, mapOfConnections);
-        String jsonString = new Gson().toJson(mapOfConnections);
-        Gson gs = new GsonBuilder().setPrettyPrinting().create();
-        JsonParser jprsr = new JsonParser();
-        JsonElement jelm = jprsr.parse(jsonString);
-        String connectionsJSON = gs.toJson(jelm);
-        System.out.println("\n///////////////////////////////////////////////////////////\n");
-        System.out.println(connectionsJSON);
-
-        //        mapOfConnections.entrySet().forEach(System.out::println);
-//        System.out.println("Number of connections: " + mapOfConnections.values().size());
+        Presenter presenter = new Presenter();
+        presenter.presentStations(stationMap);
+        presenter.presentConnections(listHashSet);
     }
+
+
 }
