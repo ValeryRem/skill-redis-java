@@ -25,9 +25,9 @@ public class Connection {
             for (int k = i + 1; k < stationList.size(); k++) {
                 List<String> stationsConnected = stationList.get(k).stationsConnected;
                 if (stationsConnected != null) {
-                    for (int m = 0; m < stationList.get(k).stationsConnected.size(); m++) {
+                    for (String s : stationsConnected) {
                         Station stationPrime = stationList.get(i);
-                        if (stationsConnected.get(m).contains(stationPrime.name)) {
+                        if (s.contains(stationPrime.name)) {
                             Connection newConnection = new Connection(stationList.get(k).line, stationList.get(k).name);
                             listConnections.add(newConnection);
                         }

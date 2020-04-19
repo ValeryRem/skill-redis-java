@@ -15,12 +15,12 @@ public class ParserOfStations {
     public ParserOfStations() {
     }
 
-    public void parsingMetroMap(String origin, Map<String, Set<Station>> setMap) {
+    public void parsingMetroMap(String origin, Map<String, List<String>> stationsMap) {
         try {
-            Document doc = Jsoup.connect(origin).maxBodySize(2_500_000).get();
+            Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get();
             Element table = doc.select("table:has(a[title='Сокольническая линия'])").first();
             Elements rows = table.getElementsByTag("tr"); // разбиваем таблицу по станциям
-            Set<Station> stationsSet = new HashSet<>();
+            List<String> stationsList = new ArrayList<>();
             String line = "";
             String suffix = "";
             for (Element row : rows) {
@@ -34,17 +34,17 @@ public class ParserOfStations {
                 if (suffix.equals(suffix2)) { // если станция находится на прежней линии
                     station = getStation(row); // находим название станции
                     station.setName(station.getName()); // добаляем к названию станции ее порядковый номер на линии
-                    line = station.line + ". " + getLineName(row); // выводим название линии
+                    line = station.line;// + ". " + getLineName(row); // выводим название линии
                 } else { // если перешли на станцию новой линии
-                    updateMap(setMap, line, stationsSet); // сбрасываем в карту результат парсинга предыдущей линии
-                    stationsSet = new HashSet<>(); // обнуляем сет для записи станций новой линии
+                    updateMap(stationsMap, line, stationsList); // сбрасываем в карту результат парсинга предыдущей линии
+                    stationsList = new ArrayList<>(); // обнуляем список для записи станций новой линии
                     suffix = suffix2; // задаем номер новой линии
                     station = getStation(row); // находим название новой станции
-                    line = station.line + ". " + getLineName(row); // выводим название новой линии
-                    station.setName(station.getName());
+                    line = station.line;// + ". " + getLineName(row); // выводим название новой линии
+                    station.setName(station.name);
                 }
                 if (station.getName().length() > 3) {
-                    stationsSet.add(station); // пройдя все элементы ряда, добавляем найденную стануию в сет
+                    stationsList.add(station.name); // пройдя все элементы ряда, добавляем найденную станцию в лист
                     list.add(station);
                 }
             }
@@ -53,23 +53,33 @@ public class ParserOfStations {
         }
     }
 
-    public static String getLineName(Element row) {
-        Elements elements = row.getElementsByTag("a");
-        String name = "";
-        for (Element element : elements) {
-            String title = element.attr("title");
-            if (title.contains("линия") && title.split(" ").length > 1 && title.split(" ").length < 4) {
-                name = title;
-                break;
-            }
-        }
-        return name;
-    }
+//    public static String getLineName(Element row) {
+//        Elements elements = row.getElementsByTag("a");
+//        String name = "";
+//        for (Element element : elements) {
+//            String title = element.attr("title");
+//            if (title.contains("линия") && title.split(" ").length > 1 && title.split(" ").length < 4) {
+//                name = title;
+//                break;
+//            }
+//        }
+//        return name;
+//    }
 
     public Station getStation(Element row) {
         String name = "";
+        String line = "";
         Elements boxes = row.getElementsByTag("td");
         for (Element box : boxes) {
+            if (box.html().contains("линия")) {
+                Element el = row.selectFirst("span");
+                if (el.html() != null) {
+                    if (el.html().length() > 0 && el.html().length() <= 3) {
+                        line = el.html();
+                    }
+                }
+            }
+
             if (box.html().contains("станция метро")) {
                 Elements elements = box.getElementsByTag("a");
                 for (Element element : elements) {
@@ -80,14 +90,8 @@ public class ParserOfStations {
                 }
             }
         }
-        Element el = row.getElementsByTag("span").first();
-        String lineOwn = "";
-        if (el != null) {
-            if (el.html().length() > 0 && el.html().length() <= 2) {
-                lineOwn = el.html();
-            }
-        }
-        return new Station(name, lineOwn, getNamesOfConnectedStations(row));
+        return
+                new Station(name, line, getNamesOfConnectedStations(row));
     }
 
     private static String getSuffix(Element row) {
@@ -101,9 +105,9 @@ public class ParserOfStations {
         return suffix;
     }
 
-    private static void updateMap(Map<String, Set<Station>> setMap, String line, Set<Station> stations) {
+    private static void updateMap(Map<String, List<String>> listMap, String line, List<String> stations) {
         if (line.length() > 0) {
-            setMap.put(line, stations);
+            listMap.put(line, stations);
         }
     }
 

@@ -23,7 +23,7 @@ public class Presenter {
         System.out.println(connectionsJSON);
     }
 
-    public void presentStations(Map<String, Set<Station>> stationMap) {
+    public void presentStations(Map<String, List<String>> stationMap) {
         String jsonStr = new Gson().toJson(stationMap);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonParser jp = new JsonParser();
