@@ -1,10 +1,8 @@
 package com.company;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
+import javax.lang.model.util.Elements;
+import javax.swing.text.Document;
+import javax.swing.text.Element;
 import java.io.File;
 import java.util.*;
 
