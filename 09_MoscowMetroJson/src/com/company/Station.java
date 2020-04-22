@@ -4,12 +4,11 @@ import java.util.List;
 
 public class Station {
     String name, line;
-    List<String> stationsConnected;
 
-    public Station(String nameOfStation, String lineOwn, List<String> stationsConnected) {
+
+    public Station(String lineOwn, String nameOfStation) {
         this.name = nameOfStation;
         this.line = lineOwn;
-        this.stationsConnected = stationsConnected;
     }
 
     public String getName() {
@@ -22,9 +21,5 @@ public class Station {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<String> getStationsConnected() {
-        return stationsConnected;
     }
 }

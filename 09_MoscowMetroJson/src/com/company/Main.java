@@ -5,10 +5,8 @@
  * Также пропарсить и вывести в JSON-файл переходы между станциями.
  * 2) Написать код, который прочитает созданный JSON-файл и напечатает количества станций на каждой линии.
  */
-
 package com.company;
-
-import java.util.*;
+import com.google.gson.GsonBuilder;
 
 public class Main {
 
@@ -24,17 +22,29 @@ public class Main {
 //            e.printStackTrace();
 //        }
         // json of Stations
-        Map<String, List<String>> stationMap = new TreeMap<>();
+//        Map<String, List<String>> stationMap = new TreeMap<>();
         ParserOfStations parserOfStations = new ParserOfStations();
-        String cssQuery = "table:has(span[title='Переход на станцию Бульвар Рокоссовского Московского центрального кольца'])";
-//        String cssQueryRing = "table:has(th['14'])";
+        String cssQuery = "table";//:has(span[title='Переход на станцию Бульвар Рокоссовского Московского центрального кольца'])";
         String origin = "src/metro.html";
-        parserOfStations.parsingMetroMap(origin, stationMap, cssQuery);
-        Connection connection = new Connection();
-        HashSet<List<Connection>> listHashSet = connection.connectionSetGenerate(parserOfStations.getListIndex());
+        StationIndex stationIndex = parserOfStations.parsingMetroMap(origin, cssQuery);
+//        System.out.println("listIndex.size(): " + parserOfStations.listIndex.size());
+//        parserOfStations.getListIndex().forEach(x -> System.out.println(x.name));
 
-        Presenter presenter = new Presenter();
-        presenter.presentStations(stationMap);
-        presenter.presentConnections(listHashSet);
+//        parserOfStations.listIndex.stream().map(x -> (x.name + " - " + x.line)).forEach(System.out::println);
+//        parserOfStations.connections.forEach(x -> {
+//                    System.out.print(x.prime.name);
+//                    x.stationsList.forEach(System.out::println);
+//        });
+
+        String json = new GsonBuilder().setPrettyPrinting().create().toJson(stationIndex);
+        System.out.println(json);
+//        for (Entry entry : parserOfStations.stationsMap.entrySet()) {
+//            System.out.println("Key: " + entry.getKey());
+//            System.out.println("\t Value: " + entry.getValue());
+//        }
+
+
+//        String json1 = new GsonBuilder().setPrettyPrinting().create().toJson(stationsMap);
+//        System.out.println(json1);
     }
 }

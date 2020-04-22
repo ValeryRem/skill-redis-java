@@ -1,31 +1,34 @@
 package com.company;
-
-import javax.lang.model.util.Elements;
-import javax.swing.text.Document;
-import javax.swing.text.Element;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import java.io.File;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ParserOfStations {
 
     List<Station> listIndex = new ArrayList<>();
+    List<Connection> connections = new ArrayList<>();
+    Connection connection = new Connection();
 
     public ParserOfStations() {
     }
 
-    public void parsingMetroMap(String origin, Map<String, List<String>> stationsMap, String cssQuery) {
+    public StationIndex parsingMetroMap(String origin, String cssQuery) {
+        Map<String, List<String>> stationsMap = new TreeMap<>();
         try {
-//            Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get();
+//            Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get(); // вариант загрузки из сети
             File htmlFile = new File(origin);
             Document doc = Jsoup.parse(htmlFile, "UTF-8");
-            Element table = doc.select(cssQuery).first();
-            if (table != null) {
-                Elements rows = table.getElementsByTag("tr"); // разбиваем таблицу по станциям
+            Elements tables = doc.select(cssQuery);//.first();
+            if (tables != null) {
+                Elements rows = tables.select("tr");//.getElementsByTag("tr"); // разбиваем таблицу по станциям
                 List<String> stationsList = new ArrayList<>();
                 String line = "";
                 String suffix = "";
                 for (Element row : rows) {
-//                Elements elements = row.getElementsByTag("a");
                     Station station;
                     String suffix2 = getSuffix(row); // находим номер линии для данной станции
 
@@ -34,7 +37,6 @@ public class ParserOfStations {
                     }
                     if (suffix.equals(suffix2)) { // если станция находится на прежней линии
                         station = getStation(row); // находим название станции
-                        station.setName(station.getName()); // добаляем к названию станции ее порядковый номер на линии
                         line = station.line;// + ". " + getLineName(row); // выводим название линии
                     } else { // если перешли на станцию новой линии
                         updateMap(stationsMap, line, stationsList); // сбрасываем в карту результат парсинга предыдущей линии
@@ -44,9 +46,12 @@ public class ParserOfStations {
                         line = station.line;// + ". " + getLineName(row); // выводим название новой линии
                         station.setName(station.name);
                     }
-                    if (station.getName().length() > 3) {
+                    if (station.getName().length() > 3 && !stationsList.contains(station.name)) {
                         stationsList.add(station.name); // пройдя все элементы ряда, добавляем найденную станцию в лист
                         listIndex.add(station);
+                        if (!getTransferStations(row).isEmpty()) {
+                            connections.add(new Connection(station, getTransferStations(row)));
+                        }
                     }
                 }
             } else {
@@ -55,20 +60,9 @@ public class ParserOfStations {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return
+                new StationIndex(stationsMap, connections);
     }
-
-//    public static String getLineName(Element row) {
-//        Elements elements = row.getElementsByTag("a");
-//        String name = "";
-//        for (Element element : elements) {
-//            String title = element.attr("title");
-//            if (title.contains("линия") && title.split(" ").length > 1 && title.split(" ").length < 4) {
-//                name = title;
-//                break;
-//            }
-//        }
-//        return name;
-//    }
 
     public Station getStation(Element row) {
         String name = "";
@@ -83,60 +77,99 @@ public class ParserOfStations {
                     }
                 }
             }
-
-            if (box.html().contains("станция метро") || box.html().contains("станция МЦК")) {
+            if (box.html().contains("станция")) {
                 Elements elements = box.getElementsByTag("a");
-                for (Element element : elements) {
-                    String title = element.attr("title");
-                    if (title.contains("станция метро") || title.contains("станция МЦК")) {
-                        name = title.replaceFirst("\\(.*\\)", "");
-                    }
-                }
+                name = elements.stream()
+                        .map(x -> x.attr("title"))
+                        .filter(x -> x.contains("станция"))
+                        .map(x -> x.replaceFirst("\\(.*\\)", ""))
+                        .collect(Collectors.joining());
+//                for (Element element: elements) {
+//                    String title = element.attr("title");
+//                    if (title.contains("станция")) {
+//                        name = title.replaceFirst("\\(.*\\)", "");
+//                    }
+//                }
+            }
+            if (name.length() > 0 && line.length() > 0) {
+                break;
             }
         }
         return
-                new Station(name, line, getNamesOfConnectedStations(row));
+                new Station(line, name);
     }
 
+//        String name = "";
+//        String line = "";
+//        Elements tds = row.getElementsByTag("td");
+//        Elements boxes = tds.select("a[title]:contains('линия')");
+//
+////        Elements boxes = row.getElementsByTag("td").stream()
+////                .filter(t -> t.html().contains("линия") || t.html().contains("Московское центральное кольцо"))
+////                .collect(Collectors.toCollection(Elements::new));                        //row.getElementsByTag("td");
+//        for (Element td : boxes) {
+//            Element el = td.selectFirst("span");
+//            if (el != null) {
+//                if (el.html().length() > 0 && el.html().length() <= 4) {
+//                    line = el.html();
+//                }
+//            }
+
+//            Elements elements = td.getElementsByTag("a");
+////            name = elements.stream()
+////                    .map(t -> t.attr("title")).filter(t -> (t.contains("станция метро") || t.contains("станция МЦК")))
+////                    .map(t -> t.replaceFirst("\\(.*\\)", "")).toString();
+//            for (Element element : elements) {
+//                String title = element.attr("title");
+//                if (title.contains("станция метро") || title.contains("станция МЦК")) {
+//                    String s = title.replaceFirst("\\(.*\\)", "");
+//                    if (s.length() > 3) {
+//                        name = s;
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//       return new Station(name, line);
+//    }
     private String getSuffix(Element row) {
-        Element el = row.getElementsByTag("span").first();
         String suffix = "";
-        if (el != null) {
-            if (el.html().length() > 0 && el.html().length() <= 2) {
-                suffix = el.html();
+            Element el = row.getElementsByTag("span").first();
+            if (el != null) {
+                if (el.html().length() > 0 && el.html().length() <= 4) {
+                    suffix = el.html();
+                }
             }
-        }
         return suffix;
     }
 
     private void updateMap(Map<String, List<String>> listMap, String line, List<String> stations) {
-        if (line.length() > 0) {
-            listMap.put(line, stations);
-        }
-    }
-
-    private List<String> getNamesOfConnectedStations(Element row) {
-        if (row.html().contains("Переход на станцию")) {
-            Elements elements = row.getElementsByTag("td");
-            List<String> result = new ArrayList<>();
-            for (Element element : elements) {
-                if (element.html().contains("Переход на станцию")) {
-                    Elements items = element.getElementsByTag("a");
-                    for (Element number : items) {
-                        String st = number.attr("title");
-                        if (st.contains("Переход на станцию")) {
-                            result.add(st.replaceAll("Переход на станцию", ""));
-                        }
-                    }
-                }
+        if (line.length() > 0 && stations.size() > 0) {
+            if (listMap.containsKey(line)) {
+                List<String> names = listMap.get(line);
+                names.addAll(stations);
+                listMap.put(line, names);
+            } else {
+                listMap.put(line, stations);
             }
-            return result;
-        } else {
-            return null;
         }
     }
 
-    public List<Station> getListIndex() {
-        return listIndex;
+    public List<String> getTransferStations(Element row) {
+//        List<String> transferHub = new ArrayList<>();
+//        Elements elements = row.select("td").select("span");
+//        for (Element element: elements) {
+//            if (element.attr("title").contains("Переход на станцию")) {
+//                String stNm = element.attr("title").replaceAll("Переход на станцию", "");
+//                transferHub.add(stNm);
+//            }
+//        }
+        //        return transferHub;
+        return
+                row.select("td").select("span").stream()
+                        .map(x -> x.attr("title"))
+                        .filter(x -> x.contains("Переход на станцию"))
+                        .map(x -> x.replaceAll("Переход на станцию", ""))
+                        .collect(Collectors.toList());
     }
 }
