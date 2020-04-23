@@ -45,10 +45,10 @@ public class ParserOfStations {
                         station = getStation(row); // находим название новой станции
                         line = station.line;// выводим название новой линии
                     }
-                    if (station.getName().length() > 3 && !stationsList.contains(station.name)) {
+                    if (station.name.length() > 3 && !stationsList.contains(station.name)) {
                         stationsList.add(station.name); // пройдя все элементы ряда, добавляем найденную станцию в лист
                         listIndex.add(station);
-                        if (!getTransferStations(row).isEmpty()) {
+                        if (row.html().contains("Переход на станцию") && !getTransferStations(row).isEmpty()) {
                             connections.add(new Connection(station, getTransferStations(row)));
                         }
                     }
@@ -68,7 +68,8 @@ public class ParserOfStations {
         String line = "";
         Elements boxes = row.getElementsByTag("td");
         for (Element box : boxes) {
-            if (box.html().contains("линия") || box.html().contains("Московское центральное кольцо")) {
+            if (box.html().contains("линия") || box.html().contains("Московское центральное кольцо") ||
+                    box.html().contains("Московский монорельс")) {
                 Element el = box.selectFirst("span");
                 if (el != null) {
                     if (el.html().length() > 0 && el.html().length() <= 4) {
@@ -146,7 +147,10 @@ public class ParserOfStations {
         if (line.length() > 0 && stations.size() > 0) {
             if (listMap.containsKey(line)) {
                 List<String> names = listMap.get(line);
-                names.addAll(stations);
+                if (!stations.isEmpty() && !listMap.get(line).contains(stations)) {
+                    names.addAll(stations);
+                    names = names.stream().distinct().collect(Collectors.toList());
+                }
                 listMap.put(line, names);
             } else {
                 listMap.put(line, stations);
@@ -155,29 +159,44 @@ public class ParserOfStations {
     }
 
     public List<Station> getTransferStations(Element row) {
-//        List<String> transferHub = new ArrayList<>();
-//        Elements elements = row.select("td").select("span");
-//        for (Element element: elements) {
-//            if (element.attr("title").contains("Переход на станцию")) {
-//                String stNm = element.attr("title").replaceAll("Переход на станцию", "");
-//                transferHub.add(stNm);
-//            }
-//        }
-        //        return transferHub;
-        return
-                row.select("td").select("span").stream()
-                        .map(x -> x.attr("title"))
-                        .filter(x -> x.contains("Переход на станцию"))
-                        .map(x -> x.replaceAll("Переход на станцию", ""))
-                        .map(x -> {
-                            Station s = null;
-                            for (Station st: listIndex) {
-                                if (x.contains(st.name)) {
-                                   s = st;
-                                    break;
-                                }
-                            } return s;
-                        })
-                        .collect(Collectors.toList());
+//        final String[] lineNumber = new String[1];
+//        return
+//                row.select("td").select("span").stream()
+//                .map(x -> {
+//                    lineNumber[0] = row.select("td:contains(Переход на станцию)").attr("span[class='sortkey']");
+//                    return x.attr("title");
+//                })
+//                .filter(x -> x.contains("Переход на станцию"))
+//                .map(x -> x.replaceAll("Переход на станцию", ""))
+//                .map(x -> {
+//                    Station s = null;
+//                    for (Station st : listIndex) {
+//                        if (x.contains(st.name) && st.line.equals(lineNumber[0])) {
+//                            s = st;
+//                            break;
+//                        }
+//                    }
+//                    return s;
+//                })
+//                .filter(Objects::nonNull)
+//                .distinct()
+//                .collect(Collectors.toList());
+        List<Station> transferHubs = new ArrayList<>();
+        Elements elements = row.getElementsByTag("td");
+        for (Element td: elements) {
+            if (td.html().contains("Переход на станцию")) {
+                Elements lines = td.select("span[class='sortkey']");
+                Elements names = td.select("span[title]");
+                for (int i = 0; i < lines.size(); i++) {
+                    for (Station st : listIndex) {
+                        if (names.get(i).html().contains(st.name) && lines.get(i).html().equals(st.line)) {
+                            transferHubs.add(st);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return transferHubs;
     }
 }
