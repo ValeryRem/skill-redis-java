@@ -2,13 +2,13 @@ package com.company;
 import java.util.List;
 
 public class Connection {
-    List<String> transferHub;
+    List<Station> transferHub;
     Station prime;
 
     public Connection() {
     }
 
-    public Connection (Station prime, List<String> transferHub) {
+    public Connection (Station prime, List<Station> transferHub) {
         this.prime = prime;
         this.transferHub = transferHub;
     }

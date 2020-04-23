@@ -37,14 +37,13 @@ public class ParserOfStations {
                     }
                     if (suffix.equals(suffix2)) { // если станция находится на прежней линии
                         station = getStation(row); // находим название станции
-                        line = station.line;// + ". " + getLineName(row); // выводим название линии
+                        line = station.line; // выводим название линии
                     } else { // если перешли на станцию новой линии
                         updateMap(stationsMap, line, stationsList); // сбрасываем в карту результат парсинга предыдущей линии
                         stationsList = new ArrayList<>(); // обнуляем список для записи станций новой линии
                         suffix = suffix2; // задаем номер новой линии
                         station = getStation(row); // находим название новой станции
-                        line = station.line;// + ". " + getLineName(row); // выводим название новой линии
-                        station.setName(station.name);
+                        line = station.line;// выводим название новой линии
                     }
                     if (station.getName().length() > 3 && !stationsList.contains(station.name)) {
                         stationsList.add(station.name); // пройдя все элементы ряда, добавляем найденную станцию в лист
@@ -155,7 +154,7 @@ public class ParserOfStations {
         }
     }
 
-    public List<String> getTransferStations(Element row) {
+    public List<Station> getTransferStations(Element row) {
 //        List<String> transferHub = new ArrayList<>();
 //        Elements elements = row.select("td").select("span");
 //        for (Element element: elements) {
@@ -170,6 +169,15 @@ public class ParserOfStations {
                         .map(x -> x.attr("title"))
                         .filter(x -> x.contains("Переход на станцию"))
                         .map(x -> x.replaceAll("Переход на станцию", ""))
+                        .map(x -> {
+                            Station s = null;
+                            for (Station st: listIndex) {
+                                if (x.contains(st.name)) {
+                                   s = st;
+                                    break;
+                                }
+                            } return s;
+                        })
                         .collect(Collectors.toList());
     }
 }
