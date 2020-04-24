@@ -2,11 +2,16 @@ package com.company;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class ParseJSON {
 
@@ -16,23 +21,46 @@ public class ParseJSON {
 //    public void parseJSON(String pathToJson) {
 //        Gson gson = new Gson();
 //        try (Reader reader = new FileReader(pathToJson)) {
-//            JsonElement jsonMap = gson.fromJson(reader, JsonElement.class);
+//            StationIndex jsonMap = gson.fromJson(reader, StationIndex.class);
 //            String jsonInString = gson.toJson(jsonMap);
 //            System.out.println(jsonInString);
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
+//    }
 
-    public String getJsonFile (String pathToJson)
-    {
+    public String parseJsonFile(String pathToJson) {
         StringBuilder builder = new StringBuilder();
         try {
             List<String> lines = Files.readAllLines(Paths.get(pathToJson));
-            lines.forEach(line -> builder.append(line));
+            lines.forEach(builder::append);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return builder.toString();
+    }
+
+    public void presentResult (String parsedJSON) {
+        Gson g = new Gson();
+        Type type = new TypeToken<Map<String, List<String>>>(){}.getType();
+        Map<String, List<String>> myMap = g.fromJson(parsedJSON, type);
+        myMap.forEach((x,y)-> System.out.println("key : " + x + " , value : " + y));
+
+//        String string1 = parsedJSON.substring(25, parsedJSON.indexOf('}') );
+//        String string2 = string1.replaceAll("[{}:\"]", "").replaceAll("[0]", " ");
+//       String[] array = string2.split(" ");
+//        String key;
+//        int value = 0;
+//        for (int i = 0; i < array.length; i++) {
+//           String st = array[i].trim();
+//            if (st.matches("\\d+")) {
+//                key = st;
+//            } else {
+//                value += value;
+//            }
+//
+//        }
+//
     }
 }
 //            //Convert JSON to JsonElement, and later to String

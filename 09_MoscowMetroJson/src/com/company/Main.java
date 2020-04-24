@@ -8,16 +8,9 @@
 package com.company;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.reflect.TypeToken;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
 
 public class Main {
 
@@ -39,21 +32,17 @@ public class Main {
         String origin = "src/metro.html";
         String pathToJson = "src/moscowMetroMap.json";
         StationIndex stationIndex = parserOfStations.parsingMetroMap(origin, cssQuery);
-//        System.out.println("listIndex.size(): " + parserOfStations.listIndex.size());
 //        parserOfStations.getListIndex().forEach(x -> System.out.println(x.name));
-
 //        parserOfStations.listIndex.stream().map(x -> (x.name + " - " + x.line)).forEach(System.out::println);
-//        parserOfStations.connections.forEach(x -> {
-//                    System.out.print(x.prime.name);
-//                    x.stationsList.forEach(System.out::println);
-//        });
 
         String json = new GsonBuilder().setPrettyPrinting().create().toJson(stationIndex);
-        System.out.println(json);
-
+//        System.out.println(json);
         Gson gson = new Gson();
         gson.toJson(json, new FileWriter(pathToJson));
-
+        ParseJSON parseJSON = new ParseJSON();
+        String parsedJSON = parseJSON.parseJsonFile(pathToJson);
+        System.out.println(parsedJSON);
+        parseJSON.presentResult(parsedJSON);
 //        try (Reader reader = new FileReader(pathToJson)) {
 //            JsonElement jsonMap = gson.fromJson(reader, JsonElement.class);
 //            String jsonInString = gson.toJson(jsonMap);
