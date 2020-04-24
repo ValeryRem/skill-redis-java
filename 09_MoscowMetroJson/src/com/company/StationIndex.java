@@ -4,10 +4,12 @@ import java.util.*;
 
 public class StationIndex {
     Map<String, List<String>> stationsMap;
-    List<Connection> jointStationsList;
+    List<Connection> hubsList;
+    List <Line> lineList;
 
-    public StationIndex (Map<String, List<String>> stationsMap, List<Connection> jointStationsList){
+    public StationIndex (Map<String, List<String>> stationsMap,  List <Line> lineList, List<Connection> hubsList){
         this.stationsMap = stationsMap;
-        this.jointStationsList = jointStationsList;
+        this.lineList = lineList;
+        this.hubsList = hubsList;
     }
 }

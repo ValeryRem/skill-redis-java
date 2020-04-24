@@ -11,8 +11,7 @@ public class ParserOfStations {
 
     List<Station> listIndex = new ArrayList<>();
     List<Connection> connections = new ArrayList<>();
-    Connection connection = new Connection();
-
+    List <Line> lineList = new ArrayList<>();;
     public ParserOfStations() {
     }
 
@@ -26,24 +25,27 @@ public class ParserOfStations {
             if (tables != null) {
                 Elements rows = tables.select("tr");//.getElementsByTag("tr"); // разбиваем таблицу по станциям
                 List<String> stationsList = new ArrayList<>();
-                String line = "";
-                String suffix = "";
+                String lineNumber = "";
+                String primeLineNumber = "";
+                Line line;
                 for (Element row : rows) {
                     Station station;
-                    String suffix2 = getSuffix(row); // находим номер линии для данной станции
-
-                    if (suffix.length() == 0) { // первичное задание линии-ключа
-                        suffix = suffix2; // задаем номер линии
+                    String lineNumberNew = getLineNumber(row); // находим номер линии для данной станции
+                    String lineName = getLineName(row);
+                    if (primeLineNumber.length() == 0) { // первичное задание линии-ключа
+                        primeLineNumber = lineNumberNew; // задаем номер линии
                     }
-                    if (suffix.equals(suffix2)) { // если станция находится на прежней линии
+                    if (primeLineNumber.equals(lineNumberNew)) { // если станция находится на прежней линии
                         station = getStation(row); // находим название станции
-                        line = station.line; // выводим название линии
+                        lineNumber = station.lineNumber; // выводим название линии
                     } else { // если перешли на станцию новой линии
-                        updateMap(stationsMap, line, stationsList); // сбрасываем в карту результат парсинга предыдущей линии
+                        line = new Line(lineNumberNew, lineName);
+                        lineList.add(line);
+                        updateMap(stationsMap, lineNumber, stationsList); // сбрасываем в карту результат парсинга предыдущей линии
                         stationsList = new ArrayList<>(); // обнуляем список для записи станций новой линии
-                        suffix = suffix2; // задаем номер новой линии
                         station = getStation(row); // находим название новой станции
-                        line = station.line;// выводим название новой линии
+                        lineNumber = station.lineNumber;// выводим название новой линии
+                        primeLineNumber = lineNumberNew; // задаем номер новой линии
                     }
                     if (station.name.length() > 3 && !stationsList.contains(station.name)) {
                         stationsList.add(station.name); // пройдя все элементы ряда, добавляем найденную станцию в лист
@@ -59,8 +61,14 @@ public class ParserOfStations {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        Comparator<Line> comparator = Comparator.comparing(ele -> ele.lineNumber);
+        Set<Line> treeSet = new TreeSet<>(comparator);
+        treeSet.addAll(lineList);
+        lineList = new ArrayList<>(treeSet);
+        List <Line> lines = lineList.stream().filter(x -> x.lineNumber.length() > 1 && x.lineName.length() > 3).collect(Collectors.toList());
+//    List <Line> lines = lineList.stream().filter(x -> x.lineName.length() > 3 && x.lineNumber.length() > 1).distinct().collect(Collectors.toList());
         return
-                new StationIndex(stationsMap, connections);
+                new StationIndex(stationsMap, lines, connections);
     }
 
     public Station getStation(Element row) {
@@ -84,12 +92,6 @@ public class ParserOfStations {
                         .filter(x -> x.contains("станция"))
                         .map(x -> x.replaceFirst("\\(.*\\)", ""))
                         .collect(Collectors.joining());
-//                for (Element element: elements) {
-//                    String title = element.attr("title");
-//                    if (title.contains("станция")) {
-//                        name = title.replaceFirst("\\(.*\\)", "");
-//                    }
-//                }
             }
             if (name.length() > 0 && line.length() > 0) {
                 break;
@@ -99,51 +101,28 @@ public class ParserOfStations {
                 new Station(line, name);
     }
 
-//        String name = "";
-//        String line = "";
-//        Elements tds = row.getElementsByTag("td");
-//        Elements boxes = tds.select("a[title]:contains('линия')");
-//
-////        Elements boxes = row.getElementsByTag("td").stream()
-////                .filter(t -> t.html().contains("линия") || t.html().contains("Московское центральное кольцо"))
-////                .collect(Collectors.toCollection(Elements::new));                        //row.getElementsByTag("td");
-//        for (Element td : boxes) {
-//            Element el = td.selectFirst("span");
-//            if (el != null) {
-//                if (el.html().length() > 0 && el.html().length() <= 4) {
-//                    line = el.html();
-//                }
-//            }
-
-//            Elements elements = td.getElementsByTag("a");
-////            name = elements.stream()
-////                    .map(t -> t.attr("title")).filter(t -> (t.contains("станция метро") || t.contains("станция МЦК")))
-////                    .map(t -> t.replaceFirst("\\(.*\\)", "")).toString();
-//            for (Element element : elements) {
-//                String title = element.attr("title");
-//                if (title.contains("станция метро") || title.contains("станция МЦК")) {
-//                    String s = title.replaceFirst("\\(.*\\)", "");
-//                    if (s.length() > 3) {
-//                        name = s;
-//                        break;
-//                    }
-//                }
-//            }
-//        }
-//       return new Station(name, line);
-//    }
-    private String getSuffix(Element row) {
-        String suffix = "";
-            Element el = row.getElementsByTag("span").first();
-            if (el != null) {
-                if (el.html().length() > 0 && el.html().length() <= 4) {
-                    suffix = el.html();
-                }
+    private String getLineNumber(Element row) {
+        String lineNumber = "";
+        Element el = row.getElementsByTag("span").first();
+        if (el != null) {
+            if (el.html().length() > 0 && el.html().length() <= 4) {
+                lineNumber = el.html();
             }
-        return suffix;
+        }
+        return lineNumber;
     }
 
-    private void updateMap(Map<String, List<String>> listMap, String line, List<String> stations) {
+    private String getLineName (Element row) {
+        String lineName = "";
+        Elements boxes = row.getElementsByTag("a");
+        lineName = boxes.stream()
+                .filter(x -> x.html().contains("линия") || x.html().contains("Московское центральное кольцо") || x.html().contains("Московский монорельс"))
+                .map(x -> x.attr("title")).limit(1)
+                .collect(Collectors.joining());
+        return lineName;
+    }
+
+    private void updateMap (Map<String, List<String>> listMap, String line, List<String> stations) {
         if (line.length() > 0 && stations.size() > 0) {
             if (listMap.containsKey(line)) {
                 List<String> names = listMap.get(line);
@@ -159,28 +138,6 @@ public class ParserOfStations {
     }
 
     public List<Station> getTransferStations(Element row) {
-//        final String[] lineNumber = new String[1];
-//        return
-//                row.select("td").select("span").stream()
-//                .map(x -> {
-//                    lineNumber[0] = row.select("td:contains(Переход на станцию)").attr("span[class='sortkey']");
-//                    return x.attr("title");
-//                })
-//                .filter(x -> x.contains("Переход на станцию"))
-//                .map(x -> x.replaceAll("Переход на станцию", ""))
-//                .map(x -> {
-//                    Station s = null;
-//                    for (Station st : listIndex) {
-//                        if (x.contains(st.name) && st.line.equals(lineNumber[0])) {
-//                            s = st;
-//                            break;
-//                        }
-//                    }
-//                    return s;
-//                })
-//                .filter(Objects::nonNull)
-//                .distinct()
-//                .collect(Collectors.toList());
         List<Station> transferHubs = new ArrayList<>();
         Elements elements = row.getElementsByTag("td");
         for (Element td: elements) {
@@ -189,7 +146,7 @@ public class ParserOfStations {
                 Elements names = td.select("span[title]");
                 for (int i = 0; i < lines.size(); i++) {
                     for (Station st : listIndex) {
-                        if (names.get(i).html().contains(st.name) && lines.get(i).html().equals(st.line)) {
+                        if (names.get(i).html().contains(st.name) && lines.get(i).html().equals(st.lineNumber)) {
                             transferHubs.add(st);
                             break;
                         }

@@ -1,14 +1,12 @@
 package com.company;
 
-import java.util.List;
-
 public class Station {
-    String name, line;
+    String name, lineNumber;
 
 
-    public Station(String lineOwn, String nameOfStation) {
+    public Station(String lineNumber, String nameOfStation) {
         this.name = nameOfStation;
-        this.line = lineOwn;
+        this.lineNumber = lineNumber;
     }
 
     public String getName() {
@@ -16,7 +14,7 @@ public class Station {
     }
 
     public String getLine() {
-        return line;
+        return lineNumber;
     }
 
     public void setName(String name) {
