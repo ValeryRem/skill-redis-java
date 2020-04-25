@@ -48,8 +48,6 @@ public class ParseJSON {
         Map<String, Integer> myMap = new TreeMap<>();
                 String string1 = parsedJSON.substring(25, parsedJSON.indexOf('}') );
         String[] array = string1.split("]");
-        String[] prefix = new String[array.length];
-        Integer[] suffix = new Integer[array.length];
         String key;
         int value;
         for (int i = 0; i < array.length - 1; i++) {
@@ -60,6 +58,5 @@ public class ParseJSON {
             myMap.put(key, value);
         }
         myMap.forEach((x,y)-> System.out.println("line: " + x + ", number of stations: " + y));
-
     }
 }
