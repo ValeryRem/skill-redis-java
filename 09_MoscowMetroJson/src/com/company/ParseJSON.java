@@ -41,47 +41,25 @@ public class ParseJSON {
     }
 
     public void presentResult (String parsedJSON) {
-        Gson g = new Gson();
-        Type type = new TypeToken<Map<String, List<String>>>(){}.getType();
-        Map<String, List<String>> myMap = g.fromJson(parsedJSON, type);
-        myMap.forEach((x,y)-> System.out.println("key : " + x + " , value : " + y));
+//        Gson g = new Gson();
+//        Type type = new TypeToken<Map<String, List<String>>>(){}.getType();
+//        Map<String, List<String>> myMap = g.fromJson(parsedJSON, type);
+//        myMap.forEach((x,y)-> System.out.println("key : " + x + " , value : " + y));
+        Map<String, Integer> myMap = new TreeMap<>();
+                String string1 = parsedJSON.substring(25, parsedJSON.indexOf('}') );
+        String[] array = string1.split("]");
+        String[] prefix = new String[array.length];
+        Integer[] suffix = new Integer[array.length];
+        String key;
+        int value;
+        for (int i = 0; i < array.length - 1; i++) {
+            String[] pref = array[i].split(":");
+            String[] pref2 = pref[0].split("\"");
+                    key = pref2[pref2.length - 1].replace("\\", "");
+                    value = pref[1].split(",").length;
+            myMap.put(key, value);
+        }
+        myMap.forEach((x,y)-> System.out.println("line: " + x + ", number of stations: " + y));
 
-//        String string1 = parsedJSON.substring(25, parsedJSON.indexOf('}') );
-//        String string2 = string1.replaceAll("[{}:\"]", "").replaceAll("[0]", " ");
-//       String[] array = string2.split(" ");
-//        String key;
-//        int value = 0;
-//        for (int i = 0; i < array.length; i++) {
-//           String st = array[i].trim();
-//            if (st.matches("\\d+")) {
-//                key = st;
-//            } else {
-//                value += value;
-//            }
-//
-//        }
-//
     }
 }
-//            //Convert JSON to JsonElement, and later to String
-//            /** JsonElement json = gson.fromJson(reader, JsonElement.class);
-//             String jsonInString = gson.toJson(json);
-//             System.out.println(jsonInString);** /
-//             } catch (IOException e) {
-//             e.printStackTrace();
-//             }
-//
-//        return
-//    }
-//
-//    private static void parseLines (JSONArray linesArray)
-//    {
-//        linesArray.forEach(lineObject -> {
-//            JSONObject lineJsonObject = (JSONObject) lineObject;
-//            Line line = new Line(
-//                    ((Long) lineJsonObject.get("number")).intValue(),
-//                    (String) lineJsonObject.get("name")
-//            );
-//            stationIndex.addLine(line);
-//        });
-//    }

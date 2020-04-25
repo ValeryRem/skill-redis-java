@@ -36,26 +36,12 @@ public class Main {
 //        parserOfStations.listIndex.stream().map(x -> (x.name + " - " + x.line)).forEach(System.out::println);
 
         String json = new GsonBuilder().setPrettyPrinting().create().toJson(stationIndex);
-//        System.out.println(json);
+        System.out.println(json);
         Gson gson = new Gson();
         gson.toJson(json, new FileWriter(pathToJson));
         ParseJSON parseJSON = new ParseJSON();
         String parsedJSON = parseJSON.parseJsonFile(pathToJson);
-        System.out.println(parsedJSON);
+//        System.out.println(parsedJSON);
         parseJSON.presentResult(parsedJSON);
-//        try (Reader reader = new FileReader(pathToJson)) {
-//            JsonElement jsonMap = gson.fromJson(reader, JsonElement.class);
-//            String jsonInString = gson.toJson(jsonMap);
-//            System.out.println(jsonInString);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        ParseJSON parseJSON = new ParseJSON();
-//        String result = parseJSON.getJsonFile(pathToJson);
-//        String res = gson.fromJson()
-//        Map<String, Object> map = gson.fromJson(result, new TypeToken<Map<String, Object>>(){}.getType());
-//        map.entrySet().forEach(System.out::println);
-//        map.forEach((x,y)-> System.out.println("key : " + x + " , value : " + y));
     }
 }
