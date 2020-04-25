@@ -40,23 +40,28 @@ public class ParseJSON {
         return builder.toString();
     }
 
-    public void presentResult (String parsedJSON) {
-//        Gson g = new Gson();
-//        Type type = new TypeToken<Map<String, List<String>>>(){}.getType();
-//        Map<String, List<String>> myMap = g.fromJson(parsedJSON, type);
-//        myMap.forEach((x,y)-> System.out.println("key : " + x + " , value : " + y));
-        Map<String, Integer> myMap = new TreeMap<>();
-                String string1 = parsedJSON.substring(25, parsedJSON.indexOf('}') );
-        String[] array = string1.split("]");
-        String key;
-        int value;
-        for (int i = 0; i < array.length - 1; i++) {
-            String[] pref = array[i].split(":");
-            String[] pref2 = pref[0].split("\"");
-                    key = pref2[pref2.length - 1].replace("\\", "");
-                    value = pref[1].split(",").length;
-            myMap.put(key, value);
+    public void presentResult (String pathToJson) {
+        try (var file = new FileReader(pathToJson)){
+            var stIndex = new Gson().fromJson(file, StationIndex.class);
+            stIndex.stationsMap
+                    .forEach((line, stations) ->
+                            System.out.printf("line: %s, number of stations: %d%n", line, stations.size()));
         }
-        myMap.forEach((x,y)-> System.out.println("line: " + x + ", number of stations: " + y));
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+//        Map<String, Integer> myMap = new TreeMap<>();
+//                String string1 = parsedJSON.substring(25, parsedJSON.indexOf('}') );
+//        String[] array = string1.split("]");
+//        String key;
+//        int value;
+//        for (int i = 0; i < array.length - 1; i++) {
+//            String[] pref = array[i].split(":");
+//            String[] pref2 = pref[0].split("\"");
+//                    key = pref2[pref2.length - 1].replace("\\", "");
+//                    value = pref[1].split(",").length;
+//            myMap.put(key, value);
+//        }
+//        myMap.forEach((x,y)-> System.out.println("line: " + x + ", number of stations: " + y));
     }
 }

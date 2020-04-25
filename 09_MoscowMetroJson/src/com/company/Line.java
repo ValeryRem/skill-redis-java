@@ -11,4 +11,11 @@ public class Line {
         this.lineNumber = lineNumber;
         this.lineName = lineName;
     }
+
+    public boolean equals(Line o) {
+        if (this == o) return true;
+        return o != null &&
+                o.lineNumber.equals(lineNumber)
+                && o.lineName.equals(lineName);
+    }
 }

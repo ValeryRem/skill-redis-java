@@ -17,6 +17,7 @@ public class ParserOfStations {
 
     public StationIndex parsingMetroMap(String origin, String cssQuery) {
         Map<String, List<String>> stationsMap = new TreeMap<>();
+
         try {
 //            Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get(); // вариант загрузки из сети
             File htmlFile = new File(origin);
@@ -66,7 +67,11 @@ public class ParserOfStations {
         treeSet.addAll(lineList);
         lineList = new ArrayList<>(treeSet);
         List <Line> lines = lineList.stream().filter(x -> x.lineNumber.length() > 1 && x.lineName.length() > 3).collect(Collectors.toList());
-//    List <Line> lines = lineList.stream().filter(x -> x.lineName.length() > 3 && x.lineNumber.length() > 1).distinct().collect(Collectors.toList());
+
+//    List <Line> lines = lineList.stream()
+//    .filter(x -> x.lineName.length() > 3 && x.lineNumber.length() > 1)
+//    .distinct()
+//    .collect(Collectors.toList());
         return
                 new StationIndex(stationsMap, lines, connections);
     }

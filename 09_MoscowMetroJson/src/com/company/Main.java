@@ -36,12 +36,19 @@ public class Main {
 //        parserOfStations.listIndex.stream().map(x -> (x.name + " - " + x.line)).forEach(System.out::println);
 
         String json = new GsonBuilder().setPrettyPrinting().create().toJson(stationIndex);
-        System.out.println(json);
-        Gson gson = new Gson();
-        gson.toJson(json, new FileWriter(pathToJson));
+        System.out.println(json);// Вывод результат парсинга html на печать
+        // парсинг
+        try (var file = new FileWriter(pathToJson)) {
+            new GsonBuilder()
+                    .setPrettyPrinting()
+                    .create()
+                    .toJson(stationIndex, file);
+        }
+//        Gson gson = new Gson();
+//        gson.toJson(json, new FileWriter(pathToJson));
         ParseJSON parseJSON = new ParseJSON();
         String parsedJSON = parseJSON.parseJsonFile(pathToJson);
 //        System.out.println(parsedJSON);
-        parseJSON.presentResult(parsedJSON);
+        parseJSON.presentResult(pathToJson);
     }
 }
