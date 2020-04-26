@@ -47,7 +47,7 @@ public class Main {
 //        Gson gson = new Gson();
 //        gson.toJson(json, new FileWriter(pathToJson));
         ParseJSON parseJSON = new ParseJSON();
-        String parsedJSON = parseJSON.parseJsonFile(pathToJson);
+//        String parsedJSON = parseJSON.parseJsonFile(pathToJson);
 //        System.out.println(parsedJSON);
         parseJSON.presentResult(pathToJson);
     }

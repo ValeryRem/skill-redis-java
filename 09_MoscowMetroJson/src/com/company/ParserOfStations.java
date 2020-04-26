@@ -62,16 +62,16 @@ public class ParserOfStations {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Comparator<Line> comparator = Comparator.comparing(ele -> ele.lineNumber);
-        Set<Line> treeSet = new TreeSet<>(comparator);
-        treeSet.addAll(lineList);
-        lineList = new ArrayList<>(treeSet);
-        List <Line> lines = lineList.stream().filter(x -> x.lineNumber.length() > 1 && x.lineName.length() > 3).collect(Collectors.toList());
+//        Comparator<Line> comparator = Comparator.comparing(ele -> ele.lineNumber);
+//        Set<Line> treeSet = new TreeSet<>(comparator);
+//        treeSet.addAll(lineList);
+//        lineList = new ArrayList<>(treeSet);
+//        List <Line> lines = lineList.stream().filter(x -> x.lineNumber.length() > 1 && x.lineName.length() > 3).collect(Collectors.toList());
 
-//    List <Line> lines = lineList.stream()
-//    .filter(x -> x.lineName.length() > 3 && x.lineNumber.length() > 1)
-//    .distinct()
-//    .collect(Collectors.toList());
+    List <Line> lines = lineList.stream()
+    .filter(x -> x.lineName.length() > 3 && x.lineNumber.length() > 1)
+    .distinct()
+    .collect(Collectors.toList());
         return
                 new StationIndex(stationsMap, lines, connections);
     }
