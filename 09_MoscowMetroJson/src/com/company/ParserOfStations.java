@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class ParserOfStations {
 
     List<Station> listIndex = new ArrayList<>();
-    List<Connection> connections = new ArrayList<>();
+    List <List<String>> hubs = new ArrayList<>();
     List <Line> lineList = new ArrayList<>();;
     public ParserOfStations() {
     }
@@ -30,6 +30,7 @@ public class ParserOfStations {
                 String primeLineNumber = "";
                 Line line;
                 for (Element row : rows) {
+                    List<String> stringList = new ArrayList<>();
                     Station station;
                     String lineNumberNew = getLineNumber(row); // находим номер линии для данной станции
                     String lineName = getLineName(row);
@@ -39,6 +40,15 @@ public class ParserOfStations {
                     if (primeLineNumber.equals(lineNumberNew)) { // если станция находится на прежней линии
                         station = getStation(row); // находим название станции
                         lineNumber = station.lineNumber; // выводим название линии
+                        if (station.name.length() > 3 && !stationsList.contains(station.name)) {
+                            stationsList.add(station.name.trim()); // пройдя все элементы ряда, добавляем найденную станцию в лист
+                            listIndex.add(station);
+                            if (row.html().contains("Переход на станцию") && (getTransferStations(row).size() > 0)) {
+                                stringList.add(station.name + "(" + station.lineNumber + ")");
+                                stringList.addAll(getTransferStations(row));
+                                hubs.add(stringList);
+                            }
+                        }
                     } else { // если перешли на станцию новой линии
                         line = new Line(lineNumberNew, lineName);
                         lineList.add(line);
@@ -47,13 +57,6 @@ public class ParserOfStations {
                         station = getStation(row); // находим название новой станции
                         lineNumber = station.lineNumber;// выводим название новой линии
                         primeLineNumber = lineNumberNew; // задаем номер новой линии
-                    }
-                    if (station.name.length() > 3 && !stationsList.contains(station.name)) {
-                        stationsList.add(station.name); // пройдя все элементы ряда, добавляем найденную станцию в лист
-                        listIndex.add(station);
-                        if (row.html().contains("Переход на станцию") && !getTransferStations(row).isEmpty()) {
-                            connections.add(new Connection(station, getTransferStations(row)));
-                        }
                     }
                 }
             } else {
@@ -67,13 +70,13 @@ public class ParserOfStations {
 //        treeSet.addAll(lineList);
 //        lineList = new ArrayList<>(treeSet);
 //        List <Line> lines = lineList.stream().filter(x -> x.lineNumber.length() > 1 && x.lineName.length() > 3).collect(Collectors.toList());
+        List<Line> lines = lineList.stream()
+                .filter(x -> x.lineName.length() > 3 && x.lineNumber.length() > 1)
+                .distinct()
+                .collect(Collectors.toList());
 
-    List <Line> lines = lineList.stream()
-    .filter(x -> x.lineName.length() > 3 && x.lineNumber.length() > 1)
-    .distinct()
-    .collect(Collectors.toList());
         return
-                new StationIndex(stationsMap, lines, connections);
+                new StationIndex(stationsMap, lines, hubs);
     }
 
     public Station getStation(Element row) {
@@ -142,8 +145,8 @@ public class ParserOfStations {
         }
     }
 
-    public List<Station> getTransferStations(Element row) {
-        List<Station> transferHubs = new ArrayList<>();
+    public List<String> getTransferStations(Element row) {
+        List<String> transferHub = new ArrayList<>();
         Elements elements = row.getElementsByTag("td");
         for (Element td: elements) {
             if (td.html().contains("Переход на станцию")) {
@@ -152,13 +155,14 @@ public class ParserOfStations {
                 for (int i = 0; i < lines.size(); i++) {
                     for (Station st : listIndex) {
                         if (names.get(i).html().contains(st.name) && lines.get(i).html().equals(st.lineNumber)) {
-                            transferHubs.add(st);
+                            transferHub.add(st.name + "(" + st.lineNumber + ")");
                             break;
                         }
                     }
                 }
             }
         }
-        return transferHubs;
+        return
+                transferHub;
     }
 }

@@ -29,16 +29,16 @@ public class ParseJSON {
 //        }
 //    }
 
-    public String parseJsonFile(String pathToJson) {
-        StringBuilder builder = new StringBuilder();
-        try {
-            List<String> lines = Files.readAllLines(Paths.get(pathToJson));
-            lines.forEach(builder::append);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return builder.toString();
-    }
+//    public String parseJsonFile(String pathToJson) {
+//        StringBuilder builder = new StringBuilder();
+//        try {
+//            List<String> lines = Files.readAllLines(Paths.get(pathToJson));
+//            lines.forEach(builder::append);
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//        return builder.toString();
+//    }
 
     public void presentResult (String pathToJson) {
         try (var file = new FileReader(pathToJson)){

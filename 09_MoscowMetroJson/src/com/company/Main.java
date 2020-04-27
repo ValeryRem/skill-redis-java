@@ -34,9 +34,13 @@ public class Main {
         StationIndex stationIndex = parserOfStations.parsingMetroMap(origin, cssQuery);
 //        parserOfStations.getListIndex().forEach(x -> System.out.println(x.name));
 //        parserOfStations.listIndex.stream().map(x -> (x.name + " - " + x.line)).forEach(System.out::println);
-
         String json = new GsonBuilder().setPrettyPrinting().create().toJson(stationIndex);
         System.out.println(json);// Вывод результат парсинга html на печать
+//        String jsonLines = new GsonBuilder().setPrettyPrinting().create().toJson(stationIndex.lineList);
+//        System.out.println(jsonLines);// Вывод результат парсинга html на печать
+//        String jsonHubs = new GsonBuilder().setPrettyPrinting().create().toJson(stationIndex.hubs);
+//        System.out.println(jsonHubs);
+
         // парсинг
         try (var file = new FileWriter(pathToJson)) {
             new GsonBuilder()

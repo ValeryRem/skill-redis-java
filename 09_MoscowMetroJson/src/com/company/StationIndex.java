@@ -4,12 +4,13 @@ import java.util.*;
 
 public class StationIndex {
     Map<String, List<String>> stationsMap;
-    List<Connection> hubsList;
+//    Connection[] hubsArray;
+List <List<String>> hubs;
     List <Line> lineList;
 
-    public StationIndex (Map<String, List<String>> stationsMap,  List <Line> lineList, List<Connection> hubsList){
+    public StationIndex (Map<String, List<String>> stationsMap,  List <Line> lineList,  List <List<String>> hubs){
         this.stationsMap = stationsMap;
         this.lineList = lineList;
-        this.hubsList = hubsList;
+        this.hubs = hubs;
     }
 }
