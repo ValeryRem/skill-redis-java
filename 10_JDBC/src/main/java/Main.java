@@ -15,7 +15,7 @@ public class Main {
         Course course = session.get(Course.class, 10);
         System.out.println(course.getName());
         Students students = session.get(Students.class, 5);
-        System.out.println(students.getRegistrationDate());
+        System.out.println(students.getId() + ". " + students.getName() + ". " + students.getRegistrationDate());
         sessionFactory.close();
     }
 }
