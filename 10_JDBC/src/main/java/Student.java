@@ -3,7 +3,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Students")
-public class Students {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -43,4 +43,6 @@ public class Students {
     public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
     }
+
+
 }
