@@ -1,5 +1,5 @@
 import javax.persistence.*;
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 @Entity
 @Table(name = "Purchaselist")
@@ -16,7 +16,7 @@ public class PurchaseList {
     private int price;
 
     @Column(name = "subscription_date")
-    private Data subscriptionDate;
+   private Date subscriptionDate;
 
     public String getStudentName() {
         return studentName;
@@ -42,11 +42,11 @@ public class PurchaseList {
         this.price = price;
     }
 
-    public Data getSubscriptionDate() {
+    public Date getSubscriptionDate() {
         return subscriptionDate;
     }
 
-    public void setSubscriptionDate(Data subscriptionDate) {
+    public void setSubscriptionDate(Date subscriptionDate) {
         this.subscriptionDate = subscriptionDate;
     }
 }

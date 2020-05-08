@@ -107,8 +107,8 @@ public class Course {
         return students;
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name = "Teacher", joinColumns = {@JoinColumn(name = "id")}, inverseJoinColumns = {@JoinColumn(name = "id")})
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "PurchaseList", joinColumns = {@JoinColumn(name = "id")}, inverseJoinColumns = {@JoinColumn(name = "student_name")})
     private List<PurchaseList> purchaseList;
 
     public List<PurchaseList> getPurchaseList() {
