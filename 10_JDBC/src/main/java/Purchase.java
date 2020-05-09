@@ -3,10 +3,11 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Purchaselist")
-public class PurchaseList {
+public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "purchase_id")
+    private int purchaseId;
 
     @Column(name = "student_name")
     private String studentName;
@@ -48,5 +49,13 @@ public class PurchaseList {
 
     public void setSubscriptionDate(Date subscriptionDate) {
         this.subscriptionDate = subscriptionDate;
+    }
+
+    public int getPurchaseId() {
+        return purchaseId;
+    }
+
+    public void setPurchaseId(int purchaseId) {
+        this.purchaseId = purchaseId;
     }
 }

@@ -1,5 +1,3 @@
-import com.mysql.cj.protocol.ColumnDefinition;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -107,11 +105,19 @@ public class Course {
         return students;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "PurchaseList", joinColumns = {@JoinColumn(name = "id")}, inverseJoinColumns = {@JoinColumn(name = "student_name")})
-    private List<PurchaseList> purchaseList;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "purchaselist", joinColumns = {@JoinColumn(name = "course_name")}, inverseJoinColumns = {@JoinColumn(name = "purchase_id")})
+    private List<Purchase> purchases;
 
-    public List<PurchaseList> getPurchaseList() {
-        return purchaseList;
+    public List<Purchase> getPurchases() {
+        return purchases;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "subscription_id")})
+    private List<Subscription> subscriptions;
+
+    public List<Subscription> getSubscriptions() {
+        return subscriptions;
     }
 }

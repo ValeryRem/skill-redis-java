@@ -6,18 +6,21 @@ import java.util.Date;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "student_id")
+    private int studentId;
+
     private String name;
     private int age;
+
     @Column(name = "registration_date")
     private Date registrationDate;
 
     public int getId() {
-        return id;
+        return studentId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.studentId = id;
     }
 
     public String getName() {
