@@ -2,7 +2,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Purchaselist")
+@Table(name = "purchaselist")
 public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +12,7 @@ public class Purchase {
     @Column(name = "student_name")
     private String studentName;
 
-    @Column(name = "course_name", unique=true, nullable=false)
+    @Column(name = "course_name")
     private String courseName;
     private int price;
 

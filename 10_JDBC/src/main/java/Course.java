@@ -2,7 +2,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Courses")
+@Table(name = "courses")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,10 +13,11 @@ public class Course {
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "enum")
     private CourseType type;
+
     private String description;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Teacher teacher;
+    @Column(name = "teacher_id")
+    private int teacherId;
 
     @Column(name = "students_count")
     private int studentsCount;
@@ -65,14 +66,6 @@ public class Course {
         this.description = desription;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
-
     public int getStudentsCount() {
         return studentsCount;
     }
@@ -97,8 +90,16 @@ public class Course {
         this.pricePerHour = pricePerHour;
     }
 
+    public int getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(int teacherId) {
+        this.teacherId = teacherId;
+    }
+
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "Subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "student_id")})
+    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "student_id")})
     private List<Student> students;
 
     public List<Student> getStudents() {
@@ -106,7 +107,7 @@ public class Course {
     }
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "purchaselist", joinColumns = {@JoinColumn(name = "course_name")}, inverseJoinColumns = {@JoinColumn(name = "purchase_id")})
+    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "subscription_date")})
     private List<Purchase> purchases;
 
     public List<Purchase> getPurchases() {
@@ -120,4 +121,11 @@ public class Course {
     public List<Subscription> getSubscriptions() {
         return subscriptions;
     }
+
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinTable(name = "courses", joinColumns = {@JoinColumn(name = "name")}, inverseJoinColumns = {@JoinColumn(name = "teacher_id")})
+//    private List<Teacher> teachers;
+//    public List<Teacher> getTeachers() {
+//        return teachers;
+//    }
 }
