@@ -6,6 +6,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import javax.management.Query;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,10 +20,12 @@ public class Main {
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
+
         Course course = session.get(Course.class, 35);
         String sqlQuery = "select students_count, (select name from teachers where id = teacher_id) AS 'teachers'" +
-                "from courses group by teacher_id";
-        Connection connection;
+                "from courses group by teacher_id limit 10";
+        String sqlQuery2 = "select * from purchaselist limit 10";
+
         //        course.setName("Макраме");
 //        course.setType(CourseType.DESIGN);
 //        course.setTeacherId(1);
@@ -40,10 +43,9 @@ public class Main {
             System.out.printf("%d%s%s%n", student.getId(), ". ", student.getName());
         }
 
-//        Course course1 = session.get(Course.class, 3);
-        List<Purchase> purchases = course.getPurchases();
-        System.out.println("\nPrintout of Purchase info: " + purchases.size());
-        purchases.forEach(System.out::println);//x -> System.out.println(x.getCourseName() + " - " + x.getStudentName()));
+//        List<Purchase> purchases = course.getPurchases();
+//        System.out.println("\nPrintout of Purchase info: " + purchases.size());
+//        purchases.forEach(x -> System.out.println(x.getCourseName() + " - " + x.getStudentName()));
 
         List<Subscription> subscriptions = course.getSubscriptions();
         System.out.println("\nPrintout of Subscription info for course #" + course.getId());
@@ -60,12 +62,29 @@ public class Main {
         transaction.commit();
         sessionFactory.close();
 
-        connection = DBConnection.getConnection(sqlQuery);
+
+        Connection connection = DBConnection.getConnection(sqlQuery);
         try (Statement statement = connection.createStatement()) {
+                    System.out.println("\nPrintout of Teachers load by students:");
             ResultSet resultSet = statement.executeQuery(sqlQuery);
             while (resultSet.next()) {
-                String courseName = resultSet.getString("name");
-                String courseID = resultSet.getString("students_count");
+                String teachers = resultSet.getString("teachers");
+                String studentsCount = resultSet.getString("students_count");
+                System.out.println(teachers + " - " + studentsCount);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        Connection connection2 = DBConnection.getConnection(sqlQuery2);
+        try (Statement statement = connection2.createStatement()) {
+            System.out.println("\nPrintout of Purchase info:");
+            ResultSet resultSet2 = statement.executeQuery(sqlQuery2);
+            while (resultSet2.next()) {
+                String purchaseId = resultSet2.getString("purchase_id");
+                String studentName = resultSet2.getString("student_name");
+                String subscriptionDate = resultSet2.getString("subscription_date");
+                System.out.println(purchaseId + ". " + studentName + " - " + subscriptionDate);
             }
         } catch (SQLException e) {
             e.printStackTrace();

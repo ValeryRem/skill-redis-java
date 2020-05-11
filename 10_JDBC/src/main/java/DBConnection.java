@@ -14,7 +14,7 @@ public class DBConnection {
             try {
                 connection = DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/" + dbName +
-                                "?user=" + dbUser + "&password=" + dbPass);
+                                "?user=" + dbUser + "&password=" + dbPass + "&serverTimezone=UTC");
                 connection.createStatement().execute(sqlQuery);
             } catch (SQLException e) {
                 e.printStackTrace();
