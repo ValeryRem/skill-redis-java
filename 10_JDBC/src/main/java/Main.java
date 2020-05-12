@@ -25,6 +25,8 @@ public class Main {
                 "from courses group by teacher_id limit 10";
         String sqlQuery2 = "select * from purchaselist limit 10";
 
+
+
         //        course.setName("Макраме");
 //        course.setType(CourseType.DESIGN);
 //        course.setTeacherId(1);
@@ -43,7 +45,8 @@ public class Main {
 //        purchases.forEach(x -> System.out.println(x.getCourseName() + " - " + x.getStudentName()));
 
         showSubscriptions(course);
-        showTeacherInfo(session, course);
+        System.out.println("\ngetCountOfCourses(): " + getCountOfCourses() + ", " + "getCountOfTeachers(): " + getCountOfTeachers());
+        showTeacherInfo(session);
 //        List<Teacher> teachers = course.getTeachers();
 //        System.out.println("\nPrintout of Teacher info for course #" + course.getId());
 //        for (Teacher teacher : teachers) {
@@ -52,10 +55,8 @@ public class Main {
         transaction.commit();
         sessionFactory.close();
 
-
-        showTeachersViaConnectionDB(sqlQuery);
-
-        showPurchasesViaConnectionDB(sqlQuery2);
+        showTeachersViaDBConnection(sqlQuery);
+        showPurchasesViaDBConnection(sqlQuery2);
     }
 
     private static void showStudents(Course course) {
@@ -74,15 +75,15 @@ public class Main {
         }
     }
 
-    private static void showPurchasesViaConnectionDB(String sqlQuery2) {
-        Connection connection2 = DBConnection.getConnection(sqlQuery2);
-        try (Statement statement = connection2.createStatement()) {
+    private static void showPurchasesViaDBConnection(String sqlQuery) {
+        Connection connection = DBConnection.getConnection(sqlQuery);
+        try (Statement statement = connection.createStatement()) {
             System.out.println("\nPrintout of Purchase info:");
-            ResultSet resultSet2 = statement.executeQuery(sqlQuery2);
-            while (resultSet2.next()) {
-                String purchaseId = resultSet2.getString("purchase_id");
-                String studentName = resultSet2.getString("student_name");
-                String subscriptionDate = resultSet2.getString("subscription_date");
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+            while (resultSet.next()) {
+                String purchaseId = resultSet.getString("purchase_id");
+                String studentName = resultSet.getString("student_name");
+                String subscriptionDate = resultSet.getString("subscription_date");
                 System.out.println(purchaseId + ". " + studentName + " - " + subscriptionDate);
             }
         } catch (SQLException e) {
@@ -90,7 +91,7 @@ public class Main {
         }
     }
 
-    private static void showTeachersViaConnectionDB(String sqlQuery) {
+    private static void showTeachersViaDBConnection(String sqlQuery) {
         Connection connection = DBConnection.getConnection(sqlQuery);
         try (Statement statement = connection.createStatement()) {
                     System.out.println("\nPrintout of Teachers load by students:");
@@ -105,17 +106,47 @@ public class Main {
         }
     }
 
-    private static void showTeacherInfo(Session session, Course course) {
+    private static void showTeacherInfo(Session session) {
         System.out.println("\nPrintout of Teacher info");
+        Course course;
         int i = 0;
         try {
-            while ((Integer) course.getId() instanceof Integer) {
+            while (i < getCountOfCourses()) {
                 i++;
                 Teacher t = session.get(Teacher.class, i);
-                System.out.printf("%d. %s - %d%n ", t.getId(), t.getName(), t.getSalary());
+                for (int k = 1; k < getCountOfCourses(); k++) {
+                 course = session.get(Course.class, k);
+                 if (course.getTeacherId() == t.getId()) {
+                        System.out.printf("%d. %s - %d - %s%n ", t.getId(), t.getName(), t.getSalary(), course.getName());
+                    }
+                }
             }
-        } catch (NullPointerException ex) {
-            System.out.println("List of Courses ended");
+        } catch (Exception ex) {
+           ex.printStackTrace();
         }
+    }
+
+    private static int getCountOfTeachers() {
+        Connection connection = DBConnection.getConnection("SELECT count(distinct teacher_id) as count FROM courses");
+        int coursesCount = 0;
+        try (Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery("SELECT count(distinct teacher_id) as count FROM courses");
+            coursesCount = resultSet.getInt("count");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return coursesCount;
+    }
+
+    private static int getCountOfCourses() {
+        Connection connection = DBConnection.getConnection("select count(id) as count from courses");
+        int coursesCount = 0;
+        try (Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery("select count(id) as count from courses");
+            coursesCount = resultSet.getInt("count");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return coursesCount;
     }
 }
