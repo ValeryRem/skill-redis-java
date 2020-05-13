@@ -26,6 +26,11 @@ public class Course {
     @Column(name = "price_per_hour")
     private float pricePerHour;
 
+//    @Column(name = "teachers")
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinTable(name = "courses", joinColumns = {@JoinColumn(name = "name")}, inverseJoinColumns = {@JoinColumn(name = "teacher_id")})
+//    private Teacher teacher;
+
     public int getId() {
         return id;
     }
@@ -122,6 +127,9 @@ public class Course {
         return subscriptions;
     }
 
+//    public Teacher getTeacher() {
+//        return teacher;
+//    }
 //    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinTable(name = "courses", joinColumns = {@JoinColumn(name = "name")}, inverseJoinColumns = {@JoinColumn(name = "teacher_id")})
 //    private List<Teacher> teachers;
