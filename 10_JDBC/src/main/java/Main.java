@@ -34,7 +34,7 @@ public class Main {
 //        System.out.printf("%d%s%s%n", course.getTeacher().getId(), ". ", course.getTeacher().getName());
 //        Student students = session.get(Student.class, 5);
 //        System.out.println(students.getId() + ". " + students.getName() + ". " + students.getRegistrationDate());
-        getTeacherInfo(session);
+        getTeacherInfo(session, 10);
         showStudents(course);
 
 //        List<Purchase> purchases = course.getPurchases();
@@ -101,13 +101,13 @@ public class Main {
         }
     }
 
-    private static void getTeacherInfo(Session session) {
+    private static void getTeacherInfo(Session session, int rowsToPrintout) {
         System.out.println("\nPrintout of Teacher info");
         int i = 0;
         int teacherId;
         try {
             Course course;
-            while (i < 10) {
+            while (i < rowsToPrintout) {
                 i++;
                 course = session.get(Course.class, i);
                 if (course != null ) {
