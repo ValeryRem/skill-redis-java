@@ -5,6 +5,7 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -21,9 +22,10 @@ public class Main {
         Transaction transaction = session.beginTransaction();
 
         Course course = session.get(Course.class, 35);
+        //выбрать кол-во студентов у каждого препод-ля, первые 10
         String sqlQuery = "select students_count, (select name from teachers where id = teacher_id) AS 'teachers'" +
                 "from courses group by teacher_id limit 10";
-        String sqlQuery2 = "select * from purchaselist limit 10";
+        String sqlQuery2 = "select * from purchaselist limit 10"; // выбрать первые 10 строк из табл. покупок
         //        course.setName("Макраме");
 //        course.setType(CourseType.DESIGN);
 //        course.setTeacherId(1);
@@ -47,11 +49,23 @@ public class Main {
 //        for (Teacher teacher : teachers) {
 //            System.out.println(teacher.getId() + ". " + teacher.getName());
 //        }
+        //Вывести в консоль все курсы по программированию  + их преподавателей: Имя_Курса -  Имя_Преподавателя.
+        //select name as 'ИМЯ_КУРСА' ,(select name from teachers where id = teacher_id) as 'Имя_Преподавателя'
+        //from courses where type='PROGRAMMING'
+        String hql = "FROM Course c SELECT c.name as 'Имя_Курса', (select t.name from Teachers t where c.id = t.teacher_id) as 'Имя_Преподавателя'  " +
+                " WHERE c.type.PROGRAMMING ";
+        getCourseAndTeacherNamesHQL(session, hql);
         transaction.commit();
         sessionFactory.close();
 
         showTeachersViaDBConnection(sqlQuery);
         showPurchasesViaDBConnection(sqlQuery2);
+    }
+
+    private static void getCourseAndTeacherNamesHQL(Session session, String hql) {
+        Query query = session.createQuery(hql);
+        List<String> results = query.list();
+        results.forEach(System.out::println);
     }
 
     private static void showStudents(Course course) {

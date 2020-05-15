@@ -6,7 +6,7 @@ import java.util.List;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private int duration;
 
@@ -17,14 +17,17 @@ public class Course {
     private String description;
 
     @Column(name = "teacher_id")
-    private int teacherId;
+    private Integer teacherId;
 
-    @Column(name = "students_count")
+    @Column(name = "students_count", nullable = true)
     private int studentsCount;
     private int price;
 
     @Column(name = "price_per_hour")
     private float pricePerHour;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Teacher teacher;
 
 //    @Column(name = "teachers")
 //    @ManyToOne(cascade = CascadeType.ALL)
