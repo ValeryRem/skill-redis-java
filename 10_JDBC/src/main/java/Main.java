@@ -65,9 +65,11 @@ public class Main {
     }
 
     private static void getCourseAndTeacherNamesHQL(Session session, String hql) {
-        var stringList = session.createQuery(hql).getResultList();
         try{
-            stringList.forEach(System.out::println);
+            Query<String> qry = session.createQuery(hql);
+            List<String> list = qry.list();
+//         List<String> stringList = qry.getResultList();
+            list.forEach(System.out::println);
         } catch (NullPointerException ex) {
             ex.printStackTrace();
         }

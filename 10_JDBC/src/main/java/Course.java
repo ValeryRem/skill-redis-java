@@ -112,15 +112,13 @@ public class Course {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "subscription_date")})
     private List<Purchase> purchases;
-
     public List<Purchase> getPurchases() {
         return purchases;
     }
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "subscription_id")})
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "subscription_date")})
     private List<Subscription> subscriptions;
-
     public List<Subscription> getSubscriptions() {
         return subscriptions;
     }

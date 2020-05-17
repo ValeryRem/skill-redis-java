@@ -1,7 +1,7 @@
 import javax.persistence.*;
 import java.util.Date;
 
-@Embeddable
+@Entity
 @Table(name = "Subscriptions")
 public class Subscription {
 //    @Id
@@ -14,7 +14,7 @@ public class Subscription {
 
     @Column(name = "course_id")
     private int courseId;
-
+    @Id
     @Column(name = "subscription_date")
     private Date subscriptionDate;
 
