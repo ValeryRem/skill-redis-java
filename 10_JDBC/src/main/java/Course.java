@@ -14,19 +14,20 @@ public class Course {
     @Column(columnDefinition = "enum")
     private CourseType type;
 
+//    @Column(name = "description")
     private String description;
 
-//    @Column(name = "teacher_id", insertable = false, updatable = false)
-//    private Integer teacherId;
+    @Column(name = "teacher_id", insertable = false, updatable = false)
+    private Integer teacherId;
 
     @Column(name = "students_count", nullable = true)
     private Integer studentsCount;
     private int price;
 
-    @Column(name = "price_per_hour")
+    @Column(name = "price_per_hour", nullable = true)
     private float pricePerHour;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Teacher teacher;
 
     public int getId() {
@@ -125,6 +126,10 @@ public class Course {
 
     public Teacher getTeacher() {
         return teacher;
+    }
+
+    public Integer getTeacherId() {
+        return teacherId;
     }
 //    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinTable(name = "courses", joinColumns = {@JoinColumn(name = "name")}, inverseJoinColumns = {@JoinColumn(name = "teacher_id")})

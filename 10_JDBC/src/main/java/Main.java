@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Iterator;
 import java.util.List;
 
 public class Main {
@@ -20,7 +21,6 @@ public class Main {
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-
 //        Course course = session.get(Course.class, 35);
         //выбрать кол-во студентов у каждого препод-ля, первые 10
 //        String sqlQuery = "select students_count, (select name from teachers where id = teacher_id) AS 'teachers'" +
@@ -36,8 +36,7 @@ public class Main {
 //        System.out.printf("%d%s%s%n", course.getTeacher().getId(), ". ", course.getTeacher().getName());
 //        Student students = session.get(Student.class, 5);
 //        System.out.println(students.getId() + ". " + students.getName() + ". " + students.getRegistrationDate());
-        String hql = "FROM Course c SELECT c.name as 'Имя_Курса', (from Teacher t select t.name where t.id = c.teacher_id) " +
-                "as 'Имя_Преподавателя' WHERE c.type.PROGRAMMING";
+        String hql = "FROM Course c where c.getType().toString().equals('PROGRAMMING')";
         getCourseAndTeacherNamesHQL(session, hql);
 
 //        getTeacherInfo(session, 10);
@@ -66,15 +65,15 @@ public class Main {
 
     private static void getCourseAndTeacherNamesHQL(Session session, String hql) {
         try{
-            Query<String> qry = session.createQuery(hql);
-            List<String> list = qry.list();
-//         List<String> stringList = qry.getResultList();
-            list.forEach(System.out::println);
+            Query<Course> qry = session.createQuery(hql);
+            List<Course> list = qry.list();
+            for (Course course : list) {
+                    System.out.println(course.getName() + " - " + course.getTeacher().getName());
+            }
         } catch (NullPointerException ex) {
             ex.printStackTrace();
         }
     }
-
 //    private static void showStudents(Course course) {
 //        System.out.printf("%n%s%s%s%d%n","Number of participants at the course ", course.getName(), ": ", course.getStudents().size());
 //        List<Student> studentList = course.getStudents();
