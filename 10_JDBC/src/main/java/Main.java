@@ -36,8 +36,8 @@ public class Main {
 //        System.out.printf("%d%s%s%n", course.getTeacher().getId(), ". ", course.getTeacher().getName());
 //        Student students = session.get(Student.class, 5);
 //        System.out.println(students.getId() + ". " + students.getName() + ". " + students.getRegistrationDate());
-        String hql = "FROM Course c SELECT c.name as 'Имя_Курса', (from Teacher t select t.name  where t.id = c.teacher_id) " +
-                "as 'Имя_Преподавателя' WHERE c.type.PROGRAMMING ";
+        String hql = "FROM Course c SELECT c.name as 'Имя_Курса', (from Teacher t select t.name where t.id = c.teacher_id) " +
+                "as 'Имя_Преподавателя' WHERE c.type.PROGRAMMING";
         getCourseAndTeacherNamesHQL(session, hql);
 
 //        getTeacherInfo(session, 10);

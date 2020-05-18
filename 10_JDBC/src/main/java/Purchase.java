@@ -4,10 +4,6 @@ import java.util.Date;
 @Entity
 @Table(name = "purchaselist")
 public class Purchase {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "purchase_id")
-    private int purchaseId;
 
     @Column(name = "student_name")
     private String studentName;
@@ -16,6 +12,8 @@ public class Purchase {
     private String courseName;
     private int price;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subscription_date")
    private Date subscriptionDate;
 
@@ -51,11 +49,11 @@ public class Purchase {
         this.subscriptionDate = subscriptionDate;
     }
 
-    public int getPurchaseId() {
-        return purchaseId;
-    }
-
-    public void setPurchaseId(int purchaseId) {
-        this.purchaseId = purchaseId;
-    }
+//    public int getPurchaseId() {
+//        return purchaseId;
+//    }
+//
+//    public void setPurchaseId(int purchaseId) {
+//        this.purchaseId = purchaseId;
+//    }
 }

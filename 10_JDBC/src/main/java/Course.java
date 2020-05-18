@@ -128,8 +128,8 @@ public class Course {
     }
 //    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinTable(name = "courses", joinColumns = {@JoinColumn(name = "name")}, inverseJoinColumns = {@JoinColumn(name = "teacher_id")})
-    private List<Teacher> teachers;
-    public List<Teacher> getTeachers() {
-        return teachers;
-    }
+//    private List<Teacher> teachers;
+//    public List<Teacher> getTeachers() {
+//        return teachers;
+//    }
 }
