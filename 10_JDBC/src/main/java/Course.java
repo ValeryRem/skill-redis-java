@@ -25,7 +25,7 @@ public class Course {
     private int price;
 
     @Column(name = "price_per_hour", nullable = true)
-    private float pricePerHour;
+    private Float pricePerHour;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Teacher teacher;

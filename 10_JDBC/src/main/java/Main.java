@@ -36,8 +36,20 @@ public class Main {
 //        System.out.printf("%d%s%s%n", course.getTeacher().getId(), ". ", course.getTeacher().getName());
 //        Student students = session.get(Student.class, 5);
 //        System.out.println(students.getId() + ". " + students.getName() + ". " + students.getRegistrationDate());
-        String hql = "FROM Course c where c.getType().toString().equals('PROGRAMMING')";
-        getCourseAndTeacherNamesHQL(session, hql);
+        String hql = " SELECT " +
+                "   c.name," +
+                "   t.name" +
+                " FROM Course AS c " +
+                " JOIN c.teacher AS t" +
+                " WHERE c.type = 'PROGRAMMING'";
+
+        List<Object[]> list = doHql(session, hql);
+        list.forEach(row -> {
+            System.out.printf("%-30s - %s%n", row[0], row[1]);
+        });
+
+        String hql2 = "FROM Course";// c where c.getType() = CourseType.PROGRAMMING";
+        getCourseAndTeacherNamesHQL(session, hql2);
 
 //        getTeacherInfo(session, 10);
 //        showStudents(course);
@@ -68,13 +80,20 @@ public class Main {
             Query<Course> qry = session.createQuery(hql);
             List<Course> list = qry.list();
             for (Course course : list) {
-                if (course.getType().toString().equals("PROGRAMMING")) {
+                if (course.getType() == CourseType.PROGRAMMING) {
                     System.out.println(course.getName() + " - " + course.getTeacher().getName());
                 }
             }
         } catch (NullPointerException ex) {
             ex.printStackTrace();
         }
+    }
+
+    private static List<Object[]> doHql(Session session, String hql) {
+        System.out.printf("---HQL----%n");
+
+        Query<Object[]> qry =  session.createQuery(hql);
+        return qry.getResultList();
     }
 //    private static void showStudents(Course course) {
 //        System.out.printf("%n%s%s%s%d%n","Number of participants at the course ", course.getName(), ": ", course.getStudents().size());
