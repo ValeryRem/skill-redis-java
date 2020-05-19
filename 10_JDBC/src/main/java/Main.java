@@ -39,7 +39,7 @@ public class Main {
         String hql = " SELECT " +
                 "   c.name," +
                 "   t.name" +
-                " FROM Course AS c " +
+                " FROM Course c " +
                 " JOIN c.teacher AS t" +
                 " WHERE c.type = 'PROGRAMMING'";
 
@@ -48,7 +48,7 @@ public class Main {
             System.out.printf("%-30s - %s%n", row[0], row[1]);
         });
 
-        String hql2 = "FROM Course";// c where c.getType() = CourseType.PROGRAMMING";
+        String hql2 = "FROM Course c where c.type ='PROGRAMMING'";
         getCourseAndTeacherNamesHQL(session, hql2);
 
 //        getTeacherInfo(session, 10);
@@ -80,9 +80,9 @@ public class Main {
             Query<Course> qry = session.createQuery(hql);
             List<Course> list = qry.list();
             for (Course course : list) {
-                if (course.getType() == CourseType.PROGRAMMING) {
+//                if (course.getType() == CourseType.PROGRAMMING) {
                     System.out.println(course.getName() + " - " + course.getTeacher().getName());
-                }
+//                }
             }
         } catch (NullPointerException ex) {
             ex.printStackTrace();
