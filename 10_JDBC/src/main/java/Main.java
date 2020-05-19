@@ -68,7 +68,9 @@ public class Main {
             Query<Course> qry = session.createQuery(hql);
             List<Course> list = qry.list();
             for (Course course : list) {
+                if (course.getType().toString().equals("PROGRAMMING")) {
                     System.out.println(course.getName() + " - " + course.getTeacher().getName());
+                }
             }
         } catch (NullPointerException ex) {
             ex.printStackTrace();
