@@ -7,20 +7,37 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import java.sql.*;
 import java.util.Iterator;
 import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) {
-        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
-        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
+
+        String sqlCreateTable = "CREATE TABLE linkedPurchaseList AS SELECT student_id, course_id FROM subscriptions";
+        try (Connection conn =  DBConnection.getConnection(sqlCreateTable)) {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery(sqlCreateTable);
+            while (resultSet.next()) {
+                Integer studentId = resultSet.getInt("student_id");
+                Integer courseId = resultSet.getInt("course_id");
+                System.out.printf("%s: %d, %s: %d ", "student_id", studentId, "course_id", courseId);
+        }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+//        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+//        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
+//        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
+//        Session session = sessionFactory.openSession();
+//        Transaction transaction = session.beginTransaction();
+
+
 //        Course course = session.get(Course.class, 35);
         //выбрать кол-во студентов у каждого препод-ля, первые 10
 //        String sqlQuery = "select students_count, (select name from teachers where id = teacher_id) AS 'teachers'" +
@@ -36,20 +53,19 @@ public class Main {
 //        System.out.printf("%d%s%s%n", course.getTeacher().getId(), ". ", course.getTeacher().getName());
 //        Student students = session.get(Student.class, 5);
 //        System.out.println(students.getId() + ". " + students.getName() + ". " + students.getRegistrationDate());
-        String hql = " SELECT " +
-                "   c.name," +
-                "   t.name" +
-                " FROM Course c " +
-                " JOIN c.teacher AS t" +
-                " WHERE c.type = 'PROGRAMMING'";
 
-        List<Object[]> list = doHql(session, hql);
-        list.forEach(row -> {
-            System.out.printf("%-30s - %s%n", row[0], row[1]);
-        });
-
-        String hql2 = "FROM Course c where c.type ='PROGRAMMING'";
-        getCourseAndTeacherNamesHQL(session, hql2);
+//        String hql = " SELECT " +
+//                "   c.name," +
+//                "   t.name" +
+//                " FROM Course c " +
+//                " JOIN c.teacher AS t" +
+//                " WHERE c.type = 'PROGRAMMING'";
+//
+//        List<Object[]> list = doHql(session, hql);
+//        list.forEach(row -> System.out.printf("%-30s - %s%n", row[0], row[1]));
+//
+//        String hql2 = "FROM Course c where c.type ='PROGRAMMING'";
+//        getCourseAndTeacherNamesHQL(session, hql2);
 
 //        getTeacherInfo(session, 10);
 //        showStudents(course);
@@ -68,33 +84,29 @@ public class Main {
         //select name as 'ИМЯ_КУРСА' ,(select name from teachers where id = teacher_id) as 'Имя_Преподавателя'
         //from courses where type='PROGRAMMING'
 
-        transaction.commit();
-        sessionFactory.close();
+//        transaction.commit();
+//        sessionFactory.close();
 
 //        showTeachersViaDBConnection(sqlQuery);
 //        showPurchasesViaDBConnection(sqlQuery2);
     }
 
-    private static void getCourseAndTeacherNamesHQL(Session session, String hql) {
-        try{
-            Query<Course> qry = session.createQuery(hql);
-            List<Course> list = qry.list();
-            for (Course course : list) {
-//                if (course.getType() == CourseType.PROGRAMMING) {
-                    System.out.println(course.getName() + " - " + course.getTeacher().getName());
-//                }
-            }
-        } catch (NullPointerException ex) {
-            ex.printStackTrace();
-        }
-    }
+//    private static void getCourseAndTeacherNamesHQL(Session session, String hql) {
+//        try{
+//            Query<Course> qry = session.createQuery(hql);
+//            List<Course> list = qry.list();
+//            list.forEach(course -> System.out.printf("%-35s - %s%n", course.getName(), course.getTeacher().getName()));
+//        } catch (NullPointerException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+//
+//    private static List<Object[]> doHql(Session session, String hql) {
+//        System.out.printf("---HQL----%n");
+//        Query<Object[]> qry =  session.createQuery(hql);
+//        return qry.getResultList();
+//    }
 
-    private static List<Object[]> doHql(Session session, String hql) {
-        System.out.printf("---HQL----%n");
-
-        Query<Object[]> qry =  session.createQuery(hql);
-        return qry.getResultList();
-    }
 //    private static void showStudents(Course course) {
 //        System.out.printf("%n%s%s%s%d%n","Number of participants at the course ", course.getName(), ": ", course.getStudents().size());
 //        List<Student> studentList = course.getStudents();

@@ -15,7 +15,7 @@ public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subscription_date")
-   private Date subscriptionDate;
+    private Date subscriptionDate;
 
     public String getStudentName() {
         return studentName;
