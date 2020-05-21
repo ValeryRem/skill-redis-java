@@ -21,11 +21,11 @@ public class Main {
         String sqlCreateTable = "CREATE TABLE linkedPurchaseList AS SELECT student_id, course_id FROM subscriptions";
         try (Connection conn =  DBConnection.getConnection(sqlCreateTable)) {
             Statement statement = conn.createStatement();
-            ResultSet resultSet = statement.executeQuery(sqlCreateTable);
+            ResultSet resultSet = statement.executeQuery("select student_id, course_id FROM subscriptions");
             while (resultSet.next()) {
                 Integer studentId = resultSet.getInt("student_id");
                 Integer courseId = resultSet.getInt("course_id");
-                System.out.printf("%s: %d, %s: %d ", "student_id", studentId, "course_id", courseId);
+                System.out.printf("%s: %d, %s: %d%n", "student_id", studentId, "course_id", courseId);
         }
         } catch (SQLException e) {
             e.printStackTrace();
