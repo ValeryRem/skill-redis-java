@@ -18,26 +18,33 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String sqlCreateTable = "CREATE TABLE linkedPurchaseList AS SELECT student_id, course_id FROM subscriptions";
-        try (Connection conn =  DBConnection.getConnection(sqlCreateTable)) {
-            Statement statement = conn.createStatement();
-            ResultSet resultSet = statement.executeQuery("select student_id, course_id FROM subscriptions");
-            while (resultSet.next()) {
-                Integer studentId = resultSet.getInt("student_id");
-                Integer courseId = resultSet.getInt("course_id");
-                System.out.printf("%s: %d, %s: %d%n", "student_id", studentId, "course_id", courseId);
-        }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        String sqlCreateTable = "CREATE TABLE linkedPurchaseList AS SELECT student_id, course_id FROM subscriptions";
+//        try (Connection conn =  DBConnection.getConnection(sqlCreateTable)) {
+//            Statement statement = conn.createStatement();
+//            ResultSet resultSet = statement.executeQuery("select student_id, course_id FROM linkedPurchaseList");
+//            while (resultSet.next()) {
+//                Integer studentId = resultSet.getInt("student_id");
+//                Integer courseId = resultSet.getInt("course_id");
+//                System.out.printf("%s: %d, %s: %d%n", "student_id", studentId, "course_id", courseId);
+//        }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
-//        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-//        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
-//        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
+        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
+        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
 
-
+        String hqlResult = "FROM Subscription s SELECT s.studentId, s.courseId";
+        List<Object[]> list = doHql(session, hqlResult);
+        String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id) VALUES row[0], row[1]";
+        Query<Object[]> qry = session.createQuery(hql);
+        list.forEach(row -> {
+            qry.getSingleResult();
+            System.out.printf("%-30s - %s%n", row[0], row[1]);
+        });
 //        Course course = session.get(Course.class, 35);
         //выбрать кол-во студентов у каждого препод-ля, первые 10
 //        String sqlQuery = "select students_count, (select name from teachers where id = teacher_id) AS 'teachers'" +
@@ -83,10 +90,8 @@ public class Main {
         //Вывести в консоль все курсы по программированию  + их преподавателей: Имя_Курса -  Имя_Преподавателя.
         //select name as 'ИМЯ_КУРСА' ,(select name from teachers where id = teacher_id) as 'Имя_Преподавателя'
         //from courses where type='PROGRAMMING'
-
-//        transaction.commit();
-//        sessionFactory.close();
-
+        transaction.commit();
+        sessionFactory.close();
 //        showTeachersViaDBConnection(sqlQuery);
 //        showPurchasesViaDBConnection(sqlQuery2);
     }
@@ -101,11 +106,11 @@ public class Main {
 //        }
 //    }
 //
-//    private static List<Object[]> doHql(Session session, String hql) {
-//        System.out.printf("---HQL----%n");
-//        Query<Object[]> qry =  session.createQuery(hql);
-//        return qry.getResultList();
-//    }
+    private static List<Object[]> doHql(Session session, String hql) {
+        System.out.printf("---HQL----%n");
+        Query<Object[]> qry =  session.createQuery(hql);
+        return qry.getResultList();
+    }
 
 //    private static void showStudents(Course course) {
 //        System.out.printf("%n%s%s%s%d%n","Number of participants at the course ", course.getName(), ": ", course.getStudents().size());

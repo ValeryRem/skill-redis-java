@@ -1,9 +1,14 @@
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "purchaselist")
 public class Purchase {
+
+    @EmbeddedId
+    private Key key;
 
     @Column(name = "student_name")
     private String studentName;
@@ -12,8 +17,8 @@ public class Purchase {
     private String courseName;
     private int price;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subscription_date")
     private Date subscriptionDate;
 
@@ -47,6 +52,44 @@ public class Purchase {
 
     public void setSubscriptionDate(Date subscriptionDate) {
         this.subscriptionDate = subscriptionDate;
+    }
+
+    @Embeddable
+    public class Key implements Serializable {
+
+        static final long serialVersionUID = 1L;
+        private String studentName;
+        private String courseName;
+        public Key() {
+        }
+
+        public Key(String studentName, String courseName) {
+            this.studentName = studentName;
+            this.courseName = courseName;
+        }
+
+        public String getStudentName() {
+            return studentName;
+        }
+
+        public String getCourseName() {
+            return courseName;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Key)) return false;
+            Key that = (Key) o;
+            return Objects.equals(getStudentName(), that.getStudentName()) &&
+                    Objects.equals(getCourseName(), that.getCourseName());
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(getStudentName(), getCourseName());
+        }
+
     }
 
 //    public int getPurchaseId() {

@@ -94,14 +94,6 @@ public class Course {
         this.pricePerHour = pricePerHour;
     }
 
-//    public int getTeacherId() {
-//        return teacherId;
-//    }
-//
-//    public void setTeacherId(int teacherId) {
-//        this.teacherId = teacherId;
-//    }
-
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "student_id")})
     private List<Student> students;
@@ -111,14 +103,14 @@ public class Course {
     }
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "subscription_date")})
+    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "key")})
     private List<Purchase> purchases;
     public List<Purchase> getPurchases() {
         return purchases;
     }
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "subscription_date")})
+    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "key")})
     private List<Subscription> subscriptions;
     public List<Subscription> getSubscriptions() {
         return subscriptions;
@@ -127,10 +119,10 @@ public class Course {
     public Teacher getTeacher() {
         return teacher;
     }
-
     public Integer getTeacherId() {
         return teacherId;
     }
+
 //    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinTable(name = "courses", joinColumns = {@JoinColumn(name = "name")}, inverseJoinColumns = {@JoinColumn(name = "teacher_id")})
 //    private List<Teacher> teachers;

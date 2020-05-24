@@ -4,13 +4,15 @@ import java.util.Date;
 @Entity
 @Table(name = "Subscriptions")
 public class Subscription {
+    @EmbeddedId
+    private Purchase.Key key;
 
     @Column(name = "student_id")
     private int studentId;
 
     @Column(name = "course_id")
     private int courseId;
-    @Id
+
     @Column(name = "subscription_date")
     private Date subscriptionDate;
 
@@ -37,4 +39,5 @@ public class Subscription {
     public void setSubscriptionDate(Date subscriptionDate) {
         this.subscriptionDate = subscriptionDate;
     }
+
 }
