@@ -39,7 +39,7 @@ public class Main {
 
         String hqlResult = "FROM Subscription s SELECT s.studentId, s.courseId";
         List<Object[]> list = doHql(session, hqlResult);
-        String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id) VALUES row[0], row[1]";
+        String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id) VALUES (row[0], row[1])";
         Query<Object[]> qry = session.createQuery(hql);
         list.forEach(row -> {
             qry.getSingleResult();

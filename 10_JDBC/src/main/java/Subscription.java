@@ -2,7 +2,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Subscriptions")
+@Table(name = "subscriptions")
 public class Subscription {
     @EmbeddedId
     private Purchase.Key key;

@@ -90,6 +90,13 @@ public class Purchase {
             return Objects.hash(getStudentName(), getCourseName());
         }
 
+        public void setStudentName(String studentName) {
+            this.studentName = studentName;
+        }
+
+        public void setCourseName(String courseName) {
+            this.courseName = courseName;
+        }
     }
 
 //    public int getPurchaseId() {

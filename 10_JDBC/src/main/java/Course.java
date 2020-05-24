@@ -14,7 +14,6 @@ public class Course {
     @Column(columnDefinition = "enum")
     private CourseType type;
 
-//    @Column(name = "description")
     private String description;
 
     @Column(name = "teacher_id", insertable = false, updatable = false)
@@ -95,7 +94,7 @@ public class Course {
     }
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "student_id")})
+    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "id")}, inverseJoinColumns = {@JoinColumn(name = "student_id")})
     private List<Student> students;
 
     public List<Student> getStudents() {
@@ -103,14 +102,21 @@ public class Course {
     }
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "key")})
+    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "id")}, inverseJoinColumns = {
+            @JoinColumn(name = "student_id", insertable = false, updatable = false),
+            @JoinColumn(name = "course_id", insertable = false, updatable = false)}
+            )
     private List<Purchase> purchases;
     public List<Purchase> getPurchases() {
         return purchases;
     }
 
+    @MapsId("key")
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "key")})
+    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "id")}, inverseJoinColumns = {
+             @JoinColumn(name = "student_id", insertable = false, updatable = false),
+             @JoinColumn(name = "course_id", insertable = false, updatable = false)}
+            )
     private List<Subscription> subscriptions;
     public List<Subscription> getSubscriptions() {
         return subscriptions;
