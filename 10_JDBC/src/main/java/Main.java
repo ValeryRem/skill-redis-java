@@ -37,14 +37,16 @@ public class Main {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        String hqlResult = "FROM Subscription s SELECT s.getStudentId(), s.getCourseId()";
-        List<Object[]> list = doHql(session, hqlResult);
-        String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id) VALUES (row[0], row[1])";
-        Query<Object[]> qry = session.createQuery(hql);
-        list.forEach(row -> {
-            qry.getSingleResult();
-            System.out.printf("%-30d - %d%n", row[0], row[1]);
-        });
+//        String hqlResult = "FROM Subscription s SELECT s.getStudentId(), s.getCourseId()";
+//        List<Object[]> list = doHql(session, hqlResult);
+//        String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id) VALUES (row[0], row[1])";
+//        Query<Object[]> qry = session.createQuery(hql);
+//        list.forEach(row -> {
+//            qry.getSingleResult();
+//            System.out.printf("%-30d - %d%n", row[0], row[1]);
+//        });
+        System.out.println("Check new LinkedPurchaseList in Skillbox DB");
+
 //        Course course = session.get(Course.class, 35);
         //выбрать кол-во студентов у каждого препод-ля, первые 10
 //        String sqlQuery = "select students_count, (select name from teachers where id = teacher_id) AS 'teachers'" +

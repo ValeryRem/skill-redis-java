@@ -6,9 +6,10 @@ import java.util.Objects;
 @Entity
 @Table(name = "purchaselist")
 public class Purchase {
-    @EmbeddedId
-    @Column(name = "purchase_id")
-    private SubscriptionId id = new SubscriptionId();
+
+    @Id
+    @Column(name = "subscription_date")
+    private Date subscriptionDate;
 
     @Column(name = "student_name")
     private String studentName;
@@ -17,8 +18,7 @@ public class Purchase {
     private String courseName;
     private int price;
 
-    @Column(name = "subscription_date")
-    private Date subscriptionDate;
+
 
     public String getStudentName() {
         return studentName;

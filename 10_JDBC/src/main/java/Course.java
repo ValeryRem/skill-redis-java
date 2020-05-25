@@ -96,27 +96,19 @@ public class Course {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "student_id")})
     private List<Student> students;
-
     public List<Student> getStudents() {
         return students;
     }
 
-    @MapsId("id")
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "purchaselist", joinColumns = {@JoinColumn(name = "course_name")}, inverseJoinColumns =
-            {@JoinColumn(name = "student_name", insertable = false, updatable = false),
-            @JoinColumn(name = "course_name", insertable = false, updatable = false)
-            })
     private List<Purchase> purchases;
     public List<Purchase> getPurchases() {
         return purchases;
     }
 
-    @MapsId("subscription_date")
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {
-            @JoinColumn(name = "student_name", insertable = false, updatable = false),
-            @JoinColumn(name = "course_name", insertable = false, updatable = false)})
+           @JoinColumn(name = "subscription_date", insertable = false, updatable = false)})
     private List<Subscription> subscriptions;
     public List<Subscription> getSubscriptions() {
         return subscriptions;

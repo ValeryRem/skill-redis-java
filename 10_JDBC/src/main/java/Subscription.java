@@ -5,31 +5,29 @@ import java.util.Date;
 @Table(name = "subscriptions")
 public class Subscription {
 
-    @EmbeddedId
-    private SubscriptionId id = new SubscriptionId();
+    @Column(name = "student_id", insertable = false, updatable = false)
+    private Integer studentId;
 
-    @Column(name = "student_id")
-    private int studentId;
+    @Column(name = "course_id", insertable = false, updatable = false)
+    private Integer courseId;
 
-    @Column(name = "course_id")
-    private int courseId;
-
+    @Id
     @Column(name = "subscription_date")
     private Date subscriptionDate;
 
-    public int getStudentId() {
+    public Integer getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
-    }
-
-    public int getCourseId() {
+    public Integer getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
+    }
+
+    public void setCourseId(Integer courseId) {
         this.courseId = courseId;
     }
 
