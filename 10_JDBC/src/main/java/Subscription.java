@@ -4,8 +4,9 @@ import java.util.Date;
 @Entity
 @Table(name = "subscriptions")
 public class Subscription {
+
     @EmbeddedId
-    private Purchase.Key key;
+    private SubscriptionId id = new SubscriptionId();
 
     @Column(name = "student_id")
     private int studentId;

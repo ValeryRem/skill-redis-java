@@ -6,9 +6,9 @@ import java.util.Objects;
 @Entity
 @Table(name = "purchaselist")
 public class Purchase {
-
     @EmbeddedId
-    private Key key;
+    @Column(name = "purchase_id")
+    private SubscriptionId id = new SubscriptionId();
 
     @Column(name = "student_name")
     private String studentName;
@@ -17,8 +17,6 @@ public class Purchase {
     private String courseName;
     private int price;
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subscription_date")
     private Date subscriptionDate;
 
@@ -54,56 +52,50 @@ public class Purchase {
         this.subscriptionDate = subscriptionDate;
     }
 
-    @Embeddable
-    public class Key implements Serializable {
-
-        static final long serialVersionUID = 1L;
-        private String studentName;
-        private String courseName;
-        public Key() {
-        }
-
-        public Key(String studentName, String courseName) {
-            this.studentName = studentName;
-            this.courseName = courseName;
-        }
-
-        public String getStudentName() {
-            return studentName;
-        }
-
-        public String getCourseName() {
-            return courseName;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof Key)) return false;
-            Key that = (Key) o;
-            return Objects.equals(getStudentName(), that.getStudentName()) &&
-                    Objects.equals(getCourseName(), that.getCourseName());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(getStudentName(), getCourseName());
-        }
-
-        public void setStudentName(String studentName) {
-            this.studentName = studentName;
-        }
-
-        public void setCourseName(String courseName) {
-            this.courseName = courseName;
-        }
-    }
-
-//    public int getPurchaseId() {
-//        return purchaseId;
-//    }
+//    @Embeddable
+//    public static class PurchaseID implements Serializable {
+//        Purchase purchase = new Purchase();
+//        static final long serialVersionUID = 1L;
+//        @Column(name = "student_name")
+//        private String studentName = purchase.getStudentName();
+//        @Column(name = "course_name")
+//        private String courseName = purchase.getCourseName();
+//        public PurchaseID() {
+//        }
 //
-//    public void setPurchaseId(int purchaseId) {
-//        this.purchaseId = purchaseId;
+//        public PurchaseID(String studentName, String courseName) {
+//            this.studentName = studentName;
+//            this.courseName = courseName;
+//        }
+//
+//        public String getStudentName() {
+//            return studentName;
+//        }
+//
+//        public String getCourseName() {
+//            return courseName;
+//        }
+//
+//        @Override
+//        public boolean equals(Object o) {
+//            if (this == o) return true;
+//            if (!(o instanceof PurchaseID)) return false;
+//            PurchaseID that = (PurchaseID) o;
+//            return Objects.equals(getStudentName(), that.getStudentName()) &&
+//                    Objects.equals(getCourseName(), that.getCourseName());
+//        }
+//
+//        @Override
+//        public int hashCode() {
+//            return Objects.hash(getStudentName(), getCourseName());
+//        }
+//
+//        public void setStudentName(String studentName) {
+//            this.studentName = studentName;
+//        }
+//
+//        public void setCourseName(String courseName) {
+//            this.courseName = courseName;
+//        }
 //    }
 }

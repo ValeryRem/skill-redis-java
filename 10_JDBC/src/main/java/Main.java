@@ -37,13 +37,13 @@ public class Main {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        String hqlResult = "FROM Subscription s SELECT s.studentId, s.courseId";
+        String hqlResult = "FROM Subscription s SELECT s.getStudentId(), s.getCourseId()";
         List<Object[]> list = doHql(session, hqlResult);
         String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id) VALUES (row[0], row[1])";
         Query<Object[]> qry = session.createQuery(hql);
         list.forEach(row -> {
             qry.getSingleResult();
-            System.out.printf("%-30s - %s%n", row[0], row[1]);
+            System.out.printf("%-30d - %d%n", row[0], row[1]);
         });
 //        Course course = session.get(Course.class, 35);
         //выбрать кол-во студентов у каждого препод-ля, первые 10

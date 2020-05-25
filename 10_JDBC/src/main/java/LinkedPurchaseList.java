@@ -1,12 +1,10 @@
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Objects;
 
 @Entity
 @Table(name = "linkedPurchaseList")
 public class LinkedPurchaseList {
     @EmbeddedId
-    private Purchase.Key key;
+    private SubscriptionId id = new SubscriptionId();
 
     @Column(name = "student_id")
     private Integer studentId;
@@ -21,6 +19,4 @@ public class LinkedPurchaseList {
     public Integer getCourseId() {
         return courseId;
     }
-
-
 }
