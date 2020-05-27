@@ -20,19 +20,20 @@ public class SubscriptionId implements Serializable {
         this.student = student;
         this.course = course;
     }
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof SubscriptionId)) return false;
-            SubscriptionId that = (SubscriptionId) o;
-            return Objects.equals(getStudent(), that.getStudent()) &&
-                    Objects.equals(getCourse(), that.getCourse());
-        }
 
-        @Override
-        public int hashCode() {
-            return Objects.hash(getStudent(), getCourse());
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SubscriptionId)) return false;
+        SubscriptionId that = (SubscriptionId) o;
+        return Objects.equals(getStudent(), that.getStudent()) &&
+                Objects.equals(getCourse(), that.getCourse());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getStudent(), getCourse());
+    }
 
     public Student getStudent() {
         return student;

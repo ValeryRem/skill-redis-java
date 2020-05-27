@@ -4,31 +4,38 @@ import java.util.Date;
 @Entity
 @Table(name = "subscriptions")
 public class Subscription {
-
-    @Column(name = "student_id", insertable = false, updatable = false)
-    private Integer studentId;
-
-    @Column(name = "course_id", insertable = false, updatable = false)
-    private Integer courseId;
-
     @Id
     @Column(name = "subscription_date")
     private Date subscriptionDate;
 
+//    @Column(name = "student_id", insertable = false, updatable = false)
+//    private Integer studentId;
+//
+//    @Column(name = "course_id", insertable = false, updatable = false)
+//    private Integer courseId;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_id")
+    private Student student;
+
     public Integer getStudentId() {
-        return studentId;
+        return student.getId();
     }
 
     public Integer getCourseId() {
-        return courseId;
+        return course.getId();
     }
 
     public void setStudentId(Integer studentId) {
-        this.studentId = studentId;
+        student.setId(studentId);
     }
 
     public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
+        course.setId(courseId);
     }
 
     public Date getSubscriptionDate() {
@@ -39,4 +46,11 @@ public class Subscription {
         this.subscriptionDate = subscriptionDate;
     }
 
+    public Course getCourse() {
+        return course;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
 }

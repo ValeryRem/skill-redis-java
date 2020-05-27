@@ -26,8 +26,8 @@ public class Course {
     @Column(name = "price_per_hour", nullable = true)
     private Float pricePerHour;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Teacher teacher;
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Teacher teacher;
 
     public int getId() {
         return id;
@@ -93,33 +93,33 @@ public class Course {
         this.pricePerHour = pricePerHour;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "student_id")})
-    private List<Student> students;
-    public List<Student> getStudents() {
-        return students;
-    }
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {@JoinColumn(name = "student_id")})
+//    private List<Student> students;
+//    public List<Student> getStudents() {
+//        return students;
+//    }
+//
+//    @OneToMany(cascade = CascadeType.ALL)
+//    private List<Purchase> purchases;
+//    public List<Purchase> getPurchases() {
+//        return purchases;
+//    }
+//
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {
+//           @JoinColumn(name = "subscription_date", insertable = false, updatable = false)})
+//    private List<Subscription> subscriptions;
+//    public List<Subscription> getSubscriptions() {
+//        return subscriptions;
+//    }
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Purchase> purchases;
-    public List<Purchase> getPurchases() {
-        return purchases;
-    }
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "subscriptions", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {
-           @JoinColumn(name = "subscription_date", insertable = false, updatable = false)})
-    private List<Subscription> subscriptions;
-    public List<Subscription> getSubscriptions() {
-        return subscriptions;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-    public Integer getTeacherId() {
-        return teacherId;
-    }
+//    public Teacher getTeacher() {
+//        return teacher;
+//    }
+//    public Integer getTeacherId() {
+//        return teacherId;
+//    }
 
 //    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinTable(name = "courses", joinColumns = {@JoinColumn(name = "name")}, inverseJoinColumns = {@JoinColumn(name = "teacher_id")})

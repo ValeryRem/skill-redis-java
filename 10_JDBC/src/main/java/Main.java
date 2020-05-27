@@ -18,7 +18,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        String sqlCreateTable = "CREATE TABLE linkedPurchaseList AS SELECT student_id, course_id FROM subscriptions";
 //        try (Connection conn =  DBConnection.getConnection(sqlCreateTable)) {
 //            Statement statement = conn.createStatement();
 //            ResultSet resultSet = statement.executeQuery("select student_id, course_id FROM linkedPurchaseList");
@@ -36,16 +35,17 @@ public class Main {
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-
-//        String hqlResult = "FROM Subscription s SELECT s.getStudentId(), s.getCourseId()";
-//        List<Object[]> list = doHql(session, hqlResult);
-//        String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id) VALUES (row[0], row[1])";
-//        Query<Object[]> qry = session.createQuery(hql);
-//        list.forEach(row -> {
-//            qry.getSingleResult();
-//            System.out.printf("%-30d - %d%n", row[0], row[1]);
-//        });
         System.out.println("Check new LinkedPurchaseList in Skillbox DB");
+
+        String hqlResult = "FROM Subscription s inner join fetch s.getStudentId(), inner join fetch s.getCourseId()";
+        List<Object[]> list = doHql(session, hqlResult);
+        String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id) VALUES (row[0], row[1])";
+        Query<Object[]> qry = session.createQuery(hql);
+        list.forEach(row -> {
+            qry.executeUpdate(); //getSingleResult();
+            System.out.printf("%-30d - %d%n", row[0], row[1]);
+        });
+
 
 //        Course course = session.get(Course.class, 35);
         //выбрать кол-во студентов у каждого препод-ля, первые 10
