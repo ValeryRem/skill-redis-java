@@ -7,7 +7,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "student_id")
-    private int studentId;
+    private Integer studentId;
 
     private String name;
     private int age;
@@ -15,7 +15,7 @@ public class Student {
     @Column(name = "registration_date")
     private Date registrationDate;
 
-    public int getId() {
+    public Integer getId() {
         return studentId;
     }
 

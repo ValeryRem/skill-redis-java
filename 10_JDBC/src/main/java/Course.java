@@ -8,7 +8,7 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private int duration;
+    private Integer duration;
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "enum")
@@ -29,7 +29,7 @@ public class Course {
 //    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    private Teacher teacher;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -45,7 +45,7 @@ public class Course {
         this.name = name;
     }
 
-    public int getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 

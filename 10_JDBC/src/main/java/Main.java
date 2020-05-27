@@ -37,15 +37,26 @@ public class Main {
         Transaction transaction = session.beginTransaction();
         System.out.println("Check new LinkedPurchaseList in Skillbox DB");
 
-        String hqlResult = "FROM Subscription s inner join fetch s.getStudentId(), inner join fetch s.getCourseId()";
-        List<Object[]> list = doHql(session, hqlResult);
-        String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id) VALUES (row[0], row[1])";
-        Query<Object[]> qry = session.createQuery(hql);
-        list.forEach(row -> {
-            qry.executeUpdate(); //getSingleResult();
-            System.out.printf("%-30d - %d%n", row[0], row[1]);
+        String hqlResult = "FROM Subscription";
+        List<Subscription> list = session.createQuery(hqlResult).getResultList();
+        list.forEach(existingSub -> {
+            LinkedPurchaseList newObject = new LinkedPurchaseList();
+            newObject.setSubscriptionDate(existingSub.getSubscriptionDate());
+            newObject.setId(new SubscriptionId(existingSub.getStudent(), existingSub.getCourse()));
+            session.persist(newObject);
         });
-
+//        for (Subscription existingSub : list) {
+//            LinkedPurchaseList newObject = new LinkedPurchaseList();
+//            newObject.setSubscriptionDate(existingSub.getSubscriptionDate());
+//            newObject.setId(new SubscriptionId(existingSub.getStudent(), existingSub.getCourse()));
+//            session.persist(newObject);
+//        }
+//        String hql = "INSERT INTO LinkedPurchaseList (student_id, course_id, subscription_date) VALUES (row[0], row[1], row[2])";
+//        Query<Object[]> qry = session.createQuery(hql);
+//        list.forEach(row -> {
+//            qry.getSingleResult();
+//            System.out.printf("%s - %s - %s%n", row[0], row[1], row[2]);
+//        });
 
 //        Course course = session.get(Course.class, 35);
         //выбрать кол-во студентов у каждого препод-ля, первые 10
@@ -108,11 +119,12 @@ public class Main {
 //        }
 //    }
 //
-    private static List<Object[]> doHql(Session session, String hql) {
-        System.out.printf("---HQL----%n");
-        Query<Object[]> qry =  session.createQuery(hql);
-        return qry.getResultList();
-    }
+
+//    private static List<Object[]> doHql(Session session, String hql) {
+//        System.out.printf("---HQL----%n");
+//        Query<Object[]> qry =  session.createQuery(hql);
+//        return qry.list();
+//    }
 
 //    private static void showStudents(Course course) {
 //        System.out.printf("%n%s%s%s%d%n","Number of participants at the course ", course.getName(), ": ", course.getStudents().size());
