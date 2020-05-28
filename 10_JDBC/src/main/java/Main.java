@@ -35,14 +35,14 @@ public class Main {
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        System.out.println("Check new LinkedPurchaseList in Skillbox DB");
+        System.out.println("\nLinkedPurchaseList is set up in DB\n");
 
-        String hqlResult = "FROM Subscription";
+        String hqlResult = "FROM Subscription s join fetch s.student join fetch s.course";
         List<Subscription> list = session.createQuery(hqlResult).getResultList();
-        list.forEach(existingSub -> {
+        list.forEach(row -> {
             LinkedPurchaseList newObject = new LinkedPurchaseList();
-            newObject.setSubscriptionDate(existingSub.getSubscriptionDate());
-            newObject.setId(new SubscriptionId(existingSub.getStudent(), existingSub.getCourse()));
+            newObject.setSubscriptionDate(row.getSubscriptionDate());
+            newObject.setId(new SubscriptionId(row.getStudent(), row.getCourse()));
             session.persist(newObject);
         });
 //        for (Subscription existingSub : list) {
@@ -108,7 +108,6 @@ public class Main {
 //        showTeachersViaDBConnection(sqlQuery);
 //        showPurchasesViaDBConnection(sqlQuery2);
     }
-
 //    private static void getCourseAndTeacherNamesHQL(Session session, String hql) {
 //        try{
 //            Query<Course> qry = session.createQuery(hql);
