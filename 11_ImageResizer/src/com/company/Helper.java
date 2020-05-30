@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-public class ImageResizer implements Runnable{
+public class Helper implements Runnable{
 
     private File[] files;
     private int newWidth;
@@ -13,7 +13,7 @@ public class ImageResizer implements Runnable{
     private String dstFolder;
     private long start;
 
-    public ImageResizer(File[] files, int newWidth, int newHeight, String dstFolder, long start) {
+    public Helper(File[] files, int newWidth, int newHeight, String dstFolder, long start) {
         this.files = files;
         this.newWidth = newWidth;
         this.newHeight = newHeight;
