@@ -10,7 +10,6 @@ public class ImageResizer implements Runnable{
     private File[] files;
     private int newWidth;
     private int newHeight;
-    private String srcFolder;
     private String dstFolder;
     private long start;
 
@@ -56,6 +55,7 @@ public class ImageResizer implements Runnable{
 //        graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
         graphics2D.drawImage(image, 0, 0, width, height, null);
         graphics2D.dispose();
-        return bufferedImage;
+        return
+                bufferedImage;
     }
 }
