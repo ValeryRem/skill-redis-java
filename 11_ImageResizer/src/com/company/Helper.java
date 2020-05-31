@@ -23,7 +23,7 @@ public class Helper implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("Total No of Files under resize:" + files.length);
+        System.out.println("Total No of Files under resize: " + files.length);
         Image img = null;
         BufferedImage tempJPG = null;
         File newFileJPG = null;

@@ -34,21 +34,14 @@ public class ImageResizer {
         System.arraycopy(files, 0, files1, 0, files1.length);
         Helper resizer1 = new Helper(files1, newWidth, newHeight, dstFolder, start);
         Thread thread1 = new Thread(resizer1);
-        thread1.start();
+        thread1.run();
 
         File[] files2 = new File[files.length - middle];
         System.arraycopy(files, middle, files2, 0, files2.length);
         Helper resizer2 = new Helper(files2, newWidth, newHeight, dstFolder, start);
         Thread thread2 = new Thread(resizer2);
-        thread2.start();
-
-        try {
-            sleep(8000);
-            Instant end = Instant.now();
-            System.out.println("Duration of code running: " + Duration.between(begin, end));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        thread2.run();
+        Instant end = Instant.now();
+        System.out.println("Duration of code running: " + Duration.between(begin, end));
     }
 }
