@@ -6,33 +6,41 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
 
 public class ImageResizer {
-    private static int newWidth = 400;
-    private static int delaySec = 2;
+    private static int maxSize = 400;
+//    private static int delaySec = 2;
     private static String srcFolder = "C:/Users/valery/Desktop/java_basics/11_ImageResizer/src/resources";
     private static String dstFolder = "C:/Users/valery/Desktop/java_basics/11_ImageResizer/src/resized";
 
-
     public static void main(String[] args) throws IOException {
-
-//        Instant begin = Instant.now();
+        Instant begin = Instant.now();
         File srsDir = new File(srcFolder);
-        long start = System.currentTimeMillis();
+//        long start = System.currentTimeMillis();
         File[] files = srsDir.listFiles();
+        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
 
         if (files == null) {
             System.out.println("Directory of images is empty!");
             return;
         }
-        ScheduledThreadPoolExecutor executor = (ScheduledThreadPoolExecutor) Executors.newScheduledThreadPool(2);
-        Helper resizer = new Helper(files, newWidth, delaySec, dstFolder, start);
-        executor.scheduleWithFixedDelay(resizer, delaySec, delaySec, TimeUnit.SECONDS);
-        executor.execute(resizer);
-        executor.shutdown();
+        for (int i = 0; i < files.length; i++) {
+            if (files[i].isFile()) {
+                System.out.println(Thread.currentThread().getName() + ": обрабатываю файл: "+ files[i].getName());
+                Helper resizer = new Helper(dstFolder, files[i], maxSize);
+//        executor.scheduleWithFixedDelay(resizer, delaySec, delaySec, TimeUnit.SECONDS);
+                executor.execute(resizer);
+                executor.shutdown();
+            }
+        }
+        if (executor.isShutdown()) {
+            Instant end = Instant.now();
+            System.out.println("Duration of code running: " + Duration.between(begin, end));
+        }
     }
 //        int middle = files.length / 2;
 //        File[] files1 = new File[middle];
@@ -50,6 +58,4 @@ public class ImageResizer {
 //        Helper resizer2 = new Helper(files2, newWidth, newHeight, dstFolder, start);
 //        Thread thread2 = new Thread(resizer2, "t2");
 //        thread2.start();
-//        Instant end = Instant.now();
-//        System.out.println("Duration of code running: " + Duration.between(begin, end));
 }
