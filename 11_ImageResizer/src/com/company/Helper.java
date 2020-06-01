@@ -52,7 +52,7 @@ public class Helper implements Runnable {
 //        System.out.println("Duration of thread " + Thread.currentThread().getName() + ": " + (System.currentTimeMillis() - start) + " ms.");
     }
 
-    public BufferedImage resizeImage(final Image image, int width, int height) {
+    public synchronized BufferedImage resizeImage(final Image image, int width, int height) {
         final BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         final Graphics2D graphics2D = bufferedImage.createGraphics();
         graphics2D.setComposite(AlphaComposite.Src);

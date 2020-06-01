@@ -34,9 +34,9 @@ public class ImageResizer {
                 Helper resizer = new Helper(dstFolder, files[i], maxSize);
 //        executor.scheduleWithFixedDelay(resizer, delaySec, delaySec, TimeUnit.SECONDS);
                 executor.execute(resizer);
-                executor.shutdown();
             }
         }
+        executor.shutdown();
         if (executor.isShutdown()) {
             Instant end = Instant.now();
             System.out.println("Duration of code running: " + Duration.between(begin, end));
