@@ -9,10 +9,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Helper implements Runnable {
-
-    //    private File[] files;
     private int maxSize;
-    //    private int delaySec;
     private String dstFolder;
     private File file;
     private Image image;
@@ -27,7 +24,6 @@ public class Helper implements Runnable {
 
     @Override
     public void run() {
-//        System.out.println("Total No of Files under resize: " + files.length);
         image = null;
         BufferedImage tempJPG = null;
         File newFileJPG = null;
@@ -39,6 +35,7 @@ public class Helper implements Runnable {
 //                    System.out.println("File " + files[i].getName());
 //                    img = ImageIO.read(files[i]);
 //                    imageRatio = (double) img.getWidth(null)/(double) img.getHeight(null);
+            System.out.println(Thread.currentThread().getName() + ": обрабатываю файл: "+ file.getName());
             setNewBounds(file, maxSize);
             tempJPG = resizeImage(image, newWidth, newHeight);
             newFileJPG = new File(dstFolder + "/" + file.getName() + "_New.jpg");

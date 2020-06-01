@@ -13,7 +13,6 @@ import static java.lang.Thread.sleep;
 
 public class ImageResizer {
     private static int maxSize = 400;
-//    private static int delaySec = 2;
     private static String srcFolder = "C:/Users/valery/Desktop/java_basics/11_ImageResizer/src/resources";
     private static String dstFolder = "C:/Users/valery/Desktop/java_basics/11_ImageResizer/src/resized";
 
@@ -30,9 +29,7 @@ public class ImageResizer {
         }
         for (int i = 0; i < files.length; i++) {
             if (files[i].isFile()) {
-                System.out.println(Thread.currentThread().getName() + ": обрабатываю файл: "+ files[i].getName());
                 Helper resizer = new Helper(dstFolder, files[i], maxSize);
-//        executor.scheduleWithFixedDelay(resizer, delaySec, delaySec, TimeUnit.SECONDS);
                 executor.execute(resizer);
             }
         }
