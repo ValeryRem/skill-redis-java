@@ -36,7 +36,7 @@ public class Helper implements Runnable {
 //                    System.out.println("File " + files[i].getName());
 //                    img = ImageIO.read(files[i]);
 //                    imageRatio = (double) img.getWidth(null)/(double) img.getHeight(null);
-            System.out.println(Thread.currentThread().getName() + ": обрабатываю файл: "+ file.getName());
+            System.out.println(Thread.currentThread().getName() + ": обрабатываю файл: " + file.getName());
             setNewBounds(file, maxSize);
             tempJPG = resizeImage(image, newWidth, newHeight);
             newFileJPG = new File(dstFolder + "/" + file.getName() + "_New.jpg");

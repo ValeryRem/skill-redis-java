@@ -33,9 +33,11 @@ public class ImageResizer {
                 executor.execute(resizer);
             }
         }
-        executor.shutdown();
+
         try {
-            Thread.sleep(5000);
+            executor.awaitTermination(5, TimeUnit.SECONDS);
+            executor.shutdown();
+//            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
