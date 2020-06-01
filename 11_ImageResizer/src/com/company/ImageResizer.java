@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import static java.lang.Thread.sleep;
 
 public class ImageResizer {
-    private static int maxSize = 400;
+    private final static int maxSize = 400;
     private static String srcFolder = "C:/Users/valery/Desktop/java_basics/11_ImageResizer/src/resources";
     private static String dstFolder = "C:/Users/valery/Desktop/java_basics/11_ImageResizer/src/resized";
 
@@ -34,9 +34,14 @@ public class ImageResizer {
             }
         }
         executor.shutdown();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         if (executor.isShutdown()) {
             Instant end = Instant.now();
-            System.out.println("Duration of code running: " + Duration.between(begin, end));
+                    System.out.println("Duration of code running: " + Duration.between(begin, end));
         }
     }
 //        int middle = files.length / 2;

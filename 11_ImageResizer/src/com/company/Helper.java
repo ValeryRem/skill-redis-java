@@ -6,6 +6,7 @@ import java.awt.geom.Path2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 
 public class Helper implements Runnable {
@@ -40,9 +41,6 @@ public class Helper implements Runnable {
             tempJPG = resizeImage(image, newWidth, newHeight);
             newFileJPG = new File(dstFolder + "/" + file.getName() + "_New.jpg");
             ImageIO.write(tempJPG, "jpg", newFileJPG);
-//                }
-//            }
-//            System.out.println("DONE");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
