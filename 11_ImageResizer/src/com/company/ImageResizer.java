@@ -35,7 +35,7 @@ public class ImageResizer {
         }
 
         try {
-            executor.awaitTermination(5, TimeUnit.SECONDS);
+            executor.awaitTermination(10, TimeUnit.SECONDS);
             executor.shutdown();
 //            Thread.sleep(5000);
         } catch (InterruptedException e) {
