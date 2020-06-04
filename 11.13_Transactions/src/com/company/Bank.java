@@ -1,33 +1,34 @@
+package com.company;
 import java.util.*;
 
-public class Bank implements Runnable
-{
-    private final HashMap<Integer, Account> accounts;
+public class Bank extends Thread {
+    private final static HashMap<Integer, Account> accounts = new HashMap<>();
     private final static long sumToCheck = 50000;
     private final Integer fromAccountNum;
     private final Integer toAccountNum;
     private final long amount;
+    private final static int numberOfAccounts = 1000;
+    private long totaBalanceBefore = getTotalBalance();
 
 
-    public Bank(HashMap<Integer, Account> accounts, Integer fromAccountNum, Integer toAccountNum, long amount) {
+    public Bank(Integer fromAccountNum, Integer toAccountNum, long amount) {
         this.fromAccountNum = fromAccountNum;
         this.toAccountNum = toAccountNum;
         this.amount = amount;
-        this.accounts = accounts;
     }
 
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + ": ");
         try {
-            transfer(accounts, fromAccountNum, toAccountNum, amount);
+            transfer(fromAccountNum, toAccountNum, amount);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     public synchronized boolean isFraud(Integer fromAccountNum, Integer toAccountNum, long amount)
-        throws InterruptedException {
+            throws InterruptedException {
         boolean result = false;
         if(amount >= sumToCheck) {
             double indx = Math.random();
@@ -45,7 +46,7 @@ public class Bank implements Runnable
      * метод isFraud. Если возвращается true, то делается блокировка
      * счетов (как – на ваше усмотрение)
      */
-    public synchronized void transfer(HashMap<Integer, Account> accounts, Integer fromAccountNum, Integer toAccountNum, long amount)
+    public synchronized void transfer(Integer fromAccountNum, Integer toAccountNum, long amount)
             throws InterruptedException {
         Account account1 = accounts.get(fromAccountNum);
         Account account2 = accounts.get(toAccountNum);
@@ -53,7 +54,7 @@ public class Bank implements Runnable
             if (isFraud(fromAccountNum, toAccountNum, amount)) {
                 account1.setOpen(false);
                 account2.setOpen(false);
-                wait(3000);
+                Thread.sleep(2000);
                 System.out.println("Accounts ## " + account1.getAccNumber() + " & " + account2.getAccNumber() + " suspended for fraud-check!");
                 account1.setOpen(true);
                 account2.setOpen(true);
@@ -75,13 +76,25 @@ public class Bank implements Runnable
         }
     }
 
-    /**
-     * TODO: реализовать метод. Возвращает остаток на счёте.
-     */
-//    public  long getBalance(HashMap<String, Account> accounts, String accountNum)
-//    {
-//        return accounts.get(accountNum).getBalance();
-//    }
-//
-//
+    public static synchronized void getHashMapOfAccounts() {
+
+        for (int i = 1; i <= numberOfAccounts; i++){
+            Integer accNumber = i;
+            Account account = new Account (accNumber, (long) (100000*Math.random()),  true);
+            accounts.put(accNumber, account);
+        }
+    }
+
+    public static long getTotalBalance () {
+        Collection<Account> set = accounts.values();
+        long result = 0;
+        for (Account account : set) {
+            result += account.getBalance();
+        }
+        return result;
+    }
+
+    public static HashMap<Integer, Account> getAccounts() {
+        return accounts;
+    }
 }
