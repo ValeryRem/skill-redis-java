@@ -1,8 +1,11 @@
-package com.company;
+package main.java;
+
+import main.java.Account;
+
 import java.util.*;
 
 public class Bank extends Thread {
-    private final static HashMap<Integer, Account> accounts = new HashMap<>();
+    private final static HashMap<Integer, Account> accounts = new HashMap();
     private final static long sumToCheck = 50000;
     private final Integer fromAccountNum;
     private final Integer toAccountNum;
@@ -65,9 +68,9 @@ public class Bank extends Thread {
                 if (account2.isOpen()) {
                     account2.setBalance(account2.getBalance() + amount);
                 }
-                System.out.println("Transfer of " + amount + " RUR from Account #" + account1.getAccNumber() + " to Account #" + account2.getAccNumber() +
-                        " fulfilled successfully. \nNew balances: Account #" + account1.getAccNumber() + ": " + account1.getBalance() + " RUR; " +
-                        "Account #" + account2.getAccNumber() + ": " + account2.getBalance() + " RUR.\n");
+                System.out.println("Transfer of " + amount + " RUR from main.java.Account #" + account1.getAccNumber() + " to main.java.Account #" + account2.getAccNumber() +
+                        " fulfilled successfully. \nNew balances: main.java.Account #" + account1.getAccNumber() + ": " + account1.getBalance() + " RUR; " +
+                        "main.java.Account #" + account2.getAccNumber() + ": " + account2.getBalance() + " RUR.\n");
             } else {
                 System.out.println("Transfer impossible. Too few money at account # " + account1.getAccNumber() + ".\n");
             }

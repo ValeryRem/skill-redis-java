@@ -9,8 +9,5 @@
         <module name="11.13_Transactions" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="11.13_Transactions" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

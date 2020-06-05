@@ -1,4 +1,5 @@
-package com.company;
+package main.java;
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
