@@ -10,16 +10,15 @@ public class Bank extends Thread {
     private final Integer fromAccountNum;
     private final Integer toAccountNum;
     private final long amount;
-    private final static int numberOfAccounts = 1000;
+    private static String output;
+//    private final static int numberOfAccounts;
     private long totaBalanceBefore = getTotalBalance();
-
 
     public Bank(Integer fromAccountNum, Integer toAccountNum, long amount) {
         this.fromAccountNum = fromAccountNum;
         this.toAccountNum = toAccountNum;
         this.amount = amount;
     }
-
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + ": ");
@@ -30,7 +29,7 @@ public class Bank extends Thread {
         }
     }
 
-    public synchronized boolean isFraud(Integer fromAccountNum, Integer toAccountNum, long amount)
+    public static synchronized boolean isFraud(Integer fromAccountNum, Integer toAccountNum, long amount)
             throws InterruptedException {
         boolean result = false;
         if(amount >= sumToCheck) {
@@ -49,7 +48,7 @@ public class Bank extends Thread {
      * метод isFraud. Если возвращается true, то делается блокировка
      * счетов (как – на ваше усмотрение)
      */
-    public synchronized void transfer(Integer fromAccountNum, Integer toAccountNum, long amount)
+    public static synchronized void transfer(Integer fromAccountNum, Integer toAccountNum, long amount)
             throws InterruptedException {
         Account account1 = accounts.get(fromAccountNum);
         Account account2 = accounts.get(toAccountNum);
@@ -75,12 +74,12 @@ public class Bank extends Thread {
                 System.out.println("Transfer impossible. Too few money at account # " + account1.getAccNumber() + ".\n");
             }
         } else {
-            System.out.println("Recursive transfer is impossible.");
+            output = "Recursive transfer is impossible!";
+            System.out.println(output);
         }
     }
 
-    public static synchronized void getHashMapOfAccounts() {
-
+    public static synchronized void getHashMapOfAccounts(int numberOfAccounts) {
         for (int i = 1; i <= numberOfAccounts; i++){
             Integer accNumber = i;
             Account account = new Account (accNumber, (long) (100000*Math.random()),  true);
@@ -99,5 +98,9 @@ public class Bank extends Thread {
 
     public static HashMap<Integer, Account> getAccounts() {
         return accounts;
+    }
+
+    public static String getOutput() {
+        return output;
     }
 }

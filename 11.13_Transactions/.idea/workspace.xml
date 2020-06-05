@@ -72,6 +72,8 @@
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/out/production/._Deadlock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Friend.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Loader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TransferTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/TransferTest.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ListExp/.idea/.gitignore" afterDir="false" />
@@ -80,6 +82,11 @@
       <change afterPath="$PROJECT_DIR$/../java_basics.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/java/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/java/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Bank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImagerResizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImageResizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../log4j2.xml" beforeDir="false" />
     </list>
@@ -115,6 +122,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -122,7 +130,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TransferTest.testRecursiveTransfer">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.Main" />
       <module name="11.13_Transactions" />
@@ -132,6 +140,26 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransferTest.testBalanceOfTransfers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="11.13_Transactions" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransferTest" />
+      <option name="METHOD_NAME" value="testBalanceOfTransfers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransferTest.testRecursiveTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="11.13_Transactions" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransferTest" />
+      <option name="METHOD_NAME" value="testRecursiveTransfer" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -185,6 +213,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TransferTest.testRecursiveTransfer" />
+        <item itemvalue="JUnit.TransferTest.testBalanceOfTransfers" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -207,45 +237,73 @@
       <option name="project" value="LOCAL" />
       <updated>1591380371389</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Compiler if IDEA tuned to 8.">
+      <created>1591381882762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591381882762</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project reloaded with Maven." />
-    <option name="LAST_COMMIT_MESSAGE" value="Project reloaded with Maven." />
+    <MESSAGE value="Compiler if IDEA tuned to 8." />
+    <option name="LAST_COMMIT_MESSAGE" value="Compiler if IDEA tuned to 8." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="172" y="0" key="CommitChangelistDialog2" timestamp="1591380368330">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1591396023194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="172" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591380368329" />
-    <state width="1309" height="507" key="GridCell.Tab.0.bottom" timestamp="1591381644361">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1591396023194" />
+    <state x="172" y="0" key="CommitChangelistDialog2" timestamp="1591381879524">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591381644361" />
-    <state width="1309" height="507" key="GridCell.Tab.0.center" timestamp="1591381644361">
+    <state x="172" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591381879524" />
+    <state width="1309" height="507" key="GridCell.Tab.0.bottom" timestamp="1591395194885">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591381644361" />
-    <state width="1309" height="507" key="GridCell.Tab.0.left" timestamp="1591381644361">
+    <state width="1309" height="507" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591395194885" />
+    <state width="1309" height="507" key="GridCell.Tab.0.center" timestamp="1591395194885">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591381644361" />
-    <state width="1309" height="507" key="GridCell.Tab.0.right" timestamp="1591381644361">
+    <state width="1309" height="507" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591395194885" />
+    <state width="1309" height="507" key="GridCell.Tab.0.left" timestamp="1591395194885">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591381644361" />
+    <state width="1309" height="507" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591395194885" />
+    <state width="1309" height="507" key="GridCell.Tab.0.right" timestamp="1591395194885">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1309" height="507" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591395194885" />
+    <state x="96" y="0" key="Maven.ArtifactSearchDialog" timestamp="1591390196587">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="96" y="0" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1591390196587" />
     <state x="34" y="0" key="SettingsEditor" timestamp="1591381813198">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591381813198" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1591380393306">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1591381893310">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591380393306" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591381893310" />
     <state x="453" y="125" key="chooseDestDirectoryDialog" timestamp="1591378786038">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="453" y="125" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1591378786038" />
+    <state x="398" y="141" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591391243271">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="398" y="141" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1591391243271" />
+    <state x="346" y="54" key="extract.method.dialog" timestamp="1591391315644">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="54" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1591391315644" />
+    <state x="255" y="159" key="run.anything.popup" timestamp="1591395795278">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="255" y="159" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1591395795278" />
   </component>
 </project>

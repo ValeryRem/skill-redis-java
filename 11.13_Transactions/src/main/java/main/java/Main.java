@@ -6,9 +6,15 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class Main {
 
     public static void main(String[] args) {
+        transferAll();
+    }
+
+    private static void transferAll() {
         int numberOfTransfers = 100;
+        int numberOfAccounts = 1000;
+
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
-        Bank.getHashMapOfAccounts();
+        Bank.getHashMapOfAccounts(numberOfAccounts);
         System.out.println("Total balance before transfers: " + Bank.getTotalBalance() + " RUR.");
         for (int i = 0; i < numberOfTransfers; i++) {
             Integer fromAccountNum = (int) (Math.random()*1000 + 1);
