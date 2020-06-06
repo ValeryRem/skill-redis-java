@@ -35,6 +35,11 @@ public class TransferTest {
         }
         long finBalance = bank.getTotalBalance(accounts);
         assertEquals(initBalance, finBalance, DELTA);
+        if (initBalance == finBalance) {
+            System.out.println("Test of balance of transfers = OK");
+        } else {
+            System.out.println("Test of balance of transfers = collapsed!");
+        }
     }
 
     @Test

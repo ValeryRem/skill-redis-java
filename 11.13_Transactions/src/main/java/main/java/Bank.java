@@ -41,7 +41,7 @@ public class Bank extends Thread {
      * метод isFraud. Если возвращается true, то делается блокировка
      * счетов (как – на ваше усмотрение)
      */
-    public synchronized void transfer(Integer fromAccountNum, Integer toAccountNum, long amount)
+    public void transfer(Integer fromAccountNum, Integer toAccountNum, long amount)
             throws InterruptedException {
         System.out.printf("%s: start sending %d -> %d: %d RUB%n",
                 Thread.currentThread().getName(), fromAccountNum, toAccountNum, amount);
@@ -58,13 +58,17 @@ public class Bank extends Thread {
                 System.out.println("Accounts ## " + account1.getAccNumber() + " & " + account2.getAccNumber() + " passed fraud-check OK.");
             }
             if (account1.isOpen() && account1.getBalance() > amount) {
-                account1.setBalance(account1.getBalance() - amount);
-                if (account2.isOpen()) {
-                    account2.setBalance(account2.getBalance() + amount);
+                synchronized (account1) {
+                    account1.setBalance(account1.getBalance() - amount);
+                    if (account2.isOpen()) {
+                        synchronized (account2) {
+                            account2.setBalance(account2.getBalance() + amount);
+                        }
+                    }
+                    System.out.println("Transfer of " + amount + " RUR from main.java.Account #" + account1.getAccNumber() + " to main.java.Account #" + account2.getAccNumber() +
+                            " fulfilled successfully. \nNew balances: main.java.Account #" + account1.getAccNumber() + ": " + account1.getBalance() + " RUR; " +
+                            "main.java.Account #" + account2.getAccNumber() + ": " + account2.getBalance() + " RUR.\n");
                 }
-                System.out.println("Transfer of " + amount + " RUR from main.java.Account #" + account1.getAccNumber() + " to main.java.Account #" + account2.getAccNumber() +
-                        " fulfilled successfully. \nNew balances: main.java.Account #" + account1.getAccNumber() + ": " + account1.getBalance() + " RUR; " +
-                        "main.java.Account #" + account2.getAccNumber() + ": " + account2.getBalance() + " RUR.\n");
             } else {
                 System.out.println("Transfer impossible. Too few money at account # " + account1.getAccNumber() + ".\n");
             }
