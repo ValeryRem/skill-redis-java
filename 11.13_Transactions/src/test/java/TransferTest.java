@@ -9,21 +9,21 @@ import main.java.Bank;
 public class TransferTest {
     private static final double DELTA = 0.00001;
     private HashMap<Integer, Account> accounts;
-    Bank bank;// = new Bank(accounts);
+    private Bank bank;
+    private long initBalance;
 
     @Before
     public void setUp() {
         Main.getHashMapOfAccounts(100);
         accounts =  Main.getAccounts();
         bank = new Bank(accounts);
+        initBalance = bank.getTotalBalance(accounts);
     }
     @Test
     public void testBalanceOfTransfers() {
         System.out.println("Bank accounts and final balance:");
         accounts.entrySet().forEach(x -> System.out.println(x.getKey() + " - " + x.getValue().getBalance()));
-        long initBalance = bank.getTotalBalance(accounts);
         try {
-//            Main.transferAll();
             for (int i = 1; i < 10; i++) {
                 int fromAccountNum = (int) (Math.random() * 100 + 1);
                 int toAccountNum = (int) (Math.random() * 100 + 1);

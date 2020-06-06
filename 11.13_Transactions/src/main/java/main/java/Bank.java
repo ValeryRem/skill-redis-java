@@ -6,7 +6,6 @@ public class Bank extends Thread {
     private final HashMap<Integer, Account> accounts;
     private final static long sumToCheck = 50000;
     private String output;
-//    private long totaBalanceBefore = getTotalBalance(accounts);
 
     public Bank(HashMap<Integer, Account> accounts) {
         this.accounts = accounts;
