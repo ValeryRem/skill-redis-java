@@ -1,36 +1,30 @@
 package main.java;
 
-import main.java.Account;
-
 import java.util.*;
 
 public class Bank extends Thread {
-    private final static HashMap<Integer, Account> accounts = new HashMap();
+    private final HashMap<Integer, Account> accounts;
     private final static long sumToCheck = 50000;
-    private final Integer fromAccountNum;
-    private final Integer toAccountNum;
-    private final long amount;
-    private static String output;
-//    private final static int numberOfAccounts;
-    private long totaBalanceBefore = getTotalBalance();
+    private String output;
+//    private long totaBalanceBefore = getTotalBalance(accounts);
 
-    public Bank(Integer fromAccountNum, Integer toAccountNum, long amount) {
-        this.fromAccountNum = fromAccountNum;
-        this.toAccountNum = toAccountNum;
-        this.amount = amount;
+    public Bank(HashMap<Integer, Account> accounts) {
+        this.accounts = accounts;
     }
-    @Override
-    public void run() {
-        System.out.println(Thread.currentThread().getName() + ": ");
-        try {
-            transfer(fromAccountNum, toAccountNum, amount);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+//    @Override
+//    public void run() {
+//        Integer fromAccountNum = (int) (Math.random()*100 + 1);
+//        Integer toAccountNum = (int) (Math.random()*100 + 1);
+//        long amount = (long) (100000*Math.random());
+////        System.out.println(Thread.currentThread().getName() + ": ");
+//        try {
+//            transfer(fromAccountNum, toAccountNum, amount);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
-    public static synchronized boolean isFraud(Integer fromAccountNum, Integer toAccountNum, long amount)
-            throws InterruptedException {
+    public synchronized boolean isFraud(Integer fromAccountNum, Integer toAccountNum, long amount) {
         boolean result = false;
         if(amount >= sumToCheck) {
             double indx = Math.random();
@@ -48,8 +42,10 @@ public class Bank extends Thread {
      * метод isFraud. Если возвращается true, то делается блокировка
      * счетов (как – на ваше усмотрение)
      */
-    public static synchronized void transfer(Integer fromAccountNum, Integer toAccountNum, long amount)
+    public synchronized void transfer(Integer fromAccountNum, Integer toAccountNum, long amount)
             throws InterruptedException {
+        System.out.printf("%s: start sending %d -> %d: %d RUB%n",
+                Thread.currentThread().getName(), fromAccountNum, toAccountNum, amount);
         Account account1 = accounts.get(fromAccountNum);
         Account account2 = accounts.get(toAccountNum);
         if (!fromAccountNum.equals(toAccountNum)) {
@@ -77,17 +73,12 @@ public class Bank extends Thread {
             output = "Recursive transfer is impossible!";
             System.out.println(output);
         }
+        System.out.printf("%s: end sending %d -> %d: %d RUB%n",
+                Thread.currentThread().getName(), fromAccountNum, toAccountNum, amount);
     }
 
-    public static synchronized void getHashMapOfAccounts(int numberOfAccounts) {
-        for (int i = 1; i <= numberOfAccounts; i++){
-            Integer accNumber = i;
-            Account account = new Account (accNumber, (long) (100000*Math.random()),  true);
-            accounts.put(accNumber, account);
-        }
-    }
 
-    public static long getTotalBalance () {
+    public long getTotalBalance (HashMap<Integer, Account> accounts) {
         Collection<Account> set = accounts.values();
         long result = 0;
         for (Account account : set) {
@@ -96,11 +87,11 @@ public class Bank extends Thread {
         return result;
     }
 
-    public static HashMap<Integer, Account> getAccounts() {
+    public HashMap<Integer, Account> getAccounts() {
         return accounts;
     }
 
-    public static String getOutput() {
+    public String getOutput() {
         return output;
     }
 }
