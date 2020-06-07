@@ -2,7 +2,7 @@ package main.java;
 
 import java.util.*;
 
-public class Bank extends Thread {
+public class Bank{
     private final HashMap<Integer, Account> accounts;
     private final static long sumToCheck = 50000;
     private String output;
@@ -51,26 +51,28 @@ public class Bank extends Thread {
             if (isFraud(fromAccountNum, toAccountNum, amount)) {
                 account1.setOpen(false);
                 account2.setOpen(false);
-                Thread.sleep(2000);
                 System.out.println("Accounts ## " + account1.getAccNumber() + " & " + account2.getAccNumber() + " suspended for fraud-check!");
+                Thread.sleep(2000);
                 account1.setOpen(true);
                 account2.setOpen(true);
                 System.out.println("Accounts ## " + account1.getAccNumber() + " & " + account2.getAccNumber() + " passed fraud-check OK.");
             }
-            if (account1.isOpen() && account1.getBalance() > amount) {
+            if (account1.isOpen() && account2.isOpen()) {
+                if (account1.getBalance() > amount) {
                 synchronized (account1) {
                     account1.setBalance(account1.getBalance() - amount);
-                    if (account2.isOpen()) {
-                        synchronized (account2) {
-                            account2.setBalance(account2.getBalance() + amount);
-                        }
-                    }
-                    System.out.println("Transfer of " + amount + " RUR from main.java.Account #" + account1.getAccNumber() + " to main.java.Account #" + account2.getAccNumber() +
+                }
+                synchronized (account2) {
+                    account2.setBalance(account2.getBalance() + amount);
+                }
+                System.out.println("Transfer of " + amount + " RUR from main.java.Account #" + account1.getAccNumber() + " to main.java.Account #" + account2.getAccNumber() +
                             " fulfilled successfully. \nNew balances: main.java.Account #" + account1.getAccNumber() + ": " + account1.getBalance() + " RUR; " +
                             "main.java.Account #" + account2.getAccNumber() + ": " + account2.getBalance() + " RUR.\n");
+                } else {
+                    System.out.println("Transfer impossible. Too few money at account # " + account1.getAccNumber() + ".\n");
                 }
             } else {
-                System.out.println("Transfer impossible. Too few money at account # " + account1.getAccNumber() + ".\n");
+                System.out.println("The Accounts are closed for operations!");
             }
         } else {
             output = "Recursive transfer is impossible!";

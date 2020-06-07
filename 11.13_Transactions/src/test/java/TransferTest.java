@@ -14,7 +14,7 @@ public class TransferTest {
 
     @Before
     public void setUp() {
-        Main.getHashMapOfAccounts(100);
+        Main.getHashMapOfAccounts(10);
         accounts =  Main.getAccounts();
         bank = new Bank(accounts);
         initBalance = bank.getTotalBalance(accounts);
@@ -24,12 +24,13 @@ public class TransferTest {
         System.out.println("Bank accounts and final balance:");
         accounts.entrySet().forEach(x -> System.out.println(x.getKey() + " - " + x.getValue().getBalance()));
         try {
-            for (int i = 1; i < 10; i++) {
-                int fromAccountNum = (int) (Math.random() * 100 + 1);
-                int toAccountNum = (int) (Math.random() * 100 + 1);
+            for (int i = 1; i < 100; i++) {
+                int fromAccountNum = (int) (Math.random() * 10 + 1);
+                int toAccountNum = (int) (Math.random() * 10 + 1);
                 long amount = (long) (100000 * Math.random());
                 bank.transfer(fromAccountNum, toAccountNum, amount);
             }
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
