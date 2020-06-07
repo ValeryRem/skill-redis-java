@@ -7,29 +7,28 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     private static HashMap<Integer, Account> accounts = new HashMap<>();
-    private  static Bank bank = new Bank(accounts);
+    private static Bank bank = new Bank(accounts);
     private static int numberOfAccounts = 10;
     public static void main(String[] args) {
         getHashMapOfAccounts(numberOfAccounts);
         transferAll();
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public static void transferAll() {
         int numberOfTransfers = 100;
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(3);
         System.out.println("Initial hashmap:");
-        accounts.entrySet().forEach(x -> System.out.println(x.getKey() + " - " + x.getValue().getBalance()));
+        accounts.entrySet().forEach(x -> System.out.println(x.getKey() + ": " + x.getValue().getBalance()));
         System.out.println("**************** Init total balance: " + bank.getTotalBalance(accounts));
         for (int i = 1; i <= numberOfTransfers; i++) {
             Integer fromAccountNum = (int) (Math.random() * 10 + 1);
             Integer toAccountNum = (int) (Math.random() * 10 + 1);
             long amount = (long) (100000 * Math.random());
-//            executor.execute(bank);
             int finalI = i;
             executor.submit(() -> {
                 try {
@@ -42,13 +41,13 @@ public class Main {
         }
         executor.shutdown();
         try {
-            executor.awaitTermination(15000, TimeUnit.MILLISECONDS);
+            executor.awaitTermination(1, TimeUnit.MINUTES);
 //            Thread.sleep(15000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("Final hashmap:");
-        accounts.entrySet().forEach(x -> System.out.println(x.getKey() + " - " + x.getValue().getBalance()));
+        accounts.entrySet().forEach(x -> System.out.println(x.getKey() + ": " + x.getValue().getBalance()));
         System.out.println("************* Final total balance: " + bank.getTotalBalance(accounts));
     }
 

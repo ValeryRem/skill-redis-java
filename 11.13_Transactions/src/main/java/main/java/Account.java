@@ -2,7 +2,7 @@ package main.java;
 
 public class Account
 {
-    private long balance;
+    private volatile long balance;
     private Integer accNumber;
     private boolean open;
 
@@ -12,7 +12,7 @@ public class Account
         this.open = open;
     }
 
-    public long getBalance() {
+    public synchronized long getBalance() {
         return balance;
     }
 

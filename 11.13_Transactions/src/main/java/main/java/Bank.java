@@ -3,9 +3,10 @@ package main.java;
 import java.util.*;
 
 public class Bank{
-    private final HashMap<Integer, Account> accounts;
+    private volatile HashMap<Integer, Account> accounts;
     private final static long sumToCheck = 50000;
     private String output;
+    private boolean positiveCurrentBalanceIndicator = true;
 
     public Bank(HashMap<Integer, Account> accounts) {
         this.accounts = accounts;
@@ -58,25 +59,30 @@ public class Bank{
                 System.out.println("Accounts ## " + account1.getAccNumber() + " & " + account2.getAccNumber() + " passed fraud-check OK.");
             }
             if (account1.isOpen() && account2.isOpen()) {
-                if (account1.getBalance() > amount) {
                 synchronized (account1) {
-                    account1.setBalance(account1.getBalance() - amount);
-                }
-                synchronized (account2) {
-                    account2.setBalance(account2.getBalance() + amount);
-                }
-                System.out.println("Transfer of " + amount + " RUR from main.java.Account #" + account1.getAccNumber() + " to main.java.Account #" + account2.getAccNumber() +
-                            " fulfilled successfully. \nNew balances: main.java.Account #" + account1.getAccNumber() + ": " + account1.getBalance() + " RUR; " +
-                            "main.java.Account #" + account2.getAccNumber() + ": " + account2.getBalance() + " RUR.\n");
-                } else {
-                    System.out.println("Transfer impossible. Too few money at account # " + account1.getAccNumber() + ".\n");
+                    if (account1.getBalance() > amount) {
+                        Thread.sleep(1000);
+                        account1.setBalance(account1.getBalance() - amount);
+                        if (account1.getBalance() < 0) {
+                            positiveCurrentBalanceIndicator = false;
+                        }
+                        synchronized (account2) {
+                            account2.setBalance(account2.getBalance() + amount);
+                        }
+                        System.out.println("Transfer of " + amount + " RUR from main.java.Account #" + account1.getAccNumber() + " to main.java.Account #" + account2.getAccNumber() +
+                                " fulfilled successfully. \nNew balances: main.java.Account #" + account1.getAccNumber() + ": " + account1.getBalance() + " RUR; " +
+                                "main.java.Account #" + account2.getAccNumber() + ": " + account2.getBalance() + " RUR.\n");
+                    } else {
+                        System.out.println("Transfer impossible. Too few money at account # " + account1.getAccNumber() + ".\n");
+                    }
                 }
             } else {
                 System.out.println("The Accounts are closed for operations!");
             }
+
         } else {
-            output = "Recursive transfer is impossible!";
-            System.out.println(output);
+                output = "Recursive transfer is impossible!";
+                System.out.println(output);
         }
         System.out.printf("%s: end sending %d -> %d: %d RUB%n",
                 Thread.currentThread().getName(), fromAccountNum, toAccountNum, amount);
@@ -98,5 +104,9 @@ public class Bank{
 
     public String getOutput() {
         return output;
+    }
+
+    public boolean isPositiveCurrentBalanceIndicator() {
+        return positiveCurrentBalanceIndicator;
     }
 }
