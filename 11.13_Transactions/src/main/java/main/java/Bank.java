@@ -48,7 +48,7 @@ public class Bank{
                 Thread.currentThread().getName(), fromAccountNum, toAccountNum, amount);
         Account account1 = accounts.get(fromAccountNum);
         Account account2 = accounts.get(toAccountNum);
-        if (!fromAccountNum.equals(toAccountNum)) {
+//        if (!fromAccountNum.equals(toAccountNum)) {
             if (isFraud(fromAccountNum, toAccountNum, amount)) {
                 account1.setOpen(false);
                 account2.setOpen(false);
@@ -59,33 +59,44 @@ public class Bank{
                 System.out.println("Accounts ## " + account1.getAccNumber() + " & " + account2.getAccNumber() + " passed fraud-check OK.");
             }
             if (account1.isOpen() && account2.isOpen()) {
-                synchronized (account1) {
-                    if (account1.getBalance() > amount) {
-                        Thread.sleep(1000);
-                        account1.setBalance(account1.getBalance() - amount);
-                        if (account1.getBalance() < 0) {
-                            positiveCurrentBalanceIndicator = false;
-                        }
+                if (account1.getAccNumber() < account2.getAccNumber()) {
+                    synchronized (account1) {
                         synchronized (account2) {
-                            account2.setBalance(account2.getBalance() + amount);
+                            doTransfer(amount, account1, account2);
                         }
-                        System.out.println("Transfer of " + amount + " RUR from main.java.Account #" + account1.getAccNumber() + " to main.java.Account #" + account2.getAccNumber() +
-                                " fulfilled successfully. \nNew balances: main.java.Account #" + account1.getAccNumber() + ": " + account1.getBalance() + " RUR; " +
-                                "main.java.Account #" + account2.getAccNumber() + ": " + account2.getBalance() + " RUR.\n");
-                    } else {
-                        System.out.println("Transfer impossible. Too few money at account # " + account1.getAccNumber() + ".\n");
                     }
+                } else if (account1.getAccNumber() > account2.getAccNumber()) {
+                    synchronized (account2) {
+                        synchronized (account1) {
+                            doTransfer(amount, account1, account2);
+                        }
+                    }
+                } else {
+                    output = "Recursive transfer is impossible!";
+                    System.out.println(output);
                 }
             } else {
                 System.out.println("The Accounts are closed for operations!");
             }
 
-        } else {
-                output = "Recursive transfer is impossible!";
-                System.out.println(output);
-        }
         System.out.printf("%s: end sending %d -> %d: %d RUB%n",
                 Thread.currentThread().getName(), fromAccountNum, toAccountNum, amount);
+    }
+
+    private void doTransfer(long amount, Account account1, Account account2) throws InterruptedException {
+        if (account1.getBalance() > amount) {
+            Thread.sleep(1000);
+            account1.setBalance(account1.getBalance() - amount);
+            account2.setBalance(account2.getBalance() + amount);
+            if (account1.getBalance() < 0) {
+                positiveCurrentBalanceIndicator = false;
+            }
+        } else {
+            System.out.println("Transfer impossible. Too few money at account # " + account1.getAccNumber());
+        }
+        System.out.println("Transfer of " + amount + " RUR from main.java.Account #" + account1.getAccNumber() + " to main.java.Account #" + account2.getAccNumber() +
+                " fulfilled successfully. \nNew balances: main.java.Account #" + account1.getAccNumber() + ": " + account1.getBalance() + " RUR; " +
+                "main.java.Account #" + account2.getAccNumber() + ": " + account2.getBalance() + " RUR.\n");
     }
 
 

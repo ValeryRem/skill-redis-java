@@ -2,7 +2,7 @@ package main.java;
 
 public class Account
 {
-    private volatile long balance;
+    private long balance;
     private Integer accNumber;
     private boolean open;
 

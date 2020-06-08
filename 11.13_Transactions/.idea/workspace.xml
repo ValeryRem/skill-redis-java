@@ -78,15 +78,12 @@
       <change afterPath="$PROJECT_DIR$/../ListExp/ListExp.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ScreenshotToDropbox/ScreenshotToDropbox.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../java_basics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../volatile.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/java/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/java/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/java/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/java/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TransferTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TransferTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TransferTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImagerResizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImageResizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../log4j2.xml" beforeDir="false" />
     </list>
@@ -113,12 +110,15 @@
     </option>
   </component>
   <component name="ProjectId" id="1cuVSEuIgHQdEECH7f6bXR9n5g5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -130,7 +130,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="JUnit.TransferTest.testPositiveCurrentBalance">
+  <component name="RunManager" selected="JUnit.TransferTest.testThreadPoolExecution">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.Main" />
       <module name="11.13_Transactions" />
@@ -174,58 +174,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
+    <configuration name="TransferTest.testThreadPoolExecution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="11.13_Transactions" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="11.13_Transactions" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransferTest" />
+      <option name="METHOD_NAME" value="testThreadPoolExecution" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TransferTest.testPositiveCurrentBalance" />
-        <item itemvalue="JUnit.TransferTest.testBalanceOfTransfers" />
+        <item itemvalue="JUnit.TransferTest.testThreadPoolExecution" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TransferTest.testBalanceOfTransfers" />
+        <item itemvalue="JUnit.TransferTest.testPositiveCurrentBalance" />
         <item itemvalue="JUnit.TransferTest.testRecursiveTransfer" />
       </list>
     </recent_temporary>
@@ -297,10 +261,18 @@
       <option name="project" value="LOCAL" />
       <updated>1591540500164</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added testPositiveCurrentBalance ().">
+      <created>1591567504545</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1591567504545</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Project reloaded with Maven." />
     <MESSAGE value="Compiler if IDEA tuned to 8." />
     <MESSAGE value="Testing transfer balance and recursive TransferTest." />
@@ -309,33 +281,34 @@
     <MESSAGE value="Testing transfer balance with synchronized (executor)." />
     <MESSAGE value="Testing transfer with synchronized (account1) &amp; synchronized (account2)." />
     <MESSAGE value="Method transfer(...) improved." />
-    <option name="LAST_COMMIT_MESSAGE" value="Method transfer(...) improved." />
+    <MESSAGE value="Added testPositiveCurrentBalance ()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added testPositiveCurrentBalance ()." />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1591567195826">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1591567195826" />
-    <state x="172" y="0" key="CommitChangelistDialog2" timestamp="1591540497681">
+    <state x="172" y="0" key="CommitChangelistDialog2" timestamp="1591567502290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="172" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591540497681" />
-    <state width="1309" height="507" key="GridCell.Tab.0.bottom" timestamp="1591566818260">
+    <state x="172" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591567502290" />
+    <state width="1309" height="507" key="GridCell.Tab.0.bottom" timestamp="1591622778913">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591566818260" />
-    <state width="1309" height="507" key="GridCell.Tab.0.center" timestamp="1591566818260">
+    <state width="1309" height="507" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591622778913" />
+    <state width="1309" height="507" key="GridCell.Tab.0.center" timestamp="1591622778913">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591566818260" />
-    <state width="1309" height="507" key="GridCell.Tab.0.left" timestamp="1591566818260">
+    <state width="1309" height="507" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591622778913" />
+    <state width="1309" height="507" key="GridCell.Tab.0.left" timestamp="1591622778912">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591566818260" />
-    <state width="1309" height="507" key="GridCell.Tab.0.right" timestamp="1591566818260">
+    <state width="1309" height="507" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591622778912" />
+    <state width="1309" height="507" key="GridCell.Tab.0.right" timestamp="1591622778913">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591566818260" />
+    <state width="1309" height="507" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591622778913" />
     <state x="96" y="0" key="Maven.ArtifactSearchDialog" timestamp="1591390196587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -344,10 +317,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591381813198" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1591540510664">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1591567512778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591540510664" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591567512778" />
     <state x="453" y="125" key="chooseDestDirectoryDialog" timestamp="1591378786038">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -356,10 +329,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="398" y="141" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1591391243271" />
-    <state x="346" y="54" key="extract.method.dialog" timestamp="1591391315644">
+    <state x="346" y="54" key="extract.method.dialog" timestamp="1591621958441">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="54" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1591391315644" />
+    <state x="346" y="54" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1591621958441" />
     <state x="255" y="159" key="run.anything.popup" timestamp="1591395795278">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

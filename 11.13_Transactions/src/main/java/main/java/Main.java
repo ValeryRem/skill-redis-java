@@ -42,7 +42,6 @@ public class Main {
         executor.shutdown();
         try {
             executor.awaitTermination(1, TimeUnit.MINUTES);
-//            Thread.sleep(15000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
