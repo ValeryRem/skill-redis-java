@@ -19,8 +19,8 @@ public class TransferTest {
     private ThreadPoolExecutor executor;
     @Before
     public void setUp() {
-        Main.getHashMapOfAccounts(10);
-        accounts =  Main.getAccounts();
+        accounts = new HashMap<>();
+        getHashMapOfAccounts(10, accounts);
         bank = new Bank(accounts);
         initBalance = bank.getTotalBalance(accounts);
         executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(3);
@@ -29,7 +29,6 @@ public class TransferTest {
     @Test
     public void testBalanceOfTransfers() {
         System.out.println("Bank accounts and final balance:");
-        accounts.entrySet().forEach(x -> System.out.println(x.getKey() + " - " + x.getValue().getBalance()));
         toDoAllTransfers(100);
         long finBalance = bank.getTotalBalance(accounts);
         assertEquals(initBalance, finBalance, DELTA);
@@ -96,6 +95,14 @@ public class TransferTest {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
+    }
+
+    public synchronized void getHashMapOfAccounts(int numberOfAccounts, HashMap<Integer, Account> accounts) {
+        for (int i = 1; i <= numberOfAccounts; i++) {
+            Integer accNumber = i;
+            Account account = new Account(accNumber, (long) (100000 * Math.random()), true);
+            accounts.put(accNumber, account);
+        }
     }
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d972a48-3f01-4f9c-bcf8-5548b5f51082" name="Default Changelist" comment="Testing transfer balance and recursive TransferTest.">
+    <list default="true" id="5d972a48-3f01-4f9c-bcf8-5548b5f51082" name="Default Changelist" comment="Changed to assertFalse(Thread.currentThread().isAlive());">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -80,10 +80,8 @@
       <change afterPath="$PROJECT_DIR$/../java_basics.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../volatile.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/java/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/java/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TransferTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Bank.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/java/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/TransferTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TransferTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImagerResizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImageResizer.java" afterDir="false" />
@@ -132,7 +130,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="JUnit.TransferTest.testThreadPoolExecution">
+  <component name="RunManager" selected="JUnit.TransferTest.testBalanceOfTransfers">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.Main" />
       <module name="11.13_Transactions" />
@@ -188,9 +186,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TransferTest.testBalanceOfTransfers" />
         <item itemvalue="JUnit.TransferTest.testThreadPoolExecution" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.TransferTest.testBalanceOfTransfers" />
         <item itemvalue="JUnit.TransferTest.testPositiveCurrentBalance" />
         <item itemvalue="JUnit.TransferTest.testRecursiveTransfer" />
       </list>
@@ -277,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591623268720</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changed to assertTrue(executor.isShutdown()).">
+      <created>1591638693184</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591638693184</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -292,33 +297,34 @@
     <MESSAGE value="Method transfer(...) improved." />
     <MESSAGE value="Added testPositiveCurrentBalance ()." />
     <MESSAGE value="Added testThreadPoolExecution." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added testThreadPoolExecution." />
+    <MESSAGE value="Changed to assertTrue(executor.isShutdown())." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed to assertTrue(executor.isShutdown())." />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1591567195826">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1591567195826" />
-    <state x="172" y="0" key="CommitChangelistDialog2" timestamp="1591623266054">
+    <state x="172" y="0" width="980" height="446" key="CommitChangelistDialog2" timestamp="1591638690786">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="172" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591623266054" />
-    <state width="1309" height="507" key="GridCell.Tab.0.bottom" timestamp="1591623191306">
+    <state x="172" y="0" width="980" height="446" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591638690786" />
+    <state width="1309" height="507" key="GridCell.Tab.0.bottom" timestamp="1591656551357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591623191306" />
-    <state width="1309" height="507" key="GridCell.Tab.0.center" timestamp="1591623191306">
+    <state width="1309" height="507" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591656551357" />
+    <state width="1309" height="507" key="GridCell.Tab.0.center" timestamp="1591656551357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591623191306" />
-    <state width="1309" height="507" key="GridCell.Tab.0.left" timestamp="1591623191306">
+    <state width="1309" height="507" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591656551357" />
+    <state width="1309" height="507" key="GridCell.Tab.0.left" timestamp="1591656551357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591623191306" />
-    <state width="1309" height="507" key="GridCell.Tab.0.right" timestamp="1591623191306">
+    <state width="1309" height="507" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591656551357" />
+    <state width="1309" height="507" key="GridCell.Tab.0.right" timestamp="1591656551357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="507" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591623191306" />
+    <state width="1309" height="507" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591656551357" />
     <state x="96" y="0" key="Maven.ArtifactSearchDialog" timestamp="1591390196587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -327,10 +333,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591381813198" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1591623510976">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1591638704345">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591623510976" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591638704345" />
     <state x="453" y="125" key="chooseDestDirectoryDialog" timestamp="1591378786038">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

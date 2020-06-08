@@ -4,7 +4,7 @@ public class Account
 {
     private long balance;
     private Integer accNumber;
-    private boolean open;
+    private volatile boolean open;
 
     public Account(Integer accNumber, long balance, boolean open) {
         this.accNumber = accNumber;
