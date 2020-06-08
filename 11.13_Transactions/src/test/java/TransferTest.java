@@ -7,10 +7,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import main.java.Bank;
+
+import static org.junit.Assert.*;
 
 public class TransferTest {
     private static final double DELTA = 0.00001;
@@ -55,8 +54,8 @@ public class TransferTest {
     @Test
     public void testThreadPoolExecution () {
         toDoAllTransfers(100);
-        assertTrue(Thread.currentThread().isAlive());
-//        assertTrue(executor.isShutdown());
+//        assertFalse(Thread.currentThread().isAlive());
+        assertTrue(executor.isShutdown());
     }
 
     private void toDoAllTransfers(int numberOfTransfers) {
