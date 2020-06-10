@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8aa09724-3cb7-4ee1-9004-0e84619ffff8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../08_ExceptionsDebuggingAndTesting/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../08_ExceptionsDebuggingAndTesting/.idea/08_ExceptionsDebuggingAndTesting.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../08_ExceptionsDebuggingAndTesting/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../08_ExceptionsDebuggingAndTesting/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../08_ExceptionsDebuggingAndTesting/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/.idea/sbt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/LambdaExercise.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/main/java/tasks/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/main/java/tasks/PleaseImplementMeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/main/java/tasks/Task1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/main/java/tasks/Task2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/main/java/tasks/Task3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/test/java/tasks/Task1Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/test/java/tasks/Task2Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/test/java/tasks/Task3Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/10_JDBCExperiments.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/src/main/java/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/.idea/copyright/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/Deadlock.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/out/production/Deadlock/Friend.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/out/production/Deadlock/Loader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/src/Friend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/Deadlock/src/Loader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/._Deadlock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/._.idea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/._Deadlock.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/._out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/._src" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/.idea/._.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/.idea/._compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/.idea/._copyright" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/.idea/._modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/.idea/._vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/.idea/copyright/._profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/out/._production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/out/production/._Deadlock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Friend.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Loader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11.13_ForkJoinPoolExperiment.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SiteSave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/result/secure-headland-59304.herokuapp.com.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ListExp/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ListExp/ListExp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ScreenshotToDropbox/ScreenshotToDropbox.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_basics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../volatile.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImagerResizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImageResizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../log4j2.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1d8ObfyL6KsdTtejYLHhkikpDp7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valery\Desktop\java_basics\11.13_ForkJoinPoolExperiment\src\main\java\result\lenta\ru" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="11.13_ForkJoinPoolExperiment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8aa09724-3cb7-4ee1-9004-0e84619ffff8" name="Default Changelist" comment="" />
+      <created>1591803326446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591803326446</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="25" key="#Inspections" timestamp="1591803742447">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="304" y="25" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1591803742447" />
+    <state x="34" y="0" key="#Project_Structure" timestamp="1591804142664">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="34" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1591804142664" />
+    <state x="132" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591805055458">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="132" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1591805055458" />
+    <state width="1309" height="403" key="GridCell.Tab.0.bottom" timestamp="1591807475448">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1309" height="403" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591807475448" />
+    <state width="1309" height="403" key="GridCell.Tab.0.center" timestamp="1591807475448">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1309" height="403" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591807475448" />
+    <state width="1309" height="403" key="GridCell.Tab.0.left" timestamp="1591807475448">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1309" height="403" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591807475448" />
+    <state width="1309" height="403" key="GridCell.Tab.0.right" timestamp="1591807475448">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1309" height="403" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591807475448" />
+    <state x="96" y="0" key="Maven.ArtifactSearchDialog" timestamp="1591803897894">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="96" y="0" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1591803897894" />
+    <state x="66" y="0" key="SettingsEditor" timestamp="1591805012285">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="66" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591805012285" />
+  </component>
+</project>
