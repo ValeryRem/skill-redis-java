@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57fde2d2-8e2e-437f-ba44-c14b8046c667" name="Default Changelist" comment="">
+    <list default="true" id="57fde2d2-8e2e-437f-ba44-c14b8046c667" name="Default Changelist" comment="New project to parse Lenta.ru html file.">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -91,21 +91,6 @@
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/resources/lenta.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/resources/sitemapgen4j-1.0.1.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/ToDo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_13_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/11.13_ParseHTMLbyForkJoinPool.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/resources/lenta.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/lenta.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ListExp/.idea/.gitignore" afterDir="false" />
@@ -116,6 +101,13 @@
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/SiteSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/SiteSave.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/result/secure-headland-59304.herokuapp.com.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/resources/lenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/resources/lenta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/lenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/lenta.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" afterDir="false" />
@@ -183,29 +175,45 @@
       <option name="presentableId" value="Default" />
       <updated>1591957573068</updated>
     </task>
+    <task id="LOCAL-00001" summary="New project to parse Lenta.ru html file.">
+      <created>1591959012105</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591959012105</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New project to parse Lenta.ru html file." />
+    <option name="LAST_COMMIT_MESSAGE" value="New project to parse Lenta.ru html file." />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="97" y="0" key="CommitChangelistDialog2" timestamp="1591959009565">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="97" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591959009565" />
     <state x="314" y="41" key="FileChooserDialogImpl" timestamp="1591957780924">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591957780924" />
-    <state width="1309" height="352" key="GridCell.Tab.0.bottom" timestamp="1591958623762">
+    <state width="1309" height="352" key="GridCell.Tab.0.bottom" timestamp="1591997469954">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="352" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591958623762" />
-    <state width="1309" height="352" key="GridCell.Tab.0.center" timestamp="1591958623762">
+    <state width="1309" height="352" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591997469954" />
+    <state width="1309" height="352" key="GridCell.Tab.0.center" timestamp="1591997469954">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="352" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591958623762" />
-    <state width="1309" height="352" key="GridCell.Tab.0.left" timestamp="1591958623761">
+    <state width="1309" height="352" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591997469954" />
+    <state width="1309" height="352" key="GridCell.Tab.0.left" timestamp="1591997469954">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="352" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591958623761" />
-    <state width="1309" height="352" key="GridCell.Tab.0.right" timestamp="1591958623762">
+    <state width="1309" height="352" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591997469954" />
+    <state width="1309" height="352" key="GridCell.Tab.0.right" timestamp="1591997469954">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="352" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591958623762" />
+    <state width="1309" height="352" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591997469954" />
     <state width="1309" height="209" key="GridCell.Tab.1.bottom" timestamp="1591958259284">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -226,5 +234,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591957796001" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1591959033659">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591959033659" />
   </component>
 </project>

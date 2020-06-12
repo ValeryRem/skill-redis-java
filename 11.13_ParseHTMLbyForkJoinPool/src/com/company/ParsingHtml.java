@@ -12,27 +12,33 @@ import org.jsoup.select.Elements;
 public class ParsingHtml {
     String origin;
     String cssQuery;
+    Elements elements;
 
     public ParsingHtml(String origin, String cssQuery) {
         this.origin = origin;
         this.cssQuery = cssQuery;
+        getHTMLinfo();
     }
 
     public void getHTMLinfo() {
-        List<Element> result = new ArrayList<>();
+//        List<Element> result = new ArrayList<>();
         try {
             File htmlFile = new File(origin);
             Document doc = Jsoup.parse(htmlFile, "UTF-8");
-            result = doc.body().getElementsByTag(cssQuery);
-//            Elements elements = doc.select(cssQuery);
+            elements = doc.body().getElementsByAttribute(cssQuery);//.getElementsByTag(cssQuery);
+//             elements = doc.select(cssQuery);
 //            result.addAll(elements);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        if (result.size() > 0) {
-            for (Element el : result) {
-                System.out.println(el.html());
+        if (elements.size() > 0) {
+            String prefix =  "https://lenta.ru";
+            for (Element el : elements) {
+                String suffix = el.attr("href");
+                if (!suffix.startsWith("http")) {
+                    System.out.println(prefix.concat(suffix));
+                }
             }
         } else {
             System.out.println("Result List is empty!");
