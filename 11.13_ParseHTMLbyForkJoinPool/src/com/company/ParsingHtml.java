@@ -3,6 +3,7 @@ package com.company;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -34,8 +35,9 @@ public class ParsingHtml {
 
         if (elements.size() > 0) {
             String prefix =  "https://lenta.ru";
-            for (Element el : elements) {
-                String suffix = el.attr("href");
+                List<Element> list = elements.stream().distinct().collect(Collectors.toList());
+            for (Element el : list) {
+                String suffix = el.attr(cssQuery);
                 if (!suffix.startsWith("http")) {
                     System.out.println(prefix.concat(suffix));
                 }
