@@ -4,9 +4,11 @@ import java.util.*;
 import java.util.concurrent.ForkJoinPool;
 
 public class Main {
-    private static final String origin = "https://secure-headland-59304.herokuapp.com/";
+//    private static final String origin = "https://secure-headland-59304.herokuapp.com/";
+    private static final String origin = "src/resources/lenta.html"; //"https://lenta.ru/";
     //       String url = "https://lenta.ru/";
-    private  static final String cssQuery = "href";
+//    private  static final String cssQuery = "href";
+  private  static final String cssQuery = "a[href]";
     private static final ParsingHtml parsingHtml = new ParsingHtml(origin, cssQuery);
 
     public static void main(String[] args) {

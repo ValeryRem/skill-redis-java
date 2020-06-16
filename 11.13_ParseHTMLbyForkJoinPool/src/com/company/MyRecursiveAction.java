@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +17,7 @@ public class MyRecursiveAction extends RecursiveAction {
     private int workLoad;
     private String origin;
     String cssQuery;
-    private static final int THRESHOLD = 10;
+    private static final int THRESHOLD = 100;
     List<String> result;
 
     public MyRecursiveAction(int workLoad, String origin, String cssQuery) {
@@ -30,8 +31,9 @@ public class MyRecursiveAction extends RecursiveAction {
     @Override
     protected void compute() {
         try {
-            Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get();
-            Elements elements = doc.body().getElementsByAttribute(cssQuery);
+            File htmlFile = new File(origin);
+            Document doc = Jsoup.parse(htmlFile, "UTF-8");
+            Elements elements = doc.body().select("a");
             workLoad = elements.size();
         } catch (IOException e) {
             e.printStackTrace();

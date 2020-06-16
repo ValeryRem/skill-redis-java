@@ -105,9 +105,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/resources/lenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/resources/lenta.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/lenta.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/lenta.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" afterDir="false" />
@@ -207,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592225799048</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ForkJoinPool method split by every reference &quot;href&quot;.">
+      <created>1592294697900</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592294697900</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -216,37 +225,38 @@
     <MESSAGE value="Parsing Lenta.ru html file in 1 thread." />
     <MESSAGE value="New project to parse Lenta.ru html file with elements.stream().distinct().collect(Collectors.toList())." />
     <MESSAGE value="Comparison of 1-thread &amp; ForkJoinPool variants." />
-    <option name="LAST_COMMIT_MESSAGE" value="Comparison of 1-thread &amp; ForkJoinPool variants." />
+    <MESSAGE value="ForkJoinPool method split by every reference &quot;href&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="ForkJoinPool method split by every reference &quot;href&quot;." />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1592218030924">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592218030924" />
-    <state x="97" y="0" width="1164" height="630" key="CommitChangelistDialog2" timestamp="1592225795137">
+    <state x="97" y="0" width="1164" height="630" key="CommitChangelistDialog2" timestamp="1592294695580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="97" y="0" width="1164" height="630" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592225795137" />
+    <state x="97" y="0" width="1164" height="630" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592294695580" />
     <state x="314" y="41" key="FileChooserDialogImpl" timestamp="1591957780924">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591957780924" />
-    <state width="1309" height="451" key="GridCell.Tab.0.bottom" timestamp="1592294276662">
+    <state width="1309" height="451" key="GridCell.Tab.0.bottom" timestamp="1592323762476">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="451" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592294276662" />
-    <state width="1309" height="451" key="GridCell.Tab.0.center" timestamp="1592294276662">
+    <state width="1309" height="451" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592323762476" />
+    <state width="1309" height="451" key="GridCell.Tab.0.center" timestamp="1592323762475">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="451" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592294276662" />
-    <state width="1309" height="451" key="GridCell.Tab.0.left" timestamp="1592294276662">
+    <state width="1309" height="451" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592323762475" />
+    <state width="1309" height="451" key="GridCell.Tab.0.left" timestamp="1592323762475">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="451" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592294276662" />
-    <state width="1309" height="451" key="GridCell.Tab.0.right" timestamp="1592294276662">
+    <state width="1309" height="451" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592323762475" />
+    <state width="1309" height="451" key="GridCell.Tab.0.right" timestamp="1592323762476">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="451" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592294276662" />
+    <state width="1309" height="451" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592323762476" />
     <state width="1309" height="369" key="GridCell.Tab.1.bottom" timestamp="1592223443416">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -267,13 +277,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591957796001" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592225810945">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592294706768">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592225810945" />
-    <state x="346" y="55" key="extract.method.dialog" timestamp="1592222483855">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592294706768" />
+    <state x="346" y="55" key="extract.method.dialog" timestamp="1592318603565">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="55" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1592222483855" />
+    <state x="346" y="55" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1592318603565" />
+    <state x="255" y="159" key="run.anything.popup" timestamp="1592319204636">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="255" y="159" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1592319204636" />
   </component>
 </project>

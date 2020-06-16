@@ -13,56 +13,61 @@ public class ParsingHtml {
     private String origin;
     private String cssQuery;
     private Elements elements;
-    private List<String> result = new LinkedList<>();
+    private List<String> result = new ArrayList<>();
+    private TreeSet<String> interResult = new TreeSet<>();
+    private String prefix = "https://lenta.ru";
 
     public ParsingHtml(String origin, String cssQuery) {
         this.origin = origin;
         this.cssQuery = cssQuery;
-        result.add(origin);
     }
 
     public List<String> getHTMLinfo(String origin) {
-        String prefix = "https://secure-headland-59304.herokuapp.com";
-        String fullRef;
-        String span = "    ";
+
+//        String prefix = "https://secure-headland-59304.herokuapp.com";
         try {
-//            File htmlFile = new File(origin);
-            Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get();
-            elements = doc.body().getElementsByAttribute(cssQuery);
-            String newPrefix;
-//            elements.forEach(x -> System.out.println(x.html()));
-//            System.out.println("childNodeSize(): " + doc.childNodeSize());
-//            List<Node> nodeList = doc.childNodes();
-//            nodeList.forEach(x -> System.out.println(x.nodeName()));
+            File htmlFile = new File(origin);
+            Document doc = Jsoup.parse(htmlFile, "UTF-8");
+            elements = doc.body().select("a");
+//            Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get();
+
             for (Element element : elements) {
-                if (element.html().contains("child")) {
-                    String htmlStr = element.toString();
-                    String suffix = htmlStr.split("\"")[1];
-                    if (!suffix.startsWith("/")) {
-                        suffix = "/".concat(suffix);
-                    }
-                    int coeff = suffix.split("/").length - 1;
-                    System.out.println("size of span: " + coeff);
-                    newPrefix = "";
-                    for (int i = 0; i < coeff; i++) {
-                        newPrefix += span ;
-                    }
-                    fullRef = newPrefix + prefix + suffix;
-//                    System.out.println(fullRef);
-                    if (!result.contains(fullRef)) {
-                    result.add(fullRef);
-                    origin = fullRef;
-                    getHTMLinfo(origin);
-                    }
-                    if (elements.size() < 1) {
-                        break;
-                    }
+                String suffix = element.attr("href");
+                if (!suffix.contains("https")) {
+                    interResult.add(prefix + suffix); //Getting sorted & distinct collection
+                    getHTMLinfo(prefix + suffix);
                 }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+//                }
+//                if (element.html().contains("child")) {
+//                    String htmlStr = element.toString();
+//                    String suffix = htmlStr.split("\"")[1];
+//                    if (!suffix.startsWith("/")) {
+//                        suffix = "/".concat(suffix);
+        List<String> newList = new LinkedList<>(interResult); //Getting sorted & distinct list
+
+        for (String s : newList) {
+            s = getSpan(s) + s;
+            result.add(s);
+        }
+        System.out.println("Result list size: " + result.size());
         return result;
+    }
+
+    private String getSpan(String str) {
+        String zero = "";
+        String span = "    ";
+        int coeff = str.split("/").length - origin.split("/").length;
+        for (int i = 0; i < coeff; i++) {
+            zero += span ;
+        }
+        return zero;
+    }
+
 //        if (elements.size() > 0) {
 //            String prefix =  "https://lenta.ru";
 //                List<Element> list = elements.stream().distinct().collect(Collectors.toList());
@@ -75,6 +80,5 @@ public class ParsingHtml {
 //        } else {
 //            System.out.println("Result List is empty!");
 //        }
-    }
 }
 
