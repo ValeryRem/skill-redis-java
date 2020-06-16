@@ -92,7 +92,6 @@
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/com/company/TreeNode.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/resources/sitemapgen4j-1.0.1.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/ToDo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ListExp/.idea/.gitignore" afterDir="false" />
@@ -107,6 +106,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
@@ -200,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592000058877</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Comparison of 1-thread &amp; ForkJoinPool variants.">
+      <created>1592225799048</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592225799048</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,37 +215,38 @@
     <MESSAGE value="New project to parse Lenta.ru html file." />
     <MESSAGE value="Parsing Lenta.ru html file in 1 thread." />
     <MESSAGE value="New project to parse Lenta.ru html file with elements.stream().distinct().collect(Collectors.toList())." />
-    <option name="LAST_COMMIT_MESSAGE" value="New project to parse Lenta.ru html file with elements.stream().distinct().collect(Collectors.toList())." />
+    <MESSAGE value="Comparison of 1-thread &amp; ForkJoinPool variants." />
+    <option name="LAST_COMMIT_MESSAGE" value="Comparison of 1-thread &amp; ForkJoinPool variants." />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1592218030924">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592218030924" />
-    <state x="97" y="0" width="1164" height="446" key="CommitChangelistDialog2" timestamp="1592000056028">
+    <state x="97" y="0" width="1164" height="630" key="CommitChangelistDialog2" timestamp="1592225795137">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="97" y="0" width="1164" height="446" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592000056028" />
+    <state x="97" y="0" width="1164" height="630" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592225795137" />
     <state x="314" y="41" key="FileChooserDialogImpl" timestamp="1591957780924">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591957780924" />
-    <state width="1309" height="253" key="GridCell.Tab.0.bottom" timestamp="1592225488626">
+    <state width="1309" height="451" key="GridCell.Tab.0.bottom" timestamp="1592294276662">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="253" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592225488626" />
-    <state width="1309" height="253" key="GridCell.Tab.0.center" timestamp="1592225488626">
+    <state width="1309" height="451" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592294276662" />
+    <state width="1309" height="451" key="GridCell.Tab.0.center" timestamp="1592294276662">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="253" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592225488626" />
-    <state width="1309" height="253" key="GridCell.Tab.0.left" timestamp="1592225488625">
+    <state width="1309" height="451" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592294276662" />
+    <state width="1309" height="451" key="GridCell.Tab.0.left" timestamp="1592294276662">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="253" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592225488625" />
-    <state width="1309" height="253" key="GridCell.Tab.0.right" timestamp="1592225488626">
+    <state width="1309" height="451" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592294276662" />
+    <state width="1309" height="451" key="GridCell.Tab.0.right" timestamp="1592294276662">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="253" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592225488626" />
+    <state width="1309" height="451" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592294276662" />
     <state width="1309" height="369" key="GridCell.Tab.1.bottom" timestamp="1592223443416">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -259,24 +267,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591957796001" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592000068807">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592225810945">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592000068807" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592225810945" />
     <state x="346" y="55" key="extract.method.dialog" timestamp="1592222483855">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="55" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1592222483855" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/ParsingHtml.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

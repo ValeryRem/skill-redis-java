@@ -17,8 +17,7 @@ public class MyRecursiveAction extends RecursiveAction {
     private String origin;
     String cssQuery;
     private static final int THRESHOLD = 10;
-    ParsingHtml parsingHtml = new ParsingHtml(origin, cssQuery);
-//    TreeSet<String> result;
+    List<String> result;
 
     public MyRecursiveAction(int workLoad, String origin, String cssQuery) {
         this.workLoad = workLoad;
@@ -26,31 +25,32 @@ public class MyRecursiveAction extends RecursiveAction {
         this.cssQuery = cssQuery;
     }
 
+    ParsingHtml parsingHtml = new ParsingHtml(origin, cssQuery);
+
     @Override
     protected void compute() {
         try {
             Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get();
-            Elements elements = doc.body().getAllElements();
+            Elements elements = doc.body().getElementsByAttribute(cssQuery);
             workLoad = elements.size();
         } catch (IOException e) {
             e.printStackTrace();
         }
         if (this.workLoad > THRESHOLD) {
-            List<MyRecursiveAction> subtasks = new ArrayList<>(createSubtasks());
+            List<MyRecursiveAction> subtasks = createSubtasks();
             for (RecursiveAction subtask : subtasks) {
                 subtask.fork();
             }
         } else {
-            parsingHtml.getHTMLinfo(origin);
+            result = parsingHtml.getHTMLinfo(origin);
         }
     }
 
     private List<MyRecursiveAction> createSubtasks() {
         List<MyRecursiveAction> subtasks = new ArrayList<>();
-        MyRecursiveAction subtask1 = new MyRecursiveAction(this.workLoad / 2, origin, cssQuery);
-        MyRecursiveAction subtask2 = new MyRecursiveAction(this.workLoad / 2, origin, cssQuery);
-        subtasks.add(subtask1);
-        subtasks.add(subtask2);
+        for (int i = 0; i < workLoad; i++) {
+            subtasks.add( new MyRecursiveAction(i, origin, cssQuery));
+        }
         return subtasks;
     }
 }
