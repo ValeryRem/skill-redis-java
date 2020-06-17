@@ -7,40 +7,44 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class ParsingHtml {
-    private final String cssQuery;
-    private TreeSet<String> result = new TreeSet<>();
+    private final TreeSet<String> result = new TreeSet<>();
+    private String prefix = "";
+    private final int depthOfParsing;
+    private final int limitOfResultList;
 
-    public ParsingHtml(String origin, String cssQuery) {
-        this.cssQuery = cssQuery;
-        result.add(origin);
+    public ParsingHtml(String prefix, int depthOfParsing, int limitOfResultList) {
+        this.prefix = prefix;
+        this.depthOfParsing = depthOfParsing;
+        this.limitOfResultList = limitOfResultList;
+        result.add(prefix + "/");
     }
 
-    public TreeSet<String> getResult() {
-        return result;
-    }
-    int k = 0;
-    public TreeSet<String> getHTMLinfo(String origin) {
-        String prefix = "https://secure-headland-59304.herokuapp.com";
+    private String url = prefix + "/";
+    private int index = 0;
+
+    public TreeSet<String> getHTMLinfo(String url) {
         String fullRef;
         try {
-            Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get();
-            Elements elements = doc.body().getElementsByAttribute(cssQuery);
+            Document doc = Jsoup.connect(url).maxBodySize(3_000_000).get();
+            Elements elements = doc.body().select("a");
+
             for (Element element : elements) {
-                if (element.html().contains("child")) {
-                    System.out.println(k++);
-                    String htmlStr = element.toString();
-                    String suffix = htmlStr.split("\"")[1];
-                    if (!suffix.startsWith("/")) {
-                        suffix = "/".concat(suffix);
-                    }
-                    fullRef = prefix + suffix;
-                    if (!result.contains(fullRef)) {
+                String suffix = element.attr("href");
+                if (!suffix.startsWith("/")) {
+                    suffix = "/".concat(suffix);
+                }
+                fullRef = prefix + suffix;
+                if (!suffix.contains("http") && suffix.length() > 3 && !suffix.startsWith("/#") && !result.contains(fullRef)) {
+                    index++;
+                    System.out.println(suffix + " -> " + index);
+                    while (result.size() < limitOfResultList) {
                         result.add(fullRef);
-                        origin = fullRef;
-                        getHTMLinfo(origin);
-                    }
-                    if (elements.size() < 1) {
-                        break;
+                        if (index == depthOfParsing) {
+                            index = 0;
+                            continue;
+                        }
+                        url = fullRef;
+                        getHTMLinfo(url);
                     }
                 }
             }

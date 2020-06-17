@@ -13,15 +13,13 @@ public class MyRecursiveAction extends RecursiveAction {
 
     private int workLoad;
     private String origin;
-    String cssQuery;
     private static final int THRESHOLD = 10;
     TreeSet<String> result = new TreeSet<>();
     ParsingHtml parsingHtml;
 
-    public MyRecursiveAction(int workLoad, String origin, String cssQuery, ParsingHtml parsingHtml) {
+    public MyRecursiveAction(int workLoad, String origin, ParsingHtml parsingHtml) {
         this.workLoad = workLoad;
         this.origin = origin;
-        this.cssQuery = cssQuery;
         this.parsingHtml = parsingHtml;
     }
 
@@ -29,7 +27,7 @@ public class MyRecursiveAction extends RecursiveAction {
     protected void compute() {
         try {
             Document doc = Jsoup.connect(origin).maxBodySize(3_000_000).get();
-            Elements elements = doc.body().getElementsByAttribute(cssQuery);
+            Elements elements = doc.body().getElementsByAttribute("href");
             workLoad = elements.size();
         } catch (IOException e) {
             e.printStackTrace();
@@ -47,7 +45,7 @@ public class MyRecursiveAction extends RecursiveAction {
     private List<MyRecursiveAction> createSubtasks() {
         List<MyRecursiveAction> subtasks = new ArrayList<>();
         for (int i = 0; i < workLoad; i++) {
-            subtasks.add( new MyRecursiveAction(i, origin, cssQuery, parsingHtml));
+            subtasks.add( new MyRecursiveAction(i, origin, parsingHtml));
         }
         return subtasks;
     }

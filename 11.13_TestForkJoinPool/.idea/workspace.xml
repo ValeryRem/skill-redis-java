@@ -92,21 +92,10 @@
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/com/company/TreeNode.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/resources/sitemapgen4j-1.0.1.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/ToDo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_13_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/11.13_TestForkJoinPool.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/MyRecursiveAction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ParsingHtml.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/code" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/code" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/output.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Comparison.jpg" afterDir="false" />
@@ -126,6 +115,13 @@
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/MyRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/MyRecursiveAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/ParsingHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/ParsingHtml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/MyRecursiveAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/MyRecursiveAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ParsingHtml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ParsingHtml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" afterDir="false" />
@@ -148,12 +144,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1dRHjfgXWugYUy11e9zMUlDytoY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -189,29 +188,50 @@
       <option name="presentableId" value="Default" />
       <updated>1592381123218</updated>
     </task>
+    <task id="LOCAL-00001" summary="Init commit of new version for test-site.">
+      <created>1592390452080</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592390452080</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Init commit of new version for test-site." />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit of new version for test-site." />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592406636628">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1592406636628" />
+    <state x="160" y="0" key="CommitChangelistDialog2" timestamp="1592390449593">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="160" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592390449593" />
     <state x="314" y="41" key="FileChooserDialogImpl" timestamp="1592381761309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592381761309" />
-    <state width="1309" height="277" key="GridCell.Tab.0.bottom" timestamp="1592389867191">
+    <state width="1309" height="277" key="GridCell.Tab.0.bottom" timestamp="1592432080383">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="277" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592389867191" />
-    <state width="1309" height="277" key="GridCell.Tab.0.center" timestamp="1592389867191">
+    <state width="1309" height="277" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592432080383" />
+    <state width="1309" height="277" key="GridCell.Tab.0.center" timestamp="1592432080383">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="277" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592389867191" />
-    <state width="1309" height="277" key="GridCell.Tab.0.left" timestamp="1592389867190">
+    <state width="1309" height="277" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592432080383" />
+    <state width="1309" height="277" key="GridCell.Tab.0.left" timestamp="1592432080383">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="277" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592389867190" />
-    <state width="1309" height="277" key="GridCell.Tab.0.right" timestamp="1592389867191">
+    <state width="1309" height="277" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592432080383" />
+    <state width="1309" height="277" key="GridCell.Tab.0.right" timestamp="1592432080383">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="277" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592389867191" />
+    <state width="1309" height="277" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592432080383" />
     <state x="452" y="287" key="ReplaceDuplicatesPrompt" timestamp="1592385357979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -220,6 +240,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592381783134" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592390464375">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592390464375" />
     <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592385347152">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
