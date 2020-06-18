@@ -13,23 +13,22 @@ import java.util.TreeSet;
 import java.util.concurrent.ForkJoinPool;
 
 public class Main {
-    private static final String prefix = "https://lenta.ru";//"https://secure-headland-59304.herokuapp.com"; // "https://skillbox.ru"
+    private static final String prefix = "https://secure-headland-59304.herokuapp.com"; //"https://lenta.ru"; "https://skillbox.ru"; //
     private static final String url = prefix + "/";
     private static MyRecursiveAction myRecursiveAction;
-    private static int workLoad;
+    private static TreeSet<String> result;
 
     public static void main(String[] args) {
         long from = new Date().getTime();
-        Document doc;
+//        Document doc;
         try {
-            doc = Jsoup.connect(url).maxBodySize(3_000_000).get();
+            Document doc = Jsoup.connect(url).maxBodySize(3_000_000).get();
             Elements elements = doc.body().getElementsByAttribute("href");
-            workLoad = elements.size();
-            myRecursiveAction = new MyRecursiveAction(workLoad, prefix);
+            myRecursiveAction = new MyRecursiveAction(prefix, 0, elements.size());
+            forkJoinResult(from);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        forkJoinResult(from);
     }
 
 //    private static void htmlParsingResult(long from) {
@@ -42,8 +41,7 @@ public class Main {
 //    }
 
     private static void forkJoinResult(long from) {
-        myRecursiveAction.startForkJoin(prefix);
-        TreeSet<String> result = myRecursiveAction.getResult();
+        result = myRecursiveAction.startForkJoin();
         try {
             output(from, result);
         } catch (IOException e) {

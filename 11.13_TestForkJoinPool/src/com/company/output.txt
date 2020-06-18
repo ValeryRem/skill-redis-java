@@ -1,0 +1,4 @@
+https://secure-headland-59304.herokuapp.com/
+    https://secure-headland-59304.herokuapp.com/child-A
+    https://secure-headland-59304.herokuapp.com/child-B
+    https://secure-headland-59304.herokuapp.com/child-C

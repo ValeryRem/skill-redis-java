@@ -114,12 +114,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/MyRecursiveAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/MyRecursiveAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ParsingHtml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ParsingHtml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/code" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/code" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/code" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/code" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
@@ -201,64 +198,72 @@
       <option name="project" value="LOCAL" />
       <updated>1592432636052</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Deleted ParsingHTML(...) method. Parsing by ForkJoinPool only.">
+      <created>1592484349237</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592484349237</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Init commit of new version for test-site." />
     <MESSAGE value="ParsingHTML(...) method uses limit of depth of Parsing &amp; volume of result set." />
-    <option name="LAST_COMMIT_MESSAGE" value="ParsingHTML(...) method uses limit of depth of Parsing &amp; volume of result set." />
+    <MESSAGE value="Deleted ParsingHTML(...) method. Parsing by ForkJoinPool only." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted ParsingHTML(...) method. Parsing by ForkJoinPool only." />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592406636628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1592406636628" />
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1592469871426">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1592496114679">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592469871426" />
-    <state x="160" y="0" key="CommitChangelistDialog2" timestamp="1592432633055">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592496114679" />
+    <state x="160" y="0" key="CommitChangelistDialog2" timestamp="1592484346583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="160" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592432633055" />
+    <state x="160" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592484346583" />
     <state x="314" y="41" key="FileChooserDialogImpl" timestamp="1592381761309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592381761309" />
-    <state width="1309" height="415" key="GridCell.Tab.0.bottom" timestamp="1592483778279">
+    <state width="1309" height="415" key="GridCell.Tab.0.bottom" timestamp="1592518436600">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592483778279" />
-    <state width="1309" height="415" key="GridCell.Tab.0.center" timestamp="1592483778279">
+    <state width="1309" height="415" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592518436600" />
+    <state width="1309" height="415" key="GridCell.Tab.0.center" timestamp="1592518436599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592483778279" />
-    <state width="1309" height="415" key="GridCell.Tab.0.left" timestamp="1592483778279">
+    <state width="1309" height="415" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592518436599" />
+    <state width="1309" height="415" key="GridCell.Tab.0.left" timestamp="1592518436599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592483778279" />
-    <state width="1309" height="415" key="GridCell.Tab.0.right" timestamp="1592483778279">
+    <state width="1309" height="415" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592518436599" />
+    <state width="1309" height="415" key="GridCell.Tab.0.right" timestamp="1592518436599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592483778279" />
-    <state width="1309" height="393" key="GridCell.Tab.1.bottom" timestamp="1592480233334">
+    <state width="1309" height="415" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592518436599" />
+    <state width="1309" height="287" key="GridCell.Tab.1.bottom" timestamp="1592518317714">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="393" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592480233334" />
-    <state width="1309" height="393" key="GridCell.Tab.1.center" timestamp="1592480233334">
+    <state width="1309" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592518317714" />
+    <state width="1309" height="287" key="GridCell.Tab.1.center" timestamp="1592518317713">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="393" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592480233334" />
-    <state width="1309" height="393" key="GridCell.Tab.1.left" timestamp="1592480233334">
+    <state width="1309" height="287" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592518317713" />
+    <state width="1309" height="287" key="GridCell.Tab.1.left" timestamp="1592518317713">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="393" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592480233334" />
-    <state width="1309" height="393" key="GridCell.Tab.1.right" timestamp="1592480233334">
+    <state width="1309" height="287" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592518317713" />
+    <state width="1309" height="287" key="GridCell.Tab.1.right" timestamp="1592518317713">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="393" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592480233334" />
+    <state width="1309" height="287" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592518317713" />
     <state x="452" y="287" key="ReplaceDuplicatesPrompt" timestamp="1592385357979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -267,10 +272,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592381783134" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592432651507">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592484353836">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592432651507" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592484353836" />
     <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592385347152">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -281,8 +286,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/MyRecursiveAction.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="2" />
+          <line>112</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
