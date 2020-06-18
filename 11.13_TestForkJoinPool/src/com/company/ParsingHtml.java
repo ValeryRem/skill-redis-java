@@ -34,12 +34,13 @@ public class ParsingHtml {
                     suffix = "/".concat(suffix);
                 }
                 fullRef = prefix + suffix;
-                if (!suffix.contains("http") && suffix.length() > 3 && !suffix.startsWith("/#") && !result.contains(fullRef)) {
+                if (!suffix.contains("http") && suffix.length() > 3 && !suffix.startsWith("/#") && !result.contains(fullRef) && !suffix.contains("@")
+                && !suffix.contains("tel:+") && !suffix.endsWith(".pdf") && !suffix.contains("/tg:/")) {
                     index++;
                     System.out.println(suffix + " -> " + index);
                     while (result.size() < limitOfResultList) {
                         result.add(fullRef);
-                        if (index == depthOfParsing) {
+                        if (index == depthOfParsing || index == elements.size() - 1) {
                             index = 0;
                             continue;
                         }

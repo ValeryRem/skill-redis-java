@@ -1,5 +1,9 @@
 package com.company;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,33 +13,37 @@ import java.util.TreeSet;
 import java.util.concurrent.ForkJoinPool;
 
 public class Main {
-    private static final String prefix = "https://lenta.ru";//"https://secure-headland-59304.herokuapp.com";
+    private static final String prefix = "https://lenta.ru";//"https://secure-headland-59304.herokuapp.com"; // "https://skillbox.ru"
     private static final String url = prefix + "/";
-    private static final int depthOfParsing = 30;
-    private static final int limitOfResultList = 500;
-
-    private static final ParsingHtml parsingHtml = new ParsingHtml(prefix, depthOfParsing, limitOfResultList);
+    private static MyRecursiveAction myRecursiveAction;
+    private static int workLoad;
 
     public static void main(String[] args) {
         long from = new Date().getTime();
-//        htmlParsingResult(from);
-        forkJoinResult(from);
-    }
-
-    private static void htmlParsingResult(long from) {
-        TreeSet<String> result = parsingHtml.getHTMLinfo(prefix);
+        Document doc;
         try {
-            output(from, result);
+            doc = Jsoup.connect(url).maxBodySize(3_000_000).get();
+            Elements elements = doc.body().getElementsByAttribute("href");
+            workLoad = elements.size();
+            myRecursiveAction = new MyRecursiveAction(workLoad, prefix);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        forkJoinResult(from);
     }
 
+//    private static void htmlParsingResult(long from) {
+//        TreeSet<String> result = myRecursiveAction.getResult();
+//        try {
+//            output(from, result);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     private static void forkJoinResult(long from) {
-        TreeSet<String> result = parsingHtml.getHTMLinfo(Main.url);
-        MyRecursiveAction myRecursiveAction = new MyRecursiveAction(10, Main.url, parsingHtml);
-        ForkJoinPool forkJoinPool = new ForkJoinPool(4);
-        forkJoinPool.invoke(myRecursiveAction);
+        myRecursiveAction.startForkJoin(prefix);
+        TreeSet<String> result = myRecursiveAction.getResult();
         try {
             output(from, result);
         } catch (IOException e) {
