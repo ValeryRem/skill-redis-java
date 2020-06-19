@@ -13,18 +13,17 @@ import java.util.TreeSet;
 import java.util.concurrent.ForkJoinPool;
 
 public class Main {
-    private static final String prefix = "https://secure-headland-59304.herokuapp.com"; //"https://lenta.ru"; "https://skillbox.ru"; //
+    private static final String prefix = "https://secure-headland-59304.herokuapp.com"; //"https://lenta.ru"; //"https://skillbox.ru"; //
     private static final String url = prefix + "/";
     private static MyRecursiveAction myRecursiveAction;
     private static TreeSet<String> result;
 
     public static void main(String[] args) {
         long from = new Date().getTime();
-//        Document doc;
         try {
             Document doc = Jsoup.connect(url).maxBodySize(3_000_000).get();
             Elements elements = doc.body().getElementsByAttribute("href");
-            myRecursiveAction = new MyRecursiveAction(prefix, 0, elements.size());
+            myRecursiveAction = new MyRecursiveAction(prefix, elements, 0, elements.size());
             forkJoinResult(from);
         } catch (IOException e) {
             e.printStackTrace();

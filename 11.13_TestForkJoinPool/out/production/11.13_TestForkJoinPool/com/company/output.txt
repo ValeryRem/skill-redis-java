@@ -1,3 +1,10 @@
-    https://secure-headland-59304.herokuapp.com/child-A
-    https://secure-headland-59304.herokuapp.com/child-B
-    https://secure-headland-59304.herokuapp.com/child-C
+https://skillbox.ru/
+    https://skillbox.ru/career/
+    https://skillbox.ru/code/
+    https://skillbox.ru/company/
+    https://skillbox.ru/contacts/
+    https://skillbox.ru/design/
+    https://skillbox.ru/jobs/
+    https://skillbox.ru/management/
+    https://skillbox.ru/marketing/
+    https://skillbox.ru/otzyvy/

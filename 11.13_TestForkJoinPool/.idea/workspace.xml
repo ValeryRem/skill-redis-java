@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="">
+    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="Parsing by ForkJoinPool however with recursion for small sets.">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -205,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592484349237</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Parsing by ForkJoinPool however without recursion.">
+      <created>1592519344263</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592519344263</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -213,7 +220,9 @@
     <MESSAGE value="Init commit of new version for test-site." />
     <MESSAGE value="ParsingHTML(...) method uses limit of depth of Parsing &amp; volume of result set." />
     <MESSAGE value="Deleted ParsingHTML(...) method. Parsing by ForkJoinPool only." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted ParsingHTML(...) method. Parsing by ForkJoinPool only." />
+    <MESSAGE value="Parsing by ForkJoinPool however without recursion." />
+    <MESSAGE value="Parsing by ForkJoinPool however with recursion for small sets." />
+    <option name="LAST_COMMIT_MESSAGE" value="Parsing by ForkJoinPool however with recursion for small sets." />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592406636628">
@@ -224,46 +233,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592496114679" />
-    <state x="160" y="0" key="CommitChangelistDialog2" timestamp="1592484346583">
+    <state x="160" y="0" key="CommitChangelistDialog2" timestamp="1592555228135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="160" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592484346583" />
+    <state x="160" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592555228135" />
     <state x="314" y="41" key="FileChooserDialogImpl" timestamp="1592381761309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592381761309" />
-    <state width="1309" height="415" key="GridCell.Tab.0.bottom" timestamp="1592518436600">
+    <state width="1309" height="415" key="GridCell.Tab.0.bottom" timestamp="1592563410991">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592518436600" />
-    <state width="1309" height="415" key="GridCell.Tab.0.center" timestamp="1592518436599">
+    <state width="1309" height="415" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592563410991" />
+    <state width="1309" height="415" key="GridCell.Tab.0.center" timestamp="1592563410991">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592518436599" />
-    <state width="1309" height="415" key="GridCell.Tab.0.left" timestamp="1592518436599">
+    <state width="1309" height="415" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592563410991" />
+    <state width="1309" height="415" key="GridCell.Tab.0.left" timestamp="1592563410991">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592518436599" />
-    <state width="1309" height="415" key="GridCell.Tab.0.right" timestamp="1592518436599">
+    <state width="1309" height="415" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592563410991" />
+    <state width="1309" height="415" key="GridCell.Tab.0.right" timestamp="1592563410991">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592518436599" />
-    <state width="1309" height="287" key="GridCell.Tab.1.bottom" timestamp="1592518317714">
+    <state width="1309" height="415" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592563410991" />
+    <state width="1309" height="287" key="GridCell.Tab.1.bottom" timestamp="1592559963545">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592518317714" />
-    <state width="1309" height="287" key="GridCell.Tab.1.center" timestamp="1592518317713">
+    <state width="1309" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592559963545" />
+    <state width="1309" height="287" key="GridCell.Tab.1.center" timestamp="1592559963545">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="287" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592518317713" />
-    <state width="1309" height="287" key="GridCell.Tab.1.left" timestamp="1592518317713">
+    <state width="1309" height="287" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592559963545" />
+    <state width="1309" height="287" key="GridCell.Tab.1.left" timestamp="1592559963545">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="287" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592518317713" />
-    <state width="1309" height="287" key="GridCell.Tab.1.right" timestamp="1592518317713">
+    <state width="1309" height="287" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592559963545" />
+    <state width="1309" height="287" key="GridCell.Tab.1.right" timestamp="1592559963545">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="287" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592518317713" />
+    <state width="1309" height="287" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592559963545" />
     <state x="452" y="287" key="ReplaceDuplicatesPrompt" timestamp="1592385357979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -272,24 +281,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592381783134" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592484353836">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592519354496">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592484353836" />
-    <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592385347152">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592519354496" />
+    <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592554883652">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="55" width="673" height="620" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1592385347152" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/MyRecursiveAction.java</url>
-          <line>112</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="346" y="55" width="673" height="620" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1592554883652" />
   </component>
 </project>
