@@ -70,3 +70,24 @@ public class Main {
     }
 
 }
+
++++++++++++++++++++++ My method for big sites:
+    private void getUrlByElement(Element element) {
+        String fullRef;
+        String suffix = element.attr("href");
+        if (!suffix.startsWith("/")) {
+            suffix = "/".concat(suffix);
+        }
+        if (!suffix.contains("http") && suffix.length() > 3 && !suffix.contains("#") && !suffix.contains("@")
+                && !suffix.contains("tel:+") && !suffix.endsWith(".pdf") && !suffix.contains("/tg:/")
+        ) {
+            fullRef = prefix + suffix;
+//            set.add(fullRef);
+//            url = fullRef;
+            if (!resultStore.getResult().contains(fullRef)) {
+                resultStore.getResult().add(fullRef);
+                System.out.println(Thread.currentThread().getName() + " -> " + fullRef + " size of result: " +
+                        resultStore.getResult().size());
+            }
+        }
+    }

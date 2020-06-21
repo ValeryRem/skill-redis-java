@@ -92,6 +92,14 @@
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/com/company/TreeNode.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/resources/sitemapgen4j-1.0.1.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/ToDo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_13_1__2_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/META-INF/11.13_TestForkJoinPool.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Parser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ResultStore.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/lib/jsoup-1.13.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ResultStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/jsoup-1.13.1.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Comparison.jpg" afterDir="false" />
@@ -111,12 +119,18 @@
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/MyRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/MyRecursiveAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/ParsingHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/ParsingHtml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_13_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_13_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11.13_TestForkJoinPool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/11.13_TestForkJoinPool.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/MyRecursiveAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/MyRecursiveAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/MyRecursiveAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ParsingHtml.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/code" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/code" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MyRecursiveAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ParsingHtml.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/code" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/code" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
@@ -151,10 +165,15 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/jsoup-1.13.1.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valery\Desktop\java_basics\11.13_TestForkJoinPool\src\lib" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -212,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592519344263</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Parsing by ForkJoinPool with good result for small site.">
+      <created>1592563769789</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592563769789</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -222,72 +248,73 @@
     <MESSAGE value="Deleted ParsingHTML(...) method. Parsing by ForkJoinPool only." />
     <MESSAGE value="Parsing by ForkJoinPool however without recursion." />
     <MESSAGE value="Parsing by ForkJoinPool however with recursion for small sets." />
-    <option name="LAST_COMMIT_MESSAGE" value="Parsing by ForkJoinPool however with recursion for small sets." />
+    <MESSAGE value="Parsing by ForkJoinPool with good result for small site." />
+    <option name="LAST_COMMIT_MESSAGE" value="Parsing by ForkJoinPool with good result for small site." />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592406636628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1592406636628" />
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1592496114679">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1592572301491">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592496114679" />
-    <state x="160" y="0" key="CommitChangelistDialog2" timestamp="1592555228135">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592572301491" />
+    <state x="160" y="0" key="CommitChangelistDialog2" timestamp="1592563767021">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="160" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592555228135" />
-    <state x="314" y="41" key="FileChooserDialogImpl" timestamp="1592381761309">
+    <state x="160" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592563767021" />
+    <state x="314" y="41" key="FileChooserDialogImpl" timestamp="1592596101368">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592381761309" />
-    <state width="1309" height="415" key="GridCell.Tab.0.bottom" timestamp="1592563410991">
+    <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592596101368" />
+    <state width="1309" height="415" key="GridCell.Tab.0.bottom" timestamp="1592731444643">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592563410991" />
-    <state width="1309" height="415" key="GridCell.Tab.0.center" timestamp="1592563410991">
+    <state width="1309" height="415" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592731444643" />
+    <state width="1309" height="415" key="GridCell.Tab.0.center" timestamp="1592731444642">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592563410991" />
-    <state width="1309" height="415" key="GridCell.Tab.0.left" timestamp="1592563410991">
+    <state width="1309" height="415" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592731444642" />
+    <state width="1309" height="415" key="GridCell.Tab.0.left" timestamp="1592731444642">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592563410991" />
-    <state width="1309" height="415" key="GridCell.Tab.0.right" timestamp="1592563410991">
+    <state width="1309" height="415" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592731444642" />
+    <state width="1309" height="415" key="GridCell.Tab.0.right" timestamp="1592731444642">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="415" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592563410991" />
-    <state width="1309" height="287" key="GridCell.Tab.1.bottom" timestamp="1592559963545">
+    <state width="1309" height="415" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592731444642" />
+    <state width="1309" height="287" key="GridCell.Tab.1.bottom" timestamp="1592726212672">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592559963545" />
-    <state width="1309" height="287" key="GridCell.Tab.1.center" timestamp="1592559963545">
+    <state width="1309" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592726212672" />
+    <state width="1309" height="287" key="GridCell.Tab.1.center" timestamp="1592726212672">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="287" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592559963545" />
-    <state width="1309" height="287" key="GridCell.Tab.1.left" timestamp="1592559963545">
+    <state width="1309" height="287" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592726212672" />
+    <state width="1309" height="287" key="GridCell.Tab.1.left" timestamp="1592726212672">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="287" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592559963545" />
-    <state width="1309" height="287" key="GridCell.Tab.1.right" timestamp="1592559963545">
+    <state width="1309" height="287" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592726212672" />
+    <state width="1309" height="287" key="GridCell.Tab.1.right" timestamp="1592726212672">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="287" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592559963545" />
+    <state width="1309" height="287" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592726212672" />
     <state x="452" y="287" key="ReplaceDuplicatesPrompt" timestamp="1592385357979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="452" y="287" key="ReplaceDuplicatesPrompt/0.0.1366.728@0.0.1366.728" timestamp="1592385357979" />
-    <state x="34" y="0" key="SettingsEditor" timestamp="1592381783134">
+    <state x="34" y="0" key="SettingsEditor" timestamp="1592596131538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592381783134" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592519354496">
+    <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592596131538" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592563781556">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592519354496" />
-    <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592554883652">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592563781556" />
+    <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592695242823">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="55" width="673" height="620" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1592554883652" />
+    <state x="346" y="55" width="673" height="620" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1592695242823" />
   </component>
 </project>
