@@ -25,15 +25,19 @@ public class Parser extends RecursiveTask<Set<String>> {
 
     @Override
     protected Set<String> compute() {
-        parseAndGetTasksForChilds(); // создаем для данного url сет задач (дочерних ссылок для парсинга)
-        Set<Parser> subTaskSet = childSet; // передаем сет задач в метод
-        subTaskSet.stream().
-                filter(task -> !taskSet.contains(task)). // проверяем task на уникальность
-                forEach(task -> {
-                    taskSet.add(task); // добавляем новый выполненный task в реестр учета выполненных задач
-                    System.out.println(Thread.currentThread().getName() + " -> task url: " + task.url + " - " + task.toString());//resultStore.getTaskSet().size());
-            resultStore.getResult().addAll(task.join());
-        });
+        if (resultStore.getResult().size() <= 500) {
+            parseAndGetTasksForChilds(); // создаем для данного url сет задач (дочерних ссылок для парсинга)
+            Set<Parser> subTaskSet = childSet; // передаем сет задач в метод
+            subTaskSet.stream().
+                    filter(task -> !taskSet.contains(task)). // проверяем task на уникальность
+                    forEach(task -> {
+                taskSet.add(task); // добавляем новый выполненный task в реестр учета выполненных задач
+                System.out.println(Thread.currentThread().getName() + " -> task url: " + task.url + " - " + task.toString());//resultStore.getTaskSet().size());
+                resultStore.getResult().addAll(task.join());
+            });
+        } else {
+            System.out.println("Set of references is full!");
+        }
         return resultStore.getResult();
     }
 
@@ -54,13 +58,32 @@ public class Parser extends RecursiveTask<Set<String>> {
     }
 
     private void processElement(Element el) {
-        String attr = el.attr("abs:href");
-        if (!attr.equals(prefix + "/") && !resultStore.getResult().contains(attr)) { // устраняем дублирующие ссылки
-            Parser parser = new Parser(attr, prefix); // создаем Parser для каждой уникальной ссылки
-            resultStore.getResult().add(attr);//resultStore.getResult().add(attr);
-            parser.fork(); // запускаем асинхронное исполнение задачи в общем пуле потоков ForkJoinPool
-            childSet.add(parser);// дабавляем объект Parser в коллекцию
+        String fullRef;
+        String suffix = el.attr("href");
+        if (!suffix.startsWith("/")) {
+            suffix = "/".concat(suffix);
         }
-        System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + resultStore.getResult().size());
+        if (!suffix.contains("http") && suffix.length() > 3 && !suffix.contains("#") && !suffix.contains("@")
+                && !suffix.contains("tel:+") && !suffix.endsWith(".pdf") && !suffix.contains("/tg:/")) {
+            fullRef = prefix + suffix;
+            if (!resultStore.getResult().contains(fullRef)) {
+                Parser parser = new Parser(fullRef, prefix);
+                resultStore.getResult().add(fullRef);
+                parser.fork();
+                childSet.add(parser);
+                System.out.println(Thread.currentThread().getName() + " -> " + fullRef + " size of result: " +
+                        resultStore.getResult().size());
+            }
+        }
+
+        // For testing site:
+//        String attr = el.attr("abs:href");
+//        if (!attr.equals(prefix + "/") && !resultStore.getResult().contains(attr)) { // устраняем дублирующие ссылки
+//            Parser parser = new Parser(attr, prefix); // создаем Parser для каждой уникальной ссылки
+//            resultStore.getResult().add(attr);//resultStore.getResult().add(attr);
+//            parser.fork(); // запускаем асинхронное исполнение задачи в общем пуле потоков ForkJoinPool
+//            childSet.add(parser);// дабавляем объект Parser в коллекцию
+//        }
+//        System.out.println(Thread.currentThread().getName() + " -> " + fullRef + " - Result size: " + resultStore.getResult().size());
     }
 }
