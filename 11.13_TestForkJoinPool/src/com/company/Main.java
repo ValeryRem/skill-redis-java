@@ -1,9 +1,5 @@
 package com.company;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -16,8 +12,8 @@ public class Main {
     private static Parser parser = new Parser(url, prefix);
 
     public static void main(String[] args) {
-        long from = new Date().getTime();
-        Set<String> siteMap = ForkJoinPool.commonPool().invoke(parser);//new ForkJoinPool().invoke(parser);
+        long from = System.currentTimeMillis();//new Date().getTime();
+            Set<String> siteMap = ForkJoinPool.commonPool().invoke(parser); //new ForkJoinPool().invoke(parser);//
         try {
             output(from, siteMap);
         } catch (IOException e) {
@@ -49,6 +45,6 @@ public class Main {
         System.out.println("\nResult:");
         list.forEach(System.out::println);
         System.out.println("result.size(): " + result.size());
-        System.out.println("Runtime: " + (new Date().getTime() - from) / 1000 + " sec.");
+        System.out.println("Runtime: " + (System.currentTimeMillis() - from) / 1000  + " sec.");
     }
 }
