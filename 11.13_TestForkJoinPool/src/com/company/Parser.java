@@ -6,7 +6,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.RecursiveTask;
@@ -16,7 +15,8 @@ public class Parser extends RecursiveTask<Set<String>> {
     private String url;
     private String prefix;
     private ResultStore resultStore = new ResultStore();
-    private Set<String> result = new HashSet<>();
+    private Set<Parser> taskSet = new HashSet<>();
+    private Set<Parser> childSet = new HashSet<>();
 
     public Parser(String url, String prefix) {
         this.url = url.trim();
@@ -26,15 +26,15 @@ public class Parser extends RecursiveTask<Set<String>> {
     @Override
     protected Set<String> compute() {
         parseAndGetTasksForChilds(); // создаем для данного url сет задач (дочерних ссылок для парсинга)
-        Set<Parser> subTaskSet = resultStore.getChildParsers(); // передаем сет задач в метод
-        for (Parser task : subTaskSet) {  // для каждой задачи...
-            if (!resultStore.getTaskSet().contains(task)){ // проверяем, выполнялся ли раньше данный task
-                resultStore.getTaskSet().add(task); // добавляем новый выполненный task в реестр учета выполненных задач
-                System.out.println(Thread.currentThread().getName() + " -> taskSet: " + resultStore.getTaskSet().size());
-                resultStore.getResult().addAll(task.join());
-            }
-        }
-        return result;
+        Set<Parser> subTaskSet = childSet; // передаем сет задач в метод
+        subTaskSet.stream().
+                filter(task -> !taskSet.contains(task)). // проверяем task на уникальность
+                forEach(task -> {
+                    taskSet.add(task); // добавляем новый выполненный task в реестр учета выполненных задач
+                    System.out.println(Thread.currentThread().getName() + " -> task url: " + task.url + " - " + task.toString());//resultStore.getTaskSet().size());
+            resultStore.getResult().addAll(task.join());
+        });
+        return resultStore.getResult();
     }
 
     private Set<Parser> parseAndGetTasksForChilds() {
@@ -50,16 +50,16 @@ public class Parser extends RecursiveTask<Set<String>> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return resultStore.getChildParsers();
+        return childSet;
     }
 
     private void processElement(Element el) {
         String attr = el.attr("abs:href");
-        if (!attr.equals(prefix + "/")) {
-            Parser parser = new Parser(attr, prefix); // создаем Parser для каждой ссылки и дабавляем их в коллекцию Parser:
-            resultStore.getResult().add(attr);
-            parser.fork();
-            resultStore.getChildParsers().add(parser);
+        if (!attr.equals(prefix + "/") && !resultStore.getResult().contains(attr)) { // устраняем дублирующие ссылки
+            Parser parser = new Parser(attr, prefix); // создаем Parser для каждой уникальной ссылки
+            resultStore.getResult().add(attr);//resultStore.getResult().add(attr);
+            parser.fork(); // запускаем асинхронное исполнение задачи в общем пуле потоков ForkJoinPool
+            childSet.add(parser);// дабавляем объект Parser в коллекцию
         }
         System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + resultStore.getResult().size());
     }

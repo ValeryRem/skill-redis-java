@@ -13,9 +13,9 @@ public class Main {
 
     public static void main(String[] args) {
         long from = System.currentTimeMillis();//new Date().getTime();
-            Set<String> siteMap = ForkJoinPool.commonPool().invoke(parser); //new ForkJoinPool().invoke(parser);//
+            Set<String> siteMap = new ForkJoinPool().invoke(parser);//ForkJoinPool.commonPool().invoke(parser); //
         try {
-            output(from, siteMap);
+            output(from, resultStore.getResult());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -24,6 +24,7 @@ public class Main {
     private static void output(long from, Set<String> set) throws IOException {
         Set<String> result = new TreeSet<>(set);
         List<String> list = new ArrayList<>();
+        list.add(url);
         FileWriter writer = new FileWriter("src\\com\\company\\output.txt");
         for (String s : result) {
             String span = "";
