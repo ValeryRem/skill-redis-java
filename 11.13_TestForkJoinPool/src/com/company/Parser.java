@@ -32,8 +32,8 @@ public class Parser extends RecursiveTask<Set<String>> {
 
     @Override
     protected Set<String> compute() {
-        parseAndGetTasksForChilds(); // создаем для данного url сет задач (дочерних ссылок для парсинга)
-        Set<Parser> subTaskSet = resultStore.getChildParsers(); // передаем сет задач в метод
+       // создаем для данного url сет задач (дочерних ссылок для парсинга)
+        Set<Parser> subTaskSet =  parseAndGetTasksForChilds(); //resultStore.getChildParsers(); // передаем сет задач в метод
         if (urlAdded.size() < LIMIT_OF_RESULT) {
             subTaskSet.stream().
                     filter(task -> !resultStore.getTaskSet().contains(task.url)). // проверяем task на уникальность
@@ -93,8 +93,8 @@ public class Parser extends RecursiveTask<Set<String>> {
         String attr = el.attr("abs:href");
         if (attr.contains(prefix) && !attr.contains(".pdf") && !urlAdded.contains(attr) && !attr.contains("#")
         && !attr.contains("@") && !attr.contains("tel:")) { // устраняем чуждые ссылки
+            urlAdded.add(attr);
             Parser parser = new Parser(from, attr, prefix, urlAdded, LIMIT_OF_RESULT); // создаем Parser для каждой уникальной ссылки
-            urlAdded.add(attr);//resultStore.getResult().add(attr);
             System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + urlAdded.size());
             resultStore.getChildParsers().add(parser);// дабавляем объект Parser в коллекцию
             parser.fork(); // запускаем асинхронное исполнение задачи в общем пуле потоков ForkJoinPool

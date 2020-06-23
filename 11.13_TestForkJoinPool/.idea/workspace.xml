@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="Universal code.">
+    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="Universal code completed.">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -133,11 +133,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ResultStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ResultStore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ResultStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ResultStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
@@ -273,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592838932161</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Universal code completed.">
+      <created>1592923789418</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592923789418</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,7 +296,8 @@
     <MESSAGE value="Control of distinct tasks." />
     <MESSAGE value="Correct result for testing site." />
     <MESSAGE value="Code for big sites like lenta.ru." />
-    <option name="LAST_COMMIT_MESSAGE" value="Code for big sites like lenta.ru." />
+    <MESSAGE value="Universal code completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Universal code completed." />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592406636628">
@@ -314,22 +320,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592596101368" />
-    <state width="1309" height="375" key="GridCell.Tab.0.bottom" timestamp="1592922832805">
+    <state width="1309" height="397" key="GridCell.Tab.0.bottom" timestamp="1592942851227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="375" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592922832805" />
-    <state width="1309" height="375" key="GridCell.Tab.0.center" timestamp="1592922832805">
+    <state width="1309" height="397" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592942851227" />
+    <state width="1309" height="397" key="GridCell.Tab.0.center" timestamp="1592942851227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="375" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592922832805" />
-    <state width="1309" height="375" key="GridCell.Tab.0.left" timestamp="1592922832805">
+    <state width="1309" height="397" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592942851227" />
+    <state width="1309" height="397" key="GridCell.Tab.0.left" timestamp="1592942851227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="375" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592922832805" />
-    <state width="1309" height="375" key="GridCell.Tab.0.right" timestamp="1592922832805">
+    <state width="1309" height="397" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592942851227" />
+    <state width="1309" height="397" key="GridCell.Tab.0.right" timestamp="1592942851227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="375" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592922832805" />
+    <state width="1309" height="397" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592942851227" />
     <state width="1309" height="287" key="GridCell.Tab.1.bottom" timestamp="1592808591179">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -354,10 +360,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592596131538" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592838941950">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592923801752">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592838941950" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592923801752" />
     <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592695242823">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
