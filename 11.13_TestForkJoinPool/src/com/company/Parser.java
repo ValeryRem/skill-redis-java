@@ -11,9 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.RecursiveTask;
 
-public class Parser extends RecursiveTask<Set<String>> {
+public class Parser extends RecursiveAction {
 
     private String url;
     private String prefix;
@@ -31,31 +32,18 @@ public class Parser extends RecursiveTask<Set<String>> {
     }
 
     @Override
-    protected Set<String> compute() {
-       // создаем для данного url сет задач (дочерних ссылок для парсинга)
-        Set<Parser> subTaskSet =  parseAndGetTasksForChilds(); //resultStore.getChildParsers(); // передаем сет задач в метод
-        if (urlAdded.size() < LIMIT_OF_RESULT) {
-            subTaskSet.stream().
-                    filter(task -> !resultStore.getTaskSet().contains(task.url)). // проверяем task на уникальность
-                    forEach(task -> {
-                resultStore.getTaskSet().add(task.url); // добавляем новый запущенный task в реестр учета задач
-                System.out.println(Thread.currentThread().getName() + " -> task url: " + task.url + "- result: " + urlAdded.size());
-                urlAdded.addAll(task.join());
-                    });
-        } else {
-            System.out.println("Set of results is overloaded!");
-            try {
-                output(from, urlAdded);
-                System.exit(0);
-            } catch (IOException e) {
-                e.printStackTrace();
+    protected void compute() {
+        Set<Parser> subTaskSet =  parseAndGetTasksForChilds();
+            for (Parser task : subTaskSet) {
+                if (!resultStore.getTaskSet().contains(task.url)) {
+                    resultStore.getTaskSet().add(task.url);
+                    System.out.println(Thread.currentThread().getName() + " -> task url: " + task.url + "- result: " + urlAdded.size());
+                    task.invoke();
+                }
             }
-        }
-        return urlAdded;
     }
 
     private Set<Parser> parseAndGetTasksForChilds() {
-        // здесь загружаем и парсим this.url и создаем массив задач для каждой дочерней ссылки.
         Document doc;
         Elements elements;
         try {
@@ -90,21 +78,32 @@ public class Parser extends RecursiveTask<Set<String>> {
 //        }
 
         // For testing site:
-        String attr = el.attr("abs:href");
-        if (attr.contains(prefix) && !attr.contains(".pdf") && !urlAdded.contains(attr) && !attr.contains("#")
-        && !attr.contains("@") && !attr.contains("tel:")) { // устраняем чуждые ссылки
-            urlAdded.add(attr);
-            Parser parser = new Parser(from, attr, prefix, urlAdded, LIMIT_OF_RESULT); // создаем Parser для каждой уникальной ссылки
-            System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + urlAdded.size());
-            resultStore.getChildParsers().add(parser);// дабавляем объект Parser в коллекцию
-            parser.fork(); // запускаем асинхронное исполнение задачи в общем пуле потоков ForkJoinPool
+        if (urlAdded.size() >= LIMIT_OF_RESULT) {
+            System.out.println("Set of results is overloaded!");
+            try {
+                output(from, urlAdded);
+//                System.exit(0);
+                notifyAll();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            String attr = el.attr("abs:href");
+            if (attr.contains(prefix) && !attr.contains(".pdf") && !urlAdded.contains(attr) && !attr.contains("#")
+                    && !attr.contains("@") && !attr.contains("tel:")) {
+                urlAdded.add(attr);
+                Parser parser = new Parser(from, attr, prefix, urlAdded, LIMIT_OF_RESULT);
+                System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + urlAdded.size());
+                resultStore.getChildParsers().add(parser);// дабавляем объект Parser в коллекцию
+                parser.fork();
+            }
         }
     }
 
     public void output(long from, Set<String> set) throws IOException {
         Set<String> treeResult = new TreeSet<>(set);
         List<String> list = new ArrayList<>();
-        FileWriter writer = new FileWriter("src\\com\\company\\output.txt");
+        FileWriter writer = new FileWriter("src/com/company/output.txt");
         for (String s : treeResult) {
             String span = "";
             String shift = "    ";

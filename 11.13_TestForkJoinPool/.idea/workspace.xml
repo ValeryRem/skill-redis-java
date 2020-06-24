@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="Universal code completed.">
+    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="Universal code completed &amp; corrected.">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -90,26 +90,6 @@
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/out/production/._Deadlock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Friend.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Loader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/.idea/libraries/sitemapgen4j_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/11.13_ForkJoinPool.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/out/production/11.13_ForkJoinPool/com/company/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/out/production/11.13_ForkJoinPool/com/company/Node.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/out/production/11.13_ForkJoinPool/com/company/NodeReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/com/company/CountingTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/com/company/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/com/company/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/com/company/NodeReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/com/company/ParsingHtml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/com/company/TreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPool/src/resources/sitemapgen4j-1.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/ToDo" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Comparison.jpg" afterDir="false" />
@@ -121,9 +101,16 @@
       <change afterPath="$PROJECT_DIR$/../java_basics.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../volatile.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Стек-трейс 220620.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/SiteSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/SiteSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/11.13_ForkJoinPoolExperiment.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/SiteSave.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/result/secure-headland-59304.herokuapp.com.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" afterDir="false" />
@@ -133,9 +120,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ResultStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ResultStore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ResultStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ResultStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
@@ -278,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592923789418</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Universal code completed &amp; corrected.">
+      <created>1592942962617</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1592942962617</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,17 +293,18 @@
     <MESSAGE value="Correct result for testing site." />
     <MESSAGE value="Code for big sites like lenta.ru." />
     <MESSAGE value="Universal code completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Universal code completed." />
+    <MESSAGE value="Universal code completed &amp; corrected." />
+    <option name="LAST_COMMIT_MESSAGE" value="Universal code completed &amp; corrected." />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592406636628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1592406636628" />
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1592895054300">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1593027342922">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592895054300" />
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1593027342922" />
     <state x="105" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592923246844">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -320,22 +317,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592596101368" />
-    <state width="1309" height="397" key="GridCell.Tab.0.bottom" timestamp="1592942851227">
+    <state width="1309" height="295" key="GridCell.Tab.0.bottom" timestamp="1593031535846">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="397" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592942851227" />
-    <state width="1309" height="397" key="GridCell.Tab.0.center" timestamp="1592942851227">
+    <state width="1309" height="295" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593031535846" />
+    <state width="1309" height="295" key="GridCell.Tab.0.center" timestamp="1593031535846">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="397" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592942851227" />
-    <state width="1309" height="397" key="GridCell.Tab.0.left" timestamp="1592942851227">
+    <state width="1309" height="295" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593031535846" />
+    <state width="1309" height="295" key="GridCell.Tab.0.left" timestamp="1593031535846">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="397" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592942851227" />
-    <state width="1309" height="397" key="GridCell.Tab.0.right" timestamp="1592942851227">
+    <state width="1309" height="295" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593031535846" />
+    <state width="1309" height="295" key="GridCell.Tab.0.right" timestamp="1593031535846">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="397" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592942851227" />
+    <state width="1309" height="295" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593031535846" />
     <state width="1309" height="287" key="GridCell.Tab.1.bottom" timestamp="1592808591179">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -360,10 +357,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592596131538" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592923801752">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1592942973070">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592923801752" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592942973070" />
     <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592695242823">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
