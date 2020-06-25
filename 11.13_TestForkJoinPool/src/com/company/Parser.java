@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.RecursiveAction;
-import java.util.concurrent.RecursiveTask;
 
 public class Parser extends RecursiveAction {
 
@@ -33,22 +32,22 @@ public class Parser extends RecursiveAction {
 
     @Override
     protected void compute() {
-        Set<Parser> subTaskSet =  parseAndGetTasksForChilds();
-            for (Parser task : subTaskSet) {
-                if (!resultStore.getTaskSet().contains(task.url)) {
-                    resultStore.getTaskSet().add(task.url);
-                    System.out.println(Thread.currentThread().getName() + " -> task url: " + task.url + "- result: " + urlAdded.size());
-                    task.invoke();
-                }
+        Set<Parser> subTaskSet = parseAndGetTasksForChildren();
+        for (Parser task : subTaskSet) {
+            if (!resultStore.getTaskSet().contains(task.url)) {
+                resultStore.getTaskSet().add(task.url);
+                System.out.println(Thread.currentThread().getName() + " -> task url: " + task.url + "- result: " + urlAdded.size());
+                task.invoke();
             }
+        }
     }
 
-    private Set<Parser> parseAndGetTasksForChilds() {
+    private Set<Parser> parseAndGetTasksForChildren() {
         Document doc;
         Elements elements;
         try {
             doc = Jsoup.connect(url).maxBodySize(3_000_000).userAgent("Mozilla").get();
-            elements = doc.select("a");  //getElementsByAttribute("href");//
+            elements = doc.select("a");  //getElementsByAttribute("href");
             for (Element element : elements) {
                     processElement(element);
             }
@@ -91,10 +90,11 @@ public class Parser extends RecursiveAction {
             String attr = el.attr("abs:href");
             if (attr.contains(prefix) && !attr.contains(".pdf") && !urlAdded.contains(attr) && !attr.contains("#")
                     && !attr.contains("@") && !attr.contains("tel:")) {
-                urlAdded.add(attr);
+
                 Parser parser = new Parser(from, attr, prefix, urlAdded, LIMIT_OF_RESULT);
+                urlAdded.add(attr);
                 System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + urlAdded.size());
-                resultStore.getChildParsers().add(parser);// дабавляем объект Parser в коллекцию
+                resultStore.getChildParsers().add(parser);
                 parser.fork();
             }
         }
