@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="Universal code completed &amp; corrected.">
+    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="Distinct output of urls.">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -90,6 +90,7 @@
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/11.13_Deadlock/__MACOSX/Deadlock/out/production/._Deadlock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Friend.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Loader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ParserContext.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Comparison.jpg" afterDir="false" />
@@ -120,9 +121,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ResultStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ResultStore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ResultStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ResultStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
@@ -279,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593032012789</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Distinct output of urls.">
+      <created>1593079538957</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1593079538957</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,17 +309,18 @@
     <MESSAGE value="Code for big sites like lenta.ru." />
     <MESSAGE value="Universal code completed." />
     <MESSAGE value="Universal code completed &amp; corrected." />
-    <option name="LAST_COMMIT_MESSAGE" value="Universal code completed &amp; corrected." />
+    <MESSAGE value="Distinct output of urls." />
+    <option name="LAST_COMMIT_MESSAGE" value="Distinct output of urls." />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592406636628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1592406636628" />
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1593027342922">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1593154404534">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1593027342922" />
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1593154404534" />
     <state x="105" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592923246844">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -322,22 +333,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592596101368" />
-    <state width="1309" height="295" key="GridCell.Tab.0.bottom" timestamp="1593079228781">
+    <state width="1309" height="295" key="GridCell.Tab.0.bottom" timestamp="1593162524758">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="295" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593079228781" />
-    <state width="1309" height="295" key="GridCell.Tab.0.center" timestamp="1593079228781">
+    <state width="1309" height="295" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593162524758" />
+    <state width="1309" height="295" key="GridCell.Tab.0.center" timestamp="1593162524758">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="295" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593079228781" />
-    <state width="1309" height="295" key="GridCell.Tab.0.left" timestamp="1593079228781">
+    <state width="1309" height="295" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593162524758" />
+    <state width="1309" height="295" key="GridCell.Tab.0.left" timestamp="1593162524758">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="295" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593079228781" />
-    <state width="1309" height="295" key="GridCell.Tab.0.right" timestamp="1593079228781">
+    <state width="1309" height="295" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593162524758" />
+    <state width="1309" height="295" key="GridCell.Tab.0.right" timestamp="1593162524758">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="295" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593079228781" />
+    <state width="1309" height="295" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593162524758" />
     <state width="1309" height="287" key="GridCell.Tab.1.bottom" timestamp="1592808591179">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -362,13 +373,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592596131538" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1593032025632">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1593079549041">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593032025632" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593079549041" />
     <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592695242823">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="55" width="673" height="620" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1592695242823" />
+    <state x="370" y="75" key="refactoring.ChangeSignatureDialog" timestamp="1593154894354">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="370" y="75" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1593154894354" />
   </component>
 </project>

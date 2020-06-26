@@ -3,10 +3,12 @@ package com.company;
 import java.util.*;
 
 public class ResultStore {
-    private  final String initUrl;
+    private String initUrl;
     private Set<Parser> childParsers = new HashSet<>();
     private Set <String> taskSet = new HashSet<>();
 
+    public ResultStore() {
+    }
 
     public ResultStore(String initUrl) {
         this.initUrl = initUrl;

@@ -16,30 +16,29 @@ import java.util.concurrent.RecursiveAction;
 public class Parser extends RecursiveAction {
 
     private String url;
-    private String prefix;
-    long from;
-    private ResultStore resultStore = new ResultStore(prefix + "/");
+    private ResultStore resultStore = new ResultStore();
+    private ParserContext parserContext;
     private Set<String> urlAdded;
-    private final int LIMIT_OF_RESULT;
+    private boolean shouldStop = false;
 
-    public Parser(long from, String url, String prefix, Set<String> urlAdded, int LIMIT_OF_RESULT) {
-        this.from = from;
+    public Parser(String url, Set<String> urlAdded, ParserContext parserContext) {
         this.url = url.trim();
-        this.prefix = prefix;
         this.urlAdded = urlAdded;
-        this.LIMIT_OF_RESULT = LIMIT_OF_RESULT;
+        this.parserContext = parserContext;
     }
 
     @Override
     protected void compute() {
-        Set<Parser> subTaskSet = parseAndGetTasksForChildren();
-        for (Parser task : subTaskSet) {
-            if (!resultStore.getTaskSet().contains(task.url)) {
-                resultStore.getTaskSet().add(task.url);
-                System.out.println(Thread.currentThread().getName() + " -> task url: " + task.url + "- result: " + urlAdded.size());
-                task.invoke();
+            Set<Parser> subTaskSet = parseAndGetTasksForChildren();
+            for (Parser task : subTaskSet) {
+                    System.out.println(Thread.currentThread().getName() + " -> task url: " + task.url + "- result: " + urlAdded.size());
+                    task.invoke();
             }
-        }
+            try {
+                output(parserContext.getFrom(), urlAdded);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
 
     private Set<Parser> parseAndGetTasksForChildren() {
@@ -47,7 +46,7 @@ public class Parser extends RecursiveAction {
         Elements elements;
         try {
             doc = Jsoup.connect(url).maxBodySize(3_000_000).userAgent("Mozilla").get();
-            elements = doc.select("a");  //getElementsByAttribute("href");
+            elements = doc.select("a");
             for (Element element : elements) {
                     processElement(element);
             }
@@ -57,45 +56,35 @@ public class Parser extends RecursiveAction {
         return resultStore.getChildParsers();
     }
 
-    private void processElement(Element el) {
-//        String fullRef;
-//        String suffix = el.attr("href");
-//        if (!suffix.startsWith("/")) {
-//            suffix = "/".concat(suffix);
-//        }
-//        if (!suffix.contains("http") && suffix.length() > 3 && !suffix.contains("#") && !suffix.contains("@")
-//                && !suffix.contains("tel:+") && !suffix.endsWith(".pdf") && !suffix.contains("/tg:/")) {
-//            fullRef = prefix + suffix;
-//            if (!resultStore.getResult().contains(fullRef)) {
-//                Parser parser = new Parser(from, fullRef, prefix);
-//                resultStore.getResult().add(fullRef);
-//                parser.fork();
-//                childSet.add(parser);
-//                System.out.println(Thread.currentThread().getName() + " -> " + fullRef + " size of result: " +
-//                        resultStore.getResult().size());
-//            }
-//        }
+    private boolean shouldStop() {
+        if (urlAdded.size() >= parserContext.getLIMIT_OF_RESULT()) {
+            shouldStop = true;
+        }
+        return shouldStop;
+    }
 
-        // For testing site:
-        if (urlAdded.size() >= LIMIT_OF_RESULT) {
-            System.out.println("Set of results is overloaded!");
+    private void processElement(Element el) {
+        if(shouldStop()){
             try {
-                output(from, urlAdded);
-//                System.exit(0);
-                notifyAll();
+                output(parserContext.getFrom(), urlAdded);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            System.out.println("Set of results is overloaded!");
+//            return;
+            System.exit(0);
         } else {
             String attr = el.attr("abs:href");
-            if (attr.contains(prefix) && !attr.contains(".pdf") && !urlAdded.contains(attr) && !attr.contains("#")
-                    && !attr.contains("@") && !attr.contains("tel:")) {
-
-                Parser parser = new Parser(from, attr, prefix, urlAdded, LIMIT_OF_RESULT);
+            if (attr.contains(parserContext.getPrefix()) && !attr.contains(".pdf") && !urlAdded.contains(attr) && !attr.contains("#")
+                    && !attr.contains("@") && !attr.contains("tel:") && attr.endsWith("/")) {
+                Parser parser = new Parser(attr, urlAdded, parserContext);
                 urlAdded.add(attr);
                 System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + urlAdded.size());
-                resultStore.getChildParsers().add(parser);
-                parser.fork();
+                if (!resultStore.getTaskSet().contains(parser.url)) {
+                    resultStore.getTaskSet().add(parser.url);
+                    resultStore.getChildParsers().add(parser);
+                    parser.fork();
+                }
             }
         }
     }
@@ -107,7 +96,7 @@ public class Parser extends RecursiveAction {
         for (String s : treeResult) {
             String span = "";
             String shift = "    ";
-            int coeff = s.split("/").length - (prefix + "/").split("/").length;
+            int coeff = s.split("/").length - (parserContext.getPrefix() + "/").split("/").length;
             for (int i = 0; i < coeff; i++) {
                 span += shift ;
             }
