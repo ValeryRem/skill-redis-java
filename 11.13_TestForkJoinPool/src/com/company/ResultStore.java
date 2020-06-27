@@ -3,15 +3,14 @@ package com.company;
 import java.util.*;
 
 public class ResultStore {
-    private String initUrl;
-    private Set<Parser> childParsers = new HashSet<>();
-    private Set <String> taskSet = new HashSet<>();
+    private Set<Parser> childParsers;
+    private Set <String> taskSet;
+    private Set<String> urlAdded;
 
-    public ResultStore() {
-    }
-
-    public ResultStore(String initUrl) {
-        this.initUrl = initUrl;
+    public ResultStore(Set<Parser> childParsers, Set<String> urlAdded, Set<String> taskSet) {
+        this.childParsers = childParsers;
+        this.urlAdded = urlAdded;
+        this.taskSet = taskSet;
     }
 
     public Set<String> getTaskSet() {
@@ -20,6 +19,10 @@ public class ResultStore {
 
     public Set<Parser> getChildParsers() {
         return childParsers;
+    }
+
+    public Set<String> getUrlAdded() {
+        return urlAdded;
     }
 }
 
