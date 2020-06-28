@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ResultStore {
     private final Set<Parser> childParsers;
-    private final Set<String> urlAdded;
+    private volatile Set<String> urlAdded;
     private final String prefix;
     private final int limitOfResult;
 

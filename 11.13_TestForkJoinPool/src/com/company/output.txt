@@ -62,6 +62,7 @@ https://skillbox.ru/
         https://skillbox.ru/course/flutter/
         https://skillbox.ru/course/for-it-speaker/
         https://skillbox.ru/course/freelance-designer/
+        https://skillbox.ru/course/freelancer/
         https://skillbox.ru/course/frontend-developer/
         https://skillbox.ru/course/frontend-pro/
         https://skillbox.ru/course/graphic-design/
@@ -158,12 +159,15 @@ https://skillbox.ru/
         https://skillbox.ru/course/profession-photographer/
         https://skillbox.ru/course/profession-pr-manager/
         https://skillbox.ru/course/profession-product-manager-pro/
+        https://skillbox.ru/course/profession-product-manager/
         https://skillbox.ru/course/profession-project-manager-pro/
+        https://skillbox.ru/course/profession-project-manager/
         https://skillbox.ru/course/profession-sales-management-b2b-b2c/
         https://skillbox.ru/course/profession-screenwriter/
         https://skillbox.ru/course/profession-sound-designer/
         https://skillbox.ru/course/profession-test/
         https://skillbox.ru/course/profession-unity-middle/
+        https://skillbox.ru/course/profession-unreal-engine-4
         https://skillbox.ru/course/profession-unreal-engine-4/
         https://skillbox.ru/course/profession-vr-ar-dev/
         https://skillbox.ru/course/profession-vr-ar/
@@ -199,6 +203,10 @@ https://skillbox.ru/
         https://skillbox.ru/course/weblayout/
         https://skillbox.ru/course/zbrush/
     https://skillbox.ru/courses/
+        https://skillbox.ru/courses/code
+        https://skillbox.ru/courses/design
+        https://skillbox.ru/courses/management
+        https://skillbox.ru/courses/marketing
     https://skillbox.ru/design/
     https://skillbox.ru/end-to-end/
     https://skillbox.ru/instagram/
@@ -227,12 +235,9 @@ https://skillbox.ru/
             https://skillbox.ru/media/design/17_voprosov_dlya_dizaynera_gotovimsya_k_sobesedovaniyu/
             https://skillbox.ru/media/design/20_poleznykh_urokov_po_cinema_4d/
             https://skillbox.ru/media/design/26_besplatnykh_fotostokov_v_pomoshch_dizayneru/
-            https://skillbox.ru/media/design/3ds_max_chast_7_poligonalnoe_modelirovanie/
-            https://skillbox.ru/media/design/3ds_max_chast_8_dovodka_arki/
             https://skillbox.ru/media/design/50_goryachikh_klavish_photoshop/
             https://skillbox.ru/media/design/5_dizayn_konferentsiy_vesny_2019/
             https://skillbox.ru/media/design/5_knig_po_dizaynu/
-            https://skillbox.ru/media/design/5_prichin_posmotret_onlayn_translyatsiyu_konkursa_future_health_design_2020/
             https://skillbox.ru/media/design/5_priyemov_kotorye_uprostyat_zhizn_nachinayushchim_illyustratoram/
             https://skillbox.ru/media/design/5_samykh_krutykh_3d_razrabotok_za_posledniy_god/
             https://skillbox.ru/media/design/5_tekhnik_v_illyustratsii/
@@ -258,7 +263,6 @@ https://skillbox.ru/
             https://skillbox.ru/media/design/9_poleznykh_knig_o_tsvete_dlya_dizaynerov/
             https://skillbox.ru/media/design/9_rassylok_o_dizayne/
             https://skillbox.ru/media/design/9_sposobov_ubrat_fon_s_kartinki/
-            https://skillbox.ru/media/design/9_urokov_iz_lichnogo_opyta/
             https://skillbox.ru/media/design/?PAGEN_1=2
             https://skillbox.ru/media/design/?PAGEN_1=2&LOAD_MORE=Y
             https://skillbox.ru/media/design/?PAGEN_1=3
@@ -267,16 +271,12 @@ https://skillbox.ru/
             https://skillbox.ru/media/design/chto_takoe_3d_grafika_i_kak_ona_ustroena/
             https://skillbox.ru/media/design/chto_takoe_graficheskiy_dizayn_i_zachem_on_nuzhen/
             https://skillbox.ru/media/design/festival_tsifrovogo_dizayna_offf/
-            https://skillbox.ru/media/design/interview_ciganov/
-            https://skillbox.ru/media/design/kak_obshchatsya_s_klientami_i_podavat_svoy_dizayn/
-            https://skillbox.ru/media/design/kak_sdelat_nadpis_krasivoy_i_ponyatnoy/
             https://skillbox.ru/media/design/kto_takoy_florist_i_chem_on_zanimaetsya/
             https://skillbox.ru/media/design/negativnoe_prostranstvo_kak_delat_dizayn_iz_vozdukha/
             https://skillbox.ru/media/design/pochemu_khoroshiy_skrinshot_eto_vazhno_i_kak_sdelat_ego_pravilno/
             https://skillbox.ru/media/design/story_diana_novikova/
             https://skillbox.ru/media/design/story_fomenko/
             https://skillbox.ru/media/design/story_romanenko/
-            https://skillbox.ru/media/design/story_rybalko/
             https://skillbox.ru/media/design/zhizn_logotipa_v_tsifre_5_printsipov_sozdaniya_aydentiki/
         https://skillbox.ru/media/growth/
         https://skillbox.ru/media/management/
