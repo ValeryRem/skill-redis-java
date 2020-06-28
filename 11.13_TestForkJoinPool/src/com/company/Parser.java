@@ -11,22 +11,17 @@ import java.util.concurrent.RecursiveAction;
 
 public class Parser extends RecursiveAction {
 
-    private String url;
-    private ResultStore resultStore;
-    private ParserContext parserContext;
+    private final String url;
+    private final ResultStore resultStore;
 
-    private boolean shouldStop = false;
-
-    public Parser(String url, ParserContext parserContext, ResultStore resultStore) {
+    public Parser(String url, ResultStore resultStore) {
         this.url = url.trim();
-        this.parserContext = parserContext;
         this.resultStore = resultStore;
     }
 
     @Override
     protected void compute() {
-        shouldStop = shouldStop();
-        if (shouldStop) {
+        if (shouldStop()) {
             try {
                 ForkJoinPool.commonPool().shutdownNow();
             } catch (Exception e) {
@@ -38,18 +33,14 @@ public class Parser extends RecursiveAction {
     }
 
     private boolean shouldStop() {
-        if (resultStore.getUrlAdded().size() > parserContext.getLimitOfResult()) {
-            shouldStop = true;
-        }
-        return shouldStop;
+        return
+                resultStore.getUrlAdded().size() > resultStore.getLimitOfResult();
     }
 
     private void parseUrl() {
-        Document doc;
-        Elements elements;
         try {
-            doc = Jsoup.connect(url).maxBodySize(3_000_000).userAgent("Mozilla").get();
-            elements = doc.select("a");
+            Document doc = Jsoup.connect(url).maxBodySize(3_000_000).userAgent("Mozilla").get();
+            Elements elements = doc.select("a");
             for (Element element : elements) {
                 processElement(element);
             }
@@ -60,13 +51,12 @@ public class Parser extends RecursiveAction {
 
     private void processElement(Element el) {
         String attr = el.attr("abs:href");
-        if (attr.contains(parserContext.getPrefix()) && !attr.contains(".pdf") && !resultStore.getUrlAdded().contains(attr) && !attr.contains("#")
-                && !attr.contains("@") && !attr.contains("tel:") && !shouldStop) {
-            resultStore.getUrlAdded().add(attr);
-            Parser parser = new Parser(attr, parserContext, resultStore);
+        if (attr.contains(resultStore.getPrefix()) && !attr.contains(".pdf") && !resultStore.getUrlAdded().contains(attr) && !attr.contains("#")
+                && !attr.contains("@") && !attr.contains("tel:") && !shouldStop()) {
+            Parser parser = new Parser(attr, resultStore);
             System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + resultStore.getUrlAdded().size());
-            if (!resultStore.getTaskSet().contains(parser.url)) {
-                resultStore.getTaskSet().add(parser.url);
+            if (!resultStore.getUrlAdded().contains(parser.url)) {
+                resultStore.getUrlAdded().add(parser.url);
                 resultStore.getChildParsers().add(parser);
                 parser.fork();
             }

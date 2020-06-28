@@ -5,21 +5,17 @@ import java.io.IOException;
 import java.util.*;
 
 public class Presenter {
-    private ParserContext parserContext;
-    private Parser parser;
-    private ResultStore resultStore;
+    private final ResultStore resultStore;
 
-    public Presenter(Parser parser, ResultStore resultStore, ParserContext parserContext){
-        this.parser = parser;
+    public Presenter(ResultStore resultStore){
         this.resultStore = resultStore;
-        this.parserContext = parserContext;
     }
 
     public void output(long from, Set<String> set) throws IOException {
         Set<String> treeResult = new TreeSet<>(set);
         treeResult.forEach(x -> {
             if (!x.endsWith("/")) {
-                x.concat("/");
+                x = x.concat("/");
             }
         });
         List<String> list = new ArrayList<>();
@@ -27,7 +23,7 @@ public class Presenter {
         for (String s : treeResult) {
             String span = "";
             String shift = "    ";
-            int coeff = s.split("/").length - (parserContext.getPrefix()).split("/").length;
+            int coeff = s.split("/").length - (resultStore.getPrefix()).split("/").length;
             for (int i = 0; i < coeff; i++) {
                 span += shift;
             }

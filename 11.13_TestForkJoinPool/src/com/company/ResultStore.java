@@ -3,18 +3,16 @@ package com.company;
 import java.util.*;
 
 public class ResultStore {
-    private Set<Parser> childParsers;
-    private Set <String> taskSet;
-    private Set<String> urlAdded;
+    private final Set<Parser> childParsers;
+    private final Set<String> urlAdded;
+    private final String prefix;
+    private final int limitOfResult;
 
-    public ResultStore(Set<Parser> childParsers, Set<String> urlAdded, Set<String> taskSet) {
+    public ResultStore(Set<Parser> childParsers, Set<String> urlAdded, String prefix, int limitOfResult) {
         this.childParsers = childParsers;
         this.urlAdded = urlAdded;
-        this.taskSet = taskSet;
-    }
-
-    public Set<String> getTaskSet() {
-        return taskSet;
+        this.prefix = prefix;
+        this.limitOfResult = limitOfResult;
     }
 
     public Set<Parser> getChildParsers() {
@@ -23,6 +21,14 @@ public class ResultStore {
 
     public Set<String> getUrlAdded() {
         return urlAdded;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public int getLimitOfResult() {
+        return limitOfResult;
     }
 }
 
