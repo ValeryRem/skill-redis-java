@@ -16,12 +16,11 @@ public class Main {
         long from = System.currentTimeMillis();
         ResultStore resultStore = new ResultStore(childParsers, urlAdded, prefix, LIMIT_OF_RESULT);
         Parser parser = new Parser(url, resultStore);
-        Presenter presenter = new Presenter(resultStore);
-
+        new Presenter(resultStore);
         ForkJoinPool.commonPool().invoke(parser); //new ForkJoinPool().invoke(parser);//
         try {
             ForkJoinPool.commonPool().awaitTermination(1, TimeUnit.MINUTES);
-            presenter.output(from, resultStore.getUrlAdded());
+            Presenter.output(from, resultStore.getUrlAdded());
         } catch (Exception e) {
             e.printStackTrace();
         }

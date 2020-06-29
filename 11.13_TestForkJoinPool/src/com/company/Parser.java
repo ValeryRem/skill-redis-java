@@ -54,12 +54,15 @@ public class Parser extends RecursiveAction {
         if (attr.contains(resultStore.getPrefix()) && !attr.contains(".pdf") && !resultStore.getUrlAdded().contains(attr) && !attr.contains("#")
                 && !attr.contains("@") && !attr.contains("tel:") && !shouldStop()) {
             Parser parser = new Parser(attr, resultStore);
-            System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + resultStore.getUrlAdded().size());
-            if (!resultStore.getUrlAdded().contains(parser.url)) {
-                resultStore.getUrlAdded().add(parser.url);
-                resultStore.getChildParsers().add(parser);
-                parser.fork();
+            synchronized (resultStore) {
+                if (!resultStore.getUrlAdded().contains(parser.url)) {
+                    resultStore.getUrlAdded().add(parser.url);
+                    System.out.println(Thread.currentThread().getName() + " -> " + attr + " - Result size: " + resultStore.getUrlAdded().size());
+                    resultStore.getChildParsers().add(parser);
+                    parser.fork();
+                }
             }
+
         }
     }
 }

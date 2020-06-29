@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="ResultStore united with ParserContext.">
+    <list default="true" id="706c77e9-b99b-4083-9ce7-8f98b31421fc" name="Default Changelist" comment="Set up volatile Set&lt;String&gt; urlAdded.">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -93,6 +93,13 @@
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Comparison.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrentParsing/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrentParsing/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrentParsing/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrentParsing/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrentParsing/ConcurrentParsing.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrentParsing/out/production/ConcurrentParsing/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrentParsing/src/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ForkJoinResult.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../HTMLParsingResult.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ListExp/.idea/.gitignore" afterDir="false" />
@@ -118,6 +125,15 @@
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/MyRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/MyRecursiveAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/ParsingHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/ParsingHtml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ResultStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/ResultStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/11.13_TestForkJoinPool/com/company/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Presenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Presenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ResultStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ResultStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" afterDir="false" />
@@ -151,6 +167,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/jsoup-1.13.1.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -304,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593332599966</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Set up volatile Set&lt;String&gt; urlAdded.">
+      <created>1593333186227</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1593333186227</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,7 +361,8 @@
     <MESSAGE value="Fixed parameters removed to ParserContext." />
     <MESSAGE value="Presenter set up." />
     <MESSAGE value="ResultStore united with ParserContext." />
-    <option name="LAST_COMMIT_MESSAGE" value="ResultStore united with ParserContext." />
+    <MESSAGE value="Set up volatile Set&lt;String&gt; urlAdded." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up volatile Set&lt;String&gt; urlAdded." />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592406636628">
@@ -364,22 +389,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="314" y="41" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592596101368" />
-    <state width="1309" height="295" key="GridCell.Tab.0.bottom" timestamp="1593332417605">
+    <state width="1309" height="407" key="GridCell.Tab.0.bottom" timestamp="1593429484315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="295" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593332417605" />
-    <state width="1309" height="295" key="GridCell.Tab.0.center" timestamp="1593332417604">
+    <state width="1309" height="407" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593429484315" />
+    <state width="1309" height="407" key="GridCell.Tab.0.center" timestamp="1593429484315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="295" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593332417604" />
-    <state width="1309" height="295" key="GridCell.Tab.0.left" timestamp="1593332417604">
+    <state width="1309" height="407" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593429484315" />
+    <state width="1309" height="407" key="GridCell.Tab.0.left" timestamp="1593429484315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="295" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593332417604" />
-    <state width="1309" height="295" key="GridCell.Tab.0.right" timestamp="1593332417605">
+    <state width="1309" height="407" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593429484315" />
+    <state width="1309" height="407" key="GridCell.Tab.0.right" timestamp="1593429484315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="295" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593332417605" />
+    <state width="1309" height="407" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593429484315" />
     <state width="1309" height="287" key="GridCell.Tab.1.bottom" timestamp="1593266221597">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -404,14 +429,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592596131538" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1593332610139">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1593333199267">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593332610139" />
-    <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1592695242823">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593333199267" />
+    <state x="346" y="55" width="673" height="620" key="extract.method.dialog" timestamp="1593427336069">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="55" width="673" height="620" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1592695242823" />
+    <state x="346" y="55" width="673" height="620" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1593427336069" />
+    <state x="0" y="0" key="new project wizard" timestamp="1593416240350">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1593416240350" />
     <state x="370" y="75" key="refactoring.ChangeSignatureDialog" timestamp="1593154894354">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
