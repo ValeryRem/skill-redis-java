@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Init commit.">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -50,13 +50,6 @@
       <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/test/java/tasks/Task1Test.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/test/java/tasks/Task2Test.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../09_streams-assignments-master/src/test/java/tasks/Task3Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/10_JDBCExperiments.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/src/main/java/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../10_JDBCExperiments/src/main/java/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/.idea/modules.xml" afterDir="false" />
@@ -91,19 +84,11 @@
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Friend.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Loader.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/DefaultController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/ToDoList.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/DefaultController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/TouristController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12.6_Описание.docx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Comparison.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ConcurrentParsing/.idea/.gitignore" afterDir="false" />
@@ -131,17 +116,8 @@
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/SiteSave.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/result/secure-headland-59304.herokuapp.com.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/out/production/11.13_ParseHTMLbyForkJoinPool/com/company/ParsingHtml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/MyRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/MyRecursiveAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/ParsingHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_ParseHTMLbyForkJoinPool/src/com/company/ParsingHtml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_TestForkJoinPool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_TestForkJoinPool/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/main/java/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11.13_Transactions/src/test/java/TransferTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImagerResizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../11_Multithreading/src/com/company/ImageResizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../log4j2.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,12 +139,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1e0XTvWjImiOeihJQHLW5B4NI09" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -184,7 +163,7 @@
       <module name="12.4_ToDoList" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value="main.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -204,6 +183,14 @@
       <option name="presentableId" value="Default" />
       <updated>1593459494918</updated>
     </task>
+    <task id="LOCAL-00001" summary="Init commit.">
+      <created>1593463139150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593463139150</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,7 +205,16 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Init commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit." />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="304" y="25" key="#Inspections" timestamp="1593608968024">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="304" y="25" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1593608968024" />
     <state x="310" y="0" width="764" height="728" key="#Main" timestamp="1593462967786">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -227,29 +223,37 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="132" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593460692949" />
-    <state width="1309" height="168" key="GridCell.Tab.0.bottom" timestamp="1593462701995">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1593607119372">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593462701995" />
-    <state width="1309" height="168" key="GridCell.Tab.0.center" timestamp="1593462701994">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1593607119372" />
+    <state width="1309" height="168" key="GridCell.Tab.0.bottom" timestamp="1593611778239">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593462701994" />
-    <state width="1309" height="168" key="GridCell.Tab.0.left" timestamp="1593462701994">
+    <state width="1309" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593611778239" />
+    <state width="1309" height="168" key="GridCell.Tab.0.center" timestamp="1593611778239">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593462701994" />
-    <state width="1309" height="168" key="GridCell.Tab.0.right" timestamp="1593462701995">
+    <state width="1309" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593611778239" />
+    <state width="1309" height="168" key="GridCell.Tab.0.left" timestamp="1593611778239">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593462701995" />
+    <state width="1309" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593611778239" />
+    <state width="1309" height="168" key="GridCell.Tab.0.right" timestamp="1593611778239">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1309" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593611778239" />
     <state x="96" y="0" key="Maven.ArtifactSearchDialog" timestamp="1593460659330">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="96" y="0" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1593460659330" />
-    <state x="66" y="0" key="SettingsEditor" timestamp="1593462898382">
+    <state x="66" y="0" key="SettingsEditor" timestamp="1593611761949">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="66" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593462898382" />
+    <state x="66" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593611761949" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1593463150757">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593463150757" />
   </component>
 </project>
