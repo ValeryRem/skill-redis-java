@@ -3,20 +3,21 @@ package main;
 import main.model.Tourist;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Storage {
     private static int currentId = 1;
-    private static HashMap<Integer, Tourist> tourists = new HashMap<Integer, Tourist>();
+    private static Map<Integer, Tourist> tourists = new ConcurrentHashMap<>();
+
     public static List<Tourist> getTourists () {
-        List<Tourist> list = new ArrayList<Tourist>();
-        list.addAll(tourists.values());
+        List<Tourist> list = new ArrayList<>(tourists.values());
         return list;
     }
     public static int addTourist (Tourist tourist) {
         int id = currentId++;
-        tourist.setID(id);
+        tourist.setId(id);
         tourists.put(id, tourist);
         return id;
     }

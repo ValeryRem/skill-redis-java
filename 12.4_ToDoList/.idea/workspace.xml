@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Init commit.">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Completing in progress. No xml. &amp; jacaScript files.">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -84,11 +84,12 @@
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Friend.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11.13_Deadlock/out/production/11.13_Deadlock/Loader.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../11_Multithreading/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/TouristController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../12.6_Описание.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/model/TouristRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery-3.4.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/text" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CoffeeMachine/CoffeeMachine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Comparison.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ConcurrentParsing/.idea/.gitignore" afterDir="false" />
@@ -103,21 +104,46 @@
       <change afterPath="$PROJECT_DIR$/../ListExp/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ListExp/ListExp.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ScreenshotToDropbox/ScreenshotToDropbox.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/SpringTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/org/example/ClassicalMusic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/org/example/Music.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/org/example/MusicPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/org/example/RockMusic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/org/example/TestBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/org/example/TestSpring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/resourses/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/webapp/index.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../java_basics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stecktrace_010720.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../volatile.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Стек-трейс 220620.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringTest/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringTest/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringTest/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringTest/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/11.13_ForkJoinPoolExperiment.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/SiteSave.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../11.13_ForkJoinPoolExperiment/src/main/java/result/secure-headland-59304.herokuapp.com.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/DefaultController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/TouristController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/TouristController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/DefaultController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../log4j2.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,6 +158,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -157,9 +184,18 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\static\" />
+      <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\static" />
+      <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\js" />
+      <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources" />
+      <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\static\css\css" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
+    <configuration name="MainApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.MainApplication" />
       <module name="12.4_ToDoList" />
       <extension name="coverage">
         <pattern>
@@ -190,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593463139150</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Completing in progress. No xml. &amp; jacaScript files.">
+      <created>1593614708899</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593614708899</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,7 +251,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Init commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Init commit." />
+    <MESSAGE value="Completing in progress. No xml. &amp; jacaScript files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completing in progress. No xml. &amp; jacaScript files." />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="25" key="#Inspections" timestamp="1593608968024">
@@ -219,41 +263,57 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="310" y="0" width="764" height="728" key="#Main/0.0.1366.728@0.0.1366.728" timestamp="1593462967786" />
+    <state x="34" y="0" key="#Project_Structure" timestamp="1593699148877">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="34" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1593699148877" />
     <state x="132" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593460692949">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="132" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593460692949" />
+    <state x="401" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593631768282">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="401" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1593631768282" />
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1593607119372">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1593607119372" />
-    <state width="1309" height="168" key="GridCell.Tab.0.bottom" timestamp="1593611778239">
+    <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593774091404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593611778239" />
-    <state width="1309" height="168" key="GridCell.Tab.0.center" timestamp="1593611778239">
+    <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1593774091404" />
+    <state width="1309" height="493" key="GridCell.Tab.0.bottom" timestamp="1593788402230">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593611778239" />
-    <state width="1309" height="168" key="GridCell.Tab.0.left" timestamp="1593611778239">
+    <state width="1309" height="493" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593788402230" />
+    <state width="1309" height="493" key="GridCell.Tab.0.center" timestamp="1593788402230">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593611778239" />
-    <state width="1309" height="168" key="GridCell.Tab.0.right" timestamp="1593611778239">
+    <state width="1309" height="493" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593788402230" />
+    <state width="1309" height="493" key="GridCell.Tab.0.left" timestamp="1593788402230">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593611778239" />
+    <state width="1309" height="493" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593788402230" />
+    <state width="1309" height="493" key="GridCell.Tab.0.right" timestamp="1593788402230">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1309" height="493" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593788402230" />
     <state x="96" y="0" key="Maven.ArtifactSearchDialog" timestamp="1593460659330">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="96" y="0" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1593460659330" />
-    <state x="66" y="0" key="SettingsEditor" timestamp="1593611761949">
+    <state x="66" y="0" key="SettingsEditor" timestamp="1593641593919">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="66" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593611761949" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1593463150757">
+    <state x="66" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593641593919" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1593614770851">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593463150757" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593614770851" />
+    <state x="0" y="0" key="new project wizard" timestamp="1593695165773">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1593695165773" />
   </component>
 </project>

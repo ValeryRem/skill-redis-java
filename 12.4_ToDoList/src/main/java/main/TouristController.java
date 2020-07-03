@@ -1,6 +1,8 @@
 package main;
 
 import main.model.Tourist;
+import main.model.TouristRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,9 @@ import java.util.List;
 @RestController
 public class TouristController {
 
+    @Autowired
+    private TouristRepository touristRepository;
+
     @GetMapping("/tourists/")
     public List<Tourist> list() {
         return Storage.getTourists();
@@ -20,15 +25,18 @@ public class TouristController {
 
     @PostMapping("/tourists/")
     public int addTourist (Tourist tourist) {
-        return Storage.addTourist(tourist);
+        Tourist newTourist = touristRepository.save(tourist);
+        return newTourist.getId();
     }
 
     @GetMapping("/tourists/{id}")
-    public ResponseEntity<Tourist> get(@PathVariable int id) {
+    public ResponseEntity<Tourist> get(@PathVariable("id") int id) {
         Tourist tourist = Storage.getTourist(id);
-        if (tourist == null) {
+//        return ResponseEntity.of(Optional.ofNullable(tourist));
+//    }
+            if (tourist == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
-        return new ResponseEntity<Tourist>(tourist, HttpStatus.OK);
+        return new ResponseEntity<>(tourist, HttpStatus.OK);
     }
 }

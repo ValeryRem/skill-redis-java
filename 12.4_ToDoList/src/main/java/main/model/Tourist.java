@@ -1,24 +1,22 @@
 package main.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Tourist {
     private String name;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int ID;
+    @Column(name = "id_tourist")
+    private int id;
     private int seat;
-    private String birthYear;
+    private String birthday;
 
-    public Tourist(String name, int ID, int seat, String birthYear) {
+    public Tourist(String name, int id, int seat, String birthday) {
         this.name = name;
-        this.ID = ID;
+        this.id = id;
         this.seat = seat;
-        this.birthYear = birthYear;
+        this.birthday = birthday;
     }
 
     public String getName() {
@@ -29,12 +27,12 @@ public class Tourist {
         this.name = name;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getSeat() {
@@ -45,11 +43,11 @@ public class Tourist {
         this.seat = seat;
     }
 
-    public String getBirthYear() {
-        return birthYear;
+    public String getBirthday() {
+        return birthday;
     }
 
-    public void setBirthYear(String birthYear) {
-        this.birthYear = birthYear;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 }
