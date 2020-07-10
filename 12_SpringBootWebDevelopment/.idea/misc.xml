@@ -7,5 +7,8 @@
       </list>
     </option>
   </component>
+  <component name="ProjectResources">
+    <resource url="http://java.sun.com/dtd/web-app_2_3.dtd" location="$USER_HOME$/AppData/Local/JetBrains/IdeaIC2020.1/extResources/d664ad10_web-app_2_3.dtd" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_13" project-jdk-name="13" project-jdk-type="JavaSDK" />
 </project>

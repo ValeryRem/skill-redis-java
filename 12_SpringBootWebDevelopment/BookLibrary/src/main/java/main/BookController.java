@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,12 +36,10 @@ public class BookController
     }
 
     @GetMapping("/books/{id}")
-    public ResponseEntity get(@PathVariable int id)
+    public ResponseEntity<Book> get(@PathVariable int id)
     {
         Optional<Book> optionalBook = bookRepository.findById(id);
-        if(!optionalBook.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        return new ResponseEntity(optionalBook.get(), HttpStatus.OK);
+        return optionalBook.map(book -> new ResponseEntity(book, HttpStatus.OK)).
+                orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
     }
 }

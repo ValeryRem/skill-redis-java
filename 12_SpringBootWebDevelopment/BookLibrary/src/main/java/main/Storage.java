@@ -9,11 +9,11 @@ import java.util.List;
 public class Storage
 {
     private static int currentId = 1;
-    private static HashMap<Integer, Book> books = new HashMap<Integer, Book>();
+    private static final HashMap<Integer, Book> books = new HashMap<>();
 
     public static List<Book> getAllBooks()
     {
-        ArrayList<Book> booksList = new ArrayList<Book>();
+        ArrayList<Book> booksList = new ArrayList<>();
         booksList.addAll(books.values());
         return booksList;
     }
