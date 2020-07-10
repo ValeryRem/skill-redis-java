@@ -6,7 +6,7 @@ public class DBConnection {
     private static Connection connection;
     private static String dbName = "skillbox";
     private static String dbUser = "root";
-    private static String dbPass = "12345678";
+    private static String dbPass = " %Remen_56#";
     private static String sqlQuery;
 
     public static Connection getConnection(String sqlQuery) {
