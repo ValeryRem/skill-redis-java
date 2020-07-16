@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14cf077f-c8b6-4b86-838b-d3b8bf2925b2" name="Default Changelist" comment="Round 4. The project is deployed on Ideа Ultimаte.">
+    <list default="true" id="14cf077f-c8b6-4b86-838b-d3b8bf2925b2" name="Default Changelist" comment="Round 6. Small changes in the project.">
       <change afterPath="$PROJECT_DIR$/../150720.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringDemo.zip" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringDemo/.gitignore" afterDir="false" />
@@ -123,8 +123,8 @@
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/spring-rest-validation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resourses/target/classes/META-INF/bookLibrary.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/target/classes/META-INF/bookLibrary.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resourses/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_ToDoList/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/DefaultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/DefaultController.java" afterDir="false" />
@@ -139,7 +139,7 @@
   </component>
   <component name="ChangesViewManager">
     <option name="groupingKeys">
-      <option value="module" />
+      <option value="directory" />
     </option>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -250,7 +250,21 @@
       <option name="project" value="LOCAL" />
       <updated>1594816464690</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Round 5. Small changes in the project.">
+      <created>1594919453878</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1594919453878</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Round 6. Small changes in the project.">
+      <created>1594919824701</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1594919824701</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +288,9 @@
     <MESSAGE value="Round 2. Tuning." />
     <MESSAGE value="Round 3. Renewed." />
     <MESSAGE value="Round 4. The project is deployed on Ideа Ultimаte." />
-    <option name="LAST_COMMIT_MESSAGE" value="Round 4. The project is deployed on Ideа Ultimаte." />
+    <MESSAGE value="Round 5. Small changes in the project." />
+    <MESSAGE value="Round 6. Small changes in the project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Round 6. Small changes in the project." />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="25" key="#Inspections" timestamp="1594917106909">
@@ -285,22 +301,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="48" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1594626717965" />
-    <state width="1309" height="449" key="GridCell.Tab.0.bottom" timestamp="1594917963814">
+    <state width="1309" height="449" key="GridCell.Tab.0.bottom" timestamp="1594929307039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="449" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594917963814" />
-    <state width="1309" height="449" key="GridCell.Tab.0.center" timestamp="1594917963814">
+    <state width="1309" height="449" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594929307039" />
+    <state width="1309" height="449" key="GridCell.Tab.0.center" timestamp="1594929307039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="449" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594917963814" />
-    <state width="1309" height="449" key="GridCell.Tab.0.left" timestamp="1594917963814">
+    <state width="1309" height="449" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594929307039" />
+    <state width="1309" height="449" key="GridCell.Tab.0.left" timestamp="1594929307039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="449" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594917963814" />
-    <state width="1309" height="449" key="GridCell.Tab.0.right" timestamp="1594917963814">
+    <state width="1309" height="449" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594929307039" />
+    <state width="1309" height="449" key="GridCell.Tab.0.right" timestamp="1594929307039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="449" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594917963814" />
+    <state width="1309" height="449" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594929307039" />
     <state x="96" y="0" key="Maven.ArtifactSearchDialog" timestamp="1594624585862">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -313,10 +329,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="531" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594845774534" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1594816477064">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1594919868170">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1594816477064" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1594919868170" />
     <state x="458" y="239" key="git4idea.ui.GitStashDialog" timestamp="1594790537153">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
