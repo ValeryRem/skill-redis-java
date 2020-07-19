@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Updated url of port 8080. PUT method set up.">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Updated PUT method, new DELETE method set up.">
       <change afterPath="$PROJECT_DIR$/../150720.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720-1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720.jpg" afterDir="false" />
@@ -260,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595016505419</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated PUT method, new DELETE method set up.">
+      <created>1595093964283</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595093964283</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -280,7 +287,8 @@
     <MESSAGE value="Init commit." />
     <MESSAGE value="Completing in progress. No xml. &amp; jacaScript files." />
     <MESSAGE value="Updated url of port 8080. PUT method set up." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated url of port 8080. PUT method set up." />
+    <MESSAGE value="Updated PUT method, new DELETE method set up." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated PUT method, new DELETE method set up." />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="25" key="#Inspections" timestamp="1593608968024">
@@ -311,22 +319,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1593774091404" />
-    <state width="1309" height="244" key="GridCell.Tab.0.bottom" timestamp="1595093864813">
+    <state width="1309" height="244" key="GridCell.Tab.0.bottom" timestamp="1595103775985">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="244" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595093864813" />
-    <state width="1309" height="244" key="GridCell.Tab.0.center" timestamp="1595093864813">
+    <state width="1309" height="244" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595103775985" />
+    <state width="1309" height="244" key="GridCell.Tab.0.center" timestamp="1595103775985">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="244" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595093864813" />
-    <state width="1309" height="244" key="GridCell.Tab.0.left" timestamp="1595093864813">
+    <state width="1309" height="244" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595103775985" />
+    <state width="1309" height="244" key="GridCell.Tab.0.left" timestamp="1595103775984">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="244" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595093864813" />
-    <state width="1309" height="244" key="GridCell.Tab.0.right" timestamp="1595093864813">
+    <state width="1309" height="244" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595103775984" />
+    <state width="1309" height="244" key="GridCell.Tab.0.right" timestamp="1595103775985">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="244" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595093864813" />
+    <state width="1309" height="244" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595103775985" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1594993252004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -355,10 +363,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1595016519544">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1595093987601">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1595016519544" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1595093987601" />
     <state x="0" y="0" key="new project wizard" timestamp="1593695165773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

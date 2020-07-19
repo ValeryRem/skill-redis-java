@@ -1,14 +1,17 @@
 package main;
 
 import main.model.Tourist;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Component
 public class Storage {
     private int currentId = 1;
+
     private Map<Integer, Tourist> touristsMap = new ConcurrentHashMap<>();
     private List<Integer> seatList = new ArrayList<>();
 //    Collection<Tourist> tourists = Storage.touristsMap.values();
