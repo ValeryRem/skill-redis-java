@@ -1,6 +1,8 @@
 package main;
 
 import main.model.Tourist;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -20,16 +22,16 @@ public class Storage {
         return this.touristsMap;
     }
 
-    public synchronized void addTourist (Tourist tourist) {
-        int id;
+    public ResponseEntity<Tourist> addTourist (Tourist tourist) {
+        int id = currentId++;
         if(!seatList.contains(tourist.getSeat())) {
-            id = currentId++;
             tourist.setId(id);
             seatList.add(tourist.getSeat());
             touristsMap.put(id, tourist);
         } else {
-            System.out.println("The seat of this new Tourist is occupied. Change his seat number!");
+            return new ResponseEntity<>(tourist, HttpStatus.NOT_ACCEPTABLE);
         }
+        return new ResponseEntity<>(tourist, HttpStatus.OK);
     }
 
     public List<Integer> getSeatList() {

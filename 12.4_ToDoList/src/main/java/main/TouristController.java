@@ -17,17 +17,15 @@ public class TouristController {
 //    private TouristRepository touristRepository;
 
     @PostMapping("/tourists/")
-    public int addTourist (Tourist tourist) {
+    public synchronized ResponseEntity<Tourist> addTourist (Tourist tourist) {
     //        Tourist  newTourist = touristRepository.save(tourist);
-        storage.addTourist(tourist);
-        return tourist.getId();
+       return storage.addTourist(tourist);
     }
 
     @GetMapping("/tourists/")
     public Collection<Tourist> list() {
         return  storage.getTouristsMap().values();
     }
-
 
     @GetMapping("/tourists/{id}")
     public ResponseEntity<Tourist> get(@PathVariable("id") Integer id) {
@@ -41,12 +39,12 @@ public class TouristController {
     }
 
     @PutMapping("/tourists/{id}")
-    public Tourist putNewData(@PathVariable("id")Integer id, String name, int seat, String birthday) {
+    public synchronized ResponseEntity<Tourist> putNewData(@PathVariable("id")Integer id, String name, int seat, String birthday) {
         Tourist tourist = storage.getTourist(id);
         if(name.length() > 0) {
             Objects.requireNonNull(tourist).setName(name);
-        }
 
+        }
         if(seat > 0) {
             if (!storage.getSeatList().contains(seat)) {
                 Objects.requireNonNull(tourist).setSeat(seat);
@@ -58,19 +56,22 @@ public class TouristController {
             Objects.requireNonNull(tourist).setBirthday(birthday);
         }
 //        touristRepository.save(Objects.requireNonNull(tourist));
-        return tourist;
+        return new ResponseEntity<>(tourist, HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/tourists/{id}")
-    public void delete(@PathVariable("id") Integer id) {
+    public synchronized ResponseEntity<Integer> delete(@PathVariable("id") Integer id) {
         if (id > 0) {
             if (storage.getTouristsMap().containsKey(id)) {
+                int seat = storage.getTouristsMap().get(id).getSeat();
                 storage.getTouristsMap().remove(id);
+                storage.getSeatList().remove(seat);
             } else {
-                System.out.println("This id is absent!");
+                return new ResponseEntity<>(id, HttpStatus.NOT_FOUND);
             }
         } else {
             storage.getTouristsMap().clear();
         }
+        return new ResponseEntity<>(id, HttpStatus.OK);
     }
 }
