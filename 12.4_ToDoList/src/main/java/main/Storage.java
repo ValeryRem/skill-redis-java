@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -36,10 +35,7 @@ public class Storage {
 //    }
 
     public ResponseEntity<Tourist> addTourist (Tourist tourist) {
-        System.out.println("Add tourist: ");
-        System.out.println("  name: " + tourist.getName());
-        System.out.println("  seat: " + tourist.getSeat());
-        System.out.println("seatList before: "  + Arrays.toString(seatList.toArray()));
+        System.out.printf("%s%s%s%s\n", "Add tourist: name: ", tourist.getName(), "  seat: ", tourist.getSeat());
         int id = currentId++;
         if(!seatList.contains(tourist.getSeat())) {
             tourist.setId(id);
@@ -48,9 +44,7 @@ public class Storage {
         } else {
             return new ResponseEntity<>(tourist, HttpStatus.NOT_ACCEPTABLE);
         }
-
-        System.out.println("seatList after: "  + Arrays.toString(seatList.toArray()));
-        System.out.println("Adding tourist done: id = " + id);
+        System.out.println("Added tourist: id = " + id);
         return new ResponseEntity<>(tourist, HttpStatus.OK);
     }
 
