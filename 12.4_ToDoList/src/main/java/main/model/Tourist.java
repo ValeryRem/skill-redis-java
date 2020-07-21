@@ -9,13 +9,13 @@ public class Tourist {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_tourist")
     private Integer id;
-    private int seat;
+    private String seat;
     private String birthday;
 
     public Tourist () {
 
     }
-    public Tourist(String name, Integer id, int seat, String birthday) {
+    public Tourist(String name, Integer id, String seat, String birthday) {
         this.name = name;
         this.id = id;
         this.seat = seat;
@@ -38,11 +38,11 @@ public class Tourist {
         this.id = id;
     }
 
-    public int getSeat() {
+    public String getSeat() {
         return seat;
     }
 
-    public void setSeat(int seat) {
+    public void setSeat(String seat) {
         this.seat = seat;
     }
 

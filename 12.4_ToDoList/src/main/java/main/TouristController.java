@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -39,15 +40,15 @@ public class TouristController {
     }
 
     @PutMapping("/tourists/{id}")
-    public synchronized ResponseEntity<Tourist> putNewData(@PathVariable("id")Integer id, String name, int seat, String birthday) {
+    public synchronized ResponseEntity<Tourist> putNewData(@PathVariable("id")Integer id, String name, String seat, String birthday) {
         Tourist tourist = storage.getTourist(id);
         if(name.length() > 0) {
             Objects.requireNonNull(tourist).setName(name);
 
         }
-        if(seat > 0) {
-            if (!storage.getSeatList().contains(seat)) {
-                Objects.requireNonNull(tourist).setSeat(seat);
+        if(!seat.equals("0")) {
+            if (!storage.getSeatList().contains(seat) || tourist.getSeat().equals(seat)) {
+                tourist.setSeat(seat);
             } else {
                 System.out.println("This seat is occupied. Change seat number!");
             }
@@ -63,9 +64,12 @@ public class TouristController {
     public synchronized ResponseEntity<Integer> delete(@PathVariable("id") Integer id) {
         if (id > 0) {
             if (storage.getTouristsMap().containsKey(id)) {
-                int seat = storage.getTouristsMap().get(id).getSeat();
-                storage.getTouristsMap().remove(id);
+                String seat = storage.getTouristsMap().get(id).getSeat();
+                System.out.println("Tourist removed: " + storage.getTouristsMap().remove(id).getName());
+                System.out.println("SeatList before: "  + Arrays.toString(storage.getSeatList().toArray()));
+                System.out.println("Connected seat to remove: " + seat);
                 storage.getSeatList().remove(seat);
+                System.out.println("SeatList after: "  + Arrays.toString(storage.getSeatList().toArray()));
             } else {
                 return new ResponseEntity<>(id, HttpStatus.NOT_FOUND);
             }
