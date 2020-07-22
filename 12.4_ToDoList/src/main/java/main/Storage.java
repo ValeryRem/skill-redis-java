@@ -40,7 +40,7 @@ public class Storage {
             Objects.requireNonNull(tourist).setName(name);
         }
         if(!seat.equals("0")) {
-            if (!seatList.contains(seat) || tourist.equals(seat)) {
+            if (!seatList.contains(seat) || tourist.getSeat().equals(seat)) {
                 tourist.setSeat(seat);
             } else {
                 System.out.println("This seat is occupied. Change seat number!");
