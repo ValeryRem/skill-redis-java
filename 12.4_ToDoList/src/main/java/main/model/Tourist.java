@@ -7,7 +7,7 @@ public class Tourist {
     private String name;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_tourist")
+//    @Column(name = "id_tourist")
     private Integer id;
     private String seat;
     private String birthday;

@@ -20,7 +20,7 @@ public class Storage {
         return this.touristsMap;
     }
 
-    public ResponseEntity<Tourist> addTourist (Tourist tourist) {
+    public synchronized ResponseEntity<Tourist> addTourist (Tourist tourist) {
         System.out.printf("%s%s%s%s\n", "Add tourist: name: ", tourist.getName(), "  seat: ", tourist.getSeat());
         int id = currentId++;
         if(!seatList.contains(tourist.getSeat())) {
@@ -30,57 +30,39 @@ public class Storage {
         } else {
             return new ResponseEntity<>(tourist, HttpStatus.NOT_ACCEPTABLE);
         }
-        System.out.println("Added tourist: id = " + id);
         return new ResponseEntity<>(tourist, HttpStatus.OK);
     }
 
-    public synchronized ResponseEntity<Tourist> putNewData(Integer id, String name, String seat, String birthday) {
+    public synchronized Tourist putCorrectives(Integer id, String name, String seat, String birthday) {
         Tourist tourist = getTourist(id);
         if(name.length() > 0) {
-            Objects.requireNonNull(tourist).setName(name);
+            tourist.setName(name);
         }
-        if(!seat.equals("0")) {
-            if (!seatList.contains(seat) || tourist.getSeat().equals(seat)) {
+
+        if (seat.length() > 0 && !tourist.getSeat().equals(seat)) {
                 tourist.setSeat(seat);
-            } else {
-                System.out.println("This seat is occupied. Change seat number!");
-            }
         }
+
         if(birthday.length() > 0) {
-            Objects.requireNonNull(tourist).setBirthday(birthday);
+            tourist.setBirthday(birthday);
         }
 //        touristRepository.save(Objects.requireNonNull(tourist));
-        return new ResponseEntity<>(tourist, HttpStatus.ACCEPTED);
+        return tourist;//new ResponseEntity<>(tourist, HttpStatus.ACCEPTED);
     }
 
-    public synchronized ResponseEntity<Integer> delete(Integer id) {
+    public synchronized Integer delete(Integer id) {
         if (id > 0) {
             if (touristsMap.containsKey(id)) {
                 String seat = touristsMap.get(id).getSeat();
-                System.out.println("Tourist removed: " + touristsMap.remove(id).getName());
-                System.out.println("SeatList before: "  + Arrays.toString(seatList.toArray()));
-                System.out.println("Connected seat to remove: " + seat);
                 seatList.remove(seat);
-                System.out.println("SeatList after: "  + Arrays.toString(seatList.toArray()));
             } else {
-                return new ResponseEntity<>(id, HttpStatus.NOT_FOUND);
+                return id;
             }
         } else {
             touristsMap.clear();
         }
-        return new ResponseEntity<>(id, HttpStatus.OK);
+        return id;
     }
-
-    public ResponseEntity<Tourist> get(Integer id) {
-        Tourist tourist = getTourist(id);
-//        return ResponseEntity.of(Optional.ofNullable(tourist));
-//    }
-        if (tourist == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        return new ResponseEntity<>(tourist, HttpStatus.OK);
-    }
-
 
     public List<String> getSeatList() {
         return seatList;
@@ -92,6 +74,4 @@ public class Storage {
         }
         return null;
     }
-
-
 }
