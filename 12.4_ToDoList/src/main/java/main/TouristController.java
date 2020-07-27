@@ -17,9 +17,9 @@ public class TouristController {
 //    private TouristRepository touristRepository;
 
     @PostMapping("/tourists/")
-    public synchronized ResponseEntity<Tourist> addTourist (Tourist tourist) {
+    public ResponseEntity<Tourist> addTourist (Tourist tourist) {
     //        Tourist  newTourist = touristRepository.save(tourist);
-       return storage.addTourist(tourist);
+       return new ResponseEntity<>(storage.addTourist(tourist), HttpStatus.OK);
     }
 
     @GetMapping("/tourists/")
@@ -30,12 +30,11 @@ public class TouristController {
     @GetMapping("/tourists/{id}")
     public ResponseEntity<Tourist> getTourist (@PathVariable("id") Integer id) {
         return ResponseEntity.of(Optional.of(storage.getTourist(id)));
-        //return new ResponseEntity<Tourist>(storage.getTourist(id), HttpStatus.OK);
     }
 
     @PutMapping("/tourists/{id}")
-    public synchronized ResponseEntity<Tourist> putChanges(@PathVariable("id")Integer id, String name, String seat, String birthday) {
-        return new ResponseEntity<>(storage.putCorrectives(id, name, seat, birthday), HttpStatus.ACCEPTED);//storage.putNewData(id, name, seat, birthday);
+    public ResponseEntity<Tourist> putChanges(@PathVariable("id")Integer id, String name, String seat, String birthday) {
+        return new ResponseEntity<>(storage.putCorrectives(id, name, seat, birthday), HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/tourists/{id}")

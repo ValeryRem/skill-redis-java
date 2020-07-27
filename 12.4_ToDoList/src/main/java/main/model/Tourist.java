@@ -1,6 +1,9 @@
 package main.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Tourist {
@@ -12,9 +15,8 @@ public class Tourist {
     private String seat;
     private String birthday;
 
-    public Tourist () {
+    public Tourist () {  }
 
-    }
     public Tourist(String name, Integer id, String seat, String birthday) {
         this.name = name;
         this.id = id;
@@ -51,6 +53,8 @@ public class Tourist {
     }
 
     public void setBirthday(String birthday) {
-        this.birthday = birthday;
+        if(birthday.matches("\\d{4}-\\d{2}-\\d{2}")) {
+            this.birthday = birthday;
+        }
     }
 }

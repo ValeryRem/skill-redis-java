@@ -1,11 +1,11 @@
 package main;
 
 import main.model.Tourist;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
@@ -13,39 +13,44 @@ public class Storage {
     private int currentId = 1;
 
     private final Map<Integer, Tourist> touristsMap = new ConcurrentHashMap<>();
-    private final List<String> seatList = new ArrayList<>();
+    private final Set<String> seats = new HashSet<>();
 //    Collection<Tourist> tourists = Storage.touristsMap.values();
 
     public Map<Integer, Tourist> getTouristsMap() {
         return this.touristsMap;
     }
 
-    public synchronized ResponseEntity<Tourist> addTourist (Tourist tourist) {
-        System.out.printf("%s%s%s%s\n", "Add tourist: name: ", tourist.getName(), "  seat: ", tourist.getSeat());
+    public synchronized Tourist addTourist (Tourist tourist) {
+//        System.out.printf("%s%s%s%s\n", "Add tourist: name: ", tourist.getName(), "  seat: ", tourist.getSeat());
         int id = currentId++;
-        if(!seatList.contains(tourist.getSeat())) {
-            tourist.setId(id);
-            seatList.add(tourist.getSeat());
-            touristsMap.put(id, tourist);
-        } else {
-            return new ResponseEntity<>(tourist, HttpStatus.NOT_ACCEPTABLE);
+        if(seats.contains(tourist.getSeat())) {
+            return null;
         }
-        return new ResponseEntity<>(tourist, HttpStatus.OK);
+        if(!tourist.getBirthday().matches("\\d{4}-\\d{2}-\\d{2}")) {
+            return null;
+        }
+        tourist.setId(id);
+        seats.add(tourist.getSeat());
+        touristsMap.put(id, tourist);
+        return tourist;
     }
 
     public synchronized Tourist putCorrectives(Integer id, String name, String seat, String birthday) {
         Tourist tourist = getTourist(id);
-        if(name.length() > 0) {
+        if(name != null) {
             tourist.setName(name);
         }
 
-        if (seat.length() > 0 && !tourist.getSeat().equals(seat)) {
+        if (seat != null && !tourist.getSeat().equals(seat)) {
+                seats.remove(tourist.getSeat());
                 tourist.setSeat(seat);
         }
 
-        if(birthday.length() > 0) {
+        if(birthday != null) {
             tourist.setBirthday(birthday);
         }
+//        System.out.printf("%s%s%s%s%s%s\n", "Corrected tourist's data: name: ", tourist.getName(), "  seat: ", tourist.getSeat(), " birthday: ",
+//                tourist.getBirthday());
 //        touristRepository.save(Objects.requireNonNull(tourist));
         return tourist;//new ResponseEntity<>(tourist, HttpStatus.ACCEPTED);
     }
@@ -54,18 +59,21 @@ public class Storage {
         if (id > 0) {
             if (touristsMap.containsKey(id)) {
                 String seat = touristsMap.get(id).getSeat();
-                seatList.remove(seat);
-            } else {
-                return id;
+                seats.remove(seat);
+//                seatList.removeIf(touristsMap.get(id).getSeat()::equals);
+                touristsMap.remove(id);
             }
+//            } else {
+//                return id;
+//            }
         } else {
             touristsMap.clear();
         }
         return id;
     }
 
-    public List<String> getSeatList() {
-        return seatList;
+    public Set<String> getSeats() {
+        return seats;
     }
 
     public Tourist getTourist (int touristId) {

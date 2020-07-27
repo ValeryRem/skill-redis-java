@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Upd 1: Businees logic removed from TourisController to Storage.">
-      <change afterPath="$PROJECT_DIR$/.idea/12.4_ToDoList.iml" afterDir="false" />
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Storage cleaned off ResponseEntity.">
       <change afterPath="$PROJECT_DIR$/../150720.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720-1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720.jpg" afterDir="false" />
@@ -153,7 +152,6 @@
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/spring-rest-validation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/TouristController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/TouristController.java" afterDir="false" />
@@ -243,7 +241,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593459494918</updated>
-      <workItem from="1595678788328" duration="5934000" />
+      <workItem from="1595678788328" duration="15279000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.">
       <created>1593463139150</created>
@@ -315,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595401051172</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Storage cleaned off ResponseEntity.">
+      <created>1595690060697</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1595690060697</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +350,8 @@
     <MESSAGE value="Optimized info messages." />
     <MESSAGE value="Businees logic removed from TourisController to Storage." />
     <MESSAGE value="Upd 1: Businees logic removed from TourisController to Storage." />
-    <option name="LAST_COMMIT_MESSAGE" value="Upd 1: Businees logic removed from TourisController to Storage." />
+    <MESSAGE value="Storage cleaned off ResponseEntity." />
+    <option name="LAST_COMMIT_MESSAGE" value="Storage cleaned off ResponseEntity." />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="25" key="#Inspections" timestamp="1593608968024">
@@ -376,22 +382,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1593774091404" />
-    <state width="1311" height="371" key="GridCell.Tab.0.bottom" timestamp="1595689502089">
+    <state width="1311" height="371" key="GridCell.Tab.0.bottom" timestamp="1595840401744">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="371" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595689502089" />
-    <state width="1311" height="371" key="GridCell.Tab.0.center" timestamp="1595689502088">
+    <state width="1311" height="371" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595840401744" />
+    <state width="1311" height="371" key="GridCell.Tab.0.center" timestamp="1595840401744">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="371" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595689502088" />
-    <state width="1311" height="371" key="GridCell.Tab.0.left" timestamp="1595689502088">
+    <state width="1311" height="371" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595840401744" />
+    <state width="1311" height="371" key="GridCell.Tab.0.left" timestamp="1595840401744">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="371" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595689502088" />
-    <state width="1311" height="371" key="GridCell.Tab.0.right" timestamp="1595689502088">
+    <state width="1311" height="371" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595840401744" />
+    <state width="1311" height="371" key="GridCell.Tab.0.right" timestamp="1595840401744">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1311" height="371" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595689502088" />
+    <state width="1311" height="371" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595840401744" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1594993252004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -420,10 +426,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1595401062452">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1595690072633">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1595401062452" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1595690072633" />
     <state x="0" y="0" key="new project wizard" timestamp="1593695165773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
