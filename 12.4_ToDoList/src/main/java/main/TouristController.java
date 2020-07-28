@@ -38,7 +38,12 @@ public class TouristController {
     }
 
     @DeleteMapping("/tourists/{id}")
-    public ResponseEntity<Integer> deleteTourist(@PathVariable("id") Integer id) {
-        return new ResponseEntity<>(storage.delete(id), HttpStatus.OK);
+    public ResponseEntity <Integer> deleteTourist(@PathVariable("id") Integer id) {
+        return new ResponseEntity<>(storage.deleteId(id), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/tourists/")
+    public void deleteAll() {
+        storage.deleteAll();
     }
 }
