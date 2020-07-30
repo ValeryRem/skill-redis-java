@@ -45,8 +45,7 @@ public class TouristController {
         if(!touristRepository.findById(id).isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
-        storage.putCorrectives(id, name, seat, birthday);
-        return new ResponseEntity<>(touristRepository.findById(id).get(), HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(storage.putCorrectives(id, name, seat, birthday), HttpStatus.OK);
     }
 
     @DeleteMapping("/tourists/{id}")

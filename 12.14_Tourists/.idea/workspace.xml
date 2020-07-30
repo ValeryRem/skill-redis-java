@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Set of seats removed.">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Init commit with JDBC.">
       <change afterPath="$PROJECT_DIR$/../150720.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720-1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720.jpg" afterDir="false" />
@@ -150,6 +150,17 @@
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/spring-rest-validation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/TouristController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/TouristController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Storage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/TouristController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/TouristController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/model/Tourist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/Tourist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
@@ -185,6 +196,7 @@
   </component>
   <component name="ChangesViewManager">
     <option name="groupingKeys">
+      <option value="directory" />
       <option value="module" />
     </option>
   </component>
@@ -350,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595951619949</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Init commit with JDBC.">
+      <created>1596054330642</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1596054330642</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +402,8 @@
     <MESSAGE value="Storage cleaned off ResponseEntity." />
     <MESSAGE value="Logic of delete &amp; put developed." />
     <MESSAGE value="Set of seats removed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Set of seats removed." />
+    <MESSAGE value="Init commit with JDBC." />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit with JDBC." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -422,22 +442,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1593774091404" />
-    <state width="1309" height="404" key="GridCell.Tab.0.bottom" timestamp="1596053187629">
+    <state width="1309" height="404" key="GridCell.Tab.0.bottom" timestamp="1596136999066">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="404" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596053187629" />
-    <state width="1309" height="404" key="GridCell.Tab.0.center" timestamp="1596053187629">
+    <state width="1309" height="404" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596136999066" />
+    <state width="1309" height="404" key="GridCell.Tab.0.center" timestamp="1596136999065">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="404" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596053187629" />
-    <state width="1309" height="404" key="GridCell.Tab.0.left" timestamp="1596053187628">
+    <state width="1309" height="404" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596136999065" />
+    <state width="1309" height="404" key="GridCell.Tab.0.left" timestamp="1596136999065">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="404" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596053187628" />
-    <state width="1309" height="404" key="GridCell.Tab.0.right" timestamp="1596053187629">
+    <state width="1309" height="404" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596136999065" />
+    <state width="1309" height="404" key="GridCell.Tab.0.right" timestamp="1596136999066">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="404" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596053187629" />
+    <state width="1309" height="404" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596136999066" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1594993252004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -466,10 +486,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1595951630178">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1596054373453">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1595951630178" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596054373453" />
     <state x="0" y="0" key="new project wizard" timestamp="1593695165773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

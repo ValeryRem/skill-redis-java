@@ -15,7 +15,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("touristsCount", "hello!");
+        model.addAttribute("touristsCount", "Начнем, пожалуй?");
         return "index";
     }
 }
