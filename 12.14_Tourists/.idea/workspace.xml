@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="@Autowired deleted from TouristController, final TouristRepository set up.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../150720.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720-1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720.jpg" afterDir="false" />
@@ -152,14 +151,7 @@
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/spring-rest-validation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/IndexController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/TouristController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/IndexController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Storage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/TouristController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
@@ -375,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596137771494</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="@Autowired deleted from TouristController, final TouristRepository set up.">
+      <created>1596226304182</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1596226304182</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,10 +493,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1596137785102">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1596226329031">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596137785102" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596226329031" />
     <state x="0" y="0" key="new project wizard" timestamp="1593695165773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

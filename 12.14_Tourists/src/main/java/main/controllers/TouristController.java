@@ -43,11 +43,13 @@ public class TouristController {
     }
 
     @PutMapping("/tourists/{id}")
-    public ResponseEntity<Tourist> putChanges(@PathVariable("id")Integer id, String name, String seat, String birthday) {
-        if(!touristRepository.findById(id).isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        return new ResponseEntity<>(storage.putCorrectives(id, name, seat, birthday), HttpStatus.OK);
+    public Tourist putChanges(@PathVariable("id")Integer id, String name, String seat, String birthday) {
+        storage.putCorrectives(id, name, seat, birthday);
+        return touristRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No such id!"));
+//        if(!touristRepository.findById(id).isPresent()) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+//        }
+//        return new ResponseEntity<>(storage.putCorrectives(id, name, seat, birthday), HttpStatus.OK);
     }
 
     @DeleteMapping("/tourists/{id}")
