@@ -14,11 +14,6 @@ import java.util.Optional;
 public class Storage {
     private int currentId = 1;
 
-//    private final Map<Integer, Tourist> touristsMap = new ConcurrentHashMap<>();
-
-//    public Map<Integer, Tourist> getTouristsMap() {
-//        return this.touristsMap;
-//    }
     @Autowired
     private TouristRepository touristRepository;
 
@@ -29,9 +24,7 @@ public class Storage {
         Iterable<Tourist> touristIterable = touristRepository.findAll();
         List<Tourist> touristList = new ArrayList<>();
         touristIterable.forEach(touristList::add);
-        indicatorOfDoubleSeat = touristList.stream()
-                .filter(t -> t.getSeat().equals(tourist.getSeat()))
-                .count() > 0;
+        indicatorOfDoubleSeat = touristList.stream().anyMatch(t -> t.getSeat().equals(tourist.getSeat()));
 
         if(indicatorOfDoubleSeat) {
             return null;
@@ -40,7 +33,6 @@ public class Storage {
         if(!tourist.getBirthday().matches("\\d{4}-\\d{2}-\\d{2}")) {
             return null;
         }
-//        tourist.setId(id);
         touristRepository.save(tourist);
         return tourist;
     }

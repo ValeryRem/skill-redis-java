@@ -1,5 +1,6 @@
-package main;
+package main.controllers;
 
+import main.Storage;
 import main.model.Tourist;
 import main.model.TouristRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,37 +8,38 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+import javax.persistence.EntityNotFoundException;
 
 @RestController
 public class TouristController {
     @Autowired
     Storage storage;
-    @Autowired
-    private TouristRepository touristRepository;
+
+    private final TouristRepository touristRepository;
+
+    public TouristController(TouristRepository touristRepository) {
+        this.touristRepository = touristRepository;
+    }
 
     @PostMapping("/tourists/")
-    public ResponseEntity<Tourist> addTourist (Tourist tourist) {
+    public Tourist addTourist (Tourist tourist) {
        storage.addTourist(tourist);
-       return new ResponseEntity<>(tourist, HttpStatus.OK);
+       return tourist;
     }
 
     @GetMapping("/tourists/")
-    public Collection<Tourist> list() {
-        Iterable<Tourist> touristIterable = touristRepository.findAll();
-        List<Tourist> touristList = new ArrayList<>();
-        touristIterable.forEach(touristList::add);
-        return touristList;
+    public Iterable<Tourist> list() {
+        //        List<Tourist> touristList = new ArrayList<>();
+//        touristIterable.forEach(touristList::add);
+        return touristRepository.findAll();
     }
 
     @GetMapping("/tourists/{id}")
-    public ResponseEntity<Tourist> getTourist (@PathVariable("id") Integer id) {
-        Optional<Tourist> optionalTourist = touristRepository.findById(id);
-        return optionalTourist.
-                map(tourist -> new ResponseEntity<>(tourist, HttpStatus.OK)).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
+    public Tourist getTourist (@PathVariable("id") Integer id) {
+        return touristRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No such tourist"));
+//        Optional<Tourist> optionalTourist = touristRepository.findById(id);
+//        return optionalTourist.
+//                map(tourist -> new ResponseEntity<>(tourist, HttpStatus.OK)).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
     }
 
     @PutMapping("/tourists/{id}")

@@ -19,10 +19,14 @@
         <input type="text" name="seat" value="">
         <hr>
         <button id="save-info">Сохранить</button>
+        <br><br>
+        <button id="show-add-tourist">Добавить данные туриста</button>
     </form>
 </div>
-<h1>Реестр туристов (<span th:text="${touristsCount}">0</span>)</h1>
-<button id="show-add-tourist">Добавить данные туриста</button>
+<h2>Количество туристов (<span th:text="${touristsCount}">0</span>)</h2>
+
+<h2>Реестр туристов</h2>
+<span th:text="${tourists}"></span>
 <br><br>
 <div id="tourist-list">
     <div th:each="tourist : ${tourists}">
