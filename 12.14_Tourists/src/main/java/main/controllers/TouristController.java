@@ -65,6 +65,6 @@ public class TouristController {
     @DeleteMapping("/tourists/")
     public ResponseEntity<String> deleteAll() {
         touristRepository.deleteAll();
-        return new ResponseEntity<>("The set of tourists deleted", HttpStatus.MOVED_PERMANENTLY);
+        return new ResponseEntity<>("The full set of tourists deleted", HttpStatus.MOVED_PERMANENTLY);
     }
 }

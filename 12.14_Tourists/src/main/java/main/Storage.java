@@ -20,13 +20,13 @@ public class Storage {
     @Transactional
     public  Tourist addTourist (Tourist tourist) {
         int id = currentId++;
-        boolean indicatorOfDoubleSeat;
+        boolean indicatorOfDoubledSeat;
         Iterable<Tourist> touristIterable = touristRepository.findAll();
         List<Tourist> touristList = new ArrayList<>();
         touristIterable.forEach(touristList::add);
-        indicatorOfDoubleSeat = touristList.stream().anyMatch(t -> t.getSeat().equals(tourist.getSeat()));
+        indicatorOfDoubledSeat = touristList.stream().anyMatch(t -> t.getSeat().equals(tourist.getSeat()));
 
-        if(indicatorOfDoubleSeat) {
+        if(indicatorOfDoubledSeat) {
             return null;
         }
 
