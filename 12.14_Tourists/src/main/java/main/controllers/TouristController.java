@@ -1,5 +1,6 @@
 package main.controllers;
 
+import main.GlobalExceptionHandler;
 import main.Storage;
 import main.model.Tourist;
 import main.model.TouristRepository;
@@ -11,9 +12,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.persistence.EntityNotFoundException;
 
 @RestController
+@RequestMapping("/tourists")
 public class TouristController {
     @Autowired
-    Storage storage;
+    private Storage storage;
+    @Autowired
+    private GlobalExceptionHandler globalExceptionHandler;
 
     private final TouristRepository touristRepository;
 
@@ -21,50 +25,53 @@ public class TouristController {
         this.touristRepository = touristRepository;
     }
 
-    @PostMapping("/tourists/")
+    @PostMapping("/")
     public Tourist addTourist (Tourist tourist) {
        storage.addTourist(tourist);
        return tourist;
     }
 
-    @GetMapping("/tourists/")
+    @GetMapping("/")
     public Iterable<Tourist> list() {
         //        List<Tourist> touristList = new ArrayList<>();
 //        touristIterable.forEach(touristList::add);
         return touristRepository.findAll();
     }
 
-    @GetMapping("/tourists/{id}")
+    @GetMapping("/{id}")
     public Tourist getTourist (@PathVariable("id") Integer id) {
-        return touristRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No such tourist"));
+        return touristRepository.findById(id).orElseThrow(EntityNotFoundException::new);
 //        Optional<Tourist> optionalTourist = touristRepository.findById(id);
 //        return optionalTourist.
 //                map(tourist -> new ResponseEntity<>(tourist, HttpStatus.OK)).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
     }
 
-    @PutMapping("/tourists/{id}")
-    public Tourist putChanges(@PathVariable("id")Integer id, String name, String seat, String birthday) {
+    @PutMapping("/{id}")
+    public Tourist putChanges(@PathVariable("id")Integer id, String name, String seat, String birthday) throws NoSuchFieldException {
         storage.putCorrectives(id, name, seat, birthday);
-        return touristRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No such id!"));
+        return touristRepository.findById(id).orElseThrow(NoSuchFieldException::new);
 //        if(!touristRepository.findById(id).isPresent()) {
 //            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 //        }
 //        return new ResponseEntity<>(storage.putCorrectives(id, name, seat, birthday), HttpStatus.OK);
     }
 
-    @DeleteMapping("/tourists/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity <Tourist> deleteTourist(@PathVariable("id") Integer id) {
-        if(!touristRepository.findById(id).isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        Tourist tourist = touristRepository.findById(id).get();
+        Tourist tourist = touristRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         touristRepository.deleteById(id);
         return new ResponseEntity<>(tourist, HttpStatus.MOVED_PERMANENTLY);
     }
 
-    @DeleteMapping("/tourists/")
+    @DeleteMapping("/")
     public ResponseEntity<String> deleteAll() {
         touristRepository.deleteAll();
         return new ResponseEntity<>("The full set of tourists deleted", HttpStatus.MOVED_PERMANENTLY);
     }
+
+//    @ExceptionHandler(EntityNotFoundException.class)
+//    public ResponseEntity<List<String>> handleContentNotAllowedException(EntityNotFoundException unfe) {
+//        List<String> errors = Collections.singletonList(unfe.getMessage());
+//        return new ResponseEntity<>(errors, HttpStatus.NOT_FOUND);
+//    }
 }

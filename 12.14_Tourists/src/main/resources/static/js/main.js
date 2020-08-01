@@ -7,20 +7,20 @@ $(function(){
             .append('<div>' + touristCode + '</div>');
     };
 
-    //Loading books on load page
-//    $.get('/books/', function(response)
-//    {
-//        for(i in response) {
-//            appendBook(response[i]);
-//        }
-//    });
+//    Loading tourists on load page
+    $.get('/tourists/', function(response)
+    {
+        for(i in response) {
+            appendTourist(response[i]);
+        }
+    });
 
-    //Show adding book form
+    //Show adding tourist form
     $('#show-add-tourist-form').click(function(){
         $('#registr-form').css('display', 'flex');
     });
 
-    //Closing adding registr. form
+    //Closing adding registr form
     $('#registr-form').click(function(event){
         if(event.target === this) {
             $(this).css('display', 'none');
@@ -49,7 +49,7 @@ $(function(){
         return false;
     });
 
-    //Adding book
+    //Adding tourist
     $('#save-tourist').click(function()
     {
         var data = $('#registr-form form').serialize();

@@ -7,13 +7,13 @@ $(function(){
             .append('<div>' + touristCode + '</div>');
     };
 
-    //Loading books on load page
-//    $.get('/books/', function(response)
-//    {
-//        for(i in response) {
-//            appendBook(response[i]);
-//        }
-//    });
+//    Loading tourists on load page
+    $.get('/tourists/', function(response)
+    {
+        for(i in response) {
+            appendTourist(response[i]);
+        }
+    });
 
     //Show adding book form
     $('#show-add-tourist-form').click(function(){

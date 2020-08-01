@@ -19,7 +19,6 @@ public class Storage {
 
     @Transactional
     public  Tourist addTourist (Tourist tourist) {
-        int id = currentId++;
         boolean indicatorOfDoubledSeat;
         Iterable<Tourist> touristIterable = touristRepository.findAll();
         List<Tourist> touristList = new ArrayList<>();
