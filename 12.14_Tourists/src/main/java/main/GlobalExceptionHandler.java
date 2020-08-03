@@ -14,11 +14,10 @@ import javax.persistence.EntityNotFoundException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
     /** Provides handling for exceptions throughout this service. */
-    private ApiError apiError = new ApiError();
-    private HttpHeaders headers = new HttpHeaders();
 
     @ExceptionHandler({EntityNotFoundException.class, IllegalArgumentException.class})
     public final ResponseEntity<ApiError> handleException(Exception ex, WebRequest request) {
+        HttpHeaders headers = new HttpHeaders();
         if (ex instanceof EntityNotFoundException) {
             HttpStatus status = HttpStatus.NOT_FOUND;
             EntityNotFoundException unfe = (EntityNotFoundException) ex;

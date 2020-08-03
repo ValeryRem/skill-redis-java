@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Updated pom.xml, index.html.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/model/ApiError.java" afterDir="false" />
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="GlobalExceptionHandler &amp; class ApiError added.">
       <change afterPath="$PROJECT_DIR$/../150720.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720-1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720.jpg" afterDir="false" />
@@ -153,6 +151,7 @@
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/spring-rest-validation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
@@ -221,13 +220,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -394,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596280437718</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="GlobalExceptionHandler &amp; class ApiError added.">
+      <created>1596322587397</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1596322587397</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +442,8 @@
     <MESSAGE value="@Autowired deleted from TouristController, final TouristRepository set up." />
     <MESSAGE value="@PutMapping(&quot;/tourists/{id}&quot;) changed." />
     <MESSAGE value="Updated pom.xml, index.html." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated pom.xml, index.html." />
+    <MESSAGE value="GlobalExceptionHandler &amp; class ApiError added." />
+    <option name="LAST_COMMIT_MESSAGE" value="GlobalExceptionHandler &amp; class ApiError added." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -463,30 +474,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="401" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1593631768282" />
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1596313684485">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1596473756750">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596313684485" />
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596473756750" />
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593774091404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1593774091404" />
-    <state width="1309" height="404" key="GridCell.Tab.0.bottom" timestamp="1596320977749">
+    <state width="1309" height="404" key="GridCell.Tab.0.bottom" timestamp="1596475090629">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="404" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596320977749" />
-    <state width="1309" height="404" key="GridCell.Tab.0.center" timestamp="1596320977749">
+    <state width="1309" height="404" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596475090629" />
+    <state width="1309" height="404" key="GridCell.Tab.0.center" timestamp="1596475090628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="404" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596320977749" />
-    <state width="1309" height="404" key="GridCell.Tab.0.left" timestamp="1596320977748">
+    <state width="1309" height="404" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596475090628" />
+    <state width="1309" height="404" key="GridCell.Tab.0.left" timestamp="1596475090628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="404" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596320977748" />
-    <state width="1309" height="404" key="GridCell.Tab.0.right" timestamp="1596320977749">
+    <state width="1309" height="404" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596475090628" />
+    <state width="1309" height="404" key="GridCell.Tab.0.right" timestamp="1596475090629">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="404" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596320977749" />
+    <state width="1309" height="404" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596475090629" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1594993252004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -507,22 +518,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="96" y="0" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1593460659330" />
-    <state x="66" y="0" key="SettingsEditor" timestamp="1593641593919">
+    <state x="66" y="0" key="SettingsEditor" timestamp="1596384174058">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="66" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593641593919" />
+    <state x="66" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596384174058" />
     <state width="623" height="498" key="SwitcherDM" timestamp="1594990751597">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1596280452212">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1596322598937">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596280452212" />
-    <state x="0" y="0" key="new project wizard" timestamp="1593695165773">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596322598937" />
+    <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1593695165773" />
+    <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1366.728@0.0.1366.728" timestamp="1596384156724" />
+    <state x="0" y="0" key="new project wizard" timestamp="1596382875035">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1596382875035" />
     <state x="255" y="159" key="run.anything.popup" timestamp="1595682406966">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

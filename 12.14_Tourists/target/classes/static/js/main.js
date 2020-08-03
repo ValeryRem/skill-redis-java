@@ -15,12 +15,12 @@ $(function(){
         }
     });
 
-    //Show adding book form
+    //Show adding tourist form
     $('#show-add-tourist-form').click(function(){
         $('#registr-form').css('display', 'flex');
     });
 
-    //Closing adding registr. form
+    //Closing adding registr form
     $('#registr-form').click(function(event){
         if(event.target === this) {
             $(this).css('display', 'none');
@@ -49,13 +49,14 @@ $(function(){
         return false;
     });
 
-    //Adding book
+    //Adding tourist
     $('#save-tourist').click(function()
     {
         var data = $('#registr-form form').serialize();
         $.ajax({
-            method: "POST",
+            type: "POST",
             url: '/tourists/',
+            dataType: html,
             data: data,
             success: function(response)
             {

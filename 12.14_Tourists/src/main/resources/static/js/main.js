@@ -54,8 +54,9 @@ $(function(){
     {
         var data = $('#registr-form form').serialize();
         $.ajax({
-            method: "POST",
+            type: "POST",
             url: '/tourists/',
+            dataType: html,
             data: data,
             success: function(response)
             {
