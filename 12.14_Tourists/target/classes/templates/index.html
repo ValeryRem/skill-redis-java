@@ -9,10 +9,10 @@
 </head>
 <body>
 <div id="registr-form">
+    <h2>Добавление туриста</h2>
     <form>
-        <h2>Добавление туриста</h2>
         <label>Имя туриста:</label>
-        <input type="text" name="name" value="">
+            <input type="text" name="name" value="">
         <label>Дата рождения:</label>
         <input type="text" name="birthday" value="">
         <label>Место в автобусе:</label>
@@ -31,6 +31,6 @@
         <a href="#" class="tourist-link" th:attr="data-id=${tourist.id}" th:text="${tourist.name}"></a>
     </div>
 </div>
-<p th:text="${someParameter}"></p>
+<!--<p th:text="${someParameter}"></p>-->
 </body>
 </html>

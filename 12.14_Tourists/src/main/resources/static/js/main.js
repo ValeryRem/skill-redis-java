@@ -52,12 +52,16 @@ $(function(){
     //Adding tourist
     $('#save-tourist').click(function()
     {
-        var data = $('#registr-form form').serialize();
+//        var data = $('#registr-form form').serialize();
         $.ajax({
             type: "POST",
             url: '/tourists/',
             dataType: html,
-            data: data,
+            data: {
+                name: ${tourist.name},
+                birthday: ${tourist.birthday},
+                seat: ${touristId.seat}
+            }
             success: function(response)
             {
                 $('#registr-form').css('display', 'none');

@@ -18,7 +18,7 @@ public class Storage {
     private TouristRepository touristRepository;
 
     @Transactional
-    public  Tourist addTourist (Tourist tourist) {
+    public  void addTourist (Tourist tourist) {
         boolean indicatorOfDoubledSeat;
         Iterable<Tourist> touristIterable = touristRepository.findAll();
         List<Tourist> touristList = new ArrayList<>();
@@ -26,15 +26,15 @@ public class Storage {
         indicatorOfDoubledSeat = touristList.stream().anyMatch(t -> t.getSeat().equals(tourist.getSeat()));
 
         if(indicatorOfDoubledSeat) {
-            return null;
+            return;
         }
 
         if(!tourist.getBirthday().matches("\\d{4}-\\d{2}-\\d{2}")) {
-            return null;
+            return;
         }
 
         touristRepository.save(tourist);
-        return tourist;
+//        return tourist;
     }
     @Transactional
     public Tourist putCorrectives(Integer id, String name, String seatNew, String birthday) {
@@ -58,6 +58,8 @@ public class Storage {
             tourist.setBirthday(birthday);
         }
         touristRepository.save(tourist);
+
+
         return tourist;
     }
 }

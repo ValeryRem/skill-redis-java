@@ -1,6 +1,5 @@
 package main.controllers;
 
-import main.GlobalExceptionHandler;
 import main.Storage;
 import main.model.Tourist;
 import main.model.TouristRepository;
@@ -14,24 +13,24 @@ import org.springframework.web.bind.annotation.*;
 public class TouristController {
     @Autowired
     private Storage storage;
-    @Autowired
-    private GlobalExceptionHandler globalExceptionHandler;
+//    @Autowired
+//    private GlobalExceptionHandler globalExceptionHandler;
 
     private final TouristRepository touristRepository;
-
     public TouristController(TouristRepository touristRepository) {
         this.touristRepository = touristRepository;
+    }
+
+    @GetMapping("/")
+    public Iterable<Tourist> list() {
+        Iterable<Tourist> tourists = touristRepository.findAll();
+        return tourists;
     }
 
     @PostMapping("/")
     public Tourist addTourist (Tourist tourist) {
        storage.addTourist(tourist);
        return tourist;
-    }
-
-    @GetMapping("/")
-    public Iterable<Tourist> list() {
-        return touristRepository.findAll();
     }
 
     @GetMapping("/{id}")
