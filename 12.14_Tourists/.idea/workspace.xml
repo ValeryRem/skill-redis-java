@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="GlobalExceptionHandler involved into handling the app.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="File main.js changed.">
       <change afterPath="$PROJECT_DIR$/../150720.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720-1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720.jpg" afterDir="false" />
@@ -151,12 +150,11 @@
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/spring-rest-validation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Storage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" afterDir="false" />
@@ -235,7 +233,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -413,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596475712174</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="File main.js changed.">
+      <created>1596580023488</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1596580023488</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +458,8 @@
     <MESSAGE value="Updated pom.xml, index.html." />
     <MESSAGE value="GlobalExceptionHandler &amp; class ApiError added." />
     <MESSAGE value="GlobalExceptionHandler involved into handling the app." />
-    <option name="LAST_COMMIT_MESSAGE" value="GlobalExceptionHandler involved into handling the app." />
+    <MESSAGE value="File main.js changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="File main.js changed." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -492,22 +498,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1593774091404" />
-    <state width="1309" height="330" key="GridCell.Tab.0.bottom" timestamp="1596579497846">
+    <state width="1309" height="330" key="GridCell.Tab.0.bottom" timestamp="1596655345839">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596579497846" />
-    <state width="1309" height="330" key="GridCell.Tab.0.center" timestamp="1596579497846">
+    <state width="1309" height="330" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596655345839" />
+    <state width="1309" height="330" key="GridCell.Tab.0.center" timestamp="1596655345839">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596579497846" />
-    <state width="1309" height="330" key="GridCell.Tab.0.left" timestamp="1596579497846">
+    <state width="1309" height="330" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596655345839" />
+    <state width="1309" height="330" key="GridCell.Tab.0.left" timestamp="1596655345839">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596579497846" />
-    <state width="1309" height="330" key="GridCell.Tab.0.right" timestamp="1596579497846">
+    <state width="1309" height="330" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596655345839" />
+    <state width="1309" height="330" key="GridCell.Tab.0.right" timestamp="1596655345839">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596579497846" />
+    <state width="1309" height="330" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596655345839" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1594993252004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -528,18 +534,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="96" y="0" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1593460659330" />
-    <state x="66" y="0" key="SettingsEditor" timestamp="1596384174058">
+    <state x="66" y="0" key="SettingsEditor" timestamp="1596611343660">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="66" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596384174058" />
+    <state x="66" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596611343660" />
     <state width="623" height="498" key="SwitcherDM" timestamp="1594990751597">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1596475801859">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1596580036406">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596475801859" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596580036406" />
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

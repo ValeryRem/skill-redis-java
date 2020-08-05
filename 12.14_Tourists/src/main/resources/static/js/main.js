@@ -1,4 +1,4 @@
-$(function(){
+//$(function(){
 
     const appendTourist = function(data){
         var touristCode = '<a href="#" class="tourist-link" data-id="' +
@@ -50,22 +50,26 @@ $(function(){
     });
 
     //Adding tourist
-    $('#save-tourist').click(function()
-    {
-//        var data = $('#registr-form form').serialize();
+    $('#save-tourist').click(function(){
+        var data = $('#registr-form form').serialize();
+        var tourist = {
+                           name: ${data.name},
+                           birthday: ${data.birthday},
+                           seat: ${data.seat}
+                        };
         $.ajax({
             type: "POST",
             url: '/tourists/',
             dataType: html,
-            data: {
-                name: ${tourist.name},
-                birthday: ${tourist.birthday},
-                seat: ${touristId.seat}
-            }
+            data: data,
             success: function(response)
             {
                 $('#registr-form').css('display', 'none');
-                var tourist = {};
+//                var tourist = {
+//                   name: ${data.name},
+//                   birthday: ${data.birthday},
+//                   seat: ${data.seat}
+//                };
                 tourist.id = response;
                 var dataArray = $('#registr-form form').serializeArray();
                 for(i in dataArray) {
@@ -76,4 +80,4 @@ $(function(){
         });
         return false;
     });
-});
+//});
