@@ -1,4 +1,4 @@
-//$(function(){
+$(function(){
 
     const appendTourist = function(data){
         var touristCode = '<a href="#" class="tourist-link" data-id="' +
@@ -16,12 +16,12 @@
     });
 
     //Show adding tourist form
-    $('#show-add-tourist-form').click(function(){
-        $('#registr-form').css('display', 'flex');
+    $('#show-add-tourist-registr-form').click(function(){
+        $('#tourist-registr-form').css('display', 'flex');
     });
 
     //Closing adding registr form
-    $('#registr-form').click(function(event){
+    $('#tourist-registr-form').click(function(event){
         if(event.target === this) {
             $(this).css('display', 'none');
         }
@@ -51,27 +51,27 @@
 
     //Adding tourist
     $('#save-tourist').click(function(){
-        var data = $('#registr-form form').serialize();
-        var tourist = {
-                           name: ${data.name},
-                           birthday: ${data.birthday},
-                           seat: ${data.seat}
-                        };
+        var data = $('#tourist-registr-form form').serialize();
+//        var tourist = {
+//                           name: ${data.name},
+//                           birthday: ${data.birthday},
+//                           seat: ${data.seat}
+//                        };
         $.ajax({
-            type: "POST",
+            method: "POST",
             url: '/tourists/',
-            dataType: html,
+            data: html,
             data: data,
             success: function(response)
             {
-                $('#registr-form').css('display', 'flex');
-//                var tourist = {
+                $('#tourist-registr-form').css('display', 'none');
+                var tourist = {
 //                   name: ${data.name},
 //                   birthday: ${data.birthday},
 //                   seat: ${data.seat}
-//                };
+                };
                 tourist.id = response;
-                var dataArray = $('#registr-form form').serializeArray();
+                var dataArray = $('#tourist-registr-form form').serializeArray();
                 for(i in dataArray) {
                     tourist[dataArray[i]['name']] = dataArray[i]['value'];
                 }
@@ -80,4 +80,4 @@
         });
         return false;
     });
-//});
+});
