@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Try to connect main.js.">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="js-folder transferred to resources.">
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/jquery-3.4.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/main.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../150720.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720-1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../170720.jpg" afterDir="false" />
@@ -151,6 +153,10 @@
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SpringRestValidation/spring-rest-validation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/jquery-3.4.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery-3.4.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
@@ -236,11 +242,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valery\Desktop\java_basics\12.14_Tourists\src\main\resources\static\" />
+      <recent name="C:\Users\valery\Desktop\java_basics\12.14_Tourists\src\main\resources\static\css" />
+      <recent name="C:\Users\valery\Desktop\java_basics\12.14_Tourists\src\main\resources" />
       <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\templates" />
       <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\static\" />
-      <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\static" />
-      <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\js" />
-      <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -431,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597677529283</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="js-folder transferred to resources.">
+      <created>1597735137609</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1597735137609</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +487,8 @@
     <MESSAGE value="File main.js changed." />
     <MESSAGE value="File main.js reduced." />
     <MESSAGE value="Try to connect main.js." />
-    <option name="LAST_COMMIT_MESSAGE" value="Try to connect main.js." />
+    <MESSAGE value="js-folder transferred to resources." />
+    <option name="LAST_COMMIT_MESSAGE" value="js-folder transferred to resources." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -513,22 +527,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1593774091404" />
-    <state width="1309" height="330" key="GridCell.Tab.0.bottom" timestamp="1597677470726">
+    <state width="1309" height="330" key="GridCell.Tab.0.bottom" timestamp="1597785701378">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597677470726" />
-    <state width="1309" height="330" key="GridCell.Tab.0.center" timestamp="1597677470726">
+    <state width="1309" height="330" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597785701378" />
+    <state width="1309" height="330" key="GridCell.Tab.0.center" timestamp="1597785701378">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597677470726" />
-    <state width="1309" height="330" key="GridCell.Tab.0.left" timestamp="1597677470726">
+    <state width="1309" height="330" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597785701378" />
+    <state width="1309" height="330" key="GridCell.Tab.0.left" timestamp="1597785701378">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597677470726" />
-    <state width="1309" height="330" key="GridCell.Tab.0.right" timestamp="1597677470726">
+    <state width="1309" height="330" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597785701378" />
+    <state width="1309" height="330" key="GridCell.Tab.0.right" timestamp="1597785701378">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597677470726" />
+    <state width="1309" height="330" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597785701378" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1594993252004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -557,10 +571,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1597677543195">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1597735147293">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597677543195" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597735147293" />
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
