@@ -66,9 +66,9 @@ $(function(){
             {
                 $('#tourist-registr-form').css('display', 'none');
                 var tourist = {
-//                   name: ${data.name},
-//                   birthday: ${data.birthday},
-//                   seat: ${data.seat}
+                   name: ${data.name},
+                   birthday: ${data.birthday},
+                   seat: ${data.seat}
                 };
                 tourist.id = response;
                 var dataArray = $('#tourist-registr-form form').serializeArray();
