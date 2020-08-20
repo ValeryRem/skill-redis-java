@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="css-file corrected (reloaded).">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="css &amp; js-files corrected.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
@@ -46,30 +46,11 @@
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/12_SpringBootWebDevelopment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/12_SpringBootWebDevelopment.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/bookLibrary.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/BookController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/DefaultController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/Storage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/model/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/java/main/model/BookRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/resources/static/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/resources/static/js/jquery-3.4.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/resources/static/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/resources/target/classes/META-INF/bookLibrary.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/src/main/resources/templates/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/BookController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/Storage.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/model/Book.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/model/BookRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/static/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/static/js/jquery-3.4.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/static/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/target/classes/META-INF/bookLibrary.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/templates/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597844935015</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="css &amp; js-files corrected.">
+      <created>1597845336587</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1597845336587</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +347,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Completing in progress. No xml. &amp; jacaScript files." />
     <MESSAGE value="Updated url of port 8080. PUT method set up." />
     <MESSAGE value="Updated PUT method, new DELETE method set up." />
     <MESSAGE value="@Autowired Storage storage." />
@@ -384,7 +371,8 @@
     <MESSAGE value="js-folder transferred to resources." />
     <MESSAGE value="File index.html is corrected." />
     <MESSAGE value="css-file corrected (reloaded)." />
-    <option name="LAST_COMMIT_MESSAGE" value="css-file corrected (reloaded)." />
+    <MESSAGE value="css &amp; js-files corrected." />
+    <option name="LAST_COMMIT_MESSAGE" value="css &amp; js-files corrected." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -423,38 +411,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1593774091404" />
-    <state width="1309" height="149" key="GridCell.Tab.0.bottom" timestamp="1597844986375">
+    <state width="1309" height="149" key="GridCell.Tab.0.bottom" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597844986375" />
-    <state width="1309" height="149" key="GridCell.Tab.0.center" timestamp="1597844986375">
+    <state width="1309" height="149" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
+    <state width="1309" height="149" key="GridCell.Tab.0.center" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597844986375" />
-    <state width="1309" height="149" key="GridCell.Tab.0.left" timestamp="1597844986375">
+    <state width="1309" height="149" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
+    <state width="1309" height="149" key="GridCell.Tab.0.left" timestamp="1597845401537">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597844986375" />
-    <state width="1309" height="149" key="GridCell.Tab.0.right" timestamp="1597844986375">
+    <state width="1309" height="149" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597845401537" />
+    <state width="1309" height="149" key="GridCell.Tab.0.right" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597844986375" />
-    <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1597844986121">
+    <state width="1309" height="149" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
+    <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597844986121" />
-    <state width="1309" height="149" key="GridCell.Tab.1.center" timestamp="1597844986121">
+    <state width="1309" height="149" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
+    <state width="1309" height="149" key="GridCell.Tab.1.center" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1597844986121" />
-    <state width="1309" height="149" key="GridCell.Tab.1.left" timestamp="1597844986121">
+    <state width="1309" height="149" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
+    <state width="1309" height="149" key="GridCell.Tab.1.left" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1597844986121" />
-    <state width="1309" height="149" key="GridCell.Tab.1.right" timestamp="1597844986121">
+    <state width="1309" height="149" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
+    <state width="1309" height="149" key="GridCell.Tab.1.right" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1597844986121" />
+    <state width="1309" height="149" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
     <state x="96" y="0" key="Maven.ArtifactSearchDialog" timestamp="1593460659330">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -467,10 +455,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1597844946249">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1597845357084">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597844946249" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597845357084" />
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
