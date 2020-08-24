@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Tourists</title>
-    <script src="/js/jquery-3.4.0.min.js"></script>
-    <script src="/js/main.js"></script>
+<!--    <script src="/js/jquery-3.4.0.min.js"></script>-->
+<!--    <script src="/js/main.js"></script>-->
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
@@ -23,7 +23,6 @@
         <button id="show-add-tourist-registr-form">Добавить данные туриста</button>
     </form>
 </div>
-
 <h2>Количество туристов: <span th:text="${touristsCount}">0</span></h2>
 
 <h2>Реестр туристов:</h2>
@@ -32,6 +31,6 @@
         <a href="#" class="tourist-link" th:attr="data-id=${tourist.id}" th:text="${tourist.name}"></a>
     </div>
 </div>
-<!--<p th:text="${someParameter}"></p>-->
+<p th:text="${someParameter}"></p>
 </body>
 </html>

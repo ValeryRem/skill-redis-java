@@ -3,6 +3,7 @@ package main.controllers;
 import main.model.Tourist;
 import main.model.TouristRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,9 @@ public class IndexController {
         return "index";
     }
 
+    @Value("${someParameter}")
+    private String someParameter;
+
     @Autowired
     TouristRepository touristRepository;
 
@@ -29,6 +33,7 @@ public class IndexController {
         touristIterable.forEach(touristList::add);
         model.addAttribute("tourists", touristList);
         model.addAttribute("touristsCount", touristList.size());
+        model.addAttribute("someParameter", someParameter);
         return "index";
     }
 }

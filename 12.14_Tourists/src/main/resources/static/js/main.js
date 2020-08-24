@@ -51,17 +51,18 @@ $(function(){
 
     //Adding tourist
     $('#save-tourist').click(function(){
-        var data = $('#tourist-registr-form form').serialize();
-//        var tourist = {
-//                           name: ${data.name},
-//                           birthday: ${data.birthday},
-//                           seat: ${data.seat}
-//                        };
+//        var data = $('#tourist-registr-form form').serialize();
+        var tourist = {
+                           name: ${data.name},
+                           birthday: ${data.birthday},
+                           seat: ${data.seat}
+                        };
         $.ajax({
             method: "POST",
             url: '/tourists/',
-            data: html,
-            data: data,
+//            data: html,
+//            data: data,
+            data: tourist,
             success: function(response)
             {
                 $('#tourist-registr-form').css('display', 'none');
