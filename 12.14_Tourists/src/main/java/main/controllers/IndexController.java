@@ -20,7 +20,7 @@ public class IndexController {
         return "index";
     }
 
-    @Value("${someParameter}")
+    @Value("${someParameter.value}")
     private String someParameter;
 
     @Autowired

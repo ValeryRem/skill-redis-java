@@ -19,18 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="jar-file completed.">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="File application.properties renamed to application.yml.">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Storage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
@@ -359,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598019580666</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="File application.properties renamed to application.yml.">
+      <created>1598282641426</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1598282641426</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +378,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Filtering deleted seats with problems." />
     <MESSAGE value="Сменил тип места с int на String." />
     <MESSAGE value="Optimized info messages." />
     <MESSAGE value="Businees logic removed from TourisController to Storage." />
@@ -404,7 +402,8 @@
     <MESSAGE value="Repeated commit of css- &amp; js-files corrected." />
     <MESSAGE value="js-folder deleted." />
     <MESSAGE value="jar-file completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="jar-file completed." />
+    <MESSAGE value="File application.properties renamed to application.yml." />
+    <option name="LAST_COMMIT_MESSAGE" value="File application.properties renamed to application.yml." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -451,22 +450,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="374" y="179" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1598247670888" />
-    <state width="1309" height="330" key="GridCell.Tab.0.bottom" timestamp="1598282342094">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1598297725520">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598282342094" />
-    <state width="1309" height="330" key="GridCell.Tab.0.center" timestamp="1598282342094">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598297725520" />
+    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1598297725520">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598282342094" />
-    <state width="1309" height="330" key="GridCell.Tab.0.left" timestamp="1598282342093">
+    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598297725520" />
+    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1598297725520">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598282342093" />
-    <state width="1309" height="330" key="GridCell.Tab.0.right" timestamp="1598282342094">
+    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598297725520" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1598297725520">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="330" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598282342094" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598297725520" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -495,10 +494,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1598019594509">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1598282718558">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598019594509" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598282718558" />
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
