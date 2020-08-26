@@ -5,10 +5,10 @@
     <title>Tourists</title>
 <!--    <script src="/js/jquery-3.4.0.min.js"></script>-->
 <!--    <script src="/js/main.js"></script>-->
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+<!--    <link rel="stylesheet" type="text/css" href="/css/styles.css">-->
 </head>
 <body>
-<div id="tourist-registr-form">
+<div id="registr-form">
     <h2>Добавление туриста</h2>
     <form>
         <label>Имя туриста:</label>
@@ -20,9 +20,10 @@
         <hr>
         <button id="save-info">Сохранить</button>
         <br><br>
-        <button id="show-add-tourist-registr-form">Добавить данные туриста</button>
     </form>
 </div>
+
+<button id="show-add-registr-form">Добавить данные туриста</button>
 <h2>Количество туристов: <span th:text="${touristsCount}">0</span></h2>
 
 <h2>Реестр туристов:</h2>

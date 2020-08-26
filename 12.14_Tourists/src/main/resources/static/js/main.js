@@ -16,12 +16,12 @@ $(function(){
     });
 
     //Show adding tourist form
-    $('#show-add-tourist-registr-form').click(function(){
-        $('#tourist-registr-form').css('display', 'flex');
+    $('#show-add-registr-form').click(function(){
+        $('#registr-form').css('display', 'flex');
     });
 
     //Closing adding registr form
-    $('#tourist-registr-form').click(function(event){
+    $('#registr-form').click(function(event){
         if(event.target === this) {
             $(this).css('display', 'none');
         }
@@ -36,7 +36,8 @@ $(function(){
             url: '/tourists/' + touristId,
             success: function(response)
             {
-                var code = '<span>Дата рождения:' + response.birthday + '</span>';
+                $(".birthday").remove();
+                var code = '<span class="birthday">Дата рождения:' + response.birthday + '</span>';
                 link.parent().append(code);
             },
             error: function(response)
@@ -50,33 +51,29 @@ $(function(){
     });
 
     //Adding tourist
-    $('#save-tourist').click(function(){
-//        var data = $('#tourist-registr-form form').serialize();
-        var tourist = {
-                           name: ${data.name},
-                           birthday: ${data.birthday},
-                           seat: ${data.seat}
-                        };
+    $('#save-info').click(function(){
+        var tourist = {};
+        $.each($('#registr-form form').serializeArray(), function() {
+            tourist[this.name] = this.value;
+        });
+
+        console.log(tourist);
         $.ajax({
             method: "POST",
             url: '/tourists/',
-//            data: html,
-//            data: data,
             data: tourist,
-            success: function(response)
-            {
-                $('#tourist-registr-form').css('display', 'none');
-//                var tourist = {
-//                   name: ${data.name},
-//                   birthday: ${data.birthday},
-//                   seat: ${data.seat}
-//                };
+            success: function(response) {
+                $('#registr-form').css('display', 'none');
                 tourist.id = response;
-//                var dataArray = $('#tourist-registr-form form').serializeArray();
-//                for(i in dataArray) {
-//                    tourist[dataArray[i]['name']] = dataArray[i]['value'];
-//                }
                 appendTourist(tourist);
+            },
+            error: function(response) {
+                var json = JSON.parse(response.responseText);
+                if (json && json.error) {
+                    alert(json.error);
+                } else {
+                    alert(response.responseText);
+                }
             }
         });
         return false;

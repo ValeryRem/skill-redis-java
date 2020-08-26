@@ -19,10 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="File application.properties renamed to application.yml.">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="The project is ready to be launched through jar-file.">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
@@ -98,7 +104,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -106,12 +112,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valery\Desktop\java_basics\12.14_Tourists\src\main" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valery\Desktop\java_basics\12.14_Tourists\src\main\resources\" />
+      <recent name="C:\Users\valery\Desktop\java_basics\12.14_Tourists\src\main\resources" />
       <recent name="C:\Users\valery\Desktop\java_basics\12.14_Tourists\src\main\resources\static\" />
       <recent name="C:\Users\valery\Desktop\java_basics\12.14_Tourists\src\main\resources\static\css" />
-      <recent name="C:\Users\valery\Desktop\java_basics\12.14_Tourists\src\main\resources" />
       <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\templates" />
-      <recent name="C:\Users\valery\Desktop\java_basics\12.4_ToDoList\src\main\resources\static\" />
     </key>
   </component>
   <component name="RunManager">
@@ -358,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598282641426</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="The project is ready to be launched through jar-file.">
+      <created>1598299027918</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1598299027918</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +394,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Сменил тип места с int на String." />
     <MESSAGE value="Optimized info messages." />
     <MESSAGE value="Businees logic removed from TourisController to Storage." />
     <MESSAGE value="Upd 1: Businees logic removed from TourisController to Storage." />
@@ -403,7 +418,8 @@
     <MESSAGE value="js-folder deleted." />
     <MESSAGE value="jar-file completed." />
     <MESSAGE value="File application.properties renamed to application.yml." />
-    <option name="LAST_COMMIT_MESSAGE" value="File application.properties renamed to application.yml." />
+    <MESSAGE value="The project is ready to be launched through jar-file." />
+    <option name="LAST_COMMIT_MESSAGE" value="The project is ready to be launched through jar-file." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -430,10 +446,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="132" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593460692949" />
-    <state x="401" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593631768282">
+    <state x="401" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598381427217">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="401" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1593631768282" />
+    <state x="401" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1598381427217" />
     <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1596473756750">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -450,22 +466,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="374" y="179" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1598247670888" />
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1598297725520">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1598456495433">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598297725520" />
-    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1598297725520">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598456495433" />
+    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1598456495432">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598297725520" />
-    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1598297725520">
+    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598456495432" />
+    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1598456495432">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598297725520" />
-    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1598297725520">
+    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598456495432" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1598456495433">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598297725520" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598456495433" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -494,10 +510,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1598282718558">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1598299038110">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598282718558" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598299038110" />
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
