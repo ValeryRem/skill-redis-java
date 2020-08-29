@@ -18,24 +18,18 @@ public class Storage {
     private TouristRepository touristRepository;
 
     @Transactional
-    public  void addTourist (Tourist tourist) {
+    public void addTourist (Tourist tourist) {
         boolean indicatorOfDoubledSeat;
         Iterable<Tourist> touristIterable = touristRepository.findAll();
         List<Tourist> touristList = new ArrayList<>();
         touristIterable.forEach(touristList::add);
         indicatorOfDoubledSeat = touristList.stream().anyMatch(t -> t.getSeat().equals(tourist.getSeat()));
-
-        if(indicatorOfDoubledSeat) {
+        if(indicatorOfDoubledSeat || !tourist.getBirthday().matches("\\d{4}-\\d{2}-\\d{2}") || !tourist.getName().matches("[a-zA-Z]*")) {
             return;
         }
-
-        if(!tourist.getBirthday().matches("\\d{4}-\\d{2}-\\d{2}")) {
-            return;
-        }
-
         touristRepository.save(tourist);
-//        return tourist;
     }
+
     @Transactional
     public Tourist putCorrectives(Integer id, String name, String seatNew, String birthday) {
         Optional<Tourist> optTourist = touristRepository.findById(id);

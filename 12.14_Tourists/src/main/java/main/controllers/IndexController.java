@@ -17,6 +17,11 @@ import java.util.List;
 
 @Controller
 public class IndexController {
+
+//    public IndexController(String someParameter) {
+//        this.someParameter = someParameter;
+//    }
+
     @GetMapping("/index2")
     @ResponseBody
     public String index2() {
@@ -45,7 +50,8 @@ public class IndexController {
 
     @PostMapping("/")
     public String touristSubmit(@ModelAttribute Tourist tourist, Model model) {
-        touristRepository.save(tourist);
+//        touristRepository.save(tourist);
+        storage.addTourist(tourist);
         return index(model);
     }
 }
