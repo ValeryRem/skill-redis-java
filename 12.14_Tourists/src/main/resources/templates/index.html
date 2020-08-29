@@ -10,7 +10,7 @@
 <body>
 <div id="registr-form">
     <h2>Добавление туриста</h2>
-    <form>
+    <form th:action="@{/}" method="post">
         <label>Имя туриста:</label>
         <input type="text" name="name" value="">
         <label>Дата рождения:</label>
@@ -23,7 +23,7 @@
     </form>
 </div>
 
-<button id="show-add-registr-form">Добавить данные туриста</button>
+<!--<button id="show-add-registr-form">Добавить данные туриста</button>-->
 <h2>Количество туристов: <span th:text="${touristsCount}">0</span></h2>
 
 <h2>Реестр туристов:</h2>

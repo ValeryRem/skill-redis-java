@@ -21,6 +21,12 @@ public class Tourist {
         this.birthday = birthday;
     }
 
+    public Tourist(String name, String birthday, String seat) {
+        this.name = name;
+        this.birthday = birthday;
+        this.seat = seat;
+    }
+
     public String getName() {
         return name;
     }

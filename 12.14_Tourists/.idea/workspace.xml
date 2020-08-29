@@ -19,18 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="The project is ready to be launched through jar-file.">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="The resources folder substituted for Igor's one.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Storage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/model/Tourist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/Tourist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.4_BookLibreryExperiment/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/encodings.xml" beforeDir="false" />
@@ -51,9 +48,6 @@
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/src/main/resources/static/js/main.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/src/main/resources/templates/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/src/main/text" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/12_SpringBootWebDevelopment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/12_SpringBootWebDevelopment.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/BookController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/Storage.class" beforeDir="false" />
@@ -83,6 +77,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1e0XTvWjImiOeihJQHLW5B4NI09" />
@@ -104,7 +99,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -374,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598299027918</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="The resources folder substituted for Igor's one.">
+      <created>1598456690890</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1598456690890</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +396,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Optimized info messages." />
     <MESSAGE value="Businees logic removed from TourisController to Storage." />
     <MESSAGE value="Upd 1: Businees logic removed from TourisController to Storage." />
     <MESSAGE value="Storage cleaned off ResponseEntity." />
@@ -419,7 +420,8 @@
     <MESSAGE value="jar-file completed." />
     <MESSAGE value="File application.properties renamed to application.yml." />
     <MESSAGE value="The project is ready to be launched through jar-file." />
-    <option name="LAST_COMMIT_MESSAGE" value="The project is ready to be launched through jar-file." />
+    <MESSAGE value="The resources folder substituted for Igor's one." />
+    <option name="LAST_COMMIT_MESSAGE" value="The resources folder substituted for Igor's one." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -450,10 +452,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="401" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1598381427217" />
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1596473756750">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1598476671893">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596473756750" />
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1598476671893" />
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593774091404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -466,22 +468,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="374" y="179" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1598247670888" />
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1598456495433">
+    <state x="409" y="58" key="FileChooserDialogImpl" timestamp="1598644687241">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598456495433" />
-    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1598456495432">
+    <state x="409" y="58" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598644687241" />
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1598690866978">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598456495432" />
-    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1598456495432">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598690866978" />
+    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1598690866978">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598456495432" />
-    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1598456495433">
+    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598690866978" />
+    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1598690866977">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598456495433" />
+    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598690866977" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1598690866978">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598690866978" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -510,18 +516,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1598299038110">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1598456706931">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598299038110" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598456706931" />
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1366.728@0.0.1366.728" timestamp="1596384156724" />
-    <state x="0" y="0" key="new project wizard" timestamp="1596382875035">
+    <state x="0" y="0" key="new project wizard" timestamp="1598556263073">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1596382875035" />
+    <state x="0" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1598556263073" />
     <state x="255" y="159" key="run.anything.popup" timestamp="1595682406966">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

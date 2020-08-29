@@ -58,8 +58,6 @@ public class Storage {
             tourist.setBirthday(birthday);
         }
         touristRepository.save(tourist);
-
-
         return tourist;
     }
 }
