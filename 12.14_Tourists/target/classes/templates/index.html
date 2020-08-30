@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Tourists</title>
-<!--    <script src="/js/jquery-3.4.0.min.js"></script>-->
-<!--    <script src="/js/main.js"></script>-->
-<!--    <link rel="stylesheet" type="text/css" href="/css/styles.css">-->
+    <script src="/js/jquery-3.4.0.min.js"></script>
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
 <div id="registr-form">
-    <h2>Добавление туриста</h2>
-    <form th:action="@{/}" method="post">
+    <h2>Добавление туриста: </h2>
+    <form>
+<!--    <form th:action="@{/}" method="post">-->
         <label>Имя туриста:</label>
         <input type="text" name="name" value="">
         <label>Дата рождения:</label>
@@ -23,14 +25,14 @@
     </form>
 </div>
 
-<!--<button id="show-add-registr-form">Добавить данные туриста</button>-->
+<button id="show-add-registr-form">Добавить данные туриста</button>
 <h2>Количество туристов: <span th:text="${touristsCount}">0</span></h2>
 
 <h2>Реестр туристов:</h2>
 <div id="tourist-list">
-    <div th:each="tourist : ${tourists}">
-        <a href="#" class="tourist-link" th:attr="data-id=${tourist.id}" th:text="${tourist.name}"></a>
-    </div>
+<!--    <div th:each="tourist : ${tourists}">-->
+<!--        <a href="#" class="tourist-link" th:attr="data-id=${tourist.id}" th:text="${tourist.name}"></a>-->
+<!--    </div>-->
 </div>
 <p th:text="${someParameter}"></p>
 </body>

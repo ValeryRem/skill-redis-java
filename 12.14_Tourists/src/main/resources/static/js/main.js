@@ -51,7 +51,9 @@ $(function(){
     });
 
     //Adding tourist
-    $('#save-info').click(function(){
+    $('#save-info').click(function(e){
+        e.preventDefault(); // Отменяем дефолтное событие отправки формы (чтобы страница не перезагрузилась)
+
         var tourist = {};
         $.each($('#registr-form form').serializeArray(), function() {
             tourist[this.name] = this.value;
@@ -61,7 +63,9 @@ $(function(){
         $.ajax({
             method: "POST",
             url: '/tourists/',
-            data: tourist,
+            data: JSON.stringify(tourist), // Преобразуем JS объект в JSON строку
+            contentType: 'application/json', // Добавляем хедер Content-type который необходим, чтобы spring понял
+            //что к нему пришел JSON и он выполнил метод контроллера :)
             success: function(response) {
                 $('#registr-form').css('display', 'none');
                 tourist.id = response;

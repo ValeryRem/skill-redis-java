@@ -19,11 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Full functionality code!">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Full functionality code with validation of input.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Storage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/encodings.xml" beforeDir="false" />
@@ -379,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598691167078</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Full functionality code with validation of input.">
+      <created>1598724523127</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1598724523127</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +408,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Upd 1: Businees logic removed from TourisController to Storage." />
     <MESSAGE value="Storage cleaned off ResponseEntity." />
     <MESSAGE value="Logic of delete &amp; put developed." />
     <MESSAGE value="Set of seats removed." />
@@ -424,7 +432,8 @@
     <MESSAGE value="The project is ready to be launched through jar-file." />
     <MESSAGE value="The resources folder substituted for Igor's one." />
     <MESSAGE value="Full functionality code!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full functionality code!" />
+    <MESSAGE value="Full functionality code with validation of input." />
+    <option name="LAST_COMMIT_MESSAGE" value="Full functionality code with validation of input." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -475,22 +484,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="409" y="58" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598644687241" />
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1598724393933">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1598817902580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598724393932" />
-    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1598724393932">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598817902580" />
+    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1598817902580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598724393932" />
-    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1598724393932">
+    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598817902580" />
+    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1598817902580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598724393932" />
-    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1598724393932">
+    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598817902580" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1598817902580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598724393932" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598817902580" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -519,10 +528,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1598691181141">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1598724539731">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598691181141" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598724539731" />
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

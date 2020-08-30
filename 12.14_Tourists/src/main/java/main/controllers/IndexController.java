@@ -48,9 +48,13 @@ public class IndexController {
         return "index";
     }
 
+//    @PostMapping("/")
+//    public Tourist addTourist (@RequestBody Tourist tourist) { // Добавляем @RequestBody чтобы spring автоматически преобразовал JSON в наш java объект
+//        storage.addTourist(tourist);
+//        return tourist;
+//    }
     @PostMapping("/")
     public String touristSubmit(@ModelAttribute Tourist tourist, Model model) {
-//        touristRepository.save(tourist);
         storage.addTourist(tourist);
         return index(model);
     }
