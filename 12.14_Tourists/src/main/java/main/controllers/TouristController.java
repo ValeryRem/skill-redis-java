@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.*;
 public class TouristController {
     @Autowired
     private Storage storage;
-//    @Autowired
-//    private GlobalExceptionHandler globalExceptionHandler;
 
     private final TouristRepository touristRepository;
     public TouristController(TouristRepository touristRepository) {
@@ -27,10 +25,20 @@ public class TouristController {
         return tourists;
     }
 
+//    @PostMapping("/")
+//    public Tourist addTourist (Tourist tourist) {
+//       storage.addTourist(tourist);
+//       return tourist;
+//    }
     @PostMapping("/")
-    public Tourist addTourist (Tourist tourist) {
-       storage.addTourist(tourist);
-       return tourist;
+//    @ResponseBody
+    public ResponseEntity<?> addTourist (@RequestBody Tourist tourist) {
+        storage.addTourist(tourist);
+        System.out.println("Tourist ID = " + tourist.getId());
+        if (tourist.getId() == null) {
+            return ResponseEntity.badRequest().body(new Error("Турист не прошел проверку"));
+        }
+        return ResponseEntity.ok(tourist.getId().toString());
     }
 
     @GetMapping("/{id}")
@@ -39,7 +47,7 @@ public class TouristController {
     }
 
     @PutMapping("/{id}")
-    public Tourist putChanges(@PathVariable("id")Integer id, String name, String seat, String birthday) throws NoSuchFieldException {
+    public Tourist putChanges(@PathVariable("id")Integer id, String name, String seat, String birthday){
         storage.putCorrectives(id, name, seat, birthday);
         return touristRepository.findById(id).get();
     }

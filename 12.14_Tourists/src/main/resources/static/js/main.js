@@ -1,7 +1,9 @@
+//все var заменены на let
+
 $(function(){
 
     const appendTourist = function(data){
-        var touristCode = '<a href="#" class="tourist-link" data-id="' +
+        let touristCode = '<a href="#" class="tourist-link" data-id="' +
             data.id + '">' + data.name + '</a><br>';
         $('#tourist-list')
             .append('<div>' + touristCode + '</div>');
@@ -29,15 +31,15 @@ $(function(){
 
     //Getting tourist
     $(document).on('click', '.tourist-link', function(){
-        var link = $(this);
-        var touristId = link.data('id');
+        let link = $(this);
+        let touristId = link.data('id');
         $.ajax({
             method: "GET",
             url: '/tourists/' + touristId,
             success: function(response)
             {
                 $(".birthday").remove();
-                var code = '<span class="birthday">Дата рождения:' + response.birthday + '</span>';
+                let code = '<span class="birthday">Дата рождения:' + response.birthday + '</span>';
                 link.parent().append(code);
             },
             error: function(response)
@@ -54,7 +56,7 @@ $(function(){
     $('#save-info').click(function(e){
         e.preventDefault(); // Отменяем дефолтное событие отправки формы (чтобы страница не перезагрузилась)
 
-        var tourist = {};
+        let tourist = {};
         $.each($('#registr-form form').serializeArray(), function() {
             tourist[this.name] = this.value;
         });
@@ -72,7 +74,7 @@ $(function(){
                 appendTourist(tourist);
             },
             error: function(response) {
-                var json = JSON.parse(response.responseText);
+                let json = JSON.parse(response.responseText);
                 if (json && json.error) {
                     alert(json.error);
                 } else {

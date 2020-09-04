@@ -53,6 +53,8 @@ public class IndexController {
 //        storage.addTourist(tourist);
 //        return tourist;
 //    }
+
+
     @PostMapping("/")
     public String touristSubmit(@ModelAttribute Tourist tourist, Model model) {
         storage.addTourist(tourist);

@@ -12,14 +12,15 @@ public class Tourist {
     private String birthday;
 
 
-    public Tourist () {  }
-
-    public Tourist(String name, Integer id, String seat, String birthday) {
-        this.name = name;
-        this.id = id;
-        this.seat = seat;
-        this.birthday = birthday;
+    public Tourist () {
     }
+
+//    public Tourist(String name, Integer id, String seat, String birthday) {
+//        this.name = name;
+//        this.id = id;
+//        this.seat = seat;
+//        this.birthday = birthday;
+//    }
 
     public Tourist(String name, String birthday, String seat) {
         this.name = name;
@@ -39,9 +40,9 @@ public class Tourist {
         return id;
     }
 
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getSeat() {
         return seat;
