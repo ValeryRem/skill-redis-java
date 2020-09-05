@@ -19,17 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="JS-scripts restored.">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Improved addTourist (@RequestBody Tourist tourist).">
       <change afterPath="$PROJECT_DIR$/../hs_err_pid22652.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hs_err_pid23360.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/model/Tourist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/Tourist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/encodings.xml" beforeDir="false" />
@@ -399,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598818178597</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Improved addTourist (@RequestBody Tourist tourist).">
+      <created>1599247975512</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1599247975512</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +429,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Logic of delete &amp; put developed." />
     <MESSAGE value="Set of seats removed." />
     <MESSAGE value="Init commit with JDBC." />
     <MESSAGE value="Synchronized changed for @Transactional." />
@@ -444,7 +453,8 @@
     <MESSAGE value="Full functionality code!" />
     <MESSAGE value="Full functionality code with validation of input." />
     <MESSAGE value="JS-scripts restored." />
-    <option name="LAST_COMMIT_MESSAGE" value="JS-scripts restored." />
+    <MESSAGE value="Improved addTourist (@RequestBody Tourist tourist)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved addTourist (@RequestBody Tourist tourist)." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -495,22 +505,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="409" y="58" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598644687241" />
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1599247117758">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1599333180246">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599247117758" />
-    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1599247117757">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599333180246" />
+    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1599333180246">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599247117757" />
-    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1599247117757">
+    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599333180246" />
+    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1599333180245">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599247117757" />
-    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1599247117757">
+    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599333180245" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1599333180246">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599247117757" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599333180246" />
     <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1597845401538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -539,10 +549,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1598818185031">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1599247990497">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598818185031" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599247990497" />
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

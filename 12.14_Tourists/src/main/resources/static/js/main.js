@@ -7,7 +7,9 @@ $(function(){
             data.id + '">' + data.name + '</a><br>';
         $('#tourist-list')
             .append('<div>' + touristCode + '</div>');
+        $("#count").text($('#tourist-list > div').length);
     };
+
 
 //    Loading tourists on load page
     $.get('/tourists/', function(response)

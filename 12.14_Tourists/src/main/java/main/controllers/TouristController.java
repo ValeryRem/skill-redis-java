@@ -31,7 +31,6 @@ public class TouristController {
 //       return tourist;
 //    }
     @PostMapping("/")
-//    @ResponseBody
     public ResponseEntity<?> addTourist (@RequestBody Tourist tourist) {
         storage.addTourist(tourist);
         System.out.println("Tourist ID = " + tourist.getId());
@@ -54,7 +53,7 @@ public class TouristController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity <Tourist> deleteTourist(@PathVariable("id") Integer id) {
-        Tourist tourist = touristRepository.findById(id).get();//.orElseThrow(() -> new EntityNotFoundException("No such tourist to delete!"));
+        Tourist tourist = touristRepository.findById(id).get(); //orElseThrow(() -> new EntityNotFoundException("No such tourist to delete!"));
         touristRepository.deleteById(id);
         return new ResponseEntity<>(tourist, HttpStatus.MOVED_PERMANENTLY);
     }
