@@ -25,11 +25,6 @@ public class TouristController {
         return tourists;
     }
 
-//    @PostMapping("/")
-//    public Tourist addTourist (Tourist tourist) {
-//       storage.addTourist(tourist);
-//       return tourist;
-//    }
     @PostMapping("/")
     public ResponseEntity<?> addTourist (@RequestBody Tourist tourist) {
         storage.addTourist(tourist);

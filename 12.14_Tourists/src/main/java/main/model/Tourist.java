@@ -6,21 +6,13 @@ import javax.persistence.*;
 public class Tourist {
     private String name;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String seat;
     private String birthday;
 
-
     public Tourist () {
     }
-
-//    public Tourist(String name, Integer id, String seat, String birthday) {
-//        this.name = name;
-//        this.id = id;
-//        this.seat = seat;
-//        this.birthday = birthday;
-//    }
 
     public Tourist(String name, String birthday, String seat) {
         this.name = name;

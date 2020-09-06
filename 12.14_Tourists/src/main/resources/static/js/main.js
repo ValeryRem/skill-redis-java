@@ -57,7 +57,6 @@ $(function(){
     //Adding tourist
     $('#save-info').click(function(e){
         e.preventDefault(); // Отменяем дефолтное событие отправки формы (чтобы страница не перезагрузилась)
-
         let tourist = {};
         $.each($('#registr-form form').serializeArray(), function() {
             tourist[this.name] = this.value;
