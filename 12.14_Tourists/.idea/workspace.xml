@@ -19,14 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="All functions are on.">
+    <list default="true" id="53725ae6-1841-42ae-a010-fb2ec76e3aad" name="Default Changelist" comment="Set up of @GeneratedValue(strategy = GenerationType.IDENTITY).">
       <change afterPath="$PROJECT_DIR$/../hs_err_pid22652.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hs_err_pid23360.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/TouristController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Tourist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/model/Tourist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/Tourist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/encodings.xml" beforeDir="false" />
@@ -410,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599334308406</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Set up of @GeneratedValue(strategy = GenerationType.IDENTITY).">
+      <created>1599382973937</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1599382973937</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +435,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Init commit with JDBC." />
     <MESSAGE value="Synchronized changed for @Transactional." />
     <MESSAGE value="@Autowired deleted from TouristController, final TouristRepository set up." />
     <MESSAGE value="@PutMapping(&quot;/tourists/{id}&quot;) changed." />
@@ -455,7 +459,8 @@
     <MESSAGE value="JS-scripts restored." />
     <MESSAGE value="Improved addTourist (@RequestBody Tourist tourist)." />
     <MESSAGE value="All functions are on." />
-    <option name="LAST_COMMIT_MESSAGE" value="All functions are on." />
+    <MESSAGE value="Set up of @GeneratedValue(strategy = GenerationType.IDENTITY)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up of @GeneratedValue(strategy = GenerationType.IDENTITY)." />
   </component>
   <component name="WindowStateProjectService">
     <state x="558" y="230" key="#Assign_Data_Sources" timestamp="1596010087698">
@@ -498,6 +503,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="48" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598279581957" />
+    <state x="377" y="0" key="#xdebugger.evaluate" timestamp="1599510300761">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="377" y="0" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1599510300761" />
     <state x="374" y="179" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1598247670888">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -506,38 +515,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="409" y="58" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598644687241" />
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1599382802476">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom" timestamp="1599512659299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599382802476" />
-    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1599382802475">
+    <state width="1309" height="484" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599512659299" />
+    <state width="1309" height="484" key="GridCell.Tab.0.center" timestamp="1599512659299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599382802475" />
-    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1599382802475">
+    <state width="1309" height="484" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599512659299" />
+    <state width="1309" height="484" key="GridCell.Tab.0.left" timestamp="1599512659299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599382802475" />
-    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1599382802476">
+    <state width="1309" height="484" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599512659299" />
+    <state width="1309" height="484" key="GridCell.Tab.0.right" timestamp="1599512659299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599382802476" />
-    <state width="1309" height="149" key="GridCell.Tab.1.bottom" timestamp="1597845401538">
+    <state width="1309" height="484" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599512659299" />
+    <state width="1309" height="406" key="GridCell.Tab.1.bottom" timestamp="1599511843178">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
-    <state width="1309" height="149" key="GridCell.Tab.1.center" timestamp="1597845401538">
+    <state width="1309" height="406" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599511843178" />
+    <state width="1309" height="406" key="GridCell.Tab.1.center" timestamp="1599511843178">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
-    <state width="1309" height="149" key="GridCell.Tab.1.left" timestamp="1597845401538">
+    <state width="1309" height="406" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1599511843178" />
+    <state width="1309" height="406" key="GridCell.Tab.1.left" timestamp="1599511843178">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
-    <state width="1309" height="149" key="GridCell.Tab.1.right" timestamp="1597845401538">
+    <state width="1309" height="406" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1599511843178" />
+    <state width="1309" height="406" key="GridCell.Tab.1.right" timestamp="1599511843178">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="149" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1597845401538" />
+    <state width="1309" height="406" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1599511843178" />
     <state x="96" y="0" key="Maven.ArtifactSearchDialog" timestamp="1593460659330">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -550,14 +559,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594990751597" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1599334331614">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1599382999523">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599334331614" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599382999523" />
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596384156724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="364" y="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1366.728@0.0.1366.728" timestamp="1596384156724" />
+    <state x="145" y="26" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1599510226813">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="145" y="26" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1599510226813" />
     <state x="0" y="0" key="new project wizard" timestamp="1598556263073">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -570,5 +583,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="262" y="0" width="840" height="726" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1597844065455" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Storage.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

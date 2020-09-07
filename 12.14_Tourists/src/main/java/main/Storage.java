@@ -42,13 +42,13 @@ public class Storage {
         if (seatExisting.equals(seatNew.trim())) {
             return null;
         }
-        if(name.length() > 0) {
+        if(name != null) {
             tourist.setName(name);
         }
-        if(seatNew.length() > 0) {
+        if(seatNew != null) {
             tourist.setSeat(seatNew);
         }
-        if(birthday.length() > 0) {
+        if(birthday != null) {
             tourist.setBirthday(birthday);
         }
         touristRepository.save(tourist);
