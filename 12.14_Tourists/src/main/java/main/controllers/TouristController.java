@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/tourists")
 public class TouristController {
@@ -26,7 +28,7 @@ public class TouristController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> addTourist (@RequestBody Tourist tourist) {
+    public ResponseEntity<?> addTourist (@Valid @RequestBody Tourist tourist) {
         storage.addTourist(tourist);
         System.out.println("Tourist ID = " + tourist.getId());
         if (tourist.getId() == null) {
