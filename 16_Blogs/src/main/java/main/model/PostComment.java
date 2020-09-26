@@ -1,27 +1,50 @@
 package main.model;
 
+import org.springframework.web.bind.annotation.Mapping;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
-
+//@Embeddable
 @Entity
-public class PostComments {
+@Table(name = "post_comments")
+public class PostComment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "parent_id")
     private Integer parentId;
-    @NotNull(message = "Post_id is mandatory")
-    @Column(name = "post_id")
+    @Column(name = "post_id", nullable = false, insertable = false, updatable = false)
     private Integer postId;
-    @NotNull(message = "Id of the voter is mandatory")
-    @Column(name = "user_id")
+    @Column(name = "user_id", nullable = false)
     private Integer userId;
     @NotNull(message = "Time of the comment is mandatory")
     private Date time;
     @NotNull(message = "Text of the comment is mandatory")
     private String text;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Post post;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PostComment )) return false;
+        return id != null && id.equals(((PostComment) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return 31;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
 
     public Integer getId() {
         return id;

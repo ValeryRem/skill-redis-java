@@ -19,26 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7926d56a-8a94-4610-a9da-d8eba408785e" name="Default Changelist" comment="Doubled init.">
-      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/bookLibrary.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/api/response/InitResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/api/response/SettingsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controllers/DefaultController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/model/Posts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/model/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/service/SettingsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/model/Posts.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SSH keys.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringRestValidation/spring-rest-validation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hs_err_pid22652.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hs_err_pid23360.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+    <list default="true" id="7926d56a-8a94-4610-a9da-d8eba408785e" name="Default Changelist" comment="DB Blogs established.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/api/response/PostResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/model/Tag2Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/model/CaptchaCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/model/Post.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/model/PostComment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/model/Tag2Post.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.14_Tourists/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.14_Tourists/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/12.4_ToDoList.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12.4_ToDoList/src/main/java/main/IndexController.java" beforeDir="false" />
@@ -55,32 +47,34 @@
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/Storage.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../12_SpringBootWebDevelopment/BookLibrary/target/classes/main/model/Book.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/api/response/InitResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/api/response/InitResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/ApiGeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/ApiGeneralController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/IndexController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/CaptchaCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/CaptchaCodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/ApiPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/ApiPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/CaptchaCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/CaptchaCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/model/GlobalSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/GlobalSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/PostComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/PostComments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/PostRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/PostComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/PostComment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/model/PostVote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/PostVote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Posts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Post.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Tag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/controllers/ApiGeneralController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/controllers/ApiGeneralController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/controllers/IndexController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/model/CaptchaCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/CaptchaCodes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/controllers/ApiPostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/controllers/ApiPostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/model/CaptchaCodes.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/model/GlobalSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/GlobalSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/model/PostComments.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/PostComments.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/model/PostRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/model/PostComments.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/model/PostVote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/PostVote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/model/Posts.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/model/Tag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/Tag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -158,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600207134056</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="DB Blogs established.">
+      <created>1600983886350</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600983886350</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,40 +176,41 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Doubled init." />
-    <option name="LAST_COMMIT_MESSAGE" value="Doubled init." />
+    <MESSAGE value="DB Blogs established." />
+    <option name="LAST_COMMIT_MESSAGE" value="DB Blogs established." />
   </component>
   <component name="WindowStateProjectService">
     <state x="132" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600204916242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="132" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1600204916242" />
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1600982724213">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1601112766739">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1600982724213" />
-    <state width="1309" height="301" key="GridCell.Tab.0.bottom" timestamp="1600983400434">
+    <state x="440" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1601112766739" />
+    <state width="1309" height="318" key="GridCell.Tab.0.bottom" timestamp="1601112032056">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="301" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600983400434" />
-    <state width="1309" height="301" key="GridCell.Tab.0.center" timestamp="1600983400433">
+    <state width="1309" height="318" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601112032056" />
+    <state width="1309" height="318" key="GridCell.Tab.0.center" timestamp="1601112032056">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="301" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600983400433" />
-    <state width="1309" height="301" key="GridCell.Tab.0.left" timestamp="1600983400433">
+    <state width="1309" height="318" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601112032056" />
+    <state width="1309" height="318" key="GridCell.Tab.0.left" timestamp="1601112032056">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="301" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600983400433" />
-    <state width="1309" height="301" key="GridCell.Tab.0.right" timestamp="1600983400433">
+    <state width="1309" height="318" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601112032056" />
+    <state width="1309" height="318" key="GridCell.Tab.0.right" timestamp="1601112032056">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1309" height="301" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600983400433" />
+    <state width="1309" height="318" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601112032056" />
     <state x="34" y="0" key="SettingsEditor" timestamp="1600637003996">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="34" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600637003996" />
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1600207150912">
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2" timestamp="1600983902904">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600207150912" />
+    <state x="174" y="30" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600983902904" />
   </component>
 </project>

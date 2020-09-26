@@ -5,7 +5,8 @@ import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
-public class CaptchaCodes {
+@Table(name = "capture_codes")
+public class CaptchaCode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

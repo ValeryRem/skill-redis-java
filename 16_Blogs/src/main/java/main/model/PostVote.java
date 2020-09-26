@@ -2,22 +2,24 @@ package main.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
+@Table(name = "post_votes")
 public class PostVote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @NotBlank(message = "Id of the vote sender is mandatory")
+    @NotNull(message = "Id of the vote sender is mandatory")
     @Column(name = "user_id")
     private Integer userId;
-    @NotBlank(message = "Post_id is mandatory")
+    @NotNull(message = "Post_id is mandatory")
     @Column(name = "post_id")
     private Integer postId;
-    @NotBlank(message = "Time of the vote is mandatory")
+    @NotNull(message = "Time of the vote is mandatory")
     private Date time;
-    @NotBlank(message = "Value of the vote is mandatory")
+    @NotNull(message = "Value of the vote is mandatory")
     private Integer value;
 
     public Integer getId() {

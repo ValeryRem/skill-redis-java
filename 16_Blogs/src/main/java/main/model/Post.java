@@ -1,12 +1,14 @@
 package main.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-public class Posts {
+@Table(name = "posts")
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -15,7 +17,7 @@ public class Posts {
     private Integer isActive;
     @Column(name ="moderation_status")
     @NotNull(message = "moderation_status is mandatory")
-    private final ModerationStatus moderationStatus;
+    private ModerationStatus moderationStatus = ModerationStatus.NEW;
     @Column(name ="moderator_id")
     private Integer moderatorId;
     @NotNull(message = "time of post is mandatory")
@@ -31,7 +33,29 @@ public class Posts {
     @Column(name ="view_count")
     private Integer viewCount;
 
-    public Posts() {
-        this.moderationStatus = ModerationStatus.NEW;
+    public Post(ModerationStatus moderationStatus) {
+        this.moderationStatus = moderationStatus;
     }
+
+    public Post(String title, Integer id) {
+        this.title = title;
+        this.id = id;
+    }
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PostComment> comments = new ArrayList<>();
+
+    public Post addComment(PostComment comment) {
+        comments.add(comment);
+        comment.setPost(this);
+        return this;
+    }
+
+    public Post removeComment(PostComment comment) {
+        comments.remove(comment);
+        comment.setPost(null);
+        return this;
+    }
+
+
 }
