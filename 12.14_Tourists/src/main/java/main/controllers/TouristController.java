@@ -37,18 +37,18 @@ public class TouristController {
         return ResponseEntity.ok(tourist.getId().toString());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id:\\d+}")
     public Tourist getTourist (@PathVariable("id") Integer id) {
         return touristRepository.findById(id).get();//.orElseThrow(() -> new EntityNotFoundException("No such tourist to get!"));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id:\\d+}")
     public Tourist putChanges(@PathVariable("id")Integer id, String name, String seat, String birthday){
         storage.putCorrectives(id, name, seat, birthday);
         return touristRepository.findById(id).get();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id:\\d+}")
     public ResponseEntity <Tourist> deleteTourist(@PathVariable("id") Integer id) {
         Tourist tourist = touristRepository.findById(id).get(); //orElseThrow(() -> new EntityNotFoundException("No such tourist to delete!"));
         touristRepository.deleteById(id);

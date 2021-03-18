@@ -9,30 +9,30 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-<div id="registr-form">
-    <h2>Добавление туриста: </h2>
-    <form th:action="@{/}" method="post">
-        <label>Имя туриста:</label>
-        <input type="text" name="name" value="">
-        <label>Дата рождения:</label>
-        <input type="text" name="birthday" value="">
-        <label>Место в автобусе:</label>
-        <input type="text" name="seat" value="">
-        <hr>
-        <button id="save-info">Сохранить</button>
-        <br><br>
-    </form>
-</div>
+    <div id="registr-form">
+        <h2>Добавление туриста: </h2>
+        <form th:action="@{/}" method="post">
+            <label>Имя туриста:</label>
+            <input type="text" name="name" value="">
+            <label>Дата рождения:</label>
+            <input type="text" name="birthday" value="">
+            <label>Место в автобусе:</label>
+            <input type="text" name="seat" value="">
+            <hr>
+            <button id="save-info">Сохранить</button>
+            <br><br>
+        </form>
+    </div>
 
-<button id="show-add-registr-form">Добавить данные туриста</button>
-<h2>Количество туристов: <span id="count" th:text="${touristsCount}">0</span></h2>
+    <button id="show-add-registr-form">Добавить данные туриста</button>
+    <h2>Количество туристов: <span id="count" th:text="${touristsCount}">0</span></h2>
 
-<h2>Реестр туристов:</h2>
-<div id="tourist-list">
-<!--    <div th:each="tourist : ${tourists}">-->
-<!--        <a href="#" class="tourist-link" th:attr="data-id=${tourist.id}" th:text="${tourist.name}"></a>-->
-<!--    </div>-->
-</div>
-<p th:text="${someParameter}"></p>
-</body>
+    <h2>Реестр туристов:</h2>
+    <div id="tourist-list">
+    <!--    <div th:each="tourist : ${tourists}">-->
+    <!--        <a href="#" class="tourist-link" th:attr="data-id=${tourist.id}" th:text="${tourist.name}"></a>-->
+    <!--    </div>-->
+    </div>
+    <p th:text="${someParameter}"></p>
+    </body>
 </html>

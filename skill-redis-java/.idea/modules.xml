@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/redis-demo.iml" filepath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/redis-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/skill-redis-java.iml" filepath="$PROJECT_DIR$/.idea/skill-redis-java.iml" />
+    </modules>
+  </component>
+</project>

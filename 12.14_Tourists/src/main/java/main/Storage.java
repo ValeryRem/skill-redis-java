@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Component
 public class Storage {
-    private final int currentId = 1;
+//    private final int currentId = 1;
 
     @Autowired
     private TouristRepository touristRepository;

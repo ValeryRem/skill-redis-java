@@ -3,8 +3,7 @@ spring.datasource.username: root
 spring.datasource.password: valery_56
 spring.jpa.database-platform: org.hibernate.dialect.MySQL8Dialect
 spring.jpa.hibernate.ddl-auto: update
-someParameter:
-  value: Testing string - 5463
+someParameter: Testing string - 5463
 # Do not need to restart on change js
 #spring.resources.static-locations= file:./src/main/resources/static/
 #spring.thymeleaf.check-template-location=true
