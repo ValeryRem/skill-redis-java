@@ -9,6 +9,9 @@
         <module name="16_Blogs" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="16_Blogs" target="13" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
