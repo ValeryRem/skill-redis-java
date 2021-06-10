@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -44,7 +45,18 @@ public class User {
     @Nullable
     private String photo;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "postId")
+    private List<Post> posts;
+
     public User() {
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     public User(Integer userId) {

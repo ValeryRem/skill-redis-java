@@ -81,12 +81,15 @@ public class GetService {
             int commentCountByPost = (int) commentList.stream().filter(a -> a.getPostId().equals(post.getPostId())).count();
             responseMap.put("id", post.getPostId());
             responseMap.put("timestamp", post.getTimestamp().getTime()/1000);
-            Map<String, Object> userMap = new LinkedHashMap<>();
-            userMap.put("id", post.getUserId());
-            Optional<User> userOptional = userRepository.findById(post.getUserId());
-            userOptional.ifPresent(user -> userMap.put("name", user.getName()));
-            userOptional.ifPresent(user -> userMap.put("photo", user.getPhoto()));
+//            Map<String, Object> userMap = new LinkedHashMap<>();
+
+            Map<String, Object> userMap = Map.of("id", post.getUser().getUserId(), "name", post.getUser().getName(),
+                    "photo", post.getUser().getPhoto());
             responseMap.put("user", userMap);
+//            Optional<User> userOptional = userRepository.findById(post.getUserId());
+//            userOptional.ifPresent(user -> userMap.put("name", user.getName()));
+//            userOptional.ifPresent(user -> userMap.put("photo", user.getPhoto()));
+
             responseMap.put("title", post.getTitle());
             responseMap.put("announce", post.getAnnounce());
             responseMap.put("likeCount", extractLikeCount(post));
@@ -97,24 +100,27 @@ public class GetService {
         }
         generalResponse.setCount(postList.size());
         generalResponse.setPosts(getOffsetLimitOutput(postMapList, offset, limit));
-        responseEntity = new ResponseEntity<>(generalResponse, HttpStatus.OK);
-        return responseEntity;
+//        responseEntity = new ResponseEntity<>(generalResponse, HttpStatus.OK);
+        return ResponseEntity.ok(generalResponse);
     }
 
     private List<Post> getOrderedPosts(Integer offset, Integer limit, String mode) {
         Page<Post> posts;
         PageRequest pageRequest = PageRequest.of(offset / limit, limit);
 
-        if (mode.equals("recent")){
-            posts = postRepository.getRecentPosts(pageRequest);
-        } else if (mode.equals("popular")) {
-            posts = postRepository.getPopularPosts(pageRequest);
-        } else if (mode.equals("best")){
-            posts = postRepository.getBestPosts(pageRequest);
-        } else if (mode.equals("early")) {
-            posts = postRepository.getEarlyPosts(pageRequest);
-        } else {
-            posts = postRepository.getRecentPosts(pageRequest);
+        switch (mode) {
+            case "popular":
+                posts = postRepository.getPopularPosts(pageRequest);
+                break;
+            case "best":
+                posts = postRepository.getBestPosts(pageRequest);
+                break;
+            case "early":
+                posts = postRepository.getEarlyPosts(pageRequest);
+                break;
+            default:
+                posts = postRepository.getRecentPosts(pageRequest);
+                break;
         }
 
         return posts.stream().filter(p -> p.isActive() == 1).collect(Collectors.toList());
@@ -127,8 +133,6 @@ public class GetService {
 
         GeneralResponse generalResponse = new GeneralResponse();
         var postList = getActivePosts();
-        var commentList = commentRepository.findAll();
-
         List<Map<String, Object>> postMapList = new ArrayList<>();
         List<Post> posts = postList.stream().
                 filter(p -> p.getText().contains(query)).collect(Collectors.toList());
@@ -138,7 +142,7 @@ public class GetService {
             Map<String, Object> userMap = new LinkedHashMap<>();
             responseMap.put("id", post.getPostId());
             responseMap.put("timestamp", post.getTimestamp().getTime()/1000);
-            int commentCountByPost = (int) commentList.stream().filter(a -> a.getPostId().equals(post.getPostId())).count();
+            int commentCountByPost = getCommentCountByPost(post);
             Optional<User> userOptional = userRepository.findById(post.getUserId());
             userOptional.ifPresent(user -> userMap.put("id", user.getUserId()));
             userOptional.ifPresent(user -> userMap.put("name", user.getName()));
@@ -164,13 +168,12 @@ public class GetService {
         var posts = getActivePosts();
         int count = 0;
         List<Map<String, Object>> postMapList = new ArrayList<>();
-        var commentList = commentRepository.findAll();
         for (Post post : posts) {
           if(post.getTimestamp().toInstant().atZone(ZoneId.systemDefault()).toLocalDate().toString().equals(date))
             {
                 count++;
                 Map<String, Object> responseMap = new LinkedHashMap<>();
-                int commentCountByPost = (int) commentList.stream().filter(a -> a.getPostId().equals(post.getPostId())).count();
+                int commentCountByPost = getCommentCountByPost(post);
                 responseMap.put("id", post.getPostId());
                 responseMap.put("timestamp", post.getTimestamp().getTime()/1000);
                 responseMap.put("title", post.getTitle());
@@ -248,11 +251,8 @@ public class GetService {
     }
 
     private int getCommentCountByPost(Post post) {
-//        var postComments = commentList.stream().filter(a -> a.getPostId().equals(post.getPostId())).
-//                collect(Collectors.toList());
-        return (int) commentRepository.findAll().stream()
-                .filter(a -> a.getPostId().equals(post.getPostId()))
-                .count();
+        Optional<Integer> commentCount = commentRepository.findCountOfPostCommentsByPostId(post.getPostId());
+        return commentCount.orElse(0);
     }
 
     public ResponseEntity<?> getMyPosts(Integer offset, Integer limit) {
@@ -472,28 +472,28 @@ public class GetService {
     private LinkedHashMap<String, Object> getUserStatistics(Integer userId) {
         LinkedHashMap<String, Object> map = new LinkedHashMap<>();
         Optional<User> userOptional = userRepository.findById(userId);
-        if(userOptional.isEmpty()) {
-            return map;
-        } else {
-            int myPostsCount = postRepository.findAllPostsByUser(userOptional.get()).size();
-            map.put("postsCount", myPostsCount);
-            int myPostsLikeCount = (int) postVoteRepository.findAllPostVotesByUserId(userId).stream().
-                    filter(pv -> pv.getValue() == 1).
-                    count();
-            map.put("likesCount", myPostsLikeCount);
-            int myPostsDislikeCount = (int) postVoteRepository.findAllPostVotesByUserId(userId).stream().
-                    filter(pv -> pv.getValue() == -1).
-                    count();
-            map.put("dislikesCount", myPostsDislikeCount);
-            int viewMyPostsCount = postVoteRepository.findAllPostVotesByUserId(userId).size();
-            map.put("viewsCount", viewMyPostsCount);
-            List<Timestamp> localDates = postRepository.findAllPostsByUser(userOptional.get()).stream().
-                    map(Post::getTimestamp).collect(Collectors.toList());
-            Timestamp minLocalDate = localDates.stream()
-                    .min(Comparator.naturalOrder()).get();
-            map.put("firstPublication", minLocalDate.getTime() / 1000);
+        if (userOptional.isEmpty()) {
             return map;
         }
+
+        int myPostsCount = postRepository.findAllPostsByUserId(userOptional.get().getUserId()).size();
+        map.put("postsCount", myPostsCount);
+        int myPostsLikeCount = (int) postVoteRepository.findAllPostVotesByUserId(userId).stream().
+                filter(pv -> pv.getValue() == 1).
+                count();
+        map.put("likesCount", myPostsLikeCount);
+        int myPostsDislikeCount = (int) postVoteRepository.findAllPostVotesByUserId(userId).stream().
+                filter(pv -> pv.getValue() == -1).
+                count();
+        map.put("dislikesCount", myPostsDislikeCount);
+        int viewMyPostsCount = postVoteRepository.findAllPostVotesByUserId(userId).size();
+        map.put("viewsCount", viewMyPostsCount);
+        List<Timestamp> localDates = postRepository.findAllPostsByUserId(userOptional.get().getUserId()).stream().
+                map(Post::getTimestamp).collect(Collectors.toList());
+        Timestamp minLocalDate = localDates.stream()
+                .min(Comparator.naturalOrder()).get();
+        map.put("firstPublication", minLocalDate.getTime() / 1000);
+        return map;
     }
 
     /*
@@ -504,9 +504,9 @@ public class GetService {
     public ResponseEntity<?> getAllStatistics () {
         LinkedHashMap<String, Object> map = new LinkedHashMap<>();
         map.put("postsCount", getCount());
-        int likeCount = (int) postVoteRepository.findAll().stream().filter(p -> p.getValue() == 1).count();
+        int likeCount = postVoteRepository.findLikeCount(); //findAll().stream().filter(p -> p.getValue() == 1).count();
         map.put("likesCount", likeCount);
-        int disLikeCount = (int) postVoteRepository.findAll().stream().filter(p -> p.getValue() == -1).count();
+        int disLikeCount = postVoteRepository.findDislikeCount(); //findAll().stream().filter(p -> p.getValue() == -1).count();
         map.put("dislikesCount", disLikeCount);
         List<Integer> list = postRepository.findAll().stream().
                 map(Post::getViewCount).
@@ -613,28 +613,33 @@ public class GetService {
     }
 
     private Integer extractLikeCount(Post post) {
-        try {
-            var list = postVoteRepository.findAll();
-            var listVotes = list.stream().
-                    filter(a -> (a.getPostId().equals(post.getPostId())) && a.getValue() == 1).
-                    collect(Collectors.toList());
-            return listVotes.size();
-        } catch (NullPointerException ex) {
-            ex.printStackTrace();
-            return 0;
-        }
+        Optional<Integer> likeCountOpt = postVoteRepository.findLikeCountByPost(post.getPostId());
+        return likeCountOpt.orElse(0);
+//        try {
+//            var list = postVoteRepository.findAll();
+//            var listVotes = list.stream().
+//                    filter(a -> (a.getPostId().equals(post.getPostId())) && a.getValue() == 1).
+//                    collect(Collectors.toList());
+//            return listVotes.size();
+//        } catch (NullPointerException ex) {
+//            ex.printStackTrace();
+//            return 0;
+//        }
     }
 
     private Integer extractDislikeCount(Post post) {
-        try {
-            List<PostVote> list = postVoteRepository.findAll();
-            List<PostVote> listVotes = list.stream().
-                    filter(a -> (a.getPostId().equals(post.getPostId())) && a.getValue() == -1).
-                    collect(Collectors.toList());
-            return listVotes.size();
-        } catch (NullPointerException ex) {
-            return 0;
-        }
+        Optional<Integer> dislikeCountOpt = postVoteRepository.findDislikeCountByPost(post.getPostId());
+        return dislikeCountOpt.orElse(0);
+
+//        try {
+//            List<PostVote> list = postVoteRepository.findAll();
+//            List<PostVote> listVotes = list.stream().
+//                    filter(a -> (a.getPostId().equals(post.getPostId())) && a.getValue() == -1).
+//                    collect(Collectors.toList());
+//            return listVotes.size();
+//        } catch (NullPointerException ex) {
+//            return 0;
+//        }
     }
 
     public Integer convertTimeToYear(Timestamp time) {

@@ -143,14 +143,21 @@ public class PostService {
     }
     Post post = new Post();
     post.setIsActive(postRequest.getActive());
-    Optional<User> optModerator = userRepository.findAll().stream().filter(User::getIsModerator).findAny();
-    optModerator.ifPresent(value -> post.setModeratorId(value.getUserId()));
+
+        Optional<Collection<User>> moderatorsOpt = userRepository.findModeratorsOpt();
+        if(moderatorsOpt.isPresent()) {
+            Collection<User> users = moderatorsOpt.get();
+            Object[] usersList = users.toArray();
+            post.setModeratorId((int) (Math.round(Math.random()*usersList.length) + 1));
+        }
+//    Optional<User> optModerator = userRepository.findAll().stream().filter(User::getIsModerator).findAny();
+//    optModerator.ifPresent(value -> post.setModeratorId(value.getUserId()));
     if (postRequest.getTimestamp() <= currentTimestamp.getTime() / 1000) {
         post.setTimestamp(currentTimestamp);
     } else {
         post.setTimestamp(new Timestamp(postRequest.getTimestamp() * 1000));
     }
-    post.setUserId(authService.getUserId());
+    post.setUserId(user.getUserId());
     post.setViewCount(0);
     post.setTitle(postRequest.getTitle());
     post.setText(cleanedOffHtml(postRequest.getText()));

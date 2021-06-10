@@ -98,16 +98,16 @@ public class PostController {
     }
 
     @PostMapping("/like")
-    private ResponseEntity<?> postLike (@RequestParam Integer post_id){//@RequestBody LikeRequest likeRequest) {
+    private ResponseEntity<?> postLike (@RequestBody LikeRequest likeRequest){//@RequestBody Integer post_id) {
         System.out.println("Method postLike activated");
-        return postService.postLikeDislike(post_id, 1);
+        return postService.postLikeDislike(likeRequest.getPostId(), 1);
     }
 
     @PostMapping("/dislike")
-    private ResponseEntity<?> postDislike (@RequestParam Integer post_id)//(@RequestBody LikeRequest likeRequest)
+    private ResponseEntity<?> postDislike (@RequestBody LikeRequest likeRequest)
     {
         System.out.println("Method postDislike activated");
-        return postService.postLikeDislike(post_id, 0);
+        return postService.postLikeDislike(likeRequest.getPostId(), -1);
     }
 
     @PostMapping("")

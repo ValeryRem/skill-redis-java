@@ -29,7 +29,7 @@ public class Post {
     @Column(name ="moderator_id")
     Integer moderatorId;
 
-    @Column(name ="user_id")
+    @Column(name = "user_id", updatable = false, insertable = false) // надо добавить, так как дублирующий доступ к столбцу
     Integer userId;
     Timestamp timestamp;
     String title;
@@ -38,7 +38,7 @@ public class Post {
     @Column(name ="view_count")
     private Integer viewCount;
 
-    @OneToMany (mappedBy="commentId", fetch=FetchType.LAZY)
+    @OneToMany (mappedBy="postId", fetch=FetchType.LAZY)
     @LazyCollection(LazyCollectionOption.EXTRA)
     private Collection<PostComment> postComments;
 
@@ -46,13 +46,13 @@ public class Post {
     @LazyCollection(LazyCollectionOption.EXTRA)
     private Collection<PostVote> postVotes;
 
-    @OneToMany (mappedBy="voteId", fetch=FetchType.LAZY)
+    @OneToMany (mappedBy="voteId", fetch=FetchType.LAZY) // voteId на подчиненной стороне, у PostVote
     @LazyCollection(LazyCollectionOption.EXTRA) // это позволяет без лишнего запроса получить количество
-    @Where(clause = "value = 1") // в этой коллекции будут только лайки
+    @Where(clause="value=1") // в этой коллекции будут только лайки
     private Collection<PostVote> postLikes;
 
-    @ManyToOne (cascade = CascadeType.ALL)
-//    @JoinColumn(name = "user_id")
+    @ManyToOne //(fetch=FetchType.LAZY)//(cascade = CascadeType.ALL)
+    @JoinColumn(name="user_id")// key на подчиненной стороне (Post)
     private User user;
 
     public Post() {
@@ -77,14 +77,6 @@ public class Post {
     public void setPostLikes(Collection<PostVote> postLikes) {
         this.postLikes = postLikes;
     }
-
-//    public Collection<PostVote> getPostVotes() {
-//        return postVotes;
-//    }
-//
-//    public void setPostVotes(Collection<PostVote> postVotes) {
-//        this.postVotes = postVotes;
-//    }
 
     public Collection<PostComment> getPostComments() {
         return postComments;
