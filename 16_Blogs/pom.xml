@@ -42,7 +42,7 @@
                     <user>root</user>
                     <password>valery_56</password>
                     <schemas>
-                        <schema>BlogsIT</schema>
+                        <schema>BlogsJ</schema>
                     </schemas>
                 </configuration>
             </plugin>

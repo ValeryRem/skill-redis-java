@@ -13,6 +13,6 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Integer> {
     Optional<User> findOneByEmail(String email);
 
-    @Query("SELECT u FROM User u WHERE u.isModerator = 1")
-    Optional<Collection<User>> findModeratorsOpt();
+    @Query("SELECT count(p) FROM Post p WHERE p.moderationStatus = 'NEW' AND p.userId = ?1")
+    Integer getModerationCount(Integer userId);
 }

@@ -28,6 +28,6 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
   Collection<Post> findAllActivePosts ();
 
   @Query("SELECT p FROM Post p WHERE p.userId = ?1")
-  Collection<Post> findAllPostsByUserId (Integer userId);
+  Collection<Post> findAllPostsByUserId (int userId);
 
 }

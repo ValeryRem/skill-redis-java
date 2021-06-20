@@ -11,28 +11,28 @@ public class PostVote {
     @Column(name = "id")
     private Integer voteId;
 
+    @Column(name = "post_id", insertable = false, updatable = false)
+    private Integer postId;
+
     @Column(name = "user_id")
     private Integer userId;
 
-    @Column(name = "post_id", nullable = false, insertable = false, updatable = false)
-//    @JsonProperty
-    private Integer postId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id")
+    private Post post;
+
     private Timestamp time;
     private Integer value;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "post_id")
-    public Post post;
 
     public PostVote() {
     }
 
-    public Post getPost() {
-        return post;
+    public Integer getPostId() {
+        return postId;
     }
 
-    public void setPost(Post post) {
-        this.post = post;
+    public void setPostId(Integer postId) {
+        this.postId = postId;
     }
 
     public Integer getVoteId() {
@@ -51,12 +51,12 @@ public class PostVote {
         this.userId = userId;
     }
 
-    public Integer getPostId() {
-        return postId;
+    public Post getPost() {
+        return post;
     }
 
-    public void setPostId(Integer postId) {
-        this.postId = postId;
+    public void setPost(Post post) {
+        this.post = post;
     }
 
     public Timestamp getTime() {return time;}

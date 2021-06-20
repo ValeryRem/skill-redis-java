@@ -26,12 +26,9 @@ public class PostController {
     private final SessionRepository sessionRepository;
     private final HttpSession httpSession;
     private final UserRepository userRepository;
-    private final PostRequest postRequest;
-    private int ID;
 
     public PostController(GetService getService, PostService postService, AuthService authService, PostRepository postRepository,
-                          SessionRepository sessionRepository, HttpSession httpSession, UserRepository userRepository,
-                          PostRequest postRequest) {
+                          SessionRepository sessionRepository, HttpSession httpSession, UserRepository userRepository) {
         this.getService = getService;
         this.postService = postService;
         this.authService = authService;
@@ -39,14 +36,13 @@ public class PostController {
         this.sessionRepository = sessionRepository;
         this.httpSession = httpSession;
         this.userRepository = userRepository;
-        this.postRequest = postRequest;
     }
 
     @GetMapping("")
     @ResponseBody
     private ResponseEntity<?> getPosts (@RequestParam(defaultValue="0") Integer offset,
                                         @RequestParam(defaultValue="10") Integer limit,
-                                        @RequestParam(defaultValue="recent") String mode){
+                                        @RequestParam String mode){
         System.out.println("Method getPosts activated. Number of posts: " + getService.getCount());
         return getService.getPosts (offset, limit, mode);
     }
@@ -68,8 +64,8 @@ public class PostController {
 
     @GetMapping("/byDate")
     private ResponseEntity<?> getPostsByDate (@RequestParam(defaultValue="0") Integer offset,
-                                                @RequestParam(defaultValue="5") Integer limit,
-                                                @RequestParam  String date){
+                                              @RequestParam(defaultValue="5") Integer limit,
+                                              @RequestParam  String date){
         System.out.println("Method getPostsByDate activated by the date: " + date );
         return getService.getPostsByDate(offset, limit, date);
     }
@@ -98,28 +94,31 @@ public class PostController {
     }
 
     @PostMapping("/like")
-    private ResponseEntity<?> postLike (@RequestBody LikeRequest likeRequest){//@RequestBody Integer post_id) {
+    private ResponseEntity<?> postLike (@RequestBody LikeRequest likeRequest) {
         System.out.println("Method postLike activated");
-        return postService.postLikeDislike(likeRequest.getPostId(), 1);
+        System.out.println(likeRequest);
+        return postService.postLikeDislike(likeRequest, 1);
     }
 
     @PostMapping("/dislike")
     private ResponseEntity<?> postDislike (@RequestBody LikeRequest likeRequest)
     {
         System.out.println("Method postDislike activated");
-        return postService.postLikeDislike(likeRequest.getPostId(), -1);
+        System.out.println(likeRequest);
+        return postService.postLikeDislike(likeRequest, -1);
     }
 
     @PostMapping("")
     private ResponseEntity<?> postPost (@RequestBody PostRequest postRequest) {
         System.out.println("Method postPost is activated");
+        System.out.println(postRequest.getActive()+" "+postRequest.getTitle());
         return postService.postPost(postRequest);
     }
 
-    @PutMapping(value = "/{id:\\d+}")
-    public ResponseEntity<?> putPost (@PathVariable(value = "id") int id, @RequestBody PutPostRequest putPostRequest){
+    @PutMapping(value = "/{ID:\\d+}")
+    public ResponseEntity<?> putPost (@PathVariable(value = "ID") int ID, @RequestBody PutPostRequest putPostRequest){
         System.out.println("Method putPost is activated");
-        return  postService.putPost(id, putPostRequest);
+        return  postService.putPost(ID, putPostRequest);
     }
 }
 

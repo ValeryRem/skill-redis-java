@@ -14,8 +14,8 @@ public class PutPostRequest implements Serializable {
     private List<String> tags;
     private String text;
 
-    public PutPostRequest() {
-    }
+//    public PutPostRequest() {
+//    }
 
     public Long getTimestamp() {
         return timestamp;

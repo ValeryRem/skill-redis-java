@@ -33,12 +33,11 @@ public class AuthService{
     private final  SessionRepository sessionRepository;
     private final  JavaMailSender javaMailSender;
     private final GlobalSettingsRepository globalSettingsRepository;
-    private final LoginRequest loginRequest;
 
     public AuthService(UserRepository userRepository, PostRepository postRepository,
                        HttpSession httpSession, CaptchaRepository captchaRepository,
                        SessionRepository sessionRepository, JavaMailSender javaMailSender,
-                       GlobalSettingsRepository globalSettingsRepository, LoginRequest loginRequest) {
+                       GlobalSettingsRepository globalSettingsRepository) {
         this.userRepository = userRepository;
         this.postRepository = postRepository;
         this.httpSession = httpSession;
@@ -46,7 +45,6 @@ public class AuthService{
         this.sessionRepository = sessionRepository;
         this.javaMailSender = javaMailSender;
         this.globalSettingsRepository = globalSettingsRepository;
-        this.loginRequest = loginRequest;
     }
 
     private boolean result = false;
@@ -86,7 +84,6 @@ public class AuthService{
         long epochSeconds = Instant.now().getEpochSecond();//LocalDateTime.now().atZone(zoneId).toEpochSecond();//
         String sessionName = httpSession.getId();
         Timestamp timestamp = new Timestamp(epochSeconds*1000);
-        System.out.println(timestamp); // for test only!!!
         Session session = new Session(sessionName, timestamp, userId);
         List<Session> oldSessions = sessionRepository.findAll().stream().
                 filter(s -> (int) s.getTimestamp().getTime() / 1000 < (int) epochSeconds - 1800).
@@ -250,7 +247,6 @@ public class AuthService{
     }
 
     public ResponseEntity<?> authRestore(String email) {
-//        Optional<User> optionalUser = userRepository.findAll().stream().filter(u -> u.getEmail().equals(email)).findAny();
         Optional<User> optionalUser = userRepository.findOneByEmail(email);
         if (optionalUser.isPresent())
         {
@@ -285,20 +281,7 @@ public class AuthService{
     }
 
     private int getModerationCount(Integer userId) {
-        int moderCount = 0;
-        List<Post> posts = postRepository.findAll();
-        Optional<User> optionalUser = userRepository.findById(userId);
-        if(optionalUser.isPresent()) {
-            User user = optionalUser.get();
-            if (user.getIsModerator() && posts.stream()
-                    .anyMatch(p -> p.getModerationStatus().equals(ModerationStatus.NEW))) {
-                moderCount = (int) posts.stream().
-                        filter(p -> p.getModeratorId().equals(userId) && p.getModerationStatus().
-                                equals(ModerationStatus.NEW)).
-                        count();
-            }
-        }
-        return moderCount;
+        return userRepository.getModerationCount(userId);
     }
 
     private void sendEmail(String email, String subject, String text) {
@@ -319,8 +302,7 @@ public class AuthService{
     }
 
     public User getCurrentUser() {
-        return
-                userRepository.getOne(getUserId());
+        return userRepository.getOne(getUserId());
     }
 
     private String generateCode(int length) {

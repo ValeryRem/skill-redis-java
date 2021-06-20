@@ -15,15 +15,14 @@ import java.util.TreeMap;
 @Table(name = "post_comments")
 public class PostComment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="comment_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Integer commentId;
 
-    @Column(name = "parent_id")
-    private Integer parentId;
+    private Integer parent_id;
 
-    @Column(name = "post_id", nullable = false, insertable = false, updatable = false)
-    private Integer postId;
+    @Column(insertable = false, updatable = false)
+    private Integer post_id;
 
     @Column(name = "user_id")
     private Integer userId;
@@ -65,20 +64,20 @@ public class PostComment {
         this.commentId = commentId;
     }
 
-    public Integer getParentId() {
-        return parentId;
+    public Integer getParent_id() {
+        return parent_id;
     }
 
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
+    public void setParent_id(Integer parent_id) {
+        this.parent_id = parent_id;
     }
 
-    public Integer getPostId() {
-        return postId;
+    public Integer getPost_id() {
+        return post_id;
     }
 
-    public void setPostId(Integer postId) {
-        this.postId = postId;
+    public void setPost_id(Integer post_id) {
+        this.post_id = post_id;
     }
 
     public Timestamp getTime() {

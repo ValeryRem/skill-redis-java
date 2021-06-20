@@ -15,15 +15,10 @@ public interface PostVoteRepository extends JpaRepository<PostVote, Integer> {
     @Query("SELECT pv FROM PostVote pv WHERE pv.userId = ?1")
     Collection<PostVote> findAllPostVotesByUserId (int userId);
 
-    @Query("SELECT count(v.value) FROM PostVote v WHERE v.value = 1")
-    Integer findLikeCount ();
+    @Query("SELECT pv FROM PostVote pv WHERE pv.postId = ?1 AND pv.userId = ?2")
+    Optional<PostVote> getOne (Integer postId, int userId);
 
-    @Query("SELECT count(v.value) FROM PostVote v WHERE v.value = -1")
-    Integer findDislikeCount ();
+    @Query("SELECT count(pv) FROM PostVote pv WHERE pv.postId = ?1 AND pv.value = ?2")
+    Optional<Integer> findCountVotesByPostId (int postId, int value);
 
-    @Query("SELECT count(v.value) FROM PostVote v WHERE v.value = 1 AND v.postId = ?1")
-    Optional<Integer> findLikeCountByPost (int postId);
-
-    @Query("SELECT count(v.value) FROM PostVote v WHERE v.value = -1 AND v.postId = ?1")
-    Optional<Integer> findDislikeCountByPost (int postId);
 }

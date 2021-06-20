@@ -1,59 +1,62 @@
 package main.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import net.bytebuddy.implementation.bind.annotation.Default;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.Where;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Collection;
 
 @Entity
 @Table(name = "posts")
-public class Post {
+public class Post implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "post_id")
-    @JoinTable(name = "users", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "id")
     Integer postId;
 
-    @Column(name ="is_active")
+    @Column(name = "is_active")
     int isActive;
 
-    @Column(name ="moderation_status")
+    @Column(name = "moderation_status")
     @Enumerated(EnumType.STRING)
     ModerationStatus moderationStatus;
 
-    @Column(name ="moderator_id")
+    @Column(name = "moderator_id")
     Integer moderatorId;
 
-    @Column(name = "user_id", updatable = false, insertable = false) // надо добавить, так как дублирующий доступ к столбцу
+    @Column(name = "user_id")//, updatable = false, insertable = false)
     Integer userId;
+
     Timestamp timestamp;
     String title;
     String text;
 
-    @Column(name ="view_count")
+    @Column(name = "view_count")
     private Integer viewCount;
 
-    @OneToMany (mappedBy="postId", fetch=FetchType.LAZY)
-    @LazyCollection(LazyCollectionOption.EXTRA)
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
     private Collection<PostComment> postComments;
 
-    @OneToMany (mappedBy="voteId", fetch=FetchType.LAZY)
-    @LazyCollection(LazyCollectionOption.EXTRA)
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
     private Collection<PostVote> postVotes;
 
-    @OneToMany (mappedBy="voteId", fetch=FetchType.LAZY) // voteId на подчиненной стороне, у PostVote
-    @LazyCollection(LazyCollectionOption.EXTRA) // это позволяет без лишнего запроса получить количество
-    @Where(clause="value=1") // в этой коллекции будут только лайки
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
+    @LazyCollection(LazyCollectionOption.EXTRA)
+    // это позволяет без лишнего запроса получить количество
+    @Where(clause = "value = 1") // в этой коллекции будут только лайки
     private Collection<PostVote> postLikes;
 
-    @ManyToOne //(fetch=FetchType.LAZY)//(cascade = CascadeType.ALL)
-    @JoinColumn(name="user_id")// key на подчиненной стороне (Post)
-    private User user;
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
+    @LazyCollection(LazyCollectionOption.EXTRA)
+    @Where(clause = "value = -1")
+    private Collection<PostVote> postDislikes;
 
     public Post() {
     }
@@ -78,6 +81,22 @@ public class Post {
         this.postLikes = postLikes;
     }
 
+    public Collection<PostVote> getPostDislikes() {
+        return postDislikes;
+    }
+
+    public void setPostDislikes(Collection<PostVote> postDislikes) {
+        this.postDislikes = postDislikes;
+    }
+
+    public Collection<PostVote> getPostVotes() {
+        return postVotes;
+    }
+
+    public void setPostVotes(Collection<PostVote> postVotes) {
+        this.postVotes = postVotes;
+    }
+
     public Collection<PostComment> getPostComments() {
         return postComments;
     }
@@ -85,7 +104,6 @@ public class Post {
     public void setPostComment(Collection<PostComment> postComments) {
         this.postComments = postComments;
     }
-
 
     public Integer getPostId() {
         return postId;
@@ -151,12 +169,13 @@ public class Post {
         String announce = getText().replaceAll("[\\p{P}\\p{S}]", "");
         try {
             if (announce.length() <= 500) {
-                announce = announce.substring(0, text.length() / 5); // В анонс выводим 20% текста поста, но не более 100 знаков
+                announce = announce.substring(0,
+                        text.length() / 5); // В анонс выводим 20% текста поста, но не более 100 знаков
             } else {
                 announce = announce.substring(0, 100);
             }
         } catch (NullPointerException ex) {
-           announce = "No text of post!";
+            announce = "No text of post!";
         }
         return announce;
     }
@@ -177,23 +196,4 @@ public class Post {
         isActive = activityMode;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public void setPostComments(Collection<PostComment> postComments) {
-        this.postComments = postComments;
-    }
-
-    public Collection<PostVote> getPostVotes() {
-        return postVotes;
-    }
-
-    public void setPostVotes(Collection<PostVote> postVotes) {
-        this.postVotes = postVotes;
-    }
 }

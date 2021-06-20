@@ -8,11 +8,11 @@ import java.io.Serializable;
 public class LikeRequest implements Serializable {
     public Integer post_id;
 
-    public Integer getPostId() {
+    public Integer getPost_id() {
         return post_id;
     }
 
-    public void setPostId(Integer post_id) {
+    public void setPost_id(Integer post_id) {
         this.post_id = post_id;
     }
 }

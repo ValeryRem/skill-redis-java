@@ -19,7 +19,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "id")
     @JoinTable(name = "posts", joinColumns = @JoinColumn(name = "post_id"))
     private Integer userId;
 
@@ -30,14 +30,13 @@ public class User {
     @DateTimeFormat(pattern = "YYYY-MM-dd HH:mm:ss")
     private Timestamp regTime;
 
-    @JoinTable(name = "posts", joinColumns = @JoinColumn(name = "post_id"))
+//    @JoinTable(name = "posts", joinColumns = @JoinColumn(name = "post_id"))
     private String name;
 
     @Email
     @Column(name = "e_mail", unique = true)
     private String email;
 
-//    @Size(min=6, max=20, message = "Password to be between 6 & 20 chars' number")
     private String password;
 
     private String code;
@@ -45,18 +44,7 @@ public class User {
     @Nullable
     private String photo;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "postId")
-    private List<Post> posts;
-
     public User() {
-    }
-
-    public List<Post> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
     }
 
     public User(Integer userId) {

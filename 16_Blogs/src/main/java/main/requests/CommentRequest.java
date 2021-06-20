@@ -6,23 +6,23 @@ import java.io.Serializable;
 
 @Service
 public class CommentRequest implements Serializable {
-    Integer post_id;
     Integer parent_id;
+    Integer post_id;
     String text;
 
-    public Integer getPostId() {
+    public Integer getPost_id() {
         return post_id;
     }
 
-    public void setPostId(Integer postId) {
+    public void setPost_id(Integer postId) {
         this.post_id = postId;
     }
 
-    public Integer getParentId() {
+    public Integer getParent_id() {
         return parent_id;
     }
 
-    public void setParentId(Integer parentId) {
+    public void setParent_id(Integer parentId) {
         this.parent_id = parentId;
     }
 
