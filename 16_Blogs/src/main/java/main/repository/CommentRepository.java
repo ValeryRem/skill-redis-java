@@ -15,6 +15,6 @@ public interface CommentRepository extends JpaRepository<PostComment, Integer> {
         @Query("SELECT pc.commentId FROM PostComment pc WHERE pc.post_id = ?1 ORDER BY pc.commentId DESC")
         List<Integer> findCommentsIdByPostId (int postId);
 
-        @Query("SELECT count(pc) FROM PostComment pc WHERE pc.post_id = post.postId")
-        int getCommentCountByPost(Post post);
+        @Query("SELECT count(pc) FROM PostComment pc WHERE pc.post_id = ?1")
+        int getCommentCountByPostId(int postId);
 }

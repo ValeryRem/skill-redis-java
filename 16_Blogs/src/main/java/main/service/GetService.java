@@ -6,7 +6,6 @@ import main.response.GeneralResponse;
 import main.response.TagResponse;
 import main.response.UserResponse;
 
-//import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.*;
@@ -34,7 +33,7 @@ public class GetService {
     private final PostVoteRepository postVoteRepository;
     private final AuthService authService;
     private final GlobalSettingsRepository globalSettingsRepository;
-    private boolean result = false;
+//    private boolean result = false;
     private ResponseEntity<?> responseEntity;
 
 
@@ -64,7 +63,6 @@ public class GetService {
 
         for (Post post : posts) {
             Map<String, Object> responseMap = new LinkedHashMap<>();
-            int commentCountByPost = commentRepository.findCommentsIdByPostId(post.getPostId()).size();
             responseMap.put("id", post.getPostId());
             responseMap.put("timestamp", post.getTimestamp().getTime() / 1000);
             int userId = post.getUserId();
@@ -72,15 +70,13 @@ public class GetService {
             Map<String, Object> userMap = Map
                     .of("id", userId, "name", user.getName());
             responseMap.put("user", userMap);
-
             responseMap.put("title", post.getTitle());
             responseMap.put("announce", post.getAnnounce());
             responseMap.put("likeCount", extractLikeCount(post));
             responseMap.put("dislikeCount", extractDislikeCount(post));
-            responseMap.put("commentCount", commentCountByPost);
+            responseMap.put("commentCount", commentRepository.getCommentCountByPostId(post.getPostId()));
             responseMap.put("viewCount", post.getViewCount());
             postMapList.add(responseMap);
-            System.out.printf("%3d %s -> %s %n", post.getPostId(), post.getUserId(), commentCountByPost);
         }
 
         GeneralResponse generalResponse = new GeneralResponse();
@@ -107,7 +103,6 @@ public class GetService {
                 posts = postRepository.getRecentPosts(pageRequest);
                 break;
         }
-
         return posts.stream().filter(p -> p.isActive() == 1).collect(Collectors.toList());
     }
 
@@ -118,19 +113,19 @@ public class GetService {
 
         GeneralResponse generalResponse = new GeneralResponse();
         var postList = postRepository.findAllActivePosts();
-        var commentList = commentRepository.findAll();
-
         List<Map<String, Object>> postMapList = new ArrayList<>();
         List<Post> posts = postList.stream().
                 filter(p -> p.getText().contains(query)).collect(Collectors.toList());
         int count = posts.size();
+        if(count == 0) {
+            return new ResponseEntity<>("No posts with this text!", HttpStatus.NOT_FOUND);
+        }
+
         posts.forEach(post -> {
             Map<String, Object> responseMap = new LinkedHashMap<>();
             Map<String, Object> userMap = new LinkedHashMap<>();
             responseMap.put("id", post.getPostId());
             responseMap.put("timestamp", post.getTimestamp().getTime() / 1000);
-            int commentCountByPost = (int) commentList.stream()
-                    .filter(a -> a.getPost_id().equals(post.getPostId())).count();
             Optional<User> userOptional = userRepository.findById(post.getUserId());
             userOptional.ifPresent(user -> userMap.put("id", user.getUserId()));
             userOptional.ifPresent(user -> userMap.put("name", user.getName()));
@@ -139,7 +134,7 @@ public class GetService {
             responseMap.put("announce", post.getAnnounce());
             responseMap.put("likeCount", extractLikeCount(post));
             responseMap.put("dislikeCount", extractDislikeCount(post));
-            responseMap.put("commentCount", commentCountByPost);
+            responseMap.put("commentCount", commentRepository.getCommentCountByPostId(post.getPostId()));
             responseMap.put("viewCount", post.getViewCount());
             postMapList.add(responseMap);
         });
@@ -156,22 +151,11 @@ public class GetService {
         var posts = postRepository.findAllActivePosts();
         int count = 0;
         List<Map<String, Object>> postMapList = new ArrayList<>();
-        var commentList = commentRepository.findAll();
         for (Post post : posts) {
             if (post.getTimestamp().toInstant().atZone(ZoneId.systemDefault()).toLocalDate().toString()
                     .equals(date)) {
                 count++;
-                Map<String, Object> responseMap = new LinkedHashMap<>();
-                int commentCountByPost = (int) commentList.stream()
-                        .filter(a -> a.getPost_id().equals(post.getPostId())).count();
-                responseMap.put("id", post.getPostId());
-                responseMap.put("timestamp", post.getTimestamp().getTime() / 1000);
-                responseMap.put("title", post.getTitle());
-                responseMap.put("announce", post.getAnnounce());
-                responseMap.put("likeCount", extractLikeCount(post));
-                responseMap.put("dislikeCount", extractDislikeCount(post));
-                responseMap.put("commentCount", commentCountByPost);
-                responseMap.put("viewCount", post.getViewCount());
+                Map<String, Object> responseMap = getMapOfPostElements(post);
                 Map<String, Object> userMap = new LinkedHashMap<>();
                 Optional<User> userOptional = userRepository.findById(post.getUserId());
                 userOptional.ifPresent(user -> userMap.put("name", user.getName()));
@@ -209,16 +193,7 @@ public class GetService {
                 }
                 posts = postsIdList.stream().map(postRepository::getOne).collect(Collectors.toList());
                 for (Post post : posts) {
-                    Map<String, Object> responseMap = new LinkedHashMap<>();
-                    int commentCountByPost = commentRepository.getCommentCountByPost(post);
-                    responseMap.put("id", post.getPostId());
-                    responseMap.put("timestamp", post.getTimestamp().getTime() / 1000);
-                    responseMap.put("title", post.getTitle());
-                    responseMap.put("announce", post.getAnnounce());
-                    responseMap.put("likeCount", extractLikeCount(post));
-                    responseMap.put("dislikeCount", extractDislikeCount(post));
-                    responseMap.put("commentCount", commentCountByPost);
-                    responseMap.put("viewCount", post.getViewCount());
+                    Map<String, Object> responseMap = getMapOfPostElements(post);
                     Map<String, Object> userMap = new LinkedHashMap<>();
                     userMap.put("id", post.getUserId());
                     Optional<User> userOptional = userRepository.findById(post.getUserId());
@@ -261,17 +236,7 @@ public class GetService {
 //                    || (post.getIsActive() == 1 && post.getModerationStatus().equals(ModerationStatus.DECLINED))
 //                    || (post.getIsActive() == 1 && post.getModerationStatus().equals(ModerationStatus.ACCEPTED)))))
             {
-                Map<String, Object> responseMap = new LinkedHashMap<>();
-                int commentCountByPost = commentRepository.getCommentCountByPost(post);
-                //(int) commentList.stream().filter(a -> a.getPostId().equals(post.getPostId())).count();
-                responseMap.put("id", post.getPostId());
-                responseMap.put("timestamp", post.getTimestamp().getTime() / 1000);
-                responseMap.put("title", post.getTitle());
-                responseMap.put("announce", post.getAnnounce());
-                responseMap.put("likeCount", extractLikeCount(post));
-                responseMap.put("dislikeCount", extractDislikeCount(post));
-                responseMap.put("commentCount", commentCountByPost);
-                responseMap.put("viewCount", post.getViewCount());
+                Map<String, Object> responseMap = getMapOfPostElements(post);
                 Map<String, Object> userMap = new LinkedHashMap<>();
                 userMap.put("id", post.getUserId());
                 Optional<User> userOptional = userRepository.findById(post.getUserId());
@@ -285,6 +250,19 @@ public class GetService {
             responseEntity = new ResponseEntity<>(generalResponse, HttpStatus.OK);
         }
         return responseEntity;
+    }
+
+    private Map<String, Object> getMapOfPostElements(Post post) {
+        Map<String, Object> responseMap = new LinkedHashMap<>();
+        responseMap.put("id", post.getPostId());
+        responseMap.put("timestamp", post.getTimestamp().getTime() / 1000);
+        responseMap.put("title", post.getTitle());
+        responseMap.put("announce", post.getAnnounce());
+        responseMap.put("likeCount", extractLikeCount(post));
+        responseMap.put("dislikeCount", extractDislikeCount(post));
+        responseMap.put("commentCount", commentRepository.getCommentCountByPostId(post.getPostId()));
+        responseMap.put("viewCount", post.getViewCount());
+        return responseMap;
     }
 
     public ResponseEntity<?> getPostById(Integer postId) {
@@ -373,7 +351,7 @@ public class GetService {
         for (Post post : postsFiltered) {
             Map<String, Object> responseMap = new LinkedHashMap<>();
             Map<String, Object> userMap = new LinkedHashMap<>();
-            int commentCountByPost = commentRepository.getCommentCountByPost(post);
+            int commentCountByPost = commentRepository.getCommentCountByPostId(post.getPostId());
             responseMap.put("id", post.getPostId());
             responseMap.put("timestamp", post.getTimestamp().getTime() / 1000);
             responseMap.put("active", post.getIsActive());
@@ -535,8 +513,8 @@ public class GetService {
         Map<String, Object> responseMap = new LinkedHashMap<>();
         Map<String, Integer> posts = new LinkedHashMap<>();
         int postCountAtDate;
-        List<Post> postsList = postRepository.findAll().stream()
-                .filter(p -> p.isActive() == 1 && p.getModerationStatus().equals(ModerationStatus.ACCEPTED))
+        List<Post> postsList = postRepository.findAllActivePosts().stream()
+//                .filter(p -> p.isActive() == 1 && p.getModerationStatus().equals(ModerationStatus.ACCEPTED))
                 .sorted(Comparator.comparing(Post::getTimestamp))
                 .collect(Collectors.toList());
         years = postsList.stream()
@@ -593,31 +571,6 @@ public class GetService {
     private Integer extractDislikeCount(Post post) {
         return postVoteRepository.findCountVotesByPostId(post.getPostId(), -1).orElse(0);
     }
-
-//  private Integer extractLikeCount(Post post) {
-//    try {
-//      var list = postVoteRepository.findAll();
-//      var listVotes = list.stream().
-//          filter(a -> (a.getPost().getPostId().equals(post.getPostId())) && a.getValue() == 1).
-//          collect(Collectors.toList());
-//      return listVotes.size();
-//    } catch (NullPointerException ex) {
-//      ex.printStackTrace();
-//      return 0;
-//    }
-//  }
-//
-//  private Integer extractDislikeCount(Post post) {
-//    try {
-//      List<PostVote> list = postVoteRepository.findAll();
-//      List<PostVote> listVotes = list.stream().
-//          filter(a -> (a.getPost().getPostId().equals(post.getPostId())) && a.getValue() == -1).
-//          collect(Collectors.toList());
-//      return listVotes.size();
-//    } catch (NullPointerException ex) {
-//      return 0;
-//    }
-//  }
 
     public Integer convertTimeToYear(Timestamp time) {
         Calendar cal = Calendar.getInstance();

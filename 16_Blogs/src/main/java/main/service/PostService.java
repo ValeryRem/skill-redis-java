@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -77,7 +76,7 @@ public class PostService {
         int userId = authService.getUserId();
         int post_id = likeRequest.getPost_id();
         Post post = postRepository.getOne(likeRequest.getPost_id());
-        Optional<PostVote> postVoteOptional = postVoteRepository.getOne(post_id, userId);
+        Optional<PostVote> postVoteOptional = postVoteRepository.getOneByPostAndUser(post_id, userId);
         if (!authService.isUserAuthorized()) {
             return ResponseEntity.ok(new ResultResponse(false));
         }
