@@ -112,10 +112,11 @@ public class GetService {
         }
 
         GeneralResponse generalResponse = new GeneralResponse();
-        var postList = postRepository.findAllActivePosts();
+//        var postList = postRepository.findAllActivePosts();
         List<Map<String, Object>> postMapList = new ArrayList<>();
-        List<Post> posts = postList.stream().
-                filter(p -> p.getText().contains(query)).collect(Collectors.toList());
+        List<Post> posts = postRepository.findByTextContaining(query);
+//                postList.stream().
+//                filter(p -> p.getText().contains(query)).collect(Collectors.toList());
         int count = posts.size();
         if(count == 0) {
             return new ResponseEntity<>("No posts with this text!", HttpStatus.NOT_FOUND);

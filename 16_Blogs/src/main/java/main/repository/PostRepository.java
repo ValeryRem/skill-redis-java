@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
+import java.util.List;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Integer> {
@@ -29,5 +30,7 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
 
   @Query("SELECT p FROM Post p WHERE p.userId = ?1")
   Collection<Post> findAllPostsByUserId (int userId);
+
+  List<Post> findByTextContaining(String text);
 
 }

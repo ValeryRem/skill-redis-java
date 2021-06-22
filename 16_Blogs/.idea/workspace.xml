@@ -4,27 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Upd10 without problems!">
+    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Code corrected for deploy.">
       <change afterPath="$PROJECT_DIR$/../Blogs-71f22b146c7df75cbe0eb3a98d4d1388df146b9b.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/PostVoteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/PostVoteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entity/PostVote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entity/PostVote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/CommentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/PostRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/PostVoteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/PostVoteRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/requests/CommentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/requests/CommentRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/requests/DislikeRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/requests/LikeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/requests/LikeRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/requests/PutPostRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/requests/PutPostRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/service/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/service/GetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/service/GetService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/service/PostService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624219451682</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Code corrected for deploy.">
+      <created>1624297877407</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624297877407</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +113,7 @@
     <MESSAGE value="Upd8 with @Query problems." />
     <MESSAGE value="Upd9 with problems in postLikes &amp; postComments." />
     <MESSAGE value="Upd10 without problems!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upd10 without problems!" />
+    <MESSAGE value="Code corrected for deploy." />
+    <option name="LAST_COMMIT_MESSAGE" value="Code corrected for deploy." />
   </component>
 </project>
