@@ -11,6 +11,7 @@ import java.util.List;
 
 @Repository
 public interface Tag2PostRepository extends JpaRepository<Tag2Post, Integer> {
-    @Query(value = "SELECT t2p FROM Tag2Post t2p")
-    List<Tag2Post> findAllTag2Posts();
+
+    @Query("SELECT t2p.postId FROM Tag2Post t2p WHERE t2p.tagId = ?1")
+    List<Integer> findPostIdByTagId(Integer tagId);
 }

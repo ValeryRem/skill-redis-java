@@ -172,47 +172,68 @@ public class GetService {
         return responseEntity;
     }
 
-    public ResponseEntity<?> getPostsByTag(Integer offset, Integer limit, String tag) {
+    public ResponseEntity<?> getPostsByTag(Integer offset, Integer limit, String tagName) {
         if (offset > limit) {
             return new ResponseEntity<>("Wrong input parameters!", HttpStatus.BAD_REQUEST);
         }
-
-        var tagList = tagRepository.findAllTags();
-        int tagId;
-        List<Integer> postsIdList = new ArrayList<>();
-        List<Post> posts;
-        List<Map<String, Object>> postMapList = new ArrayList<>();
-        List<Tag2Post> tag2PostList = tag2PostRepository.findAll();
-        if (tagList.size() > 0 && tag2PostList.size() > 0) {
-            if (tagList.stream().map(Tag::getTagName).collect(Collectors.toList()).contains(tag.trim())) {
-                tagId = tagList.stream().filter(t -> t.getTagName().equals(tag)).findFirst()
-                        .orElse(new Tag()).getId();
-                for (Tag2Post tag2Post : tag2PostList) {
-                    if (tag2Post.getTagId().equals(tagId)) {
-                        postsIdList.add(tag2Post.getPostId());
-                    }
-                }
-                posts = postsIdList.stream().map(postRepository::getOne).collect(Collectors.toList());
-                for (Post post : posts) {
-                    Map<String, Object> responseMap = getMapOfPostElements(post);
-                    Map<String, Object> userMap = new LinkedHashMap<>();
-                    userMap.put("id", post.getUserId());
-                    Optional<User> userOptional = userRepository.findById(post.getUserId());
-                    userOptional.ifPresent(user -> userMap.put("name", user.getName()));
-                    responseMap.put("user", userMap);
-                    postMapList.add(responseMap);
-                }
-                GeneralResponse generalResponse = new GeneralResponse();
-                generalResponse.setCount(posts.size());
-                generalResponse.setPosts(getOffsetLimitOutput(postMapList, offset, limit));
-                responseEntity = new ResponseEntity<>(generalResponse, HttpStatus.OK);
-            } else {
-                responseEntity = new ResponseEntity<>("Tag " + tag + " not found!", HttpStatus.NOT_FOUND);
-            }
-        } else {
-            responseEntity = new ResponseEntity<>("No tags or tag2Post yet registered.",
+        Optional<Tag> tagOptional = tagRepository.findTagByName(tagName);
+        if (tagOptional.isEmpty()) {
+            responseEntity = new ResponseEntity<>("No tag " + tagName + " is registered.",
                     HttpStatus.NO_CONTENT);
+        } else {
+            Tag tag = tagOptional.get();
+            int tagId = tag.getId();
+            List<Post> posts = new ArrayList<>();
+            List<Integer> postsIdList = tag2PostRepository.findPostIdByTagId(tagId);
+            postsIdList.forEach(id -> posts.add(postRepository.getOne(id))
+            );
+            List<Map<String, Object>> postMapList = new ArrayList<>();
+            for (Post post : posts) {
+                Map<String, Object> responseMap = getMapOfPostElements(post);
+                Map<String, Object> userMap = new LinkedHashMap<>();
+                userMap.put("id", post.getUserId());
+                Optional<User> userOptional = userRepository.findById(post.getUserId());
+                userOptional.ifPresent(user -> userMap.put("name", user.getName()));
+                responseMap.put("user", userMap);
+                postMapList.add(responseMap);
+            }
+            GeneralResponse generalResponse = new GeneralResponse();
+            generalResponse.setCount(posts.size());
+            generalResponse.setPosts(getOffsetLimitOutput(postMapList, offset, limit));
+            responseEntity = new ResponseEntity<>(generalResponse, HttpStatus.OK);
         }
+
+//        List<Tag2Post> tag2PostList = tag2PostRepository.findAll();
+//        if (tagList.size() > 0 && tag2PostList.size() > 0) {
+//            if (tagList.stream().map(Tag::getTagName).collect(Collectors.toList()).contains(tagName.trim())) {
+//                tagId = tagList.stream().filter(t -> t.getTagName().equals(tagName)).findFirst()
+//                        .orElse(new Tag()).getId();
+//                for (Tag2Post tag2Post : tag2PostList) {
+//                    if (tag2Post.getTagId().equals(tagId)) {
+//                        postsIdList.add(tag2Post.getPostId());
+//                    }
+//                }
+//                posts = postsIdList.stream().map(postRepository::getOne).collect(Collectors.toList());
+//                for (Post post : posts) {
+//                    Map<String, Object> responseMap = getMapOfPostElements(post);
+//                    Map<String, Object> userMap = new LinkedHashMap<>();
+//                    userMap.put("id", post.getUserId());
+//                    Optional<User> userOptional = userRepository.findById(post.getUserId());
+//                    userOptional.ifPresent(user -> userMap.put("name", user.getName()));
+//                    responseMap.put("user", userMap);
+//                    postMapList.add(responseMap);
+//                }
+//                GeneralResponse generalResponse = new GeneralResponse();
+//                generalResponse.setCount(posts.size());
+//                generalResponse.setPosts(getOffsetLimitOutput(postMapList, offset, limit));
+//                responseEntity = new ResponseEntity<>(generalResponse, HttpStatus.OK);
+//            } else {
+//                responseEntity = new ResponseEntity<>("Tag " + tagName + " not found!", HttpStatus.NOT_FOUND);
+//            }
+//        } else {
+//            responseEntity = new ResponseEntity<>("No tags or tag2Post yet registered.",
+//                    HttpStatus.NO_CONTENT);
+//        }
         return responseEntity;
     }
 

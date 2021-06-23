@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -15,4 +16,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Query("SELECT count(p) FROM Post p WHERE p.moderationStatus = 'NEW' AND p.userId = ?1")
     Integer getModerationCount(Integer userId);
+
+    @Query("SELECT  u.userId FROM User u WHERE u.isModerator = 1")
+    List<Integer> getModeratorIds ();
+
+
 }

@@ -111,7 +111,6 @@ public class PostController {
     @PostMapping("")
     private ResponseEntity<?> postPost (@RequestBody PostRequest postRequest) {
         System.out.println("Method postPost is activated");
-        System.out.println(postRequest.getActive()+" "+postRequest.getTitle());
         return postService.postPost(postRequest);
     }
 

@@ -136,7 +136,9 @@ public class PostService {
         } else {
             post.setTimestamp(new Timestamp(postRequest.getTimestamp() * 1000));
         }
-
+        List<Integer> mooderatorIds = userRepository.getModeratorIds();
+        int moderatorId = mooderatorIds.get((int)(Math.random() * mooderatorIds.size()));
+        post.setModeratorId(moderatorId);
         post.setUserId(userId);
         post.setViewCount(0);
         post.setTitle(postRequest.getTitle());
