@@ -4,20 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Code corrected for deploy.">
+    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Developed in PostService and GetService by postPost and getPostByTag.">
       <change afterPath="$PROJECT_DIR$/../Blogs-71f22b146c7df75cbe0eb3a98d4d1388df146b9b.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/entity/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/PostVoteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/PostVoteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/Tag2PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/Tag2PostRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/TagRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/TagRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/PostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/controllers/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/controllers/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entity/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entity/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/CommentRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/repository/PostVoteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/PostVoteRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/Tag2PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/Tag2PostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/TagRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/TagRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/service/GetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/service/GetService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/service/PostService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624355986349</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Developed in PostService and GetService by postPost and getPostByTag.">
+      <created>1624451733020</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624451733020</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +149,7 @@
     <MESSAGE value="Upd9 with problems in postLikes &amp; postComments." />
     <MESSAGE value="Upd10 without problems!" />
     <MESSAGE value="Code corrected for deploy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Code corrected for deploy." />
+    <MESSAGE value="Developed in PostService and GetService by postPost and getPostByTag." />
+    <option name="LAST_COMMIT_MESSAGE" value="Developed in PostService and GetService by postPost and getPostByTag." />
   </component>
 </project>

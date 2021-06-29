@@ -43,7 +43,7 @@ public class PostController {
     private ResponseEntity<?> getPosts (@RequestParam(defaultValue="0") Integer offset,
                                         @RequestParam(defaultValue="10") Integer limit,
                                         @RequestParam String mode){
-        System.out.println("Method getPosts activated. Number of posts: " + getService.getCount());
+        System.out.println("Method getPosts activated.");
         return getService.getPosts (offset, limit, mode);
     }
 
@@ -58,7 +58,7 @@ public class PostController {
     private ResponseEntity<?> getPostsBySearch (@RequestParam(defaultValue="0") Integer offset,
                                                 @RequestParam(defaultValue="5") Integer limit,
                                                 @RequestParam String query) {
-        System.out.println("Method getPostsBySearch activated. Query:" + query);
+        System.out.println("Method getPostsBySearch activated");
         return getService.getPostsBySearch(offset, limit, query);
     }
 
@@ -117,7 +117,7 @@ public class PostController {
     @PutMapping(value = "/{ID:\\d+}")
     public ResponseEntity<?> putPost (@PathVariable(value = "ID") int ID, @RequestBody PutPostRequest putPostRequest){
         System.out.println("Method putPost is activated");
-        return  postService.putPost(ID, putPostRequest);
+        return postService.putPost(ID, putPostRequest);
     }
 }
 

@@ -1,11 +1,8 @@
 package main.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import net.bytebuddy.implementation.bind.annotation.Default;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.Where;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -49,8 +46,7 @@ public class Post implements Serializable {
 
     @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
     @LazyCollection(LazyCollectionOption.EXTRA)
-    // это позволяет без лишнего запроса получить количество
-    @Where(clause = "value = 1") // в этой коллекции будут только лайки
+    @Where(clause = "value = 1")
     private Collection<PostVote> postLikes;
 
     @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
@@ -58,8 +54,7 @@ public class Post implements Serializable {
     @Where(clause = "value = -1")
     private Collection<PostVote> postDislikes;
 
-    public Post() {
-    }
+    public Post() { }
 
     public Post(ModerationStatus moderationStatus) {
         this.moderationStatus = moderationStatus;

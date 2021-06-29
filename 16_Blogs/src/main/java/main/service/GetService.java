@@ -33,9 +33,7 @@ public class GetService {
     private final PostVoteRepository postVoteRepository;
     private final AuthService authService;
     private final GlobalSettingsRepository globalSettingsRepository;
-//    private boolean result = false;
     private ResponseEntity<?> responseEntity;
-
 
     public GetService(PostRepository postRepository, Tag2PostRepository tag2PostRepository,
                       TagRepository tagRepository,
@@ -87,8 +85,7 @@ public class GetService {
 
     private List<Post> getOrderedPosts(Integer offset, Integer limit, String mode) {
         Page<Post> posts;
-        PageRequest pageRequest = PageRequest.of(offset / limit, limit);
-
+        PageRequest pageRequest = PageRequest.of(offset, limit);
         switch (mode) {
             case "popular":
                 posts = postRepository.getPopularPosts(pageRequest);
@@ -112,11 +109,8 @@ public class GetService {
         }
 
         GeneralResponse generalResponse = new GeneralResponse();
-//        var postList = postRepository.findAllActivePosts();
         List<Map<String, Object>> postMapList = new ArrayList<>();
         List<Post> posts = postRepository.findByTextContaining(query);
-//                postList.stream().
-//                filter(p -> p.getText().contains(query)).collect(Collectors.toList());
         int count = posts.size();
         if(count == 0) {
             return new ResponseEntity<>("No posts with this text!", HttpStatus.NOT_FOUND);
@@ -203,37 +197,6 @@ public class GetService {
             responseEntity = new ResponseEntity<>(generalResponse, HttpStatus.OK);
         }
 
-//        List<Tag2Post> tag2PostList = tag2PostRepository.findAll();
-//        if (tagList.size() > 0 && tag2PostList.size() > 0) {
-//            if (tagList.stream().map(Tag::getTagName).collect(Collectors.toList()).contains(tagName.trim())) {
-//                tagId = tagList.stream().filter(t -> t.getTagName().equals(tagName)).findFirst()
-//                        .orElse(new Tag()).getId();
-//                for (Tag2Post tag2Post : tag2PostList) {
-//                    if (tag2Post.getTagId().equals(tagId)) {
-//                        postsIdList.add(tag2Post.getPostId());
-//                    }
-//                }
-//                posts = postsIdList.stream().map(postRepository::getOne).collect(Collectors.toList());
-//                for (Post post : posts) {
-//                    Map<String, Object> responseMap = getMapOfPostElements(post);
-//                    Map<String, Object> userMap = new LinkedHashMap<>();
-//                    userMap.put("id", post.getUserId());
-//                    Optional<User> userOptional = userRepository.findById(post.getUserId());
-//                    userOptional.ifPresent(user -> userMap.put("name", user.getName()));
-//                    responseMap.put("user", userMap);
-//                    postMapList.add(responseMap);
-//                }
-//                GeneralResponse generalResponse = new GeneralResponse();
-//                generalResponse.setCount(posts.size());
-//                generalResponse.setPosts(getOffsetLimitOutput(postMapList, offset, limit));
-//                responseEntity = new ResponseEntity<>(generalResponse, HttpStatus.OK);
-//            } else {
-//                responseEntity = new ResponseEntity<>("Tag " + tagName + " not found!", HttpStatus.NOT_FOUND);
-//            }
-//        } else {
-//            responseEntity = new ResponseEntity<>("No tags or tag2Post yet registered.",
-//                    HttpStatus.NO_CONTENT);
-//        }
         return responseEntity;
     }
 
@@ -249,24 +212,16 @@ public class GetService {
         GeneralResponse generalResponse = new GeneralResponse();
         List<Map<String, Object>> postMapList = new ArrayList<>();
         int userId = authService.getUserId();
-        List<Post> posts = postRepository.findAll();//getOffsetLimitOutput(, offset, limit);
+        List<Post> myPosts = (List<Post>) postRepository.findAllPostsByUserId(userId);
         int count = 0;
-        for (Post post : posts) {
-            if (post.getUserId().equals(userId))
-//                    && (post.getIsActive() == 0
-//                    || ((post.getIsActive() == 1 && post.getModerationStatus().equals(ModerationStatus.NEW))
-//                    || (post.getIsActive() == 1 && post.getModerationStatus().equals(ModerationStatus.DECLINED))
-//                    || (post.getIsActive() == 1 && post.getModerationStatus().equals(ModerationStatus.ACCEPTED)))))
-            {
-                Map<String, Object> responseMap = getMapOfPostElements(post);
-                Map<String, Object> userMap = new LinkedHashMap<>();
-                userMap.put("id", post.getUserId());
-                Optional<User> userOptional = userRepository.findById(post.getUserId());
-                userOptional.ifPresent(user -> userMap.put("name", user.getName()));
-                responseMap.put("user", userMap);
-                postMapList.add(responseMap);
-                count++;
-            }
+        for (Post post : myPosts) {
+            Map<String, Object> responseMap = getMapOfPostElements(post);
+            Map<String, Object> userMap = new LinkedHashMap<>();
+            userMap.put("id", post.getUserId());
+            userMap.put("name", userRepository.getOne(userId).getName());
+            responseMap.put("user", userMap);
+            postMapList.add(responseMap);
+            count++;
             generalResponse.setCount(count);
             generalResponse.setPosts(getOffsetLimitOutput(postMapList, offset, limit));
             responseEntity = new ResponseEntity<>(generalResponse, HttpStatus.OK);
@@ -288,8 +243,7 @@ public class GetService {
     }
 
     public ResponseEntity<?> getPostById(Integer postId) {
-        if (postRepository.findById(postId)
-                .isEmpty()) {//findAll().stream().map(Post::getPostId).collect(Collectors.toList()).contains(postId)) {
+        if (postRepository.findById(postId).isEmpty()) {
             return new ResponseEntity<>("Post with ID = " + postId + " not found.", HttpStatus.NOT_FOUND);
         }
 
@@ -303,9 +257,10 @@ public class GetService {
         responseMap.put("timestamp", post.getTimestamp().getTime() / 1000);
         responseMap.put("active", post.getIsActive());
 
-        Optional<User> userOptional = userRepository.findById(post.getUserId());
-        userOptional.ifPresent(user -> userMap.put("name", user.getName()));
-        userOptional.ifPresent(user -> userMap.put("id", user.getUserId()));
+        User user = userRepository.getOne(post.getUserId());
+        userMap.put("name", user.getName());
+        userMap.put("id", user.getUserId());
+
         responseMap.put("user", userMap);
         responseMap.put("title", post.getTitle());
         responseMap.put("announce", post.getAnnounce());
@@ -314,40 +269,32 @@ public class GetService {
         responseMap.put("dislikeCount", extractDislikeCount(post));
         responseMap.put("viewCount", post.getViewCount());
 
-        List<PostComment> postCommentList = commentRepository.findAll().stream()
-                .filter(c -> c.getPost_id().equals(postId))
-                .collect(Collectors.toList());
+        List<PostComment> postCommentList = commentRepository.findCommentsByPostId(postId);
         postCommentList.forEach(c -> {
             Map<String, Object> commentMap = new LinkedHashMap<>();
             commentMap.put("id", c.getCommentId());
             commentMap.put("timestamp", c.getTime().getTime() / 1000);
             commentMap.put("text", c.getText());
-            if (userOptional.isPresent()) {
-                UserResponse userResponse = new UserResponse();
-                userResponse.setId(userOptional.get().getUserId());
-                userResponse.setName(userOptional.get().getName());
-                userResponse.setPhoto(userOptional.get().getPhoto());
-                commentMap.put("user", userResponse);
-            }
+            User commentUser = userRepository.findById(c.getUserId()).orElseThrow();
+            UserResponse userResponse = new UserResponse();
+            userResponse.setId(commentUser.getUserId());
+            userResponse.setName(commentUser.getName());
+            userResponse.setPhoto(commentUser.getPhoto());
+            commentMap.put("user", userResponse);
             commentsMapList.add(commentMap);
             responseMap.put("comments", commentsMapList);
         });
         if (post.getIsActive() == 1 && post.getModerationStatus().equals(ModerationStatus.ACCEPTED) &&
                 post.getTimestamp().getTime() < Timestamp.valueOf(LocalDateTime.now()).getTime()) {
-            List<Tag2Post> tag2PostList = tag2PostRepository.findAll();
-            var tagsIdList = new ArrayList<Integer>();
-            List<String> tags = new ArrayList<>();
-            for (Tag2Post tag2Post : tag2PostList) {
-                if (tag2Post.getPostId().equals(postId)) {
-                    tagsIdList.add(tag2Post.getTagId()); // формируем лист id тэгов, связанных с postId
-                }
-            }
+            var tagsIdList = tag2PostRepository.findTagIdsByPostId(postId);
+            List<String> tagNames = new ArrayList<>();
+
             if (!tagsIdList.isEmpty()) {
-                tags = tagsIdList.stream()
+                tagNames = tagsIdList.stream()
                         .map(t -> tagRepository.getOne(t).getTagName())
                         .collect(Collectors.toList());
             }
-            responseMap.put("tags", tags);
+            responseMap.put("tags", tagNames);
         }
         return new ResponseEntity<>(responseMap, HttpStatus.OK);
     }
