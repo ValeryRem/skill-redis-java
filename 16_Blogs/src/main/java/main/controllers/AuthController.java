@@ -2,22 +2,19 @@ package main.controllers;
 
 import main.requests.RestoreRequest;
 import main.service.AuthService;
-import main.service.GetService;
 import main.requests.LoginRequest;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-    private final GetService getService;
+//    private final GetService getService;
     private final AuthService authService;
     private final LoginRequest loginRequest;
 
-    public AuthController(GetService getService, AuthService authService, LoginRequest loginRequest) {
-        this.getService = getService;
+    public AuthController(AuthService authService, LoginRequest loginRequest) {
+//        this.getService = getService;
         this.authService = authService;
         this.loginRequest = loginRequest;
     }
@@ -28,7 +25,7 @@ public class AuthController {
         return authService.getAuthCheck();
     }
 
-    @PostMapping (value = "/login")//, consumes = {"application/json", "application/x-www-form-urlencoded;charset=UTF-8"})
+    @PostMapping (value = "/login")
     private ResponseEntity<?> postAuthLogin(@RequestBody LoginRequest loginRequest) {
         System.out.println("Method postAuthLogin is activated.");
         return authService.postAuthLogin(loginRequest);
