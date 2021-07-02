@@ -110,7 +110,7 @@ public class GetService {
 
         GeneralResponse generalResponse = new GeneralResponse();
         List<Map<String, Object>> postMapList = new ArrayList<>();
-        List<Post> posts = postRepository.findByTextContaining(query);
+        List<Post> posts = postRepository.findByTextContaining(query.trim());
         int count = posts.size();
         if(count == 0) {
             return new ResponseEntity<>("No posts with this text!", HttpStatus.NOT_FOUND);

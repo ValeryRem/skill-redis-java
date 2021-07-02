@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Method getPostsBySearch(...) under checking.">
+    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Cleaned for deploy on heroku.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
