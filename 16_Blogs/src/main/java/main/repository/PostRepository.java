@@ -10,16 +10,17 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Integer> {
-  @Query ("SELECT p FROM Post p ORDER BY p.postId DESC")
+  @Query ("SELECT p FROM Post p ORDER BY p.timestamp DESC")
   Page<Post> getRecentPosts (PageRequest pageRequest);
 
   @Query ("SELECT p FROM Post p ORDER BY SIZE(p.postComments) DESC")
   Page<Post> getPopularPosts(PageRequest pageRequest);
 
-  @Query ("SELECT p FROM Post p ORDER BY SIZE(p.postLikes) DESC")
+  @Query ("SELECT p FROM Post p JOIN PostVote pv ON p.postId = pv.postId WHERE pv.value = 1 ORDER BY SIZE(p.postLikes) DESC")
   Page<Post> getBestPosts(PageRequest pageRequest);
 
   @Query ("SELECT p FROM Post p ORDER BY p.timestamp")
@@ -32,7 +33,4 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
   Collection<Post> findAllPostsByUserId (int userId);
 
   List<Post> findByTextContaining(String text);
-
-
-
 }

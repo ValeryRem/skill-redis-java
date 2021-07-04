@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Cleaned for deploy on heroku.">
+    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Upd1: Cleaned for deploy on heroku.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/PostVoteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/PostVoteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/PostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/PostVoteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/PostVoteRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/service/GetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/service/GetService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--follow-tags" />
@@ -119,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624950888651</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Upd1: Cleaned for deploy on heroku.">
+      <created>1625212917795</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625212917795</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +154,7 @@
     <MESSAGE value="Code corrected for deploy." />
     <MESSAGE value="Developed in PostService and GetService by postPost and getPostByTag." />
     <MESSAGE value="Method getPostsBySearch(...) under checking." />
-    <option name="LAST_COMMIT_MESSAGE" value="Method getPostsBySearch(...) under checking." />
+    <MESSAGE value="Upd1: Cleaned for deploy on heroku." />
+    <option name="LAST_COMMIT_MESSAGE" value="Upd1: Cleaned for deploy on heroku." />
   </component>
 </project>

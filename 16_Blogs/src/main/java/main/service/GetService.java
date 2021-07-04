@@ -65,8 +65,9 @@ public class GetService {
             responseMap.put("timestamp", post.getTimestamp().getTime() / 1000);
             int userId = post.getUserId();
             User user = userRepository.getOne(userId);
-            Map<String, Object> userMap = Map
-                    .of("id", userId, "name", user.getName());
+            Map<String, Object> userMap = new LinkedHashMap<>();
+                   userMap.put("id", userId);
+                   userMap.put("name", user.getName());
             responseMap.put("user", userMap);
             responseMap.put("title", post.getTitle());
             responseMap.put("announce", post.getAnnounce());
