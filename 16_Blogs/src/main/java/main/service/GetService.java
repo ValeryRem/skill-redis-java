@@ -86,7 +86,7 @@ public class GetService {
 
     private List<Post> getOrderedPosts(Integer offset, Integer limit, String mode) {
         Page<Post> posts;
-        PageRequest pageRequest = PageRequest.of(offset, limit);
+        PageRequest pageRequest = PageRequest.of(offset/limit, limit);
         switch (mode) {
             case "popular":
                 posts = postRepository.getPopularPosts(pageRequest);
@@ -101,7 +101,7 @@ public class GetService {
                 posts = postRepository.getRecentPosts(pageRequest);
                 break;
         }
-        return posts.stream().filter(p -> p.isActive() == 1).collect(Collectors.toList());
+        return posts.toList();//.stream().filter(p -> p.isActive() == 1).collect(Collectors.toList());
     }
 
     public ResponseEntity<?> getPostsBySearch(Integer offset, Integer limit, String query) {

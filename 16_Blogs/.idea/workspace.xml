@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Upd1: Cleaned for deploy on heroku.">
+    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Updated Page&lt;Post&gt; getBestPosts in PostRepository.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/PostVoteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/PostVoteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/PostRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/repository/PostVoteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/repository/PostVoteRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/service/GetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/service/GetService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
