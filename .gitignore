@@ -18,4 +18,7 @@
 
   *.class
   hs_err_pid*
-  .DS_Store
+
+  **.idea
+  **/target/classes
+  **.iml
