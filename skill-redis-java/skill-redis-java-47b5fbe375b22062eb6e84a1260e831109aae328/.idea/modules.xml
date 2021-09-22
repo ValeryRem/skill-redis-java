@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/skill-redis-java.iml" filepath="$PROJECT_DIR$/skill-redis-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis-demo.iml" filepath="$PROJECT_DIR$/redis-demo.iml" />
     </modules>
   </component>
 </project>

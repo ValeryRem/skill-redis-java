@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Updated Page&lt;Post&gt; getBestPosts in PostRepository.">
+    <list default="true" id="69de2074-0186-47b4-9e8f-f87247adfe59" name="Default Changelist" comment="Update for Heroku.">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/service/GetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/16_Blogs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/16_Blogs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/controllers/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controllers/GeneralController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,29 +24,49 @@
         <option name="title" value="Current Branch" />
       </GitPushTagMode>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.4.RELEASE/spring-web-5.2.4.RELEASE.jar!/org/springframework/web/bind/annotation/RequestBody.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/main/repository/PostRepository.java" root0="SKIP_INSPECTION" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="showPreview" value="true" />
+  </component>
   <component name="ProjectId" id="1tcAFLzGK78iagZAHmTtabDHhrp" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Blogs" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valery\Desktop\java_basics\16_Blogs" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ApplicationMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <envs>
+        <env name="CLEARDB_DATABASE_URL" value="mysql://bc2bf3eba93a08:7f074a44@eu-cdbr-west-01.cleardb.com/heroku_b55c59d1f40106f?useUnicode=true&amp;characterEncoding=utf-8&amp;reconnect=truereconnect=true" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="main.ApplicationMain" />
       <module name="16_Blogs" />
       <extension name="coverage">
@@ -128,7 +150,28 @@
       <option name="project" value="LOCAL" />
       <updated>1625212917795</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updated  @Query in getBestPosts in PostRepository.">
+      <created>1625865220367</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625865220367</updated>
+    </task>
+    <task id="LOCAL-00010" summary="New system.properties set up.">
+      <created>1627672575172</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1627672575173</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update for Heroku.">
+      <created>1627717563293</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1627717563293</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +187,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Upd8 with @Query problems." />
     <MESSAGE value="Upd9 with problems in postLikes &amp; postComments." />
     <MESSAGE value="Upd10 without problems!" />
@@ -151,6 +195,13 @@
     <MESSAGE value="Developed in PostService and GetService by postPost and getPostByTag." />
     <MESSAGE value="Method getPostsBySearch(...) under checking." />
     <MESSAGE value="Upd1: Cleaned for deploy on heroku." />
-    <option name="LAST_COMMIT_MESSAGE" value="Upd1: Cleaned for deploy on heroku." />
+    <MESSAGE value="Updated  @Query in getBestPosts in PostRepository." />
+    <MESSAGE value="New system.properties set up." />
+    <MESSAGE value="Update for Heroku." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update for Heroku." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
