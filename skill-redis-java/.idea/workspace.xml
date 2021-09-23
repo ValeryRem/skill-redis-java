@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="965bdc12-7c0f-4db9-86ac-a35b8264222e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../16_Blogs/upload/226/43/78/23_Goat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../16_Blogs/upload/226/43/78/69_Darwin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../16_Blogs/upload/226/43/78/84_Wolf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__de_ruedigermoeller_fst_2_57.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_netty_netty_buffer_4_1_41_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_netty_netty_codec_4_1_41_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_41_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_netty_netty_common_4_1_41_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_netty_netty_handler_4_1_41_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_netty_netty_resolver_4_1_41_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_41_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_netty_netty_transport_4_1_41_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__io_reactivex_rxjava2_rxjava_2_2_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__javax_cache_cache_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__org_jodd_jodd_bean_5_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__org_jodd_jodd_core_5_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__org_objenesis_objenesis_2_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__org_redisson_redisson_3_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java-47b5fbe375b22062eb6e84a1260e831109aae328/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skill-redis-java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../13_NoSQL/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../13_NoSQL/3.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/16_Blogs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/16_Blogs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/src/main/java/main/controllers/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/src/main/java/main/controllers/GeneralController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/target/classes/main/controllers/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/target/classes/main/controllers/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16_Blogs/target/classes/main/service/GetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../16_Blogs/target/classes/main/service/GetService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_9_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_ruedigermoeller_fst_2_57.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_41_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_41_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_41_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_41_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_41_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_41_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_41_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_41_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava2_rxjava_2_2_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_cache_cache_api_1_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jodd_jodd_bean_5_0_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jodd_jodd_core_5_0_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_redisson_redisson_3_11_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/skill-redis-java.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1yTyzTNbJk1Hoa4cXFa8yz1N3Ul" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valery\Desktop\java_basics\skill-redis-java" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="965bdc12-7c0f-4db9-86ac-a35b8264222e" name="Default Changelist" comment="" />
+      <created>1632290140358</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632290140358</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
