@@ -8,6 +8,7 @@ import org.redisson.client.RedisConnectionException;
 import org.redisson.config.Config;
 
 import java.util.Date;
+import java.util.SortedSet;
 
 import static java.lang.System.out;
 
@@ -27,9 +28,7 @@ public class RedisStorage {
         return new Date().getTime() / 1000;
     }
 
-    public RScoredSortedSet<String> getOnlineUsers() {
-        return onlineUsers;
-    }
+
     // Пример вывода всех ключей
 //    public void listKeys() {
 //        Iterable<String> keys = rKeys.getKeys();
@@ -43,15 +42,39 @@ public class RedisStorage {
         config.useSingleServer().setAddress("redis://127.0.0.1:6379");
         try {
             redissonClient = Redisson.create(config);
+            onlineUsers = redissonClient.getScoredSortedSet(KEY);
+            onlineUsers.add(getTs(), "Bob");
+            onlineUsers.add(getTs(), "Lion");
+            onlineUsers.add(getTs(), "Tom");
+            onlineUsers.add(getTs(), "Rion");
+            onlineUsers.add(getTs(), "Clio");
+            onlineUsers.add(getTs(), "Polly");
+            onlineUsers.add(getTs(), "Dion");
+            onlineUsers.add(getTs(), "Rubby");
+            onlineUsers.add(getTs(), "Nelly");
+            onlineUsers.add(getTs(), "Virtu");
+            onlineUsers.add(getTs(), "Tulon");
+            onlineUsers.add(getTs(), "Georg");
+            onlineUsers.add(getTs(), "Clown");
+            onlineUsers.add(getTs(), "Mergy");
+            onlineUsers.add(getTs(), "Lulu");
+            onlineUsers.add(getTs(), "Xeon");
+            onlineUsers.add(getTs(), "Betty");
+            onlineUsers.add(getTs(), "Lexus");
+            onlineUsers.add(getTs(), "Quenty");
+            onlineUsers.add(getTs(), "Zuykov");
         } catch (RedisConnectionException Exc) {
             out.println("Не удалось подключиться к Redis");
             out.println(Exc.getMessage());
         }
 //        rKeys = redissonClient.getKeys();
-        onlineUsers = redissonClient.getScoredSortedSet(KEY);
+
 //        rKeys.delete(KEY); // Why?
     }
 
+    public RScoredSortedSet<String> getOnlineUsers() {
+        return onlineUsers;
+    }
     void shutdown() {
         redissonClient.shutdown();
     }
