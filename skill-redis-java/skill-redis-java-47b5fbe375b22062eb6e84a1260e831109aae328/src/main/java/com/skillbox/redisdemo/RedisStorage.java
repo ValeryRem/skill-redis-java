@@ -25,10 +25,8 @@ public class RedisStorage {
     private final static String KEY = "ONLINE_USERS";
 
     public double getTs() {
-        return new Date().getTime() / 1000;
+        return Double.longBitsToDouble(new Date().getTime() / 1000);
     }
-
-
     // Пример вывода всех ключей
 //    public void listKeys() {
 //        Iterable<String> keys = rKeys.getKeys();
@@ -43,6 +41,7 @@ public class RedisStorage {
         try {
             redissonClient = Redisson.create(config);
             onlineUsers = redissonClient.getScoredSortedSet(KEY);
+            onlineUsers.removeRangeByScore(onlineUsers.firstScore(), true, onlineUsers.lastScore(), true); // Очищаем множество от остатков
             onlineUsers.add(getTs(), "Bob");
             onlineUsers.add(getTs(), "Lion");
             onlineUsers.add(getTs(), "Tom");
@@ -53,16 +52,16 @@ public class RedisStorage {
             onlineUsers.add(getTs(), "Rubby");
             onlineUsers.add(getTs(), "Nelly");
             onlineUsers.add(getTs(), "Virtu");
-            onlineUsers.add(getTs(), "Tulon");
-            onlineUsers.add(getTs(), "Georg");
+            onlineUsers.add(getTs(), "Tulonn");
+            onlineUsers.add(getTs(), "George");
             onlineUsers.add(getTs(), "Clown");
             onlineUsers.add(getTs(), "Mergy");
             onlineUsers.add(getTs(), "Lulu");
             onlineUsers.add(getTs(), "Xeon");
             onlineUsers.add(getTs(), "Betty");
             onlineUsers.add(getTs(), "Lexus");
-            onlineUsers.add(getTs(), "Quenty");
-            onlineUsers.add(getTs(), "Zuykov");
+            onlineUsers.add(getTs(), "Quentin");
+            onlineUsers.add(getTs(), "Zhukov");
         } catch (RedisConnectionException Exc) {
             out.println("Не удалось подключиться к Redis");
             out.println(Exc.getMessage());
@@ -84,6 +83,7 @@ public class RedisStorage {
     {
         //ZADD ONLINE_USERS
         onlineUsers.add(getTs(), String.valueOf(user_id));
+        out.println(onlineUsers.entryRange(user_id, user_id));
     }
 
     // Удаляет
