@@ -25,7 +25,7 @@ public class RedisStorage {
     private final static String KEY = "ONLINE_USERS";
 
     public double getTs() {
-        return Double.longBitsToDouble(new Date().getTime() / 1000);
+        return Double.longBitsToDouble(new Date().getTime());
     }
     // Пример вывода всех ключей
 //    public void listKeys() {

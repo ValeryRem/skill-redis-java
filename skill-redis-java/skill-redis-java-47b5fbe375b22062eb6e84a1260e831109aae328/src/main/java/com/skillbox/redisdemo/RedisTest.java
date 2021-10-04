@@ -26,7 +26,7 @@ public class RedisTest {
     private static final int REQUESTS = 100;
 
     // Также мы добавим задержку вывода в лог пользователя, следующего пр списку
-    private static final int SLEEP = 1000; // 1 секунда
+    private static final int SLEEP = 500; // 1 секунда
 
     private static final SimpleDateFormat DF = new SimpleDateFormat("HH:mm:ss");
     private static void log(int UsersOnline) {
