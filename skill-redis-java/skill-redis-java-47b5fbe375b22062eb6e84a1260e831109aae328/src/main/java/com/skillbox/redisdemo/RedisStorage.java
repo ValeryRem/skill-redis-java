@@ -41,27 +41,28 @@ public class RedisStorage {
         try {
             redissonClient = Redisson.create(config);
             onlineUsers = redissonClient.getScoredSortedSet(KEY);
-            onlineUsers.removeRangeByScore(onlineUsers.firstScore(), true, onlineUsers.lastScore(), true); // Очищаем множество от остатков
-            onlineUsers.add(getTs(), "Bob");
-            onlineUsers.add(getTs(), "Lion");
-            onlineUsers.add(getTs(), "Tom");
-            onlineUsers.add(getTs(), "Rion");
-            onlineUsers.add(getTs(), "Clio");
-            onlineUsers.add(getTs(), "Polly");
-            onlineUsers.add(getTs(), "Dion");
-            onlineUsers.add(getTs(), "Rubby");
-            onlineUsers.add(getTs(), "Nelly");
-            onlineUsers.add(getTs(), "Virtu");
-            onlineUsers.add(getTs(), "Tulonn");
-            onlineUsers.add(getTs(), "George");
-            onlineUsers.add(getTs(), "Clown");
-            onlineUsers.add(getTs(), "Mergy");
-            onlineUsers.add(getTs(), "Lulu");
-            onlineUsers.add(getTs(), "Xeon");
-            onlineUsers.add(getTs(), "Betty");
-            onlineUsers.add(getTs(), "Lexus");
-            onlineUsers.add(getTs(), "Quentin");
-            onlineUsers.add(getTs(), "Zhukov");
+            onlineUsers.removeAll(onlineUsers.readAll());
+//            onlineUsers.removeRangeByScore(onlineUsers.firstScore(), true, onlineUsers.lastScore(), true); // Очищаем множество от остатков
+            onlineUsers.add(getTs(), "User_1");
+            onlineUsers.add(getTs(), "User_2");
+            onlineUsers.add(getTs(), "User_3");
+            onlineUsers.add(getTs(), "User_4");
+            onlineUsers.add(getTs(), "User_5");
+            onlineUsers.add(getTs(), "User_6");
+            onlineUsers.add(getTs(), "User_7");
+            onlineUsers.add(getTs(), "User_8");
+            onlineUsers.add(getTs(), "User_9");
+            onlineUsers.add(getTs(), "User_10");
+            onlineUsers.add(getTs(), "User_11");
+            onlineUsers.add(getTs(), "User_12");
+            onlineUsers.add(getTs(), "User_13");
+            onlineUsers.add(getTs(), "User_14");
+            onlineUsers.add(getTs(), "User_15");
+            onlineUsers.add(getTs(), "User_16");
+            onlineUsers.add(getTs(), "User_17");
+            onlineUsers.add(getTs(), "User_18");
+            onlineUsers.add(getTs(), "User_19");
+            onlineUsers.add(getTs(), "User_20");
         } catch (RedisConnectionException Exc) {
             out.println("Не удалось подключиться к Redis");
             out.println(Exc.getMessage());
@@ -81,9 +82,10 @@ public class RedisStorage {
     // Фиксирует посещение пользователем страницы
     void logPageVisit(int user_id)
     {
-        //ZADD ONLINE_USERS
-        onlineUsers.add(getTs(), String.valueOf(user_id));
-        out.println(onlineUsers.entryRange(user_id, user_id));
+        out.println("User_" + user_id + " popped up");
+        onlineUsers.removeRangeByScore(user_id, true, user_id, true);
+//        onlineUsers.remove("User_" + user_id);
+        onlineUsers.add(getTs(), "User_" + user_id);
     }
 
     // Удаляет
