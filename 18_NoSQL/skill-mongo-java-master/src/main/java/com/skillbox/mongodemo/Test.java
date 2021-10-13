@@ -1,10 +1,15 @@
 package com.skillbox.mongodemo;
 
 import au.com.bytecode.opencsv.CSVReader;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.ListDatabasesIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Collation;
 import org.bson.BsonDocument;
 import org.bson.Document;
 import org.bson.conversions.Bson;
@@ -33,58 +38,31 @@ public class Test {
 
         // Удалим из нее все документы
         collection.drop();
-        System.out.println(collection.countDocuments());
-//        try {
-//            CSVReader reader = new CSVReader(new FileReader("mongo.csv"), ',' , '"' , 0);
-//            String[] nextLine;
-//            while ((nextLine = reader.readNext()) != null) {
-//                    //Verifying the read data here
-////                    System.out.println(Arrays.toString(nextLine));
-//                    Document document = new Document()
-//                            .append("Name", nextLine[0])
-//                            .append("Age", nextLine[1])
-//                            .append("Courses", nextLine[2]);
-//                    collection.insertOne(document);
-//            }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//
-//        collection.find().forEach((Consumer<Document>) System.out::println);
+//        System.out.println("Cunt: " + collection.countDocuments());
 
-//        // Создадим первый документ
-//        Document firstDocument = new Document()
-//                .append("Type", 1)
-//                .append("Description", "Это наш первый документ в MongoDB")
-//                .append("Author", "Я")
-//                .append("Time", new SimpleDateFormat().format(new Date()));
-//
-//
-//        // Вложенный объект
-//        Document nestedObject = new Document()
-//                .append("Course", "NoSQL Базы Данных")
-//                .append("Author", "Mike Ovchinnikov");
-//
-//        firstDocument.append("Skillbox", nestedObject);
-//
-//
-//        // Вставляем документ в коллекцию
-//        collection.insertOne(firstDocument);
-//
-//        collection.find().forEach((Consumer<Document>) document -> {
-//            System.out.println("Наш первый документ:\n" + document);
-//        });
-//
-//        // Используем JSON-синтаксис для создания объекта
-//        Document secondDocument = Document.parse(
-//                "{Type: 2, Description:\"Мы создали и нашли этот документ с помощью JSON-синтаксиса\"}"
-//        );
-//        collection.insertOne(secondDocument);
-//
-//        // Используем JSON-синтаксис для написания запроса (выбираем документы с Type=2)
-//        BsonDocument query = BsonDocument.parse("{Type: {$eq: 2}}");
-//        collection.find(query).forEach((Consumer<Document>) document -> {
-//            System.out.println("Наш второй документ:\n" + document);
-//        });
+        try {
+            CSVReader reader = new CSVReader(new FileReader("mongo.csv"), ',' , '"' , 0);
+            String[] nextLine;
+            while ((nextLine = reader.readNext()) != null) {
+                    Document document = new Document()
+                            .append("Name", nextLine[0])
+                            .append("Age", nextLine[1])
+                            .append("Courses", nextLine[2]);
+                    collection.insertOne(document);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Count of students in the collection: " + collection.countDocuments());
+
+        BasicDBObject query = new BasicDBObject();
+        query.put("Age", new BasicDBObject("$gt", 40));
+        FindIterable<Document> iterable = collection.find(query);
+        MongoCollection<Document> collectionOver40 = database.getCollection("studentsOver40");
+        while (iterable.iterator().hasNext()) {
+            Document studentOver40 = iterable.iterator().next();
+            collectionOver40.insertOne(studentOver40);
+        }
+        System.out.println("Count of students over40: " + collectionOver40.countDocuments());
     }
 }
