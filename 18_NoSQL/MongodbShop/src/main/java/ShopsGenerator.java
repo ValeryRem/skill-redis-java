@@ -1,15 +1,25 @@
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
-import com.mongodb.MongoClient;
+import com.mongodb.*;
+import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Accumulators;
+import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.BsonField;
 import com.mongodb.client.model.Projections;
+import org.bson.BsonDocument;
+import org.bson.BsonString;
 import org.bson.Document;
+import org.bson.codecs.configuration.CodecRegistry;
+import org.bson.codecs.pojo.PojoCodecProvider;
+import static com.mongodb.client.model.Aggregates.*;
+
 import java.util.*;
+
+import static com.mongodb.client.model.Accumulators.avg;
 import static com.mongodb.client.model.Filters.*;
+import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
+import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 public class ShopsGenerator {
 
@@ -27,6 +37,8 @@ public class ShopsGenerator {
 
     private final MongoClient mongoClient = new MongoClient("127.0.0.1", 27017);
     private final MongoDatabase database = mongoClient.getDatabase("mongo-shops");
+    private final CodecRegistry pojoCodecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(),
+            fromProviders(PojoCodecProvider.builder().automatic(true).build()));
 
     // Создаем базовую коллекцию тоаров GoodsCollection
     private MongoCollection<Document> goods = database.getCollection("GoodsCollection");
@@ -63,8 +75,9 @@ public class ShopsGenerator {
         }
     }
 
-    public MongoCollection<Document> getStatistics(ArrayList<MongoCollection<Document>> listOfShops) throws NoSuchFieldException {
+    public MongoCollection<Document> getStatistics(ArrayList<MongoCollection<Document>> listOfShops) {
         MongoCollection<Document> result = database.getCollection("Statistics");
+        result = result.withCodecRegistry(pojoCodecRegistry);
         result.drop();
         for (MongoCollection<Document> shop : listOfShops) {
             Document document = new Document();
@@ -76,8 +89,34 @@ public class ShopsGenerator {
                 countOfLess100++;
             }
             document.append("count of prices less 100", countOfLess100);
+            FindIterable<Document> cursor = shop.find();
+            //Находим товар с максимальной ценой в магазине
+            Document doc = cursor.sort(new BasicDBObject("price", -1)).limit(1).iterator().tryNext();
+            if(doc != null) {
+                document.append("max price", doc.get("price"));
+            }
+            //Находим товар с миниимальной ценой в магазине
+            Document d = cursor.sort(new BasicDBObject("price", 1)).limit(1).iterator().tryNext();
+            if(d != null) {
+                document.append("min price", d.get("price"));
+            }
+            //Находим среднюю цену товаров в агазине
+//            BsonField field = avg("avgOfPrice", "$shop.price");
+//            document.append(field.getName(), field.getValue());
+
+            AggregateIterable<org.bson.Document> aggregate = shop.aggregate(Collections.singletonList(group("_id",
+                    new BsonField("avgPrice", new BsonDocument("$avg", new BsonString("$price"))))));
+            Document res = aggregate.first();
+            if(res != null) {
+                double avgPrice = res.getDouble("avgPrice");
+                document.append("avgPrice", avgPrice);
+            }
             result.insertOne(document);
         }
         return result;
+    }
+
+    public MongoClient getMongoClient() {
+        return mongoClient;
     }
 }
