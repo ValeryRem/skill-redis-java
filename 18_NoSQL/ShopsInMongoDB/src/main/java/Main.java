@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Main {
     private final static MongoService mongoService = new MongoService();
 

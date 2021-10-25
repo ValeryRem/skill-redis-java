@@ -22,7 +22,6 @@ public class MongoService {
     private final CodecRegistry pojoCodecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(),
             fromProviders(PojoCodecProvider.builder().automatic(true).build()));
 private  final MongoClient mongoClient = new MongoClient("127.0.0.1", 27017);
-    // Создаем базовую коллекцию тоаров GoodsCollection
     private final List<MongoCollection<Document>> shopsCollection = new ArrayList<>();
 
     public void processInput() {
@@ -32,7 +31,6 @@ private  final MongoClient mongoClient = new MongoClient("127.0.0.1", 27017);
         do {
             Scanner scanner = new Scanner(System.in);
             String order = scanner.nextLine();
-
             switch (order) {
                 case "ДОБАВИТЬ_МАГАЗИН":
                     System.out.println("Добавьте название магазина.");
@@ -115,12 +113,12 @@ private  final MongoClient mongoClient = new MongoClient("127.0.0.1", 27017);
             //Находим товар с максимальной ценой в магазине
             Document doc = cursor.sort(new BasicDBObject("price", -1)).limit(1).iterator().tryNext();
             if(doc != null) {
-                document.append("max price", doc.get("price"));
+                document.append("item with max price", doc.toString());//.get("price"));
             }
             //Находим товар с миниимальной ценой в магазине
             Document d = cursor.sort(new BasicDBObject("price", 1)).limit(1).iterator().tryNext();
             if(d != null) {
-                document.append("min price", d.get("price"));
+                document.append("item with min price", d.toString());
             }
             //Находим среднюю цену товаров в магазине
             AggregateIterable<org.bson.Document> aggregate = shop.aggregate(Collections.singletonList(group("_id",
