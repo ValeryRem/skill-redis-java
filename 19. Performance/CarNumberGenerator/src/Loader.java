@@ -1,16 +1,47 @@
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class Loader {
 
-    public static void main(String[] args) throws Exception {
-        long start = System.currentTimeMillis();
+    public static void main(String[] args) {
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
 
+//        ExecutorService executor = Executors.newScheduledThreadPool(2);
+//        executor.submit(() -> {
+//            try {
+//                TimeUnit.MILLISECONDS.sleep(100);
+//                generateCarNumber();
+//            }
+//            catch (Exception e) {
+//                System.err.println("task interrupted");
+//            }
+//        });
+//        executor.shutdown();
+
+        Runnable task = () -> {
+            try {
+                TimeUnit.MILLISECONDS.sleep(100);
+                generateCarNumber();
+            }
+            catch (Exception e) {
+                System.err.println("task interrupted");
+            }
+        };
+
+        executor.scheduleWithFixedDelay(task, 0, 10, TimeUnit.MILLISECONDS);
 //        FileOutputStream writer = new FileOutputStream("res/numbers.txt");
+    }
+
+    private static void generateCarNumber() throws Exception{
+        long start = System.currentTimeMillis();
         PrintWriter printWriter = new PrintWriter("res/numbers.txt");
         char letters[] = {'У', 'К', 'Е', 'Н', 'Х', 'В', 'А', 'Р', 'О', 'С', 'М', 'Т'};
         int regionCode = 199;
-        for (int regions = 1; regions < 100; regions++) {
+        for (int regions = 1; regions < 10; regions++) {
             for (int number = 1; number < 1000; number++) {
                 for (char firstLetter : letters) {
                     for (char secondLetter : letters) {
@@ -38,7 +69,7 @@ public class Loader {
         }
         printWriter.flush();
         printWriter.close();
-        System.out.println((System.currentTimeMillis() - start) + " ms");
+        System.out.println((Thread.currentThread().getName() + ": " + (System.currentTimeMillis() - start) + " ms"));
     }
 
     private static String padNumber(int number, int numberLength) {
