@@ -6,7 +6,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Loader {
-
     public static void main(String[] args) {
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
 
