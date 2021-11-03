@@ -59,6 +59,7 @@ public class Task implements Runnable {
         try (OutputStream out = Files.newOutputStream(Path.of(fileNameRoot + ".txt"),
             StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.APPEND)) {
                 Files.copy(Paths.get(fileNameRoot + firstLetter + ".txt"), out);
+                Files.delete(Paths.get(fileNameRoot + firstLetter + ".txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
