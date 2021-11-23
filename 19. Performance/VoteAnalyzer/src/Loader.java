@@ -8,9 +8,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
+import java.lang.management.GarbageCollectorMXBean;
+import java.lang.management.ManagementFactory;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 public class Loader
 {
@@ -19,7 +22,7 @@ public class Loader
 
     private static HashMap<Integer, WorkTime> voteStationWorkTimes = new HashMap<>();
     private static HashMap<Voter, Integer> voterCounts = new HashMap<>();
-
+    private static List<GarbageCollectorMXBean> gcBeans = ManagementFactory.getGarbageCollectorMXBeans();
     public static void main(String[] args) throws Exception
     {
         String fileName = "res/data-18M.xml";
@@ -52,8 +55,10 @@ public class Loader
 //        }
         long usedMemory = freeMemory - Runtime.getRuntime().freeMemory();
         System.out.println("usedMemory : " + usedMemory);
-    }
 
+        VerifyCurrentGC verifyCurrentGC = new VerifyCurrentGC();
+        verifyCurrentGC.verifyGC(gcBeans);
+    }
 //    private static void parseFile(String fileName) throws Exception
 //    {
 //        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
