@@ -1,11 +1,10 @@
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class TimePeriod implements Comparable<TimePeriod>
 {
     private long from;
     private long to;
+    private final long ONE_DAY_MILLIS = 86_400_000;
 
     /**
      * Time period within one day
@@ -16,31 +15,34 @@ public class TimePeriod implements Comparable<TimePeriod>
     {
         this.from = from;
         this.to = to;
-        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
-        if(!dayFormat.format(new Date(from)).equals(dayFormat.format(new Date(to))))
+//        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
+//        if(!dayFormat.format(new Date(from)).equals(dayFormat.format(new Date(to))))
+        if((from/ONE_DAY_MILLIS) != (to/ONE_DAY_MILLIS))
             throw new IllegalArgumentException("Dates 'from' and 'to' must be within ONE day!");
     }
 
-    public TimePeriod(Date from, Date to)
-    {
-        this.from = from.getTime();
-        this.to = to.getTime();
-        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
-        if(!dayFormat.format(from).equals(dayFormat.format(to)))
-            throw new IllegalArgumentException("Dates 'from' and 'to' must be within ONE day!");
-    }
+//    public TimePeriod(Date from, Date to)
+//    {
+//        this.from = from.getTime();
+//        this.to = to.getTime();
+//        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
+//        if(!dayFormat.format(from).equals(dayFormat.format(to)))
+//            throw new IllegalArgumentException("Dates 'from' and 'to' must be within ONE day!");
+//    }
 
-    public void appendTime(Date visitTime)
+    public void appendTime(long visitTime)//(Date visitTime)
     {
-        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
-        if(!dayFormat.format(new Date(from)).equals(dayFormat.format(new Date(visitTime.getTime()))))
+//        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
+//        if(!dayFormat.format(new Date(from)).equals(dayFormat.format(new Date(visitTime.getTime()))))
+        if((from/ONE_DAY_MILLIS) != (visitTime/ONE_DAY_MILLIS)) {
             throw new IllegalArgumentException("Visit time must be within the same day as the current TimePeriod!");
-        long visitTimeTs = visitTime.getTime();
-        if(visitTimeTs < from) {
-            from = visitTimeTs;
         }
-        if(visitTimeTs > to) {
-            to = visitTimeTs;
+//        long visitTimeTs = visitTime.getTime();
+        if(visitTime < from) {
+            from = visitTime;
+        }
+        if(visitTime > to) {
+            to = visitTime;
         }
     }
 
@@ -56,15 +58,23 @@ public class TimePeriod implements Comparable<TimePeriod>
     @Override
     public int compareTo(TimePeriod period)
     {
-        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
-        Date current = new Date();
-        Date compared = new Date();
-        try {
-            current = dayFormat.parse(dayFormat.format(new Date(from)));
-            compared = dayFormat.parse(dayFormat.format(new Date(period.from)));
-        } catch (ParseException e) {
-            e.printStackTrace();
+//        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
+//        Date current = new Date();
+//        Date compared = new Date();
+//        try {
+//            current = dayFormat.parse(dayFormat.format(new Date(from)));
+//            compared = dayFormat.parse(dayFormat.format(new Date(period.from)));
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//        return current.compareTo(compared);
+        int result;
+        if(from == period.from) {
+            result = 0;
+        } else {
+            result = -1;
         }
-        return current.compareTo(compared);
+        return result;
     }
+
 }
