@@ -1,43 +1,32 @@
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.File;
-import java.lang.management.GarbageCollectorMXBean;
-import java.lang.management.ManagementFactory;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 
 public class Loader
 {
-    private static SimpleDateFormat birthDayFormat = new SimpleDateFormat("yyyy.MM.dd");
-    private static SimpleDateFormat visitDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+//    private final static SimpleDateFormat birthDayFormat = new SimpleDateFormat("yyyy.MM.dd");
+//    private final static SimpleDateFormat visitDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+//    private final static HashMap<Integer, WorkTime> voteStationWorkTimes = new HashMap<>();
+//    private final static HashMap<Voter, Integer> voterCounts = new HashMap<>();
+//    private final static List<GarbageCollectorMXBean> gcBeans = ManagementFactory.getGarbageCollectorMXBeans();
 
-    private static HashMap<Integer, WorkTime> voteStationWorkTimes = new HashMap<>();
-    private static HashMap<Voter, Integer> voterCounts = new HashMap<>();
-    private static List<GarbageCollectorMXBean> gcBeans = ManagementFactory.getGarbageCollectorMXBeans();
     public static void main(String[] args) throws Exception
     {
-        String fileName = "res/data-18M.xml";
+        String fileName = "res/data-1M.xml";
         long freeMemory = Runtime.getRuntime().freeMemory();
-        System.out.println("*** free memory beginning: " + freeMemory);
+        System.out.println("*** free memory at beginning: " + freeMemory);
 
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         SAXParser parser = saxParserFactory.newSAXParser();
         XMLHandler xmlHandler = new XMLHandler();
-        parser.parse(new File(fileName), xmlHandler);
+        parser.parse(fileName, xmlHandler);
         xmlHandler.printDoubledVisits();
+        xmlHandler.printWorkingTimes();
+
+//        xmlHandler.printVisitTimes();
 //        System.out.println("***** starting freeMemory: " + freeMemory); //
 //        parseFile(fileName);
 //
-//        //Printing results
+        //Printing results
 //        System.out.println("Voting station work times: ");
 //        for(Integer votingStation : voteStationWorkTimes.keySet())
 //        {
@@ -56,8 +45,8 @@ public class Loader
         long usedMemory = freeMemory - Runtime.getRuntime().freeMemory();
         System.out.println("usedMemory : " + usedMemory);
 
-        VerifyCurrentGC verifyCurrentGC = new VerifyCurrentGC();
-        verifyCurrentGC.verifyGC(gcBeans);
+//        VerifyCurrentGC verifyCurrentGC = new VerifyCurrentGC();
+//        verifyCurrentGC.verifyGC(gcBeans);
     }
 //    private static void parseFile(String fileName) throws Exception
 //    {

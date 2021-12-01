@@ -76,5 +76,4 @@ public class TimePeriod implements Comparable<TimePeriod>
         }
         return result;
     }
-
 }
