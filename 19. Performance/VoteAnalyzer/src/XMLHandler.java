@@ -3,9 +3,10 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.lang.Long.parseLong;
 
 public class XMLHandler extends DefaultHandler  {//SAXParserFactory {
     private Voter voter;// = new Voter();
@@ -13,10 +14,9 @@ public class XMLHandler extends DefaultHandler  {//SAXParserFactory {
     private final SimpleDateFormat birthdayFormat = new SimpleDateFormat("yyyy.MM.dd");
     private final  SimpleDateFormat visitDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
     private final HashMap<Voter, Integer> voterVisitCounts;
-//    private final HashMap<Integer, Date> visitTimes = new HashMap<>();
-    private final HashMap<Integer, WorkTime> voteStationWorkTimes = new HashMap<>();
     private final WorkTime workTime = new WorkTime();
-    private final HashSet<Integer> stations = new HashSet<>();
+//    private final HashSet<Integer> stations = new HashSet<>();
+    private final HashSet<Visit> visits = new HashSet<>();
 
     public XMLHandler () {
         voterVisitCounts = new HashMap<>();
@@ -24,23 +24,24 @@ public class XMLHandler extends DefaultHandler  {//SAXParserFactory {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
+        TimePeriod timePeriod;
         try {
             if (qName.equals("voter") && voter == null) {
                 Date birthday = birthdayFormat.parse(attributes.getValue("birthDay"));
                 voter = new Voter(attributes.getValue("name"), birthday);
             } else if (qName.equals("visit") && voter !=null) {
+
                 int count = voterVisitCounts.getOrDefault(voter, 0);
                 Date visitTime = visitDateFormat.parse(attributes.getValue("time"));
+                int station = Integer.parseInt(attributes.getValue("station"));
                 workTime.addVisitTime(visitTime.getTime());
-                int  station = Integer.parseInt(attributes.getValue("station"));
-                stations.add(station);
-                voteStationWorkTimes.put(station, workTime);
+//                stations.add(station);
+                processVisits(station, visitTime);
                 voterVisitCounts.put(voter, count + 1);
-//                visitTimes.put(station, visitTime);
             }
         } catch (ParseException e) {
                 e.printStackTrace();
-            }
+        }
     }
 
     @Override
@@ -77,8 +78,29 @@ public class XMLHandler extends DefaultHandler  {//SAXParserFactory {
 //        }
 //    }
     public void printWorkingTimes(){
-        for (int st: stations){
-            System.out.println("station: " + st + ", visit time: " + voteStationWorkTimes.get(st));
+        List<Visit> sortedList = visits.stream()
+                .sorted(Comparator.comparing(Visit::getStation)) //comparator - how you want to sort it
+                .collect(Collectors.toList());
+        for (Visit v: sortedList){
+            System.out.println("Station " + v.getStation() + "; visit times: " +
+                    visitDateFormat.format(new Date(v.getTimePeriod().getFrom())) + " - " +
+                    visitDateFormat.format(new Date(v.getTimePeriod().getTo())));
+        }
+    }
+
+    public void processVisits (int station, Date visitTime){
+        boolean isDatePresent = false;
+        for (Visit v: visits) {
+            long ONE_DAY_MILLIS = 86_400_000;
+            if(station == v.getStation() &&
+                    visitTime.getTime()/ ONE_DAY_MILLIS == v.getTimePeriod().getTo()/ ONE_DAY_MILLIS) {
+                v.getTimePeriod().appendTime(visitTime.getTime());
+                isDatePresent = true;
+                break;
+            }
+        }
+        if(!isDatePresent){
+            visits.add(new Visit(station, new TimePeriod(visitTime.getTime(), visitTime.getTime())));
         }
     }
 }

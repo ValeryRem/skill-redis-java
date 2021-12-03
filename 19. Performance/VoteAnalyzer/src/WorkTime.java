@@ -1,4 +1,3 @@
-import java.util.Date;
 import java.util.TreeSet;
 
 public class WorkTime
@@ -39,5 +38,9 @@ public class WorkTime
             line += period;
         }
         return line;
+    }
+
+    public TreeSet<TimePeriod> getPeriods() {
+        return periods;
     }
 }

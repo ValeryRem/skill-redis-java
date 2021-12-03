@@ -17,11 +17,22 @@ public class TimePeriod implements Comparable<TimePeriod>
         this.to = to;
 //        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
 //        if(!dayFormat.format(new Date(from)).equals(dayFormat.format(new Date(to))))
-        if((from/ONE_DAY_MILLIS) != (to/ONE_DAY_MILLIS))
+        if((from/ONE_DAY_MILLIS) != (to/ONE_DAY_MILLIS)) {
             throw new IllegalArgumentException("Dates 'from' and 'to' must be within ONE day!");
+        }
+        if(from > to) {
+            long c = from;
+            from = to;
+            to = c;
+            this.from = from;
+            this.to = to;
+        }
     }
 
-//    public TimePeriod(Date from, Date to)
+    public TimePeriod() {
+    }
+
+    //    public TimePeriod(Date from, Date to)
 //    {
 //        this.from = from.getTime();
 //        this.to = to.getTime();
@@ -34,15 +45,16 @@ public class TimePeriod implements Comparable<TimePeriod>
     {
 //        SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
 //        if(!dayFormat.format(new Date(from)).equals(dayFormat.format(new Date(visitTime.getTime()))))
-        if((from/ONE_DAY_MILLIS) != (visitTime/ONE_DAY_MILLIS)) {
-            throw new IllegalArgumentException("Visit time must be within the same day as the current TimePeriod!");
-        }
+        if((from/ONE_DAY_MILLIS) == (visitTime/ONE_DAY_MILLIS)) {
+//            throw new IllegalArgumentException("Visit time must be within the same day as the current TimePeriod!");
+//        }
 //        long visitTimeTs = visitTime.getTime();
-        if(visitTime < from) {
-            from = visitTime;
-        }
-        if(visitTime > to) {
-            to = visitTime;
+            if (visitTime < from) {
+                from = visitTime;
+            }
+            if (visitTime > to) {
+                to = visitTime;
+            }
         }
     }
 
@@ -75,5 +87,13 @@ public class TimePeriod implements Comparable<TimePeriod>
             result = -1;
         }
         return result;
+    }
+
+    public long getFrom() {
+        return from;
+    }
+
+    public long getTo() {
+        return to;
     }
 }

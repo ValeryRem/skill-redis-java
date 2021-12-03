@@ -6,6 +6,7 @@ public class Voter
     private String name;
     private Date birthDay;
 
+
     public Voter(String name, Date birthDay)
     {
         this.name = name;
