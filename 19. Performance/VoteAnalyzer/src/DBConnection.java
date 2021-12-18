@@ -6,7 +6,7 @@ public class DBConnection
 
     private static String dbName = "learn";
     private static String dbUser = "root";
-    private static String dbPass = "ya78yrc8n4w3984";
+    private static String dbPass = "valery_56";
 
     public static Connection getConnection()
     {
@@ -17,9 +17,10 @@ public class DBConnection
                     "jdbc:mysql://localhost:3306/" + dbName +
                     "?user=" + dbUser + "&password=" + dbPass);
                 connection.createStatement().execute("DROP TABLE IF EXISTS voter_count");
+                connection.createStatement().execute("set names utf8");
                 connection.createStatement().execute("CREATE TABLE voter_count(" +
                         "id INT NOT NULL AUTO_INCREMENT, " +
-                        "name TINYTEXT NOT NULL, " +
+                        "name TINYTEXT CHARACTER SET utf8 NOT NULL, " +
                         "birthDate DATE NOT NULL, " +
                         "`count` INT NOT NULL, " +
                         "PRIMARY KEY(id))");
@@ -58,5 +59,6 @@ public class DBConnection
             System.out.println("\t" + rs.getString("name") + " (" +
                     rs.getString("birthDate") + ") - " + rs.getInt("count"));
         }
+        rs.close();
     }
 }
