@@ -3,7 +3,7 @@ import javax.xml.parsers.SAXParserFactory;
 
 public class Loader
 {
-    private final static String fileName = "res/data-1572M.xml";
+    private final static String fileName = "res/data-0.2M.xml";
 
     public static void main(String[] args) throws Exception
     {
