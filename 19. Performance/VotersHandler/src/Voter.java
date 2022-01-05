@@ -5,9 +5,8 @@ public class Voter
 {
     private String name;
     private String birthDay;
-    int station;
-    String visitTime;
-
+    private int station;
+    private String visitTime;
 
     public Voter(String name, String birthDay, int station, String visitTime) {
         this.name = name;
