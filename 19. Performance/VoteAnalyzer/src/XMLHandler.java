@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.lang.Long.parseLong;
-
 public class XMLHandler extends DefaultHandler  {//SAXParserFactory {
     private Voter voter;// = new Voter();
 
@@ -24,13 +22,13 @@ public class XMLHandler extends DefaultHandler  {//SAXParserFactory {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
-        TimePeriod timePeriod;
+//        TimePeriod timePeriod;
         try {
             if (qName.equals("voter") && voter == null) {
+                String name = attributes.getValue("name");
                 Date birthday = birthdayFormat.parse(attributes.getValue("birthDay"));
-                voter = new Voter(attributes.getValue("name"), birthday);
+                voter = new Voter(name, birthday);
             } else if (qName.equals("visit") && voter !=null) {
-
                 int count = voterVisitCounts.getOrDefault(voter, 0);
                 Date visitTime = visitDateFormat.parse(attributes.getValue("time"));
                 int station = Integer.parseInt(attributes.getValue("station"));
@@ -51,7 +49,7 @@ public class XMLHandler extends DefaultHandler  {//SAXParserFactory {
         }
     }
 
-    public void printDoubledVisits(){
+    public void printMultiVisits(){
         for (Voter v: voterVisitCounts.keySet()) {
             int count = voterVisitCounts.get(v);
             if(count > 1){
