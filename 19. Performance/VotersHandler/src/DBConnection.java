@@ -17,7 +17,7 @@ public class DBConnection
             try {
                 connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/" + dbName +
-                    "?user=" + dbUser + "&password=" + dbPass + "&useSSL=false");
+                    "?user=" + dbUser + "&password=" + dbPass + "&characterEncoding=UTF-8&useSSL=false");
                 connection.createStatement().execute("DROP TABLE IF EXISTS voters");
                 connection.createStatement().execute("CREATE TABLE voters(" +
                         "id INT NOT NULL AUTO_INCREMENT, " +

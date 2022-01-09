@@ -52,15 +52,15 @@ public class XMLHandler extends DefaultHandler {
     }
 
     public void setToDB(Voter voter) throws Exception {
-        String sql = "SELECT 'id' FROM 'voters' WHERE name='" + voter.getName() +
-                "' AND birthDate='" + voter.getBirthDay() +
-                "' AND station='" + voter.getStation() + "' AND visitTime='" + voter.getVisitTime() + "'";
+        String sql = "SELECT id FROM voters WHERE 'name'='" + voter.getName() +
+                "' AND 'birthDate'='" + voter.getBirthDay() +
+                "' AND 'station'='" + voter.getStation() + "' AND 'visitTime'='" + voter.getVisitTime() + "'";
         ResultSet rs = DBConnection.getConnection().createStatement().executeQuery(sql);
         if (rs == null) {
             DBConnection.getConnection().createStatement()
-                    .execute("INSERT INTO voters(name, birthDate, station, visitTime) VALUES(" +
-                            voter.getName() + ", " + voter.getBirthDay() + ", " + voter.getStation() +
-                            ", " + voter.getVisitTime() + ")");
+                    .execute("INSERT INTO 'voters'(name, birthDate, station, visitTime) VALUES('" +
+                            voter.getName() + "', '" + voter.getBirthDay() + "', '" + voter.getStation() +
+                            "', '" + voter.getVisitTime() + "')");
         } else {
             rs.close();
         }

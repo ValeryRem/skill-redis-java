@@ -15,6 +15,6 @@ public class Loader
         XMLHandler xmlHandler = new XMLHandler();
         parser.parse(fileName, xmlHandler);
         long end = System.currentTimeMillis();
-        System.out.println("Duration of parsing: " + (end - start)/1000 + " sec.");
+        System.out.println("Duration of parsing: " + (end - start) + " ms.");
     }
 }
