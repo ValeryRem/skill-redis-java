@@ -1,6 +1,4 @@
 import java.sql.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class DBConnection
 {
@@ -9,6 +7,7 @@ public class DBConnection
     private static final String dbName = "learn";
     private static final String dbUser = "root";
     private static final String dbPass = "valery_56";
+//    private static String query = "INSERT INTO voters(name, birthDate, station, visitTime) VALUES";
 
     public static Connection getConnection()
     {
@@ -33,7 +32,15 @@ public class DBConnection
         return connection;
     }
 
-//    public void setVoterToDB(Voter voter) throws Exception
+//    public static String getQuery() {
+//        return query;
+//    }
+//
+//    public static void setQuery(String query) {
+//        DBConnection.query = query;
+//    }
+
+    //    public void setVoterToDB(Voter voter) throws Exception
 //    {
 //        String sql = "SELECT id FROM voters WHERE name='" + voter.getName() + "' AND birthDate='" + voter.getBirthDay() + "' " +
 //                " AND visitTime='" + voter.getTime() + "' " + " AND station='" + voter.getStation() + "'";
