@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 
 public class Loader
 {
-    private final static String fileName = "res/data-18M.xml";
+    private final static String fileName = "res/data-1572M.xml";
 
     public static void main(String[] args) throws Exception
     {

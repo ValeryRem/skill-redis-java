@@ -5,8 +5,6 @@ public class XMLHandler extends DefaultHandler {
     // Создаем стартовую строку-загулшку:
     private final Voter voter = new Voter("Заглушка", "1900.12.12", 999, "0000.00.00 00:00:00");
     private boolean isNewVoter = true;
-//    private StringBuilder insertQuery = new StringBuilder();
-//    private int step;
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
@@ -31,19 +29,14 @@ public class XMLHandler extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) {
-//        String query = DBConnection.getQuery();
         if (qName.equals("voter")) {
-//            DBConnection.setQuery(query + (insertQuery.append((insertQuery.length() == 0 ? "" : ",") +
-//                    "('" + voter.getName() + "', '" + voter.getBirthDay() + "', " + voter.getStation() + ", '" +
-//                    voter.getVisitTime()+ "')")).toString());
             try {
-                setToDB(voter);
+                DBConnection.setVoterDB(voter);
             } catch (Exception e) {
                 e.printStackTrace();
             }
             isNewVoter = true;
         }
-//        System.out.println(step++);///////////
     }
 
     @Override
@@ -54,12 +47,5 @@ public class XMLHandler extends DefaultHandler {
     @Override
     public void endDocument() {
         System.out.println("Разбор документа завершен!");
-    }
-
-    public void setToDB(Voter voter) throws Exception {
-        String query = "INSERT INTO voters(name, birthDate, station, visitTime) VALUES('" +
-                voter.getName() + "', '" + voter.getBirthDay() + "', " + voter.getStation() +
-                ", '" + voter.getVisitTime() + "')";
-        DBConnection.getConnection().createStatement().execute(query);
     }
 }

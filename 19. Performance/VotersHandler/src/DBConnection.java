@@ -7,6 +7,7 @@ public class DBConnection
     private static final String dbName = "learn";
     private static final String dbUser = "root";
     private static final String dbPass = "valery_56";
+    private static StringBuilder insertQuery = new StringBuilder();
 //    private static String query = "INSERT INTO voters(name, birthDate, station, visitTime) VALUES";
 
     public static Connection getConnection()
@@ -32,27 +33,30 @@ public class DBConnection
         return connection;
     }
 
-//    public static String getQuery() {
-//        return query;
-//    }
-//
-//    public static void setQuery(String query) {
-//        DBConnection.query = query;
-//    }
+    public static void setVoterDB(Voter voter) throws SQLException {
+        String birthDay = voter.getBirthDay().replace('.', '-');
+        String name = voter.getName();
+        int station = voter.getStation();
+        String visitTime = voter.getVisitTime();
 
-    //    public void setVoterToDB(Voter voter) throws Exception
-//    {
-//        String sql = "SELECT id FROM voters WHERE name='" + voter.getName() + "' AND birthDate='" + voter.getBirthDay() + "' " +
-//                " AND visitTime='" + voter.getTime() + "' " + " AND station='" + voter.getStation() + "'";
-//        ResultSet rs = DBConnection.getConnection().createStatement().executeQuery(sql);
-//        if(rs == null)
-//        {
-//            DBConnection.getConnection().createStatement()
-//                    .execute("INSERT INTO voters(name, birthDate, visitTime, station) VALUES('"  +
-//                            voter.getName() + "', '" + birthdayFormat.format(voter.getBirthDay()) + "', '" +
-//                            visitDateFormat.format(voter.getTime()) + "', '" + voter.getStation() + "')");
-//        } else {
-//            rs.close();
-//        }
-//    }
+        insertQuery.append(insertQuery.length() == 0 ? "" : ",")
+                .append("('")
+                .append(name)
+                .append("', '")
+                .append(birthDay)
+                .append("', '")
+                .append(station)
+                .append("', '")
+                .append(visitTime)
+                .append("')");
+        if (insertQuery.length() > 65000) {
+            executeMultiInsert();
+            insertQuery.delete(0, (insertQuery.length()));
+        }
+    }
+
+    public static void executeMultiInsert() throws SQLException {
+        String sql = "INSERT INTO voters(name, birthDate, station, visitTime) VALUES" + insertQuery;
+        DBConnection.getConnection().createStatement().execute(sql);
+    }
 }
