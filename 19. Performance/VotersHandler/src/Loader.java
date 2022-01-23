@@ -15,8 +15,6 @@ public class Loader
         SAXParser parser = saxParserFactory.newSAXParser();
         XMLHandler xmlHandler = new XMLHandler();
         parser.parse(fileName, xmlHandler);
-//        ResultSet rs = DBConnection.getConnection().createStatement().executeQuery(DBConnection.getQuery());
-//        rs.close();
         long end = System.currentTimeMillis();
         System.out.println("Duration of parsing: " + (end - start) + " ms.");
     }

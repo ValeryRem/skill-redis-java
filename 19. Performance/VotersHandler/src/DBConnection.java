@@ -1,3 +1,8 @@
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.*;
 
 public class DBConnection
@@ -8,7 +13,16 @@ public class DBConnection
     private static final String dbUser = "root";
     private static final String dbPass = "valery_56";
     private static StringBuilder insertQuery = new StringBuilder();
-//    private static String query = "INSERT INTO voters(name, birthDate, station, visitTime) VALUES";
+    private static XMLStreamReader xmlr;
+
+    static {
+        try {
+            xmlr = XMLInputFactory.newInstance().createXMLStreamReader("res/data-1572M.xml",
+                new FileInputStream("res/data-1572M.xml"));
+        } catch (XMLStreamException | FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static Connection getConnection()
     {
@@ -33,7 +47,7 @@ public class DBConnection
         return connection;
     }
 
-    public static void setVoterDB(Voter voter) throws SQLException {
+    public static void setVoterDB(Voter voter) throws SQLException, XMLStreamException {
         String birthDay = voter.getBirthDay().replace('.', '-');
         String name = voter.getName();
         int station = voter.getStation();
@@ -49,10 +63,14 @@ public class DBConnection
                 .append("', '")
                 .append(visitTime)
                 .append("')");
-        if (insertQuery.length() > 65000) {
-            executeMultiInsert();
-            insertQuery.delete(0, (insertQuery.length()));
-        }
+
+            if (insertQuery.length() > 65000){
+                executeMultiInsert();
+                insertQuery.delete(0, (insertQuery.length()));
+            }
+            if (!xmlr.hasNext()) {
+                executeMultiInsert();
+            }
     }
 
     public static void executeMultiInsert() throws SQLException {
