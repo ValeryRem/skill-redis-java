@@ -1,8 +1,4 @@
-import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.sql.*;
 
 public class DBConnection
@@ -13,16 +9,6 @@ public class DBConnection
     private static final String dbUser = "root";
     private static final String dbPass = "valery_56";
     private static StringBuilder insertQuery = new StringBuilder();
-    private static XMLStreamReader xmlr;
-
-    static {
-        try {
-            xmlr = XMLInputFactory.newInstance().createXMLStreamReader("res/data-1572M.xml",
-                new FileInputStream("res/data-1572M.xml"));
-        } catch (XMLStreamException | FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static Connection getConnection()
     {
@@ -67,9 +53,6 @@ public class DBConnection
             if (insertQuery.length() > 65000){
                 executeMultiInsert();
                 insertQuery.delete(0, (insertQuery.length()));
-            }
-            if (!xmlr.hasNext()) {
-                executeMultiInsert();
             }
     }
 

@@ -5,3 +5,16 @@
 
 Важно:
 Не загружайте XML файлы с данными в репозиторий
+
+Объем БД:
+для res/data-18M.xml
+148754 - при insertQuery.length() > 65000
+148768 - при insertQuery.length() > 30000
+149097 - при insertQuery.length() > 10000
+149074 - при insertQuery.length() >  5000
+
+для res/data-1572M.xml
+12_348_867 - при insertQuery.length() >  100_000
+12 348 493 - при insertQuery.length() >  65_000
+
+12_349_146 - при  DBConnection.executeMultiInsert(); в  endDocument().

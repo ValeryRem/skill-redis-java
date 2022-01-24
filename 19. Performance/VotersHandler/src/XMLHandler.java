@@ -1,6 +1,8 @@
 import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.sql.SQLException;
+
 public class XMLHandler extends DefaultHandler {
     // Создаем стартовую строку-загулшку:
     private final Voter voter = new Voter("Заглушка", "1900.12.12", 999, "0000.00.00 00:00:00");
@@ -46,6 +48,11 @@ public class XMLHandler extends DefaultHandler {
 
     @Override
     public void endDocument() {
+        try {
+            DBConnection.executeMultiInsert();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
         System.out.println("Разбор документа завершен!");
     }
 }
